@@ -1,0 +1,10 @@
+open pike.z8.ru
+user ulges kil777o
+binary
+cd /www/site1/public_html/consumer/rabota
+lcd //Ulges-fs/software/Ulges/Site
+prompt
+mput oper_otkl.html
+prompt
+close
+quit

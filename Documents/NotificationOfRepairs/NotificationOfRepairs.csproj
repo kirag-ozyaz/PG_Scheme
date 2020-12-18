@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54133342-3C3A-4B79-824A-9E1BF69312F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NotificationOfRepairs</RootNamespace>
+    <AssemblyName>NotificationOfRepairs</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\EIS_DotPeek\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\EIS_DotPeek\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\EIS_DotPeek\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="RequestsClient">
+      <HintPath>..\LIB\RequestsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeModel">
+      <HintPath>..\LIB\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AbonentToNotification.cs" />
+    <Compile Include="Classes\SerializeStatic.cs" />
+    <Compile Include="Classes\SerializerXML.cs" />
+    <Compile Include="DataSets\DataSetNotifications.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNotifications.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\FormJournalNotificationOfRepairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\FormJournalNotificationOfRepairs.Designer.cs">
+      <DependentUpon>FormJournalNotificationOfRepairs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\FormNotificationOfRepairsAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\FormNotificationOfRepairsAddEdit.Designer.cs">
+      <DependentUpon>FormNotificationOfRepairsAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSets\DataSetNotifications.xsc">
+      <DependentUpon>DataSetNotifications.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetNotifications.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNotifications.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetNotifications.xss">
+      <DependentUpon>DataSetNotifications.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\FormJournalNotificationOfRepairs.resx">
+      <DependentUpon>FormJournalNotificationOfRepairs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\FormNotificationOfRepairsAddEdit.resx">
+      <DependentUpon>FormNotificationOfRepairsAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ClassLibrarySQL\Library.csproj">
+      <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ReferenceTables\ReferenceTables.csproj">
+      <Project>{70de9a59-49c6-4683-9f6b-3f04c819c1a8}</Project>
+      <Name>ReferenceTables</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Scheme\SchemeModel\SchemeModelN.csproj">
+      <Project>{1e4637ad-f6b6-4cd5-9c9c-5f333ebf4443}</Project>
+      <Name>SchemeModelN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="info.txt" />
+    <None Include="Resources\work-are-required-manager-27884425.800%281%29.ico" />
+    <None Include="Resources\work-are-required-manager-27884425.800.ico" />
+    <None Include="Resources\kisspng-customer-service-telephone-call-call-centre-telema-telemarketing-5ad0d20d9d6734.5055854515236347016447.ico" />
+    <None Include="Resources\work-are-required-manager-27884425.8001.jpg" />
+    <None Include="Resources\kisspng-customer-service-telephone-call-call-centre-telema-telemarketing-5ad0d20d9d6734.5055854515236347016447.png" />
+    <None Include="Resources\work-are-required-manager-27884425.800.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

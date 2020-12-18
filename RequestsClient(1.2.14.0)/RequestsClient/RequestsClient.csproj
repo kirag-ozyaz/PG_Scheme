@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7130860-165F-46E0-B9DA-7AB214B2458B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RequestsClient</RootNamespace>
+    <AssemblyName>RequestsClient</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System" />
+    <Reference Include="FormLbr">
+      <HintPath>S:\Ulges\EIS\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="ControlsLbr">
+      <HintPath>..\..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeModel">
+      <HintPath>..\..\LIB\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-{48AC9696-1BF2-417A-951F-E652FAFA528D}.cs" />
+    <Compile Include="B8fCHAhERZDV2aludv\esOBEeQ7kgE4sG7Xat.cs" />
+    <Compile Include="CpqUqHLETpQM1GPco5\G868F8PfVDPhiDtMmF.cs" />
+    <Compile Include="cuviS0OvlA7biGvOSn\E1YGNRmqUpG01b1DWc.cs" />
+    <Compile Include="CZUM21s3QjGFLaOaSlT\nYiRMDsROepA93gsTfY.cs" />
+    <Compile Include="DB6vtwDbcGARY8yZXc\gQW17mt4mbf8QpRu2s.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DB6vtwDbcGARY8yZXc\gQW17mt4mbf8QpRu2s.Designer.cs">
+      <DependentUpon>gQW17mt4mbf8QpRu2s.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eZHiZIu7wLfQFygrAc\EHoVC3rocxoG12S1Bp.cs" />
+    <Compile Include="Forms\JournalRequestForRepair\eActionRequestRepair.cs" />
+    <Compile Include="Forms\JournalRequestForRepair\FormJournalRequestForRepairAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\JournalRequestForRepair\FormJournalRequestForRepairAddEdit.Designer.cs">
+      <DependentUpon>FormJournalRequestForRepairAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\JournalRequestForRepair\FormSettingsSender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\JournalRequestForRepair\FormSettingsSender.Designer.cs">
+      <DependentUpon>FormSettingsSender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TemperatureSR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TemperatureSR.Designer.cs">
+      <DependentUpon>TemperatureSR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HsEXfKsq15GfPw4kPLQ\cDhluYseFOthxgEIXpc.cs" />
+    <Compile Include="j5c8XXscsIc6vD2Fg4l\aNqu80syO4AxurQp3Hl.cs" />
+    <Compile Include="kDqVgKJgtBgVGRux2Q\tdgsyJb7kYIvCkPsM1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kDqVgKJgtBgVGRux2Q\tdgsyJb7kYIvCkPsM1.Designer.cs">
+      <DependentUpon>tdgsyJb7kYIvCkPsM1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MvaLQQTEtIaq3uG67b\gKOgc5YsGEjMpcbTJE.cs" />
+    <Compile Include="pbkZoaB6tFgyiUHIKr\MdBMOhVqRSHesLq1WY.cs" />
+    <Compile Include="ppnZVr6AHhE7WGGKHi\bXh6yYHrM4qGkEZ15n.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="qtwZbEsi4XgU4OgI53d\rsCOeks1YYCUTIIu76m.cs" />
+    <Compile Include="RequestService\AddressElement.cs" />
+    <Compile Include="RequestService\AddressObjects.cs" />
+    <Compile Include="RequestService\DateBeginEndList.cs" />
+    <Compile Include="RequestService\DICTIONARY.cs" />
+    <Compile Include="RequestService\Document.cs" />
+    <Compile Include="RequestService\GetAddressElementRequest.cs" />
+    <Compile Include="RequestService\GetAddressElementRequestBody.cs" />
+    <Compile Include="RequestService\GetAddressElementResponse.cs" />
+    <Compile Include="RequestService\GetAddressElementResponseBody.cs" />
+    <Compile Include="RequestService\GetDictGroupWorksRequest.cs" />
+    <Compile Include="RequestService\GetDictGroupWorksRequestBody.cs" />
+    <Compile Include="RequestService\GetDictGroupWorksResponse.cs" />
+    <Compile Include="RequestService\GetDictGroupWorksResponseBody.cs" />
+    <Compile Include="RequestService\GetDictStatusRequest.cs" />
+    <Compile Include="RequestService\GetDictStatusRequestBody.cs" />
+    <Compile Include="RequestService\GetDictStatusResponse.cs" />
+    <Compile Include="RequestService\GetDictStatusResponseBody.cs" />
+    <Compile Include="RequestService\GetDictTypeDisableRequest.cs" />
+    <Compile Include="RequestService\GetDictTypeDisableRequestBody.cs" />
+    <Compile Include="RequestService\GetDictTypeDisableResponse.cs" />
+    <Compile Include="RequestService\GetDictTypeDisableResponseBody.cs" />
+    <Compile Include="RequestService\GetDictTypeOrganizationRequest.cs" />
+    <Compile Include="RequestService\GetDictTypeOrganizationRequestBody.cs" />
+    <Compile Include="RequestService\GetDictTypeOrganizationResponse.cs" />
+    <Compile Include="RequestService\GetDictTypeOrganizationResponseBody.cs" />
+    <Compile Include="RequestService\GetDictTypeRegionRequest.cs" />
+    <Compile Include="RequestService\GetDictTypeRegionRequestBody.cs" />
+    <Compile Include="RequestService\GetDictTypeRegionResponse.cs" />
+    <Compile Include="RequestService\GetDictTypeRegionResponseBody.cs" />
+    <Compile Include="RequestService\Request.cs" />
+    <Compile Include="RequestService\RequestCancelRequest.cs" />
+    <Compile Include="RequestService\RequestCancelRequestBody.cs" />
+    <Compile Include="RequestService\RequestCancelResponse.cs" />
+    <Compile Include="RequestService\RequestCancelResponseBody.cs" />
+    <Compile Include="RequestService\RequestsServiceSoap.cs" />
+    <Compile Include="RequestService\RequestsServiceSoapChannel.cs" />
+    <Compile Include="RequestService\RequestsServiceSoapClient.cs" />
+    <Compile Include="RequestService\Response.cs" />
+    <Compile Include="RequestService\SendReqRequest.cs" />
+    <Compile Include="RequestService\SendReqRequestBody.cs" />
+    <Compile Include="RequestService\SendReqResponse.cs" />
+    <Compile Include="RequestService\SendReqResponseBody.cs" />
+    <Compile Include="RequestService\SuccsessRequest.cs" />
+    <Compile Include="RequestService\SuccsessRequestBody.cs" />
+    <Compile Include="RequestService\SuccsessResponse.cs" />
+    <Compile Include="RequestService\SuccsessResponseBody.cs" />
+    <Compile Include="S1vCqGe6FZFwjOZ7Cb\hHTdIbieaEH23dYXRr.cs" />
+    <Compile Include="Sa3hhkKoTU4BY8foum\WCmvNPgWPECq8L36M2.cs" />
+    <Compile Include="Uyev3X11Q89JA1jQe0\dVnYRTNDfVctthapT5.cs" />
+    <Compile Include="WTbxUfsXa34kJl1qKMV\HdmwA4sAB9M6dTeLQJb.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="m40gxRlS35aHniZh0a.HX2Su9OAQh7Wy165kL" />
+    <EmbeddedResource Include="Ov6NoaI5IrFQL5TxmR.KXGBkBT3P6ikUATQ3K" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

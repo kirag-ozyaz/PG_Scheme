@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A5B828D-AE4B-499A-A029-33603ED786A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OfficeLB</RootNamespace>
+    <AssemblyName>OfficeLB</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-{99C1462E-275E-45F1-9E8F-9184FF2E1E6F}.cs" />
+    <Compile Include="Base.cs" />
+    <Compile Include="Class0.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="Class3.cs" />
+    <Compile Include="Class4.cs" />
+    <Compile Include="Class5.cs" />
+    <Compile Include="Class6.cs" />
+    <Compile Include="Class7.cs" />
+    <Compile Include="Class8.cs" />
+    <Compile Include="Class9.cs" />
+    <Compile Include="Excel\ActiveSheet.cs" />
+    <Compile Include="Excel\Application.cs" />
+    <Compile Include="Excel\ApplicationEvents.cs" />
+    <Compile Include="Excel\Borders.cs" />
+    <Compile Include="Excel\Cell.cs" />
+    <Compile Include="Excel\Columns.cs" />
+    <Compile Include="Excel\ExcelEventsProvider.cs" />
+    <Compile Include="Excel\Font.cs" />
+    <Compile Include="Excel\Interior.cs" />
+    <Compile Include="Excel\NewWorkbookEventHandler.cs" />
+    <Compile Include="Excel\PageSetup.cs" />
+    <Compile Include="Excel\Range.cs" />
+    <Compile Include="Excel\Rows.cs" />
+    <Compile Include="Excel\SheetActivateEventHandler.cs" />
+    <Compile Include="Excel\SheetBeforeDoubleClickEventHandler.cs" />
+    <Compile Include="Excel\SheetBeforeRightClickEventHandler.cs" />
+    <Compile Include="Excel\SheetCalculateEventHandler.cs" />
+    <Compile Include="Excel\SheetChangeEventHandler.cs" />
+    <Compile Include="Excel\SheetDeactivateEventHandler.cs" />
+    <Compile Include="Excel\SheetFollowHyperlinkEventHandler.cs" />
+    <Compile Include="Excel\SheetPivotTableUpdateEventHandler.cs" />
+    <Compile Include="Excel\SheetSelectionChangeEventHandler.cs" />
+    <Compile Include="Excel\Style.cs" />
+    <Compile Include="Excel\Validation.cs" />
+    <Compile Include="Excel\WindowActivateEventHandler.cs" />
+    <Compile Include="Excel\WindowDeactivateEventHandler.cs" />
+    <Compile Include="Excel\WindowResizeEventHandler.cs" />
+    <Compile Include="Excel\Workbook.cs" />
+    <Compile Include="Excel\WorkbookActivateEventHandler.cs" />
+    <Compile Include="Excel\WorkbookAddinInstallEventHandler.cs" />
+    <Compile Include="Excel\WorkbookAddinUninstallEventHandler.cs" />
+    <Compile Include="Excel\WorkbookBeforeCloseEventHandler.cs" />
+    <Compile Include="Excel\WorkbookBeforePrintEventHandler.cs" />
+    <Compile Include="Excel\WorkbookBeforeSaveEventHandler.cs" />
+    <Compile Include="Excel\WorkbookDeactivateEventHandler.cs" />
+    <Compile Include="Excel\WorkbookNewSheetEventHandler.cs" />
+    <Compile Include="Excel\WorkbookOpenEventHandler.cs" />
+    <Compile Include="Excel\WorkbookPivotTableCloseConnectionEventHandler.cs" />
+    <Compile Include="Excel\WorkbookPivotTableOpenConnectionEventHandler.cs" />
+    <Compile Include="Excel\Workbooks.cs" />
+    <Compile Include="Excel\Worksheet.cs" />
+    <Compile Include="Excel\WorksheetFunction.cs" />
+    <Compile Include="Excel\Worksheets.cs" />
+    <Compile Include="Excel\xlCellType.cs" />
+    <Compile Include="Excel\xlCellTypeValue.cs" />
+    <Compile Include="Excel\xlCommentDisplayMode.cs" />
+    <Compile Include="Excel\xlDeleteShiftDirection.cs" />
+    <Compile Include="Excel\xlDVAlertStyle.cs" />
+    <Compile Include="Excel\xlHAlignment.cs" />
+    <Compile Include="Excel\xlInsertShiftDirection.cs" />
+    <Compile Include="Excel\xlLineStyle.cs" />
+    <Compile Include="Excel\xlLineType.cs" />
+    <Compile Include="Excel\xlPageBreak.cs" />
+    <Compile Include="Excel\xlPageOrientation.cs" />
+    <Compile Include="Excel\xlPaperSize.cs" />
+    <Compile Include="Excel\xlSpecialCellsValue.cs" />
+    <Compile Include="Excel\xlVAlignment.cs" />
+    <Compile Include="Excel\xlWeightBorder.cs" />
+    <Compile Include="Excel\xlWindowState.cs" />
+    <Compile Include="InstallProduct.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Word\Application.cs" />
+    <Compile Include="Word\ApplicationEvents.cs" />
+    <Compile Include="Word\Bookmark.cs" />
+    <Compile Include="Word\Bookmarks.cs" />
+    <Compile Include="Word\Border.cs" />
+    <Compile Include="Word\Borders.cs" />
+    <Compile Include="Word\Cell.cs" />
+    <Compile Include="Word\Cells.cs" />
+    <Compile Include="Word\Characters.cs" />
+    <Compile Include="Word\Column.cs" />
+    <Compile Include="Word\Columns.cs" />
+    <Compile Include="Word\Comments.cs" />
+    <Compile Include="Word\Dialog.cs" />
+    <Compile Include="Word\Document.cs" />
+    <Compile Include="Word\DocumentBeforeCloseEventHandler.cs" />
+    <Compile Include="Word\DocumentBeforePrintEventHandler.cs" />
+    <Compile Include="Word\DocumentBeforeSaveEventHandler.cs" />
+    <Compile Include="Word\DocumentChangeEventHandler.cs" />
+    <Compile Include="Word\DocumentOpenEventHandler.cs" />
+    <Compile Include="Word\Documents.cs" />
+    <Compile Include="Word\DropCap.cs" />
+    <Compile Include="Word\Editors.cs" />
+    <Compile Include="Word\FileSearch.cs" />
+    <Compile Include="Word\Find.cs" />
+    <Compile Include="Word\Font.cs" />
+    <Compile Include="Word\FoundFiles.cs" />
+    <Compile Include="Word\Frame.cs" />
+    <Compile Include="Word\Frames.cs" />
+    <Compile Include="Word\GEnum0.cs" />
+    <Compile Include="Word\GEnum1.cs" />
+    <Compile Include="Word\MsoAutomationSecurity.cs" />
+    <Compile Include="Word\MsoFeatureInstall.cs" />
+    <Compile Include="Word\MsoFileDialogType.cs" />
+    <Compile Include="Word\MsoSortBy.cs" />
+    <Compile Include="Word\MsoSortOrder.cs" />
+    <Compile Include="Word\MsoSyncEventType.cs" />
+    <Compile Include="Word\NewDocumentEventHandler.cs" />
+    <Compile Include="Word\Options.cs" />
+    <Compile Include="Word\PageSetup.cs" />
+    <Compile Include="Word\Paragraph.cs" />
+    <Compile Include="Word\ParagraphFormat.cs" />
+    <Compile Include="Word\Paragraphs.cs" />
+    <Compile Include="Word\QuitEventHandler.cs" />
+    <Compile Include="Word\Range.cs" />
+    <Compile Include="Word\Replacement.cs" />
+    <Compile Include="Word\Row.cs" />
+    <Compile Include="Word\Rows.cs" />
+    <Compile Include="Word\Section.cs" />
+    <Compile Include="Word\Sections.cs" />
+    <Compile Include="Word\Selection.cs" />
+    <Compile Include="Word\Sentence.cs" />
+    <Compile Include="Word\Sentences.cs" />
+    <Compile Include="Word\Shading.cs" />
+    <Compile Include="Word\StartupEventHandler.cs" />
+    <Compile Include="Word\Style.cs" />
+    <Compile Include="Word\Table.cs" />
+    <Compile Include="Word\Tables.cs" />
+    <Compile Include="Word\Variable.cs" />
+    <Compile Include="Word\Variables.cs" />
+    <Compile Include="Word\View.cs" />
+    <Compile Include="Word\WdAlertLevel.cs" />
+    <Compile Include="Word\WdAlignment.cs" />
+    <Compile Include="Word\WdAnimation.cs" />
+    <Compile Include="Word\WdArrangeStyle.cs" />
+    <Compile Include="Word\WdAutoFitBehavior.cs" />
+    <Compile Include="Word\WdBaselineAlignment.cs" />
+    <Compile Include="Word\WdBookmarkSortBy.cs" />
+    <Compile Include="Word\WdBreakType.cs" />
+    <Compile Include="Word\WdBuiltInProperty.cs" />
+    <Compile Include="Word\WdBuiltinStyle.cs" />
+    <Compile Include="Word\WdCaptionLabelID.cs" />
+    <Compile Include="Word\WdCellVerticalAlignment.cs" />
+    <Compile Include="Word\WdCharacterCase.cs" />
+    <Compile Include="Word\WdCharacterWidth.cs" />
+    <Compile Include="Word\WdCollapseDirection.cs" />
+    <Compile Include="Word\WdColor.cs" />
+    <Compile Include="Word\WdColorIndex.cs" />
+    <Compile Include="Word\WdCommentDisplayMode.cs" />
+    <Compile Include="Word\WdDefaultTableBehavior.cs" />
+    <Compile Include="Word\WdDocumentMedium.cs" />
+    <Compile Include="Word\WdEditorType.cs" />
+    <Compile Include="Word\WdEmphasisMark.cs" />
+    <Compile Include="Word\WdEnableCancelKey.cs" />
+    <Compile Include="Word\WdEnclosureType.cs" />
+    <Compile Include="Word\WdFieldShading.cs" />
+    <Compile Include="Word\WdFindWrap.cs" />
+    <Compile Include="Word\WdFramePosition.cs" />
+    <Compile Include="Word\WdFrameSizeRule.cs" />
+    <Compile Include="Word\WdGoToDirection.cs" />
+    <Compile Include="Word\WdGoToItem.cs" />
+    <Compile Include="Word\WdGutterStyleOld.cs" />
+    <Compile Include="Word\WdHAlignment.cs" />
+    <Compile Include="Word\WdHelpType.cs" />
+    <Compile Include="Word\WdHorizontalInVerticalType.cs" />
+    <Compile Include="Word\WdInformation.cs" />
+    <Compile Include="Word\WdInternationalIndex.cs" />
+    <Compile Include="Word\WdKana.cs" />
+    <Compile Include="Word\WdKey.cs" />
+    <Compile Include="Word\WdKeyCategory.cs" />
+    <Compile Include="Word\WdLanguageID.cs" />
+    <Compile Include="Word\WdLayoutMode.cs" />
+    <Compile Include="Word\WdLineSpacing.cs" />
+    <Compile Include="Word\WdLineStyle.cs" />
+    <Compile Include="Word\WdLineType.cs" />
+    <Compile Include="Word\WdLineWidth.cs" />
+    <Compile Include="Word\WdLinkType.cs" />
+    <Compile Include="Word\WdListApplyTo.cs" />
+    <Compile Include="Word\WdListGalleryType.cs" />
+    <Compile Include="Word\WdListLevelAlignment.cs" />
+    <Compile Include="Word\WdListNumberStyle.cs" />
+    <Compile Include="Word\WdListType.cs" />
+    <Compile Include="Word\WdMailerPriority.cs" />
+    <Compile Include="Word\WdMailMergeActiveRecord.cs" />
+    <Compile Include="Word\WdMailMergeComparison.cs" />
+    <Compile Include="Word\WdMailMergeDataSource.cs" />
+    <Compile Include="Word\WdMailMergeDefaultRecord.cs" />
+    <Compile Include="Word\WdMailMergeDestination.cs" />
+    <Compile Include="Word\WdMailMergeMailFormat.cs" />
+    <Compile Include="Word\WdMailMergeMainDocType.cs" />
+    <Compile Include="Word\WdMailMergeState.cs" />
+    <Compile Include="Word\WdMailSystem.cs" />
+    <Compile Include="Word\WdMovementType.cs" />
+    <Compile Include="Word\WdOrientation.cs" />
+    <Compile Include="Word\WdOriginalFormat.cs" />
+    <Compile Include="Word\WdOutlineLevel.cs" />
+    <Compile Include="Word\WdPageBorderArt.cs" />
+    <Compile Include="Word\WdPageNumberAlignment.cs" />
+    <Compile Include="Word\WdPageOrientation.cs" />
+    <Compile Include="Word\WdPaperSize.cs" />
+    <Compile Include="Word\WdPaperTray.cs" />
+    <Compile Include="Word\WdParagraphAlignment.cs" />
+    <Compile Include="Word\WdPasteDataType.cs" />
+    <Compile Include="Word\WdPhoneticGuideAlignmentType.cs" />
+    <Compile Include="Word\WdPreferredType.cs" />
+    <Compile Include="Word\WdPreferredWidthType.cs" />
+    <Compile Include="Word\WdPrintOutItem.cs" />
+    <Compile Include="Word\WdPrintOutPages.cs" />
+    <Compile Include="Word\WdPrintOutRange.cs" />
+    <Compile Include="Word\WdReadingOrder.cs" />
+    <Compile Include="Word\WdReferenceKind.cs" />
+    <Compile Include="Word\WdReferenceType.cs" />
+    <Compile Include="Word\WdRelativeHorizontalPosition.cs" />
+    <Compile Include="Word\WdRelativeVerticalPosition.cs" />
+    <Compile Include="Word\WdReplace.cs" />
+    <Compile Include="Word\WdRevisionsBalloonMargin.cs" />
+    <Compile Include="Word\WdRevisionsBalloonWidthType.cs" />
+    <Compile Include="Word\WdRevisionsMode.cs" />
+    <Compile Include="Word\WdRevisionsView.cs" />
+    <Compile Include="Word\WdRowAlignment.cs" />
+    <Compile Include="Word\WdRowHeightRule.cs" />
+    <Compile Include="Word\WdRulerStyle.cs" />
+    <Compile Include="Word\WdSaveOptions.cs" />
+    <Compile Include="Word\WdSectionDirection.cs" />
+    <Compile Include="Word\WdSectionStart.cs" />
+    <Compile Include="Word\WdSeekView.cs" />
+    <Compile Include="Word\WdSelectionFlags.cs" />
+    <Compile Include="Word\WdSelectionType.cs" />
+    <Compile Include="Word\WdShadowType.cs" />
+    <Compile Include="Word\WdShapeTypes.cs" />
+    <Compile Include="Word\WdSortFieldType.cs" />
+    <Compile Include="Word\WdSortOrder.cs" />
+    <Compile Include="Word\WdSortSeparator.cs" />
+    <Compile Include="Word\WdSpecialPane.cs" />
+    <Compile Include="Word\WdSpellingWordType.cs" />
+    <Compile Include="Word\WdStatistic.cs" />
+    <Compile Include="Word\WdStoryType.cs" />
+    <Compile Include="Word\WdStyleType.cs" />
+    <Compile Include="Word\WdTableDirection.cs" />
+    <Compile Include="Word\WdTableFieldSeparator.cs" />
+    <Compile Include="Word\WdTableFormat.cs" />
+    <Compile Include="Word\WdTCSCConverterDirection.cs" />
+    <Compile Include="Word\WdTextboxTightWrap.cs" />
+    <Compile Include="Word\WdTextOrientation.cs" />
+    <Compile Include="Word\WdTextureIndex.cs" />
+    <Compile Include="Word\WdThreeDStyles.cs" />
+    <Compile Include="Word\WdTwoLinesInOneType.cs" />
+    <Compile Include="Word\WdUnderline.cs" />
+    <Compile Include="Word\WdUnits.cs" />
+    <Compile Include="Word\WdVAlignment.cs" />
+    <Compile Include="Word\WdVerticalAlignment.cs" />
+    <Compile Include="Word\WdViewType.cs" />
+    <Compile Include="Word\WdWeightBorder.cs" />
+    <Compile Include="Word\WdWindowState.cs" />
+    <Compile Include="Word\WdWordAtrStyles.cs" />
+    <Compile Include="Word\WdWordDialog.cs" />
+    <Compile Include="Word\Window.cs" />
+    <Compile Include="Word\WindowActivateEventHandler.cs" />
+    <Compile Include="Word\WindowBeforeDoubleClickEventHandler.cs" />
+    <Compile Include="Word\WindowBeforeRightClickEventHandler.cs" />
+    <Compile Include="Word\WindowDeactivateEventHandler.cs" />
+    <Compile Include="Word\Windows.cs" />
+    <Compile Include="Word\WindowSelectionChangeEventHandler.cs" />
+    <Compile Include="Word\WordEventProvider.cs" />
+    <Compile Include="Word\Words.cs" />
+    <Compile Include="XMLSpreadsheet\Aligment.cs" />
+    <Compile Include="XMLSpreadsheet\Cell.cs" />
+    <Compile Include="XMLSpreadsheet\Column.cs" />
+    <Compile Include="XMLSpreadsheet\Data.cs" />
+    <Compile Include="XMLSpreadsheet\DocumentProperties.cs" />
+    <Compile Include="XMLSpreadsheet\ExcelWorkbook.cs" />
+    <Compile Include="XMLSpreadsheet\Font.cs" />
+    <Compile Include="XMLSpreadsheet\NonXsiTextWriter.cs" />
+    <Compile Include="XMLSpreadsheet\Row.cs" />
+    <Compile Include="XMLSpreadsheet\Serializer.cs" />
+    <Compile Include="XMLSpreadsheet\Style.cs" />
+    <Compile Include="XMLSpreadsheet\Styles.cs" />
+    <Compile Include="XMLSpreadsheet\Table.cs" />
+    <Compile Include="XMLSpreadsheet\TypeConvert.cs" />
+    <Compile Include="XMLSpreadsheet\Workbook.cs" />
+    <Compile Include="XMLSpreadsheet\Worksheet.cs" />
+    <Compile Include="XMLSpreadsheet\WorksheetOptions.cs" />
+    <Compile Include="XMLSpreadsheet\XmlSpreadsheet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="g.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

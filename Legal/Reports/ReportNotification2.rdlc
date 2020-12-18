@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="LegalDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>dcb7379d-8b57-4df1-9c5d-04d886e8f1c9</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DogDetailes">
+      <Fields>
+        <Field Name="CodeAbonent">
+          <DataField>CodeAbonent</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idWorker">
+          <DataField>idWorker</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FIO">
+          <DataField>FIO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocNumber">
+          <DataField>DocNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocDate">
+          <DataField>DocDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="idDocType">
+          <DataField>idDocType</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>LegalDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Legal.DataSet</rd:DataSetName>
+        <rd:TableName>vG_AbnDogDetailsDataTable</rd:TableName>
+        <rd:ObjectDataSourceType>Legal.DataSet.DataSetAbn+vG_AbnDogDetailsDataTable, DataSet.DataSetAbn.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix5">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>7.40092in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>10.66667in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle2">
+                      <ReportItems>
+                        <Textbox Name="Textbox15">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>УВЕДОМЛЕНИЕ</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <HangingIndent>36pt</HangingIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>В соответствии с п.135 Постановления Правительства РФ от 04.05.2012 г «О функционировании розничных  рынков  электрической  энергии,  полном и(или) частичном  ограничении   режима   потребления   электрической  энергии»  Вам необходимо   произвести   замеры  потокораспределения,  нагрузок  и   уровней напряжения   на   принадлежащих  Вам  объектах(устройствах)   в  третью  среду декабря .</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <HangingIndent>27pt</HangingIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Данные  произведенных замеров Вам необходимо представить в  течение 10 рабочих дней со дня проведения в МУП  «УльГЭС»  по адресу г. Ульяновск, ул. Вокзальная 6а.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <HangingIndent>27pt</HangingIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <HangingIndent>36pt</HangingIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Приложение: Форма акта 1л.</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <HangingIndent>36pt</HangingIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <Top>10.1734cm</Top>
+                          <Left>0.64469cm</Left>
+                          <Height>7.38188cm</Height>
+                          <Width>17.8331cm</Width>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Name">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=First(Fields!Name.Value)</Value>
+                                  <Style>
+                                    <FontSize>14pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Name</rd:DefaultName>
+                          <Top>6.58417cm</Top>
+                          <Left>9.31029cm</Left>
+                          <Height>3.11354cm</Height>
+                          <Width>9.1675cm</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Image Name="ulges">
+                          <Source>Embedded</Source>
+                          <Value>ulges</Value>
+                          <Sizing>FitProportional</Sizing>
+                          <Top>1.43193cm</Top>
+                          <Left>0.53057cm</Left>
+                          <Height>3.7666cm</Height>
+                          <Width>4.27812cm</Width>
+                          <ZIndex>2</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Image>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>МУНИЦИПАЛЬНОЕ УНИТАРНОЕ ПРЕДПРИЯТИЕ</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>Gray</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Ульяновская городская</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontSize>18.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>Blue</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>электросеть</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontSize>18.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>Blue</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                                <LineHeight>19.9pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>Blue</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                                <LineHeight>19.9pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Ульяновск, ул. Минаева, д. 46,</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>Gray</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                                <LineHeight>19.9pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>тел. (8422) 32-23-06, факс (8422) 32-20-97. E-mail: bdk@ulges.ru</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>Gray</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                                <LineHeight>19.9pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>ОКПО 03220104 ОГРН 1027301176242 ИНН/КПП 7303003290/732501001</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                                <LineHeight>19.9pt</LineHeight>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>Gray</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontSize>8.5pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>Gray</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Top>1.43193cm</Top>
+                          <Left>5.57057cm</Left>
+                          <Height>3.7666cm</Height>
+                          <Width>11.93271cm</Width>
+                          <ZIndex>3</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Image Name="line">
+                          <Source>Embedded</Source>
+                          <Value>line</Value>
+                          <Sizing>FitProportional</Sizing>
+                          <Top>5.23383cm</Top>
+                          <Left>0cm</Left>
+                          <Height>0.89146cm</Height>
+                          <Width>17.94862cm</Width>
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Image>
+                        <Textbox Name="CodeAbonent">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>№</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!CodeAbonent.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CodeAbonent</rd:DefaultName>
+                          <Top>0.55563cm</Top>
+                          <Left>16.50695cm</Left>
+                          <Height>0.6cm</Height>
+                          <Width>1.97083cm</Width>
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value xml:space="preserve">        </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Начальник СКУЭЭ                                                                           </Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Parameters!Signature.Value</Value>
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Normal</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Получил:_______________________(Ф.И.О.)_________________ ( должность )</Value>
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Дата ___.__.2012 г.                                      _____________________(подпись)</Value>
+                                  <Style>
+                                    <FontStyle>Italic</FontStyle>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                    <TextDecoration>None</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <LeftIndent>0cm</LeftIndent>
+                              <RightIndent>0cm</RightIndent>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Top>17.73166cm</Top>
+                          <Left>0.64469cm</Left>
+                          <Height>9.10167cm</Height>
+                          <Width>17.8331cm</Width>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Rectangle>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Подробности">
+                <PageBreak>
+                  <BreakLocation>Between</BreakLocation>
+                </PageBreak>
+              </Group>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DogDetailes</DataSetName>
+        <Top>0.01269cm</Top>
+        <Left>0.01494cm</Left>
+        <Height>27.09334cm</Height>
+        <Width>18.79834cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>10.7532in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="Signature">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>7.4705in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>1.5cm</LeftMargin>
+    <RightMargin>0.5cm</RightMargin>
+    <TopMargin>0.5cm</TopMargin>
+    <BottomMargin>0.5cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="ulges">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="line">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>/9j/4AAQSkZJRgABAQEAlgDEAAD/4QBaRXhpZgAATU0AKgAAAAgABQMBAAUAAAABAAAASgMDAAEAAAABAAAAAFEQAAEAAAABAQAAAFERAAQAAAABAAAXFFESAAQAAAABAAAeGgAAAAAAAYagAACxj//bAEMACAYGBwYFCAcHBwkJCAoMFA0MCwsMGRITDxQdGh8eHRocHCAkLicgIiwjHBwoNyksMDE0NDQfJzk9ODI8LjM0Mv/bAEMBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIACsEWAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/APfMilyK4t7jSRgf8JBqHXszf4Uw3GkbsHXdSPH95v8ACuv6
+s/P7mZ+0/q522RRkVwpm0dtu7XNTOPvctz+lAn0MgN/beqds/M3+FP6r5v7mHtP6ud1kUZFcN52hg/8AIX1YkdTub/CkM+gjOdX1b/vtv8KPqvr9we0O7zSZFcKJdCbn+1NWIPT5z/hTRL4fBI/tHVsH/aOP5Uvq3r9we0O8yKMiuEZtBOD9s1ZsH1PH6ULJoWCVudXye+Tmn9W9fuD2h3e4etGRXCBtByB52rnJPc9f8/yppbQC2PM1Z8cdf1o+q+v3f8EPaM73IoyK4Bv7AzgHVhnqAakEuifKBrWqYAxtJbj26UfVfX7v+CHtDvMijIrgxLoXA/tnVckdQzf4UedofAbV9VJHoW/wpfVvX7g9od5kUZHrXBmTQgys+oasSehJPX8qjSTQSDu1LVmA9zg/pT+q+b+7/gh7RnflgASTgCjcD3rgS/h8gBr7Vifck/0qOL+w4gyveaqVBIG3OMds8UfVfN/d/wAEPaHoeRSZHrXAl/D5YqLnVz7Ann9KaT4eJA83V+frR9W9fu/4Ie0PQMj1o3D1rgfN8ONg+ZqnXuT/AJ7VET4fJ+5rHvR9W9fu/wCCHtD0PcPWjI9a8+x4f2E+Xq/oD/n6fpSmLw+2XFtq/u20/wCNH1b1+7/gh7Q9ByPWjI9a8+Mmggcaxqq5H3cn/CgSaAHz/auqkkdiR/T6UfVfX7g9oeg5HrRketcB5ugY41HVyR0G48/pSCXQPlZr7V9xOTlj/hR9V9fuD2n9XPQMj1oyPWvP2k8PEf8AH5qrcdMn/ClD+H25+06s2B0JP+FH1Xzf3f8ABF7U7/IpMj1FeflvDxwnn6sTwc5P8jRt8P7SFbVth4PHHNNYTzf3f8EPanoGR6ilyPWuBVfD7cqmrEn0znFIy+H8Y8vViO/XHpR9V8393/BH7T+v6R32QO4pcj1rgQnh48C31U888E5/Wl8rw+wyLXVW7/dP+NH1Xzf3f8EPaf1/SO8JA6kUua4TytBZcmw1
+U/8AATz+tJv0Jic6jqo6/LuPHt0pfVfN/d/wQ9od5RXBCTQRj/iY6tj/AHj/AIU7zNBJCi/1dTnGNzcn8qPqvr9we0O7zRmuBLeH+hu9WOO+W4/SmAeHlXK3Ore+Cf8ACj6t6/d/wQ9qeg5oyK883eHmwTNrBHXGT6UFfDqk5fViSff/AD70vq3r93/BD2h6HmjNedE+HSdpOsDJxyTwKeF8PgMDHrGcg4Oc0fVvX7v+CHtD0LI9aMj1rzgL4dKncmstxnmnLF4eO4iDWABznFH1Zd393/BD2jPRcj1pNy+o/OvOlTw6Tk2esbcdCDj6daeV8OjKLp+rZ6YweP1o+rLz+7/gh7RnodFedo3h9Qf+JlrMZzyA5GPQdP8AOKaZPD+3P9oazgnOMn/Cn9V9fu/4Ie0PRqK85VvD2Qgu9Z6cjP8A9ahj4dc5e61dv4ckn/Cj6r6/d/wQ9oejUV50P+EeHS51g4GTjPPv09qVV8OshzPrGB25P4dKPq3m/u/4Ie0PRKK87I8PA4J1cnkDv+FH/FOscqusnPAIzxR9W8393/BD2h6JRmvO2Tw8oIEOsE5HABzmmhfDzrn7NrB9ff8AWj6su7+7/gh7Q9GzSEgdTXnbDw8JObPVyBz0/wDr8dads8PrgnTtY2juVOD+v0o+rLu/u/4Ie0PQi4AySMfWjdXnDJ4fA+bS9YCnuR1/WkEvh4hSL7WAw6DPT9Pwo+rLu/u/4Ie0Z6RmjNec7vDxfcbzWST/ABZ6YHTpRu8NmNv9M1jHOSW6/pS+rev3f8EPaHo2aM152W8O8n7VrB4HGT6/T1pgbw2dpeXWCvOHPSj6t5v7v+CL2h6PuAo3CvOCPDJfltYJzkdaHPhxkZAushiQMgHJo+rev3f8EftD0fcKNwrzlV8NqCNmsHOOoPIpG/4RpOPs2sFgMHg5/n9KPq3r93/BDnPR9wo3D1rzYp4ZVQotNYJPYDn09aNnhpWYHTtYJH+yfwPWj6t6
+/d/wQ9oekb165GPrQHU9CPzrzgR+G+F/svWTnoCp+b9ab5XhwMFXSdXZwM4wQR+tH1Zef3f8EOdnpWaNwrzfzfDaEgXmsxsScorHj26UGTw2GZvt2skjJ6n6+lH1X1+7/gh7RnpG6jdXmqjw4cYu9Z3DH4fpTw3hzAxLrJI6nJ6U/qvm/u/4Ie0Z6PuoyK84P/COu3zNrWemaN3hpuM6wQAQV5o+q+b+7/gh7Rno+4UbhXnAXw12XV2Prin48OM2Vt9Y3HsAc4o+q+v3f8EPaM9D3il3Dj3rzvb4aUfNbatuOSMg5NKR4dIyLTV/l/iwflHr1pfVl5/d/wAEPaM9D3CjcK878vw20hVbDVmx12g/4/SjZ4cDY/s3V+cYG0/40/qq7v7v+CHtGeheamSNwyOvNOyK86MXh0EZ0fVzn/ZP+PSm7vDzYJvdZjH90k4A9On0o+rev3f8EPaM9HyKM15wz+GANq3ervn0J/PpUbf8I0w4n1jPI65x+f1pfVvN/d/wRe0Z6XuFG4V5qZPDe4DzNaUjk4bH+f8A61BHhpjuEmsbug70fVvX7v8Agj9oelbhRuFebAeGs5xrJJ/Sh/8AhGiRmHWiBkd/y696Pq3m/u/4Ie0PSdwo3Ad6832+GnLH7PrAPQ98+/WkEfhro1vrL855Gf8APWj6su7+7/gh7Q9I3qe9LvHrXnKp4aPSz1jOQc4P+NIYfDpU5sNZ5GenX9aPqy8/u/4Ie0PRjIo6sPTrR5i8fMOenvXnQh8OFdx0zWG5xkg8/r7U4ReHhyNK1diOOQf8f84o+rru/u/4Ic7PRMijIrzrzPDg4+16v6bcnj26UL/wjavn7Xq+cjHJ4/Sj6t5v7g9oei7h60ZHrXnbN4c8sf6XrAHcbjz+mKQSeHNw/e6ycDPX9aPq3m/uD2h6LkUZFedD/hHly3mayVPr0oZvDxGHbWmB/vHr/n+lH1bzf3B7Q9F3A9DRuHrXnajw4PlP9rk/jzUb
+Dw2wO+LWCD03enH/ANaj6t5v7v8Agh7Q9IyKMivPMeHSD/o2sY7kg/404/8ACOlcfY9Yz14B4/Wj6t5v7v8Agh7Q9B3Ad6Quo6nFeetD4dyP9C1gAcdD/jSGPw+Tn+zdYIx6HGPzo+rLu/u/4Ie0Z6JuX1oyPWvPEh8PHH/Et1g4xn5Sf5GiSTw/kL/aGsIf7uT8vt0o+reb+7/gh7Q9DyPWjI9a8+E3h0DP23Vz7ZPTH0oEnh8EkXmsH1OTz+lH1b1+4PaHoORRkV507eHdxH2nWD7jv+lOP/COA5Nxq/HPfn9KPq3m/uD2jPQ9w9aNw9a88Mnh0qF87WGxzjJ4pCfDpIH/ABOGB6g9Kf1b1+4PaHomRRuHrXn27w/tB3aweM49fakxoBydmr4z+dL6t5v7v+CHtD0LcMZyMUbh6159/wAU+zhFj1diR0FIq+HiMrBq0mOpAzR9W839we0PQtw9aMj1rz949APDWmscfMcqf8adnw+2MWmrAkfdwf8AGj6t5v7v+CHtDv8AI9aMj1rgDLoIyP7T1ZO2Mnj9KBPoGf8AkJ6u2D/fP+FH1Z+f3B7Q7/I9aK4uxn0U6hb+VqOpPI0i7Vdm2k56HjpXZjpWNSnyOxcZXFooorMoKKKKACiiikI58x+IckLBpoz3waQw+ISR+40zB7Ybiuhorf2z7InkXc50xeJSAdmm57DB4pDH4oxjy9L/APHq6Oij2z7IORdznRF4oKnnTVPphvxpBB4oJIY6Zt9SG/wro6KPbPsvuHyHPGHxSo+WXTcDooDf4Uvk+KM/6/Thkdlbiugope2fZfcLkRzwg8UlObiwDc9VP+FKtv4n73Nhn/cP+FdBRT9s+y+4ORGALbxOet3Ydf7h/wAKabTxRkEX1l242H/Cuhoo9s+y+4ORdznhaeKNuP7Qs856+X/9ameT4ozgDTev3ip5966Sij2z7L7g5Ec6sfictyNNAx3DUph8Sggg6bk4z8rV0NFHtn2X
+3ByLuc8sfijIzJp4HsrUgg8Tg587Tv8Avhv8K6Kij2z7L7g5F3Of8jxQT/r9OBPfa3+FIbfxSVwLrT/++G/wroaKXtn2X3ByLuc/5HijJ/0nT8Y7K3+FMNr4qx/x/WXXtGfT6V0dFP2z7L7g5Ec8LTxMVH+n2SnviI/4UC08T9P7Qs8evl8/yroaKPbPsvuDkRzv2PxRn/kJWnTr5X/1qb9i8UspzqdqDjjEXf8AKukoo9s+y+5ByI5oQ+Khg7tOyBj7p/wpwh8Uk5Z9Nz/ut/hXR0Ue2f8AKvuDkXc53yPFOQftGnDv9xv8KUW/ijvc6eeP7jf4V0NFHtn2X3ByebOc8jxWSM3VgB3wp/wpwtfFAAze2J/4Af8ACuhoo9s+y+4OTzZzq2vigE5vrLn/AKZk/wBKUWvigH/j+siM5HyH/Cuhoo9s+y+5ByLuc+bXxMQ3+n2XI4/dH/ClNr4lIx9vsx9Ij/hW/RR7Z9l9yDkRgCz8SKvGpWhOe8NILLxKchtTtsdsQ/8A1q6Cij277L7kHIu/4nP/AGLxJu/5Ctvj/rgP8KRovE4yFm08+jFTn+VdDRR7d9l9yDkXc57yfFAx/pGnep+Vvy6Upg8Tkn/SdPwenytx+ldBRR7Z9l9wcnmc8YfFBI/0nT+Op2Nz+lAtvE+7P22wx3Hln/Cuhoo9s+y+4OTzOdNr4ozkX9j9PLP+FJ9k8U/9BCx/79n/AAro6KXtn2X3ByLuc19j8VYx/aNkeDyYv/rUv2LxRk/8TO0Azx+6/wDrV0lFHtn2X3ByI5oWPinqdVtOv/PL/wCtR9h8U9f7Wtfp5I/wrpaKftn2X3ByI5sWPijHOrWv/fkf4UpsPE5Uf8Te2B74gH+FdHRS9s+y+5ByI5k23iors+06aV6bmQ5x+VKYfFeAPP03/vk+n0rpaKftn2X3ByeZzJt/Fhyou9PHHDbT6/SntbeKmxi909cHoEPr9K6Oij2z7L7g5Ec6bbxTj/j+
+0/OP+eZ/wo+zeKuf9N0/r/cP+FdFRR7Z9l9w+RHO/ZfFBP8AyELEDP8AzzJx+lJ9j8UlhnU7MDviL/61dHRR7Z9l9wuRHOfY/FAf/kJWZUf9M/8A61Itl4pK86raA47Rf/WrpKKPbPsvuDkRzn2HxR/0FrTp08kdfypDp/ifn/icWwGP+eA/wrpKKXtn2X3IORHNnT/E5/5jFtj/AK4D/CmNbeKwSFuNOIxgMVII/Sunop+2fZfcHIjmo7XxUox9q04D/cP59KUW3iof8vWnAAdkPP6V0lFHtn2X3ByI5r7L4qP/AC/WAHf5Dn+VIbPxY2P9P09R7Ief/Ha6ail7Z9l9wci7nN/ZPFWD/wATGxz0x5Z/PpUa2fi3O46lY8jp5fA/Suooo9s+y+4ORdzmRZeKsnOqWfPTEXT9KPsPivYf+JpZ7u37n/61dNRR7Z9l9wciOY/s/wAVn/mMWwPb9yPT6UpsPFJDAaxajPT9wP8ACumoo9s+y+4fKjl/7O8VheNZtsn1hHH6Uv8AZvikrzrcAPPSAf4V09FHtn2X3C5Ecu1t4u28XWnNjtsOT+lJ9k8X7t32zTj/AMAP+FdTRin7Z9l9wci7nMm28XY4vdOz/uH/AApTZ+K2A/0/T+P9g8/X5a6Wil7Z9l9wciOZFj4tzk6nY/Tyz/8AE042XistxqViB/1yPP6V0lFHtn2X3ByI5v7F4qwM6lY57/uv/rUv2DxSMf8AE1tD65h/+tXR0Ue2fZfcHIjnBYeKSmG1WzBzwRFnH6Ug0/xRjH9r2vT/AJ4j/Cukop+2fZfcg5Ec3/Z3ijn/AInFtnP/ADwH+FB0zxO3B1qAY7iAZP6V0lFL20uy+5ByI5s6Z4nyB/bkGB/07jn9KDa+LB8q3enYxjcUOf5V0lFHtn2X3ByHMm18XEYF5pqn2Q/4U02Xi49L7Txz2Tt/3zXUUU/bPsvuDkXc5lrPxazAi/09RnkCM/4Uhs/F3bUdP57mM8fp
+XT0UvbPsvuDk8zmPsPi0jH9p2IPr5X/1qX7D4swP+JnZZ9fK/wDrV01FHtn2X3ByeZzH9n+LAoA1azJ7/ucf0pfsHivbj+1rPPr5P/1q6aij2z7L7g5EcwdP8V9tXtf+/I/+Jpx07xSQP+JzbAnriAcfpXS0Ue2fZfcHIjmhp3ikY/4nFt06+SP8KUab4nPXWoMe0A/wrpKKPbS7L7kHIjmTbeLQxAu9PIHQ7D/hSra+Lec3un9MD5Dx+ldLRT9s+y+4OTzObNr4rzj7Zp/uSh/wo+yeK+f9OsBn/YPH6V0lFL2z7L7g5F3Oaaz8VnG3ULDI/wCmZ/woNn4syCNQsf8Av3/9auloo9s+y+4ORHOfY/FRA/4mNkpx2i/+tTfsHivP/IVtAOf+WI/wrpaKPbPsvuDkXc5sWXinJzqlpj/rl/8AWpFsPFO47tVtcY4/dD/Culoo9s+y+4ORdznH0/xO33dXtx6/uR/hR/Z/ijIH9r2wXv8AuR/hXR0Ue2fZfcg5Ec2dO8TkcavbDv8A6gdfyo+z+K8gfadOxnk7Dn+VdJRR7Z9l9wcnmc0LbxWrki407Hb5Tz+lL9m8WAk/a7A5PTYcD9K6Sij2z7L7g5PM5wWvinn/AE6x5/6Znj9KDa+KsjF7Y9ef3Z6fl/nNdHRR7Z9l9wcnmc19k8Vg/wDH/Yn/AIB/9alFn4qwP+JjZZxyfL/+tXSUUe2fZfcPk8zm1s/FPOdQs/b93n+lPFp4nH/MQsv+/X/1q6Gij2r7L7hcnmc6LLxOAR/aVocjqYun6UCx8THk6pbD2EPHX6V0VFHtn2X3IOXzOeFj4lyc6pbYx/zx/wDrUpsfEmMjVLfPoYB/hXQUUe1l2X3D5TnjD4owMTacT7q3X8qRYfFAzmbTh/wFv8K6Kij2z7L7hcnmYlvF4hW4jM81i0IYbwisDjvjitodKWiolLm6FJWCiiipGFFFFABRRRSEFFFFMYUUUUAFFFFABRRRQAUU
+UUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRSEf/2Q==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportID>10310d8a-f088-4d47-b5cd-2aefde8ce79d</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+</Report>

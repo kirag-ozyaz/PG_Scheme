@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4F87949-2A0C-47E0-883E-ECA2743D8894}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RequestForRepair</RootNamespace>
+    <AssemblyName>RequestForRepair</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\LIB\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="RequestsClient">
+      <HintPath>..\LIB\RequestsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeModel">
+      <HintPath>..\LIB\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telemetry">
+      <HintPath>..\LIB\Telemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="WinDocking">
+      <HintPath>..\LIB\WinDocking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Documents\Reports\FormReportRequestForRepairN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherClass.cs" />
+    <Compile Include="FormJournalRequestForRepairAddEditPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJournalRequestForRepairAddEditPL.Designer.cs">
+      <DependentUpon>FormJournalRequestForRepairAddEditPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJournalRequestForRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJournalRequestForRepair.Designer.cs">
+      <DependentUpon>FormJournalRequestForRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetN.cs">
+      <DependentUpon>DataSetN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\DivisionRequestForRepair.cs" />
+    <Compile Include="Documents\eActionRequestRepair.cs" />
+    <Compile Include="Documents\ExportRequestForRepair.cs" />
+    <Compile Include="Documents\FormJournalRequestForRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\FormJournalRequestForRepair.Designer.cs">
+      <DependentUpon>FormJournalRequestForRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\FormJournalRequestForRepairAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\FormJournalRequestForRepairAddEdit.Designer.cs">
+      <DependentUpon>FormJournalRequestForRepairAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\FormLinkRequestAndSchm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Reports\FormExportRequestForRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Reports\FormReportReguestForRepairSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Reports\FormReportRequestForRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRequestForRepairAddAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRequestForRepairAddAddress.Designer.cs">
+      <DependentUpon>FormRequestForRepairAddAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLinkRequestAndSchm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLinkRequestAndSchm.Designer.cs">
+      <DependentUpon>FormLinkRequestAndSchm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJournalRequestForRepairAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJournalRequestForRepairAddEdit.Designer.cs">
+      <DependentUpon>FormJournalRequestForRepairAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StaticFormData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Linq\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\FormJournalRequestForRepair.resx">
+      <DependentUpon>FormJournalRequestForRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Reports\FormReportRequestForRepairN.resx">
+      <DependentUpon>FormReportRequestForRepairN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJournalRequestForRepairAddEditPL.resx">
+      <DependentUpon>FormJournalRequestForRepairAddEditPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\FormJournalRequestForRepairAddEdit.resx">
+      <DependentUpon>FormJournalRequestForRepairAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJournalRequestForRepair.resx">
+      <DependentUpon>FormJournalRequestForRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJournalRequestForRepairAddEdit.resx">
+      <DependentUpon>FormJournalRequestForRepairAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRequestForRepairAddAddress.resx">
+      <DependentUpon>FormRequestForRepairAddAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DataSetN.xsc">
+      <DependentUpon>DataSetN.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetN.xss">
+      <DependentUpon>DataSetN.xsd</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Documents\RDLC\ReportrequestForRepairFull.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportrequestForRepairFullPeriod.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportrequestForRepairNoAddress.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportrequestForRepairNoAddressPeriod.rdlc" />
+    <None Include="Resources\FindNext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindPrev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FTP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh 16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repair.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repair_Crash1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CopyBuffer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ElementAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ElementDel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ElementEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ElementInformation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Import2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowNext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowPrev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowUP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ElementAccept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FAQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindNextObj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindObj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pogoda1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowDeletedObject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sortAZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sortZA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pogoda.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_go.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ElementGo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setting.png" />
+    <Content Include="SQL\GetTransformerSchmObj.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ClassLibrarySQL\Library.csproj">
+      <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

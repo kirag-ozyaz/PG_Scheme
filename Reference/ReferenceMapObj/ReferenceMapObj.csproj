@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E383301-C781-4B04-89C3-CFB97466AFA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReferenceMapObj</RootNamespace>
+    <AssemblyName>ReferenceMapObj</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSets\DataSetKladr.cs">
+      <DependentUpon>DataSetKladr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetKladr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetKladr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MapObj\FormMapObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapObj\FormMapObj.Designer.cs">
+      <DependentUpon>FormMapObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapObj\FormMapObjAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapObj\FormMapObjAddEdit.Designer.cs">
+      <DependentUpon>FormMapObjAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapObj\FormMapObjParamAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapObj\FormMapObjParamAddEdit.Designer.cs">
+      <DependentUpon>FormMapObjParamAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MapObj\FormMapObj.resx">
+      <DependentUpon>FormMapObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapObj\FormMapObjAddEdit.resx">
+      <DependentUpon>FormMapObjAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapObj\FormMapObjParamAddEdit.resx">
+      <DependentUpon>FormMapObjParamAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSets\DataSetKladr.xsc">
+      <DependentUpon>DataSetKladr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetKladr.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetKladr.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetKladr.xss">
+      <DependentUpon>DataSetKladr.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

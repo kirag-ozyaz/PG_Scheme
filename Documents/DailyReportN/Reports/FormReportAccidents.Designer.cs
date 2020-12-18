@@ -1,0 +1,252 @@
+﻿using ControlsLbr.ReportViewerRus;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace DailyReportN.Reports
+{
+	public partial class FormReportAccidents : FormLbr.FormBase
+	{
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && this.components != null)
+			{
+				this.components.Dispose();
+			}
+            base.Dispose(disposing);
+        }
+
+		private System.ComponentModel.IContainer components=null;
+
+        private void InitializeComponent()
+        {
+            ComponentResourceManager resource = new ComponentResourceManager(typeof(FormReportAccidents));
+            this.splitContainerMain = new SplitContainer();
+            this.progressBar = new ProgressBar();
+            this.groupBoxTypeDoc = new GroupBox();
+            this.chkFilterDefectHV = new CheckBox();
+            this.chkFilterActDetection = new CheckBox();
+            this.groupBoxDate = new GroupBox();
+            this.dtpFilterEnd = new DateTimePicker();
+            this.label2 = new Label();
+            this.dtpFilterBeg = new DateTimePicker();
+            this.label1 = new Label();
+            this.rbFilterPeriod = new RadioButton();
+            this.cmbFilterYear = new ComboBox();
+            this.rbFilterYear = new RadioButton();
+            this.toolStripFilter = new ToolStrip();
+            this.toolBtnFilterApply = new ToolStripButton();
+            this.toolBtnFilterDelete = new ToolStripButton();
+            this.backgroundWorker = new BackgroundWorker();
+            this.groupBoxFormatPaper = new GroupBox();
+            this.rbA4 = new RadioButton();
+            this.rbA3 = new RadioButton();
+            this.splitContainerMain.Panel1.SuspendLayout();
+            this.splitContainerMain.SuspendLayout();
+            this.groupBoxTypeDoc.SuspendLayout();
+            this.groupBoxDate.SuspendLayout();
+            this.toolStripFilter.SuspendLayout();
+            this.groupBoxFormatPaper.SuspendLayout();
+            base.SuspendLayout();
+            this.splitContainerMain.Dock = DockStyle.Fill;
+            this.splitContainerMain.FixedPanel = FixedPanel.Panel1;
+            this.splitContainerMain.Location = new Point(0, 0);
+            this.splitContainerMain.Name = "splitContainerMain";
+            this.splitContainerMain.Panel1.Controls.Add(this.groupBoxFormatPaper);
+            this.splitContainerMain.Panel1.Controls.Add(this.progressBar);
+            this.splitContainerMain.Panel1.Controls.Add(this.groupBoxTypeDoc);
+            this.splitContainerMain.Panel1.Controls.Add(this.groupBoxDate);
+            this.splitContainerMain.Panel1.Controls.Add(this.toolStripFilter);
+            this.splitContainerMain.Size = new Size(829, 582);
+            this.splitContainerMain.SplitterDistance = 257;
+            this.splitContainerMain.TabIndex = 2;
+            this.progressBar.Dock = DockStyle.Bottom;
+            this.progressBar.Location = new Point(0, 559);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new Size(257, 23);
+            this.progressBar.Style = ProgressBarStyle.Marquee;
+            this.progressBar.TabIndex = 3;
+            this.progressBar.Visible = false;
+            this.groupBoxTypeDoc.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+            this.groupBoxTypeDoc.Controls.Add(this.chkFilterDefectHV);
+            this.groupBoxTypeDoc.Controls.Add(this.chkFilterActDetection);
+            this.groupBoxTypeDoc.Location = new Point(12, 211);
+            this.groupBoxTypeDoc.Name = "groupBoxTypeDoc";
+            this.groupBoxTypeDoc.Size = new Size(232, 67);
+            this.groupBoxTypeDoc.TabIndex = 2;
+            this.groupBoxTypeDoc.TabStop = false;
+            this.chkFilterDefectHV.AutoSize = true;
+            this.chkFilterDefectHV.Checked = true;
+            this.chkFilterDefectHV.CheckState = CheckState.Checked;
+            this.chkFilterDefectHV.Location = new Point(6, 42);
+            this.chkFilterDefectHV.Name = "chkFilterDefectHV";
+            this.chkFilterDefectHV.Size = new Size(84, 17);
+            this.chkFilterDefectHV.TabIndex = 1;
+            this.chkFilterDefectHV.Text = "Дефект ВН";
+            this.chkFilterDefectHV.UseVisualStyleBackColor = true;
+            this.chkFilterActDetection.AutoSize = true;
+            this.chkFilterActDetection.Checked = true;
+            this.chkFilterActDetection.CheckState = CheckState.Checked;
+            this.chkFilterActDetection.Location = new Point(6, 19);
+            this.chkFilterActDetection.Name = "chkFilterActDetection";
+            this.chkFilterActDetection.Size = new Size(125, 17);
+            this.chkFilterActDetection.TabIndex = 0;
+            this.chkFilterActDetection.Text = "Акт расследования";
+            this.chkFilterActDetection.UseVisualStyleBackColor = true;
+            this.groupBoxDate.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+            this.groupBoxDate.Controls.Add(this.dtpFilterEnd);
+            this.groupBoxDate.Controls.Add(this.label2);
+            this.groupBoxDate.Controls.Add(this.dtpFilterBeg);
+            this.groupBoxDate.Controls.Add(this.label1);
+            this.groupBoxDate.Controls.Add(this.rbFilterPeriod);
+            this.groupBoxDate.Controls.Add(this.cmbFilterYear);
+            this.groupBoxDate.Controls.Add(this.rbFilterYear);
+            this.groupBoxDate.Location = new Point(12, 28);
+            this.groupBoxDate.Name = "groupBoxDate";
+            this.groupBoxDate.Size = new Size(232, 177);
+            this.groupBoxDate.TabIndex = 1;
+            this.groupBoxDate.TabStop = false;
+            this.groupBoxDate.Text = "Дата";
+            this.dtpFilterEnd.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+            this.dtpFilterEnd.Enabled = false;
+            this.dtpFilterEnd.Location = new Point(6, 147);
+            this.dtpFilterEnd.Name = "dtpFilterEnd";
+            this.dtpFilterEnd.Size = new Size(220, 20);
+            this.dtpFilterEnd.TabIndex = 6;
+            this.label2.AutoSize = true;
+            this.label2.Location = new Point(6, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new Size(38, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Конец";
+            this.dtpFilterBeg.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+            this.dtpFilterBeg.Enabled = false;
+            this.dtpFilterBeg.Location = new Point(6, 105);
+            this.dtpFilterBeg.Name = "dtpFilterBeg";
+            this.dtpFilterBeg.Size = new Size(220, 20);
+            this.dtpFilterBeg.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new Point(6, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new Size(44, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Начало";
+            this.rbFilterPeriod.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+            this.rbFilterPeriod.AutoSize = true;
+            this.rbFilterPeriod.Location = new Point(6, 69);
+            this.rbFilterPeriod.Name = "rbFilterPeriod";
+            this.rbFilterPeriod.Size = new Size(63, 17);
+            this.rbFilterPeriod.TabIndex = 2;
+            this.rbFilterPeriod.Text = "Период";
+            this.rbFilterPeriod.UseVisualStyleBackColor = true;
+            this.rbFilterPeriod.CheckedChanged +=new System.EventHandler( this.rbFilterPeriod_CheckedChanged);
+            this.cmbFilterYear.FormattingEnabled = true;
+            this.cmbFilterYear.Location = new Point(6, 42);
+            this.cmbFilterYear.Name = "cmbFilterYear";
+            this.cmbFilterYear.Size = new Size(220, 21);
+            this.cmbFilterYear.TabIndex = 1;
+            this.rbFilterYear.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+            this.rbFilterYear.AutoSize = true;
+            this.rbFilterYear.Checked = true;
+            this.rbFilterYear.Location = new Point(6, 19);
+            this.rbFilterYear.Name = "rbFilterYear";
+            this.rbFilterYear.Size = new Size(43, 17);
+            this.rbFilterYear.TabIndex = 0;
+            this.rbFilterYear.TabStop = true;
+            this.rbFilterYear.Text = "Год";
+            this.rbFilterYear.UseVisualStyleBackColor = true;
+            this.toolStripFilter.Items.AddRange(new ToolStripItem[]
+            {
+                this.toolBtnFilterApply,
+                this.toolBtnFilterDelete
+            });
+            this.toolStripFilter.Location = new Point(0, 0);
+            this.toolStripFilter.Name = "toolStripFilter";
+            this.toolStripFilter.Size = new Size(257, 25);
+            this.toolStripFilter.TabIndex = 0;
+            this.toolStripFilter.Text = "Фильтр";
+            this.toolBtnFilterApply.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            this.toolBtnFilterApply.Image = (Image)global::DailyReportN.Properties.Resources.filter;
+            this.toolBtnFilterApply.ImageTransparentColor = Color.Magenta;
+            this.toolBtnFilterApply.Name = "toolBtnFilterApply";
+            this.toolBtnFilterApply.Size = new Size(23, 22);
+            this.toolBtnFilterApply.Text = "Применить фильтр";
+            this.toolBtnFilterApply.Click += new System.EventHandler(  this.toolBtnFilterApply_Click);
+            this.toolBtnFilterDelete.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            this.toolBtnFilterDelete.Image = (Image)global::DailyReportN.Properties.Resources.filter_delete;
+            this.toolBtnFilterDelete.ImageTransparentColor = Color.Magenta;
+            this.toolBtnFilterDelete.Name = "toolBtnFilterDelete";
+            this.toolBtnFilterDelete.Size = new Size(23, 22);
+            this.toolBtnFilterDelete.Text = "Убрать фильтр";
+            this.toolBtnFilterDelete.Click += new System.EventHandler(this.toolBtnFilterDelete_Click);
+            this.backgroundWorker.DoWork +=new DoWorkEventHandler (this.backgroundWorker_DoWork);
+            this.backgroundWorker.RunWorkerCompleted +=new RunWorkerCompletedEventHandler (this.backgroundWorker_RunWorkerCompleted);
+            this.groupBoxFormatPaper.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+            this.groupBoxFormatPaper.Controls.Add(this.rbA3);
+            this.groupBoxFormatPaper.Controls.Add(this.rbA4);
+            this.groupBoxFormatPaper.Location = new Point(12, 284);
+            this.groupBoxFormatPaper.Name = "groupBoxFormatPaper";
+            this.groupBoxFormatPaper.Size = new Size(232, 67);
+            this.groupBoxFormatPaper.TabIndex = 4;
+            this.groupBoxFormatPaper.TabStop = false;
+            this.rbA4.AutoSize = true;
+            this.rbA4.Checked = true;
+            this.rbA4.Location = new Point(6, 19);
+            this.rbA4.Name = "rbA4";
+            this.rbA4.Size = new Size(38, 17);
+            this.rbA4.TabIndex = 0;
+            this.rbA4.TabStop = true;
+            this.rbA4.Text = "A4";
+            this.rbA4.UseVisualStyleBackColor = true;
+            this.rbA3.AutoSize = true;
+            this.rbA3.Location = new Point(5, 42);
+            this.rbA3.Name = "rbA3";
+            this.rbA3.Size = new Size(38, 17);
+            this.rbA3.TabIndex = 1;
+            this.rbA3.Text = "A3";
+            this.rbA3.UseVisualStyleBackColor = true;
+            base.AutoScaleDimensions = new SizeF(6f, 13f);
+            base.AutoScaleMode = AutoScaleMode.Font;
+            base.ClientSize = new Size(829, 582);
+            base.Controls.Add(this.splitContainerMain);
+            base.Name = "FormReportAccidents";
+            this.Text = "Перечень аварий";
+            base.Load +=new System.EventHandler( this.FormReportAccidents_Load);
+            this.splitContainerMain.Panel1.ResumeLayout(false);
+            this.splitContainerMain.Panel1.PerformLayout();
+            this.splitContainerMain.ResumeLayout(false);
+            this.groupBoxTypeDoc.ResumeLayout(false);
+            this.groupBoxTypeDoc.PerformLayout();
+            this.groupBoxDate.ResumeLayout(false);
+            this.groupBoxDate.PerformLayout();
+            this.toolStripFilter.ResumeLayout(false);
+            this.toolStripFilter.PerformLayout();
+            this.groupBoxFormatPaper.ResumeLayout(false);
+            this.groupBoxFormatPaper.PerformLayout();
+            base.ResumeLayout(false);
+        }
+
+
+        private ReportViewerRus rptViewer;
+        private SplitContainer splitContainerMain;
+        private GroupBox groupBoxDate;
+        private DateTimePicker dtpFilterEnd;
+        private Label label2;
+        private DateTimePicker dtpFilterBeg;
+        private Label label1;
+        private RadioButton rbFilterPeriod;
+        private ComboBox cmbFilterYear;
+        private RadioButton rbFilterYear;
+        private ToolStrip toolStripFilter;
+        private ToolStripButton toolBtnFilterApply;
+        private ToolStripButton toolBtnFilterDelete;
+        private GroupBox groupBoxTypeDoc;
+        private CheckBox chkFilterDefectHV;
+        private CheckBox chkFilterActDetection;
+        private BackgroundWorker backgroundWorker;
+        private ProgressBar progressBar;
+        private GroupBox groupBoxFormatPaper;
+        private RadioButton rbA3;
+        private RadioButton rbA4;
+    }
+}

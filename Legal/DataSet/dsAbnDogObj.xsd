@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAbnDogObj" targetNamespace="http://tempuri.org/dsAbnDogObj.xsd" xmlns:mstns="http://tempuri.org/dsAbnDogObj.xsd" xmlns="http://tempuri.org/dsAbnDogObj.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="NotPublic" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GESConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Legal.Properties.Settings.GlobalReference.Default.GESConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAbnDogObj" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsAbnDogObj" msprop:Generator_UserDSName="dsAbnDogObj">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tG_Dog_Obj" msprop:Generator_TableClassName="tG_Dog_ObjDataTable" msprop:Generator_RowEvArgName="tG_Dog_ObjRowChangeEvent" msprop:Generator_TableVarName="tabletG_Dog_Obj" msprop:Generator_TablePropName="tG_Dog_Obj" msprop:Generator_RowDeletingName="tG_Dog_ObjRowDeleting" msprop:Generator_UserTableName="tG_Dog_Obj" msprop:Generator_RowChangingName="tG_Dog_ObjRowChanging" msprop:Generator_RowDeletedName="tG_Dog_ObjRowDeleted" msprop:Generator_RowChangedName="tG_Dog_ObjRowChanged" msprop:Generator_RowEvHandlerName="tG_Dog_ObjRowChangeEventHandler" msprop:Generator_RowClassName="tG_Dog_ObjRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idDog" msprop:Generator_ColumnVarNameInTable="columnidDog" msprop:Generator_ColumnPropNameInRow="idDog" msprop:Generator_ColumnPropNameInTable="idDogColumn" msprop:Generator_UserColumnName="idDog" type="xs:int" />
+              <xs:element name="idObj" msprop:Generator_ColumnVarNameInTable="columnidObj" msprop:Generator_ColumnPropNameInRow="idObj" msprop:Generator_ColumnPropNameInTable="idObjColumn" msprop:Generator_UserColumnName="idObj" type="xs:int" />
+              <xs:element name="NumberObj" msprop:Generator_ColumnVarNameInTable="columnNumberObj" msprop:Generator_ColumnPropNameInRow="NumberObj" msprop:Generator_ColumnPropNameInTable="NumberObjColumn" msprop:Generator_UserColumnName="NumberObj" type="xs:int" minOccurs="0" />
+              <xs:element name="NumberSubObj" msprop:Generator_ColumnVarNameInTable="columnNumberSubObj" msprop:Generator_ColumnPropNameInRow="NumberSubObj" msprop:Generator_ColumnPropNameInTable="NumberSubObjColumn" msprop:Generator_UserColumnName="NumberSubObj" type="xs:int" minOccurs="0" />
+              <xs:element name="DateBegin" msprop:Generator_ColumnVarNameInTable="columnDateBegin" msprop:Generator_ColumnPropNameInRow="DateBegin" msprop:Generator_ColumnPropNameInTable="DateBeginColumn" msprop:Generator_UserColumnName="DateBegin" type="xs:dateTime" />
+              <xs:element name="DateEnd" msprop:Generator_ColumnVarNameInTable="columnDateEnd" msprop:Generator_ColumnPropNameInRow="DateEnd" msprop:Generator_ColumnPropNameInTable="DateEndColumn" msprop:Generator_UserColumnName="DateEnd" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tG_Dog_Obj" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E4637AD-F6B6-4CD5-9C9C-5F333EBF4443}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchemeModelN</RootNamespace>
+    <AssemblyName>SchemeModelN</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataSql">
+      <HintPath>..\..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\..\LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculations\ElectricAmperage.cs" />
+    <Compile Include="Calculations\HistorySwitchingItemClass.cs" />
+    <Compile Include="Calculations\TreeNodeObj.cs" />
+    <Compile Include="AmperageConverte.cs" />
+    <Compile Include="AmperageProperties.cs" />
+    <Compile Include="ElectricBus.cs" />
+    <Compile Include="ElectricLine.cs" />
+    <Compile Include="ElectricModel.cs" />
+    <Compile Include="ElectricModelN.cs" />
+    <Compile Include="ElectricObject.cs" />
+    <Compile Include="ElectricPoint.cs" />
+    <Compile Include="ElectricRelation.cs" />
+    <Compile Include="ElectricSubstation.cs" />
+    <Compile Include="ElectricSwitch.cs" />
+    <Compile Include="eTypeRectangleTool.cs" />
+    <Compile Include="eTypeShinaTool.cs" />
+    <Compile Include="LineToolType.cs" />
+    <Compile Include="ModelObjectBase.cs" />
+    <Compile Include="ModelRectangle.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeSwitch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="g.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ClassLibrarySQL\Library.csproj">
+      <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

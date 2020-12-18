@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D50D9E86-805A-493F-A996-8F7E1EB6D985}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchemeReports</RootNamespace>
+    <AssemblyName>SchemeReports</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Legal">
+      <HintPath>..\LIB\Legal.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\LIB\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Passport">
+      <HintPath>..\LIB\Passport.dll</HintPath>
+    </Reference>
+    <Reference Include="Scheme">
+      <HintPath>..\LIB\Scheme.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeCtrl2">
+      <HintPath>..\LIB\SchemeCtrl2.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeModel">
+      <HintPath>..\LIB\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinDocking">
+      <HintPath>..\LIB\WinDocking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetScheme.cs">
+      <DependentUpon>DataSetScheme.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetScheme.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetScheme.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormJournalAbn\FormJournalAbnN2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJournalAbn\FormJournalAbnN2.Designer.cs">
+      <DependentUpon>FormJournalAbnN2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJournalAbn\TypeAbn.cs" />
+    <Compile Include="FormLinkAbnNewAndOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLinkAbnNewAndOld.Designer.cs">
+      <DependentUpon>FormLinkAbnNewAndOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMeasuringReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMeasuringReport.Designer.cs">
+      <DependentUpon>FormMeasuringReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReportObjLink\dsDop.cs">
+      <DependentUpon>dsDop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportObjLink\dsDop.Designer.cs">
+      <DependentUpon>dsDop.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ReportObjLink\FormReportObjLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportObjLink\FormReportObjLink.Designer.cs">
+      <DependentUpon>FormReportObjLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportObjLink\FormReportObjLinkPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportObjLink\FormReportObjLinkPrint.Designer.cs">
+      <DependentUpon>FormReportObjLinkPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTestShmEdge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTestShmEdge.Designer.cs">
+      <DependentUpon>FormTestShmEdge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTreeSchmObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTreeSchmObj.Designer.cs">
+      <DependentUpon>FormTreeSchmObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetResource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormLinkAbnNewAndOld.resx">
+      <DependentUpon>FormLinkAbnNewAndOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMeasuringReport.resx">
+      <DependentUpon>FormMeasuringReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportObjLink\FormReportObjLink.resx">
+      <DependentUpon>FormReportObjLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportObjLink\FormReportObjLinkPrint.resx">
+      <DependentUpon>FormReportObjLinkPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportObjLink\ReportObjLinkPrint-1.rdlc" />
+    <EmbeddedResource Include="FormTestShmEdge.resx">
+      <DependentUpon>FormTestShmEdge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTreeSchmObj.resx">
+      <DependentUpon>FormTreeSchmObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSetScheme.xsc">
+      <DependentUpon>DataSetScheme.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetScheme.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetScheme.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetScheme.xss">
+      <DependentUpon>DataSetScheme.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportObjLink\dsDop.xsc">
+      <DependentUpon>dsDop.xsd</DependentUpon>
+    </None>
+    <None Include="ReportObjLink\dsDop.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDop.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportObjLink\dsDop.xss">
+      <DependentUpon>dsDop.xsd</DependentUpon>
+    </None>
+    <None Include="Res\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\NormalImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\Play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\PointImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RDLC\ReportMeasurement.rdlc" />
+    <EmbeddedResource Include="ReportLinkAbnWithCP-5.sql" />
+    <EmbeddedResource Include="SchmCell.sql" />
+    <EmbeddedResource Include="ReportLinkAbnNewAndOld.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SchmCable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EIS_Consumer\Prv\Prv.csproj">
+      <Project>{c31d5809-3384-49a0-9818-91aabd08e5ba}</Project>
+      <Name>Prv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrarySQL\Library.csproj">
+      <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReferenceTables\ReferenceTables.csproj">
+      <Project>{70de9a59-49c6-4683-9f6b-3f04c819c1a8}</Project>
+      <Name>ReferenceTables</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scheme\SchemeModel\SchemeModelN.csproj">
+      <Project>{1E4637AD-F6B6-4CD5-9C9C-5F333EBF4443}</Project>
+      <Name>SchemeModelN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="vL_SchmAbnFull_2019.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindNext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindPrev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scheme_Old.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Res\report_1914.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SqlScripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReportObjLink\fn_LegReportMain_Link-3.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

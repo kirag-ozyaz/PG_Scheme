@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7B73D01-073C-4840-99DA-332A28A9E0D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ExportToPostGIS</RootNamespace>
+    <AssemblyName>ExportToPostGIS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataSql">
+      <HintPath>..\..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\..\LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net35\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\LIB\MySQL-6.9.8\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SchemeService\SchemeServiceN1\SchemeService\LIB\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net35\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Scheme">
+      <HintPath>..\..\..\..\SUB\EIS\1\EIS\LIBS\Scheme.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeCtrl2">
+      <HintPath>..\..\LIB\SchemeCtrl2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetDokuments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDokuments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPersonnel.cs">
+      <DependentUpon>DataSetPersonnel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPersonnel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPersonnel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormExportPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExportPersonnel.Designer.cs">
+      <DependentUpon>FormExportPersonnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuments\FormExportOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuments\FormExportOrder.Designer.cs">
+      <DependentUpon>FormExportOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuments\ExportOrder.cs" />
+    <Compile Include="Personnel.cs" />
+    <Compile Include="FormExportReference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExportReference.Designer.cs">
+      <DependentUpon>FormExportReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartCity\FormIntegrationSmartCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmartCity\FormIntegrationSmartCity.Designer.cs">
+      <DependentUpon>FormIntegrationSmartCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartCity\IntegrationSmartCity.cs" />
+    <Compile Include="SQLSettingsGIS.cs" />
+    <EmbeddedResource Include="FormExportPersonnel.resx">
+      <DependentUpon>FormExportPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExportReference.resx">
+      <DependentUpon>FormExportReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuments\FormExportOrder.resx">
+      <DependentUpon>FormExportOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SmartCity\FormIntegrationSmartCity.resx">
+      <DependentUpon>FormIntegrationSmartCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DataSetDokuments.xsc">
+      <DependentUpon>DataSetDokuments.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDokuments.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDokuments.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDokuments.xss">
+      <DependentUpon>DataSetDokuments.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPersonnel.xsc">
+      <DependentUpon>DataSetPersonnel.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPersonnel.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPersonnel.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPersonnel.xss">
+      <DependentUpon>DataSetPersonnel.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dokuments\info1.txt" />
+    <Content Include="info.txt" />
+    <EmbeddedResource Include="Dokuments\GetTableOrder.sql" />
+    <None Include="Personnel\ImportPersonnel.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ClassLibrarySQL\Library.csproj">
+      <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ReferenceTables\ReferenceTables.csproj">
+      <Project>{70de9a59-49c6-4683-9f6b-3f04c819c1a8}</Project>
+      <Name>ReferenceTables</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Scheme\SchemeModel\SchemeModelN.csproj">
+      <Project>{1e4637ad-f6b6-4cd5-9c9c-5f333ebf4443}</Project>
+      <Name>SchemeModelN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

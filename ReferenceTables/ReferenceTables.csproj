@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70DE9A59-49C6-4683-9F6B-3F04C819C1A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>References</RootNamespace>
+    <AssemblyName>References</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\..\Дополнительные библиотеки\Снифферы\A Network Sniffer in C#\MJsniffer\MJSniff\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeModel">
+      <HintPath>..\LIB\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinDocking">
+      <HintPath>..\LIB\WinDocking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="FormReference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReference.Designer.cs">
+      <DependentUpon>FormReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GES_LOG\TableSchmAbn.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReferenceTables.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchemeTables.cs" />
+    <Compile Include="SettingsTable.cs" />
+    <Compile Include="Settings\ControlServices.cs" />
+    <Compile Include="Settings\FormSettingsSender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\FormSettingsSender.Designer.cs">
+      <DependentUpon>FormSettingsSender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Settings.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\FormSettingsSender.resx">
+      <DependentUpon>FormSettingsSender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vL_SchmAbnFullNoTime.sql">
+      <SubType>UserControl</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormReference.resx">
+      <DependentUpon>FormReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchmCable.sql" />
+    <EmbeddedResource Include="vL_SchmAbnFull_2019.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrarySQL\Library.csproj">
+      <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scheme\SchemeModel\SchemeModelN.csproj">
+      <Project>{1e4637ad-f6b6-4cd5-9c9c-5f333ebf4443}</Project>
+      <Name>SchemeModelN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SchmCell.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="vL_SchmAbnFull_2019-4.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GES_LOG\CheckAbnObjTableSchmAbn.sql" />
+    <Content Include="GES_LOG\GetTableSchmAbn.sql" />
+    <Content Include="GES_LOG\Проверка_пропущенных_ID.sql" />
+    <EmbeddedResource Include="SqlScripts\ActApprovalReservation.sql" />
+    <Content Include="SqlScripts\fn_LegReportMain_Link-3.sql">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="SqlScripts\SchmLineCellAll-1.sql" />
+    <EmbeddedResource Include="SqlScripts\SchmLineCellAll-2.sql" />
+    <EmbeddedResource Include="SqlScripts\SchmCellAll.sql" />
+    <EmbeddedResource Include="SqlScripts\GetTextCellSub.sql" />
+    <EmbeddedResource Include="SqlScripts\vL_SchmAbnLegal.sql" />
+    <None Include="Settings\Send1.png" />
+    <None Include="Settings\Send.png" />
+    <EmbeddedResource Include="GetTransformerSchmObj.sql" />
+    <EmbeddedResource Include="MarkCable.sql">
+      <SubType>Component</SubType>
+    </EmbeddedResource>
+    <None Include="Settings\Stop.png" />
+    <None Include="Settings\Restart.png" />
+    <None Include="Settings\Pause.png" />
+    <None Include="Settings\Play.png" />
+    <EmbeddedResource Include="vL_SchmAbnFull2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

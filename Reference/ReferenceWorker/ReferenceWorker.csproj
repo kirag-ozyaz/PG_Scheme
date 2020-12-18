@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1750BB36-1F3E-4000-8271-4F06CA02437E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ReferenceWorker</RootNamespace>
+    <AssemblyName>ReferenceWorker</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetWorker.cs">
+      <DependentUpon>DataSetWorker.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetWorker.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetWorker.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Divisions\FormDivisions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Divisions\FormDivisions.Designer.cs">
+      <DependentUpon>FormDivisions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Divisions\FormDivisionsAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Divisions\FormDivisionsAddEdit.Designer.cs">
+      <DependentUpon>FormDivisionsAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkers.Designer.cs">
+      <DependentUpon>FormWorkers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorkersSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkersSelect.Designer.cs">
+      <DependentUpon>FormWorkersSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobTitle\FormJobTitleAddEditPadez.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobTitle\FormJobTitleAddEditPadez.Designer.cs">
+      <DependentUpon>FormJobTitleAddEditPadez.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobTitle\FormJobTitles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobTitle\FormJobTitles.Designer.cs">
+      <DependentUpon>FormJobTitles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobTitle\FormJobTitlesAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobTitle\FormJobTitlesAddEdit.Designer.cs">
+      <DependentUpon>FormJobTitlesAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Worker\FormWorkerAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormWorkerAddEdit.Designer.cs">
+      <DependentUpon>FormWorkerAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\FormWorkerAddEditPadez.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormWorkerAddEditPadez.Designer.cs">
+      <DependentUpon>FormWorkerAddEditPadez.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\FormWorkerContactAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormWorkerContactAddEdit.Designer.cs">
+      <DependentUpon>FormWorkerContactAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\FormWorkerGroupAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormWorkerGroupAddEdit.Designer.cs">
+      <DependentUpon>FormWorkerGroupAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\FormWorkerGroupElectricalAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormWorkerGroupElectricalAddEdit.Designer.cs">
+      <DependentUpon>FormWorkerGroupElectricalAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\FormWorkerOrganization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormWorkerOrganization.Designer.cs">
+      <DependentUpon>FormWorkerOrganization.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Divisions\FormDivisions.resx">
+      <DependentUpon>FormDivisions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Divisions\FormDivisionsAddEdit.resx">
+      <DependentUpon>FormDivisionsAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWorkers.resx">
+      <DependentUpon>FormWorkers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWorkersSelect.resx">
+      <DependentUpon>FormWorkersSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobTitle\FormJobTitleAddEditPadez.resx">
+      <DependentUpon>FormJobTitleAddEditPadez.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobTitle\FormJobTitles.resx">
+      <DependentUpon>FormJobTitles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobTitle\FormJobTitlesAddEdit.resx">
+      <DependentUpon>FormJobTitlesAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Worker\FormWorkerAddEdit.resx">
+      <DependentUpon>FormWorkerAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\FormWorkerAddEditPadez.resx">
+      <DependentUpon>FormWorkerAddEditPadez.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\FormWorkerContactAddEdit.resx">
+      <DependentUpon>FormWorkerContactAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\FormWorkerGroupAddEdit.resx">
+      <DependentUpon>FormWorkerGroupAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\FormWorkerGroupElectricalAddEdit.resx">
+      <DependentUpon>FormWorkerGroupElectricalAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\FormWorkerOrganization.resx">
+      <DependentUpon>FormWorkerOrganization.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DataSetWorker.xsc">
+      <DependentUpon>DataSetWorker.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetWorker.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetWorker.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetWorker.xss">
+      <DependentUpon>DataSetWorker.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReferenceMapObj\ReferenceMapObj.csproj">
+      <Project>{6E383301-C781-4B04-89C3-CFB97466AFA3}</Project>
+      <Name>ReferenceMapObj</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AdLlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tssbAddMissingCells1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

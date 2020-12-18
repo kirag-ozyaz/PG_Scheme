@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SchemeModelN.ElectricBus">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAQAAGAEAAAAgABAAIAAAAAAgAAAAAAIA=</HashCode>
+      <FileName>ElectricBus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.ElectricLine">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAABAAEEEIAAACAgAgAgISAAACAgAIACAAMA=</HashCode>
+      <FileName>ElectricLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.ElectricModel" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kSAAECIKBQAAwAABkCAgAQCElQAAQDEAAGBigAAAAAA=</HashCode>
+      <FileName>ElectricModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.ElectricObject" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAQAAAAgAIBEgAAASAwAQAACAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>ElectricObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.ElectricPoint">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ElectricPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.ElectricRelation">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAAAQAAAAAIA=</HashCode>
+      <FileName>ElectricRelation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.ElectricSubstation">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ElectricSubstation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.ElectricSwitch">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>ElectricSwitch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.ModelObjectBase" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAEARAAAAEQIQAAAIEQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModelObjectBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.ModelRectangle" Collapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModelRectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.Calculations.ElectricAmperage" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAgBAEAIwQBAFAAAACAQAAAhACAAAAAAAAJA=</HashCode>
+      <FileName>Calculations\ElectricAmperage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.Calculations.HistorySwitchingItemClass" Collapsed="true">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAAAAAEAAAACAAAAAAAAQAAAAAAAAAAAAEAAggBAAQ=</HashCode>
+      <FileName>Calculations\HistorySwitchingItemClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemeModelN.Calculations.TreeNodeObj" Collapsed="true">
+    <Position X="21" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAgAAAEAAAgAAEABAAAUAAAAAkAAAABAQAAAABIAAA=</HashCode>
+      <FileName>Calculations\TreeNodeObj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="1.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="SchemeModelN.eTypeShinaTool">
+    <Position X="17.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAQAAAAAAAAAAAAABAEAAAAABAAAAAAAAAEBAAA=</HashCode>
+      <FileName>eTypeShinaTool.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SchemeModelN.LineToolType">
+    <Position X="19.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAAEAEUBAAA=</HashCode>
+      <FileName>LineToolType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SchemeModelN.TypeSwitch">
+    <Position X="21" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAEAAAQAAAEAAQgIAAIgkEAQMAAJATEQEAIhA=</HashCode>
+      <FileName>TypeSwitch.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

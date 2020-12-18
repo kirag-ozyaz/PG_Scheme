@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile CurrentProfile="(Default)" GeneratedClassNamespace="Reference.Properties" GeneratedClassName="Settings" xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="GESConnectionString" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=SALE-SQL;Initial Catalog=GES;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="GESConnectionString1" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=coder-sql;Initial Catalog=GES;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="GESConnectionString2" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=coder-server;Initial Catalog=GES;Persist Security Info=True;User ID=sasha;Password="cegth pfobnf"</Value>
+    </Setting>
+    <Setting Name="GESConnectionString3" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=ulges-sql2;Initial Catalog=GES;Integrated Security=True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

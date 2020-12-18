@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetDokuments" targetNamespace="http://tempuri.org/DataSetDokuments.xsd" xmlns:mstns="http://tempuri.org/DataSetDokuments.xsd" xmlns="http://tempuri.org/DataSetDokuments.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GESConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ExportToPostGIS.Properties.Settings.GlobalReference.Default.GESConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetDokuments" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetDokuments" msprop:Generator_UserDSName="DataSetDokuments">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tSchm_Label" msprop:Generator_TableClassName="tSchm_LabelDataTable" msprop:Generator_TableVarName="tabletSchm_Label" msprop:Generator_RowChangedName="tSchm_LabelRowChanged" msprop:Generator_TablePropName="tSchm_Label" msprop:Generator_RowDeletingName="tSchm_LabelRowDeleting" msprop:Generator_RowChangingName="tSchm_LabelRowChanging" msprop:Generator_RowEvHandlerName="tSchm_LabelRowChangeEventHandler" msprop:Generator_RowDeletedName="tSchm_LabelRowDeleted" msprop:Generator_RowClassName="tSchm_LabelRow" msprop:Generator_UserTableName="tSchm_Label" msprop:Generator_RowEvArgName="tSchm_LabelRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypeLabel" msprop:Generator_ColumnVarNameInTable="columnTypeLabel" msprop:Generator_ColumnPropNameInRow="TypeLabel" msprop:Generator_ColumnPropNameInTable="TypeLabelColumn" msprop:Generator_UserColumnName="TypeLabel" type="xs:int" />
+              <xs:element name="idParent" msprop:Generator_ColumnVarNameInTable="columnidParent" msprop:Generator_ColumnPropNameInRow="idParent" msprop:Generator_ColumnPropNameInTable="idParentColumn" msprop:Generator_UserColumnName="idParent" type="xs:int" minOccurs="0" />
+              <xs:element name="XmlCoords" msprop:Generator_ColumnVarNameInTable="columnXmlCoords" msprop:Generator_ColumnPropNameInRow="XmlCoords" msprop:Generator_ColumnPropNameInTable="XmlCoordsColumn" msprop:Generator_UserColumnName="XmlCoords">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tag" msprop:Generator_ColumnVarNameInTable="columnTag" msprop:Generator_ColumnPropNameInRow="Tag" msprop:Generator_ColumnPropNameInTable="TagColumn" msprop:Generator_UserColumnName="Tag" type="xs:int" minOccurs="0" />
+              <xs:element name="ExtendedTypeLabel" msprop:Generator_ColumnVarNameInTable="columnExtendedTypeLabel" msprop:Generator_ColumnPropNameInRow="ExtendedTypeLabel" msprop:Generator_ColumnPropNameInTable="ExtendedTypeLabelColumn" msprop:Generator_UserColumnName="ExtendedTypeLabel" type="xs:int" minOccurs="0" />
+              <xs:element name="XmlSubstation" msprop:Generator_ColumnVarNameInTable="columnXmlSubstation" msprop:Generator_ColumnPropNameInRow="XmlSubstation" msprop:Generator_ColumnPropNameInTable="XmlSubstationColumn" msprop:Generator_UserColumnName="XmlSubstation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tSchm_Label" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

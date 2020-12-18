@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF891306-5FA3-42E9-A19C-B088704D983B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SchemeCtrl2</RootNamespace>
+    <AssemblyName>SchemeCtrl2</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Constants">
+      <HintPath>..\..\..\какие-то eis\EIS\Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\..\..\какие-то eis\EIS\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\..\..\какие-то eis\EIS\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="DXFLibrary">
+      <HintPath>..\..\LIB\DXFLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\..\..\какие-то eis\EIS\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Legal">
+      <HintPath>..\..\LIB\Legal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel" />
+    <Reference Include="Passport">
+      <HintPath>..\..\LIB\Passport.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telemetry">
+      <HintPath>..\..\LIB\Telemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.1.6643.41644, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WeifenLuo.WinFormsUI.Docking.2.1.0\lib\net20\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WinDocking">
+      <HintPath>..\..\LIB\WinDocking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculations\Amperage.cs" />
+    <Compile Include="Calculations\AmperageConductor.cs" />
+    <Compile Include="Calculations\AmperageConductorEventArgs.cs" />
+    <Compile Include="Calculations\AmperageConductorEventHandler.cs" />
+    <Compile Include="Calculations\AmperageConverter.cs" />
+    <Compile Include="Calculations\AmperageProperties.cs" />
+    <Compile Include="Calculations\AmperageSwitch.cs" />
+    <Compile Include="Calculations\CouplingRealationChangeEventHandler.cs" />
+    <Compile Include="Calculations\CouplingRealationsList.cs" />
+    <Compile Include="Calculations\CouplingRealationsListChangeEventArgs.cs" />
+    <Compile Include="Calculations\CouplingRealationsListChangeEventHandler.cs" />
+    <Compile Include="Calculations\CouplingRealationsListChangeType.cs" />
+    <Compile Include="Calculations\CouplingRelation.cs" />
+    <Compile Include="Calculations\CouplingRelationChangeEventArgs.cs" />
+    <Compile Include="Calculations\CouplingRelationConverter.cs" />
+    <Compile Include="Canvas\AmperageException.cs" />
+    <Compile Include="Canvas\CanvasControl.Designer.cs">
+      <DependentUpon>CanvasControl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Canvas\CanvasFrame.cs" />
+    <Compile Include="Canvas\CanvasLog.cs" />
+    <Compile Include="Canvas\CanvasMessageEventArgs.cs" />
+    <Compile Include="Canvas\CanvasMessageEventHandler.cs" />
+    <Compile Include="Canvas\CanvasSettings.cs" />
+    <Compile Include="Canvas\ConvertCanvas.cs" />
+    <Compile Include="Canvas\Copying.cs" />
+    <Compile Include="Canvas\CopyPasteCanvasObjects.cs" />
+    <Compile Include="Canvas\DrawObjectEventHandler.cs" />
+    <Compile Include="Canvas\DrawObjectsEventArgs.cs" />
+    <Compile Include="Canvas\eCanvasEditingMode.cs" />
+    <Compile Include="Canvas\eCommandType.cs" />
+    <Compile Include="Canvas\eMessageType.cs" />
+    <Compile Include="Canvas\eMetric.cs" />
+    <Compile Include="Canvas\eMouseControlState.cs" />
+    <Compile Include="Canvas\eSimulationMode.cs" />
+    <Compile Include="Canvas\eTypeCanvas.cs" />
+    <Compile Include="Canvas\FileInfo.cs" />
+    <Compile Include="Canvas\Forms\Cable.cs" />
+    <Compile Include="Canvas\Forms\FormAbnFromOldSchema.Designer.cs">
+      <DependentUpon>FormAbnFromOldSchema.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasAddDelFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasAddDelFilter.Designer.cs">
+      <DependentUpon>FormCanvasAddDelFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasAddFilterName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasAddFilterName.Designer.cs">
+      <DependentUpon>FormCanvasAddFilterName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasFilterApply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasFilterApply.Designer.cs">
+      <DependentUpon>FormCanvasFilterApply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasPrint.Designer.cs">
+      <DependentUpon>FormCanvasPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasRemoveTransformer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormCanvasRemoveTransformer.Designer.cs">
+      <DependentUpon>FormCanvasRemoveTransformer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormExportCanvasToImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormExportCanvasToImage.Designer.cs">
+      <DependentUpon>FormExportCanvasToImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormJRelayProtectionAutomationEditBySchmObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormJRelayProtectionAutomationEditBySchmObj.Designer.cs">
+      <DependentUpon>FormJRelayProtectionAutomationEditBySchmObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormLinkLineCable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormLinkLineCable.Designer.cs">
+      <DependentUpon>FormLinkLineCable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\Forms\FormSchmObjFile.Designer.cs">
+      <DependentUpon>FormSchmObjFile.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Canvas\Forms\Parameter.cs" />
+    <Compile Include="Canvas\Forms\UlgesCableLineChars.cs" />
+    <Compile Include="Canvas\Forms\UlgesClutch.cs" />
+    <Compile Include="Canvas\Forms\UlgesClutchChars.cs" />
+    <Compile Include="Canvas\PropertyFromBaseElement.cs" />
+    <Compile Include="Canvas\SelectionRectangle.cs" />
+    <Compile Include="Canvas\ShowContextMenuCanvasEventHandler.cs" />
+    <Compile Include="Canvas\TreeNodeObj.cs" />
+    <Compile Include="Canvas\UndoRedoManager.cs" />
+    <Compile Include="Canvas\UnitPoint.cs" />
+    <Compile Include="Canvas\WorkerCanvasPrint.cs" />
+    <Compile Include="Canvas\WorkerTitleFIO.cs" />
+    <Compile Include="Class100.cs" />
+    <Compile Include="Class101.cs" />
+    <Compile Include="Class102.cs" />
+    <Compile Include="Class103.cs" />
+    <Compile Include="Class104.cs" />
+    <Compile Include="Class105.cs" />
+    <Compile Include="Class74.cs" />
+    <Compile Include="Class88.cs" />
+    <Compile Include="Class89.cs" />
+    <Compile Include="Class90.cs" />
+    <Compile Include="Class91.cs" />
+    <Compile Include="Class92.cs" />
+    <Compile Include="Class93.cs" />
+    <Compile Include="Class94.cs" />
+    <Compile Include="Class95.cs" />
+    <Compile Include="Class96.cs" />
+    <Compile Include="Control0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data\DataSetOPCConfig.cs" />
+    <Compile Include="Data\DataSetScheme.cs" />
+    <Compile Include="DrawTool\AddParalelBranchHandle.cs" />
+    <Compile Include="DrawTool\Alignment.cs" />
+    <Compile Include="DrawTool\AmperageTransformerTool.cs" />
+    <Compile Include="DrawTool\ArrowTool.cs" />
+    <Compile Include="DrawTool\AutomaticEntryProvisionTool.cs" />
+    <Compile Include="DrawTool\Branch.cs" />
+    <Compile Include="DrawTool\BranchCollection.cs" />
+    <Compile Include="DrawTool\BranchType.cs" />
+    <Compile Include="DrawTool\CircuitBreakerTool.cs" />
+    <Compile Include="DrawTool\ComplexSwitchgearTool.cs" />
+    <Compile Include="DrawTool\DamageTool.cs" />
+    <Compile Include="DrawTool\DischargerTool.cs" />
+    <Compile Include="DrawTool\DrawNewObjectEventHandler.cs" />
+    <Compile Include="DrawTool\DrawObjectBase.cs" />
+    <Compile Include="DrawTool\DrawObjectBaseError.cs" />
+    <Compile Include="DrawTool\DrawObjectBaseEventHandler.cs" />
+    <Compile Include="DrawTool\eDrawMode.cs" />
+    <Compile Include="DrawTool\ElectricMeterTool.cs" />
+    <Compile Include="DrawTool\EndTrimTool.cs" />
+    <Compile Include="DrawTool\ePositionText.cs" />
+    <Compile Include="DrawTool\ErrorsOfElectricity.cs" />
+    <Compile Include="DrawTool\eTextBranchPosition.cs" />
+    <Compile Include="DrawTool\eTextBranchType.cs" />
+    <Compile Include="DrawTool\eTypeAddShinaPatterns.cs" />
+    <Compile Include="DrawTool\eTypeLabelTool.cs" />
+    <Compile Include="DrawTool\eTypeRectangleTool.cs" />
+    <Compile Include="DrawTool\eTypeShinaTool.cs" />
+    <Compile Include="DrawTool\FormsObj\BranchPropertyesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\BranchPropertyesForm.Designer.cs">
+      <DependentUpon>BranchPropertyesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormCellProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormCellProperties.Designer.cs">
+      <DependentUpon>FormCellProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormDamageToolProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormDamageToolProperty.Designer.cs">
+      <DependentUpon>FormDamageToolProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormLabelToolProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormLabelToolProperties.Designer.cs">
+      <DependentUpon>FormLabelToolProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormPointProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormPointProperties.Designer.cs">
+      <DependentUpon>FormPointProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormRectangleProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormRectangleProperties.Designer.cs">
+      <DependentUpon>FormRectangleProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormShinaProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormShinaProperties.Designer.cs">
+      <DependentUpon>FormShinaProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormTelemetryLabelPropertiy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormTelemetryLabelPropertiy.Designer.cs">
+      <DependentUpon>FormTelemetryLabelPropertiy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormTextBranchProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\FormTextBranchProperties.Designer.cs">
+      <DependentUpon>FormTextBranchProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\GroupPropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\GroupPropertyForm.Designer.cs">
+      <DependentUpon>GroupPropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\LinePropertyesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\LinePropertyesForm.Designer.cs">
+      <DependentUpon>LinePropertyesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\ObjectOnLinePropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\ObjectOnLinePropertyForm.Designer.cs">
+      <DependentUpon>ObjectOnLinePropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\TransformerToolPropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrawTool\FormsObj\TransformerToolPropertyForm.Designer.cs">
+      <DependentUpon>TransformerToolPropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\FreeLabelTool.cs" />
+    <Compile Include="DrawTool\FuseTool.cs" />
+    <Compile Include="DrawTool\GroundingTool.cs" />
+    <Compile Include="DrawTool\GroupDrawObjectBase.cs" />
+    <Compile Include="DrawTool\LabelTool.cs" />
+    <Compile Include="DrawTool\LinearDisconnectorTool.cs" />
+    <Compile Include="DrawTool\LinearDisconnectorWaxworkTool.cs" />
+    <Compile Include="DrawTool\LineCellTool.cs" />
+    <Compile Include="DrawTool\LineTool.cs" />
+    <Compile Include="DrawTool\LineToolEventArgs.cs" />
+    <Compile Include="DrawTool\LineToolEventHandler.cs" />
+    <Compile Include="DrawTool\LineToolState.cs" />
+    <Compile Include="DrawTool\LineToolType.cs" />
+    <Compile Include="DrawTool\LoadSwitchTool.cs" />
+    <Compile Include="DrawTool\LoadSwitchWaxworkTool.cs" />
+    <Compile Include="DrawTool\LubricantSwitchTool.cs" />
+    <Compile Include="DrawTool\MagneticStarterTool.cs" />
+    <Compile Include="DrawTool\MeasurementLabelTool.cs" />
+    <Compile Include="DrawTool\NeedToPreserveEnum.cs" />
+    <Compile Include="DrawTool\NodeTool.cs" />
+    <Compile Include="DrawTool\NotPhasedTool.cs" />
+    <Compile Include="DrawTool\ObjectOnLine.cs" />
+    <Compile Include="DrawTool\OffTool.cs" />
+    <Compile Include="DrawTool\OutsideLineDisconnectorTool.cs" />
+    <Compile Include="DrawTool\PointShinaTool.cs" />
+    <Compile Include="DrawTool\PointTool.cs" />
+    <Compile Include="DrawTool\PointToolEventHandle.cs" />
+    <Compile Include="DrawTool\PointToolEvetsArgs.cs" />
+    <Compile Include="DrawTool\RectangleTool.cs" />
+    <Compile Include="DrawTool\ResizeRectangleEventsArgs.cs" />
+    <Compile Include="DrawTool\ResizeRectangleTool.cs" />
+    <Compile Include="DrawTool\ResponsibleAbonentTool.cs" />
+    <Compile Include="DrawTool\RPSTool.cs" />
+    <Compile Include="DrawTool\SeparatorTool.cs" />
+    <Compile Include="DrawTool\ShinaTool.cs" />
+    <Compile Include="DrawTool\SpecialLockingTool.cs" />
+    <Compile Include="DrawTool\SplitterShinaTool.cs" />
+    <Compile Include="DrawTool\States.cs" />
+    <Compile Include="DrawTool\TelemechanicsProtectionTool.cs" />
+    <Compile Include="DrawTool\TelemechanicsTool.cs" />
+    <Compile Include="DrawTool\TelemetryLabelTool.cs" />
+    <Compile Include="DrawTool\TelemetryValues.cs" />
+    <Compile Include="DrawTool\TextBranchTool.cs" />
+    <Compile Include="DrawTool\TextFont.cs" />
+    <Compile Include="DrawTool\TransformerPointTool.cs" />
+    <Compile Include="DrawTool\TransformerTool.cs" />
+    <Compile Include="DrawTool\TypePointTool.cs" />
+    <Compile Include="DrawTool\TypeSwitch.cs" />
+    <Compile Include="DrawTool\VacuumSwitchTool.cs" />
+    <Compile Include="DrawTool\VideoTool.cs" />
+    <Compile Include="DrawTool\VoltageLimiterTool.cs" />
+    <Compile Include="DrawTool\VoltageTransformerTool.cs" />
+    <Compile Include="ElectricModel\Calculations\Amperage.cs" />
+    <Compile Include="ElectricModel\Calculations\AmperageConductor.cs" />
+    <Compile Include="ElectricModel\Calculations\AmperageConductorEventArgs.cs" />
+    <Compile Include="ElectricModel\Calculations\AmperageConductorEventHandler.cs" />
+    <Compile Include="ElectricModel\Calculations\AmperageProperties.cs" />
+    <Compile Include="ElectricModel\Calculations\AmperageSwitch.cs" />
+    <Compile Include="ElectricModel\ElectricBus.cs" />
+    <Compile Include="ElectricModel\ElectricLine.cs" />
+    <Compile Include="ElectricModel\ElectricModel.cs" />
+    <Compile Include="ElectricModel\ElectricObject.cs" />
+    <Compile Include="ElectricModel\ElectricPoint.cs" />
+    <Compile Include="ElectricModel\ElectricRelation.cs" />
+    <Compile Include="ElectricModel\ElectricSubstation.cs" />
+    <Compile Include="ElectricModel\ElectricSwitch.cs" />
+    <Compile Include="Enum3.cs" />
+    <Compile Include="Ercloud\ErcloudConnect.cs" />
+    <Compile Include="Ercloud\FormSwitchLinkErcloud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ercloud\FormSwitchLinkErcloud.Designer.cs">
+      <DependentUpon>FormSwitchLinkErcloud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ercloud\FormSwitchShowDataErcloud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ercloud\FormSwitchShowDataErcloud.Designer.cs">
+      <DependentUpon>FormSwitchShowDataErcloud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IChatChannel.cs" />
+    <Compile Include="Interface0.cs" />
+    <Compile Include="ISchemeCallback.cs" />
+    <Compile Include="ISchemeService.cs" />
+    <Compile Include="Layers\BackgroundLayer.cs" />
+    <Compile Include="Layers\DrawingLayer.cs" />
+    <Compile Include="Layers\Forms\FormPatternSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\Forms\FormPatternSettings.Designer.cs">
+      <DependentUpon>FormPatternSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\GridLayer.cs" />
+    <Compile Include="Layers\ICanvasLayer.cs" />
+    <Compile Include="Layers\ObjectsLayerEventHandler.cs" />
+    <Compile Include="Layers\PatternTP.cs" />
+    <Compile Include="Layers\ShablonTP.cs" />
+    <Compile Include="PortableObjectsControl\PortableObjectsPanel.Designer.cs">
+      <DependentUpon>PortableObjectsPanel.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SchemeProxy.cs" />
+    <Compile Include="Scheme\Classes\ClientManager.cs" />
+    <Compile Include="Scheme\Classes\DOBMoveEventHandler.cs" />
+    <Compile Include="Scheme\Classes\info.cs" />
+    <Compile Include="Scheme\Classes\info2.cs" />
+    <Compile Include="SnapPoint\ISnapPoint.cs" />
+    <Compile Include="TreeViewSchmObjects\TreeViewSchmObjects.Designer.cs">
+      <DependentUpon>TreeViewSchmObjects.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="WCF\BranchServer.cs" />
+    <Compile Include="WCF\CallBackType.cs" />
+    <Compile Include="WCF\ChangingDrawObject.cs" />
+    <Compile Include="WCF\ClientState.cs" />
+    <Compile Include="WCF\DOBChangeEventHandler.cs" />
+    <Compile Include="WCF\DOBMoveEventHandler.cs" />
+    <Compile Include="WCF\eTypeTransferObject.cs" />
+    <Compile Include="WCF\ICallBack.cs" />
+    <Compile Include="WCF\ISchemeServer.cs" />
+    <Compile Include="WCF\ISchemeService.cs" />
+    <Compile Include="WCF\LineServer.cs" />
+    <Compile Include="WCF\LineStateOnChangeHandler.cs" />
+    <Compile Include="WCF\LineStateServer.cs" />
+    <Compile Include="WCF\ObjectBaseServer.cs" />
+    <Compile Include="WCF\ObjectOnLineOnChangeHandler.cs" />
+    <Compile Include="WCF\ObjectOnLineServer.cs" />
+    <Compile Include="WCF\PointServerTool.cs" />
+    <Compile Include="WCF\ProxyCallBackEventArgs.cs" />
+    <Compile Include="WCF\ProxyEventArgs.cs" />
+    <Compile Include="WCF\Proxy_Singleton.cs" />
+    <Compile Include="WCF\RectangleServer.cs" />
+    <Compile Include="WCF\RelationServer.cs" />
+    <Compile Include="WCF\SchemeEventArgs.cs" />
+    <Compile Include="WCF\SchemeEventType.cs" />
+    <Compile Include="WCF\SchemeService.cs" />
+    <Compile Include="WCF\ServerAgent.cs" />
+    <Compile Include="WCF\ShinaServer.cs" />
+    <Compile Include="Xml\PropertyUtil.cs" />
+    <Compile Include="Xml\XmlSerializable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Canvas\CanvasControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CanvasControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormAbnFromOldSchema.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormAbnFromOldSchema.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormCanvasAddDelFilter.resx">
+      <DependentUpon>FormCanvasAddDelFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormCanvasAddFilterName.resx">
+      <DependentUpon>FormCanvasAddFilterName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormCanvasFilterApply.resx">
+      <DependentUpon>FormCanvasFilterApply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormCanvasPrint.resx">
+      <DependentUpon>FormCanvasPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormCanvasRemoveTransformer.resx">
+      <DependentUpon>FormCanvasRemoveTransformer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormExportCanvasToImage.resx">
+      <DependentUpon>FormExportCanvasToImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormJRelayProtectionAutomationEditBySchmObj.resx">
+      <DependentUpon>FormJRelayProtectionAutomationEditBySchmObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormLinkLineCable.resx">
+      <DependentUpon>FormLinkLineCable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Forms\FormSchmObjFile.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormSchmObjFile.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\BranchPropertyesForm.resx">
+      <DependentUpon>BranchPropertyesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\FormCellProperties.resx">
+      <DependentUpon>FormCellProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\FormDamageToolProperty.resx">
+      <DependentUpon>FormDamageToolProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\FormLabelToolProperties.resx">
+      <DependentUpon>FormLabelToolProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\FormPointProperties.resx">
+      <DependentUpon>FormPointProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\FormRectangleProperties.resx">
+      <DependentUpon>FormRectangleProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\FormShinaProperties.resx">
+      <DependentUpon>FormShinaProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\FormTelemetryLabelPropertiy.resx">
+      <DependentUpon>FormTelemetryLabelPropertiy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\FormTextBranchProperties.resx">
+      <DependentUpon>FormTextBranchProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\GroupPropertyForm.resx">
+      <DependentUpon>GroupPropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\LinePropertyesForm.resx">
+      <DependentUpon>LinePropertyesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\ObjectOnLinePropertyForm.resx">
+      <DependentUpon>ObjectOnLinePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrawTool\FormsObj\TransformerToolPropertyForm.resx">
+      <DependentUpon>TransformerToolPropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ercloud\FormSwitchLinkErcloud.resx">
+      <DependentUpon>FormSwitchLinkErcloud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ercloud\FormSwitchShowDataErcloud.resx">
+      <DependentUpon>FormSwitchShowDataErcloud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\Forms\FormPatternSettings.resx">
+      <DependentUpon>FormPatternSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortableObjectsControl\PortableObjectsPanel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PortableObjectsPanel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchemeCtrl2.Resources.hmove.cur" />
+    <EmbeddedResource Include="SchemeCtrl2.Resources.mouse.png" />
+    <EmbeddedResource Include="TreeViewSchmObjects\TreeViewSchmObjects.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TreeViewSchmObjects.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

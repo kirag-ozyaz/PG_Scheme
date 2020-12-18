@@ -1,0 +1,529 @@
+﻿namespace SchemeCtrl2.DrawTool.FormsObj
+{
+	public partial class TransformerToolPropertyForm : global::System.Windows.Forms.Form
+	{
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && this.icontainer_0 != null)
+			{
+				this.icontainer_0.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		private void InitializeComponent()
+		{
+			this.icontainer_0 = new global::System.ComponentModel.Container();
+			this.tabControl1 = new global::System.Windows.Forms.TabControl();
+			this.tabPage1 = new global::System.Windows.Forms.TabPage();
+			this.panel1 = new global::System.Windows.Forms.Panel();
+			this.radioButtonLT = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonR = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonB = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonT = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonRB = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonLB = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonRT = new global::System.Windows.Forms.RadioButton();
+			this.aCgDyblRoR = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonNotVisible = new global::System.Windows.Forms.RadioButton();
+			this.oldTransComboBox = new global::System.Windows.Forms.ComboBox();
+			this.bindingSource_0 = new global::System.Windows.Forms.BindingSource(this.icontainer_0);
+			this.class22_0 = new global::DataSetScheme();
+			this.oldTransRadioButton = new global::System.Windows.Forms.RadioButton();
+			this.newTransRadioButton = new global::System.Windows.Forms.RadioButton();
+			this.newTransNameTextBox = new global::System.Windows.Forms.TextBox();
+			this.tabPage2 = new global::System.Windows.Forms.TabPage();
+			this.panel3 = new global::System.Windows.Forms.Panel();
+			this.checkBoxKey = new global::System.Windows.Forms.CheckBox();
+			this.groupBoxKey = new global::System.Windows.Forms.GroupBox();
+			this.radioButtonKeyRB = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonKeyRT = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonKeyLB = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonKeyLT = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonKeyR = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonKeyB = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonKeyT = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonKeyL = new global::System.Windows.Forms.RadioButton();
+			this.panel2 = new global::System.Windows.Forms.Panel();
+			this.checkBoxDamage = new global::System.Windows.Forms.CheckBox();
+			this.groupBoxDamage = new global::System.Windows.Forms.GroupBox();
+			this.radioButtonDamageRB = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonDamageRT = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonDamageLB = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonDamageLT = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonDamageR = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonDamageB = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonDamageT = new global::System.Windows.Forms.RadioButton();
+			this.radioButtonDamageL = new global::System.Windows.Forms.RadioButton();
+			this.buttonCancel = new global::System.Windows.Forms.Button();
+			this.utoDncCyn1 = new global::System.Windows.Forms.Button();
+			this.tabControl1.SuspendLayout();
+			this.tabPage1.SuspendLayout();
+			this.panel1.SuspendLayout();
+			((global::System.ComponentModel.ISupportInitialize)this.bindingSource_0).BeginInit();
+			((global::System.ComponentModel.ISupportInitialize)this.class22_0).BeginInit();
+			this.tabPage2.SuspendLayout();
+			this.panel3.SuspendLayout();
+			this.groupBoxKey.SuspendLayout();
+			this.panel2.SuspendLayout();
+			this.groupBoxDamage.SuspendLayout();
+			base.SuspendLayout();
+			this.tabControl1.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Bottom | global::System.Windows.Forms.AnchorStyles.Left | global::System.Windows.Forms.AnchorStyles.Right);
+			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Location = new global::System.Drawing.Point(12, 12);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new global::System.Drawing.Size(310, 143);
+			this.tabControl1.TabIndex = 0;
+			this.tabPage1.Controls.Add(this.panel1);
+			this.tabPage1.Controls.Add(this.oldTransComboBox);
+			this.tabPage1.Controls.Add(this.oldTransRadioButton);
+			this.tabPage1.Controls.Add(this.newTransRadioButton);
+			this.tabPage1.Controls.Add(this.newTransNameTextBox);
+			this.tabPage1.Location = new global::System.Drawing.Point(4, 22);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Padding = new global::System.Windows.Forms.Padding(3);
+			this.tabPage1.Size = new global::System.Drawing.Size(302, 117);
+			this.tabPage1.TabIndex = 0;
+			this.tabPage1.Text = "Общие";
+			this.tabPage1.UseVisualStyleBackColor = true;
+			this.panel1.Controls.Add(this.radioButtonLT);
+			this.panel1.Controls.Add(this.radioButtonR);
+			this.panel1.Controls.Add(this.radioButtonB);
+			this.panel1.Controls.Add(this.radioButtonT);
+			this.panel1.Controls.Add(this.radioButtonRB);
+			this.panel1.Controls.Add(this.radioButtonLB);
+			this.panel1.Controls.Add(this.radioButtonRT);
+			this.panel1.Controls.Add(this.aCgDyblRoR);
+			this.panel1.Controls.Add(this.radioButtonNotVisible);
+			this.panel1.Location = new global::System.Drawing.Point(171, 6);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new global::System.Drawing.Size(126, 97);
+			this.panel1.TabIndex = 22;
+			this.radioButtonLT.AutoSize = true;
+			this.radioButtonLT.Location = new global::System.Drawing.Point(3, 3);
+			this.radioButtonLT.Name = "radioButtonLT";
+			this.radioButtonLT.Size = new global::System.Drawing.Size(38, 17);
+			this.radioButtonLT.TabIndex = 16;
+			this.radioButtonLT.TabStop = true;
+			this.radioButtonLT.Text = "LT";
+			this.radioButtonLT.UseVisualStyleBackColor = true;
+			this.radioButtonR.AutoSize = true;
+			this.radioButtonR.Location = new global::System.Drawing.Point(85, 26);
+			this.radioButtonR.Name = "radioButtonR";
+			this.radioButtonR.Size = new global::System.Drawing.Size(33, 17);
+			this.radioButtonR.TabIndex = 13;
+			this.radioButtonR.TabStop = true;
+			this.radioButtonR.Text = "R";
+			this.radioButtonR.UseVisualStyleBackColor = true;
+			this.radioButtonB.AutoSize = true;
+			this.radioButtonB.Location = new global::System.Drawing.Point(47, 49);
+			this.radioButtonB.Name = "radioButtonB";
+			this.radioButtonB.Size = new global::System.Drawing.Size(32, 17);
+			this.radioButtonB.TabIndex = 15;
+			this.radioButtonB.TabStop = true;
+			this.radioButtonB.Text = "B";
+			this.radioButtonB.UseVisualStyleBackColor = true;
+			this.radioButtonT.AutoSize = true;
+			this.radioButtonT.Location = new global::System.Drawing.Point(47, 3);
+			this.radioButtonT.Name = "radioButtonT";
+			this.radioButtonT.Size = new global::System.Drawing.Size(32, 17);
+			this.radioButtonT.TabIndex = 14;
+			this.radioButtonT.TabStop = true;
+			this.radioButtonT.Text = "T";
+			this.radioButtonT.UseVisualStyleBackColor = true;
+			this.radioButtonRB.AutoSize = true;
+			this.radioButtonRB.Location = new global::System.Drawing.Point(85, 49);
+			this.radioButtonRB.Name = "radioButtonRB";
+			this.radioButtonRB.Size = new global::System.Drawing.Size(40, 17);
+			this.radioButtonRB.TabIndex = 19;
+			this.radioButtonRB.TabStop = true;
+			this.radioButtonRB.Text = "RB";
+			this.radioButtonRB.UseVisualStyleBackColor = true;
+			this.radioButtonLB.AutoSize = true;
+			this.radioButtonLB.Location = new global::System.Drawing.Point(3, 49);
+			this.radioButtonLB.Name = "radioButtonLB";
+			this.radioButtonLB.Size = new global::System.Drawing.Size(38, 17);
+			this.radioButtonLB.TabIndex = 17;
+			this.radioButtonLB.TabStop = true;
+			this.radioButtonLB.Text = "LB";
+			this.radioButtonLB.UseVisualStyleBackColor = true;
+			this.radioButtonRT.AutoSize = true;
+			this.radioButtonRT.Location = new global::System.Drawing.Point(85, 3);
+			this.radioButtonRT.Name = "radioButtonRT";
+			this.radioButtonRT.Size = new global::System.Drawing.Size(40, 17);
+			this.radioButtonRT.TabIndex = 18;
+			this.radioButtonRT.TabStop = true;
+			this.radioButtonRT.Text = "RT";
+			this.radioButtonRT.UseVisualStyleBackColor = true;
+			this.aCgDyblRoR.AutoSize = true;
+			this.aCgDyblRoR.Location = new global::System.Drawing.Point(3, 26);
+			this.aCgDyblRoR.Name = "radioButtonL";
+			this.aCgDyblRoR.Size = new global::System.Drawing.Size(31, 17);
+			this.aCgDyblRoR.TabIndex = 12;
+			this.aCgDyblRoR.TabStop = true;
+			this.aCgDyblRoR.Text = "L";
+			this.aCgDyblRoR.UseVisualStyleBackColor = true;
+			this.radioButtonNotVisible.AutoSize = true;
+			this.radioButtonNotVisible.Location = new global::System.Drawing.Point(18, 72);
+			this.radioButtonNotVisible.Name = "radioButtonNotVisible";
+			this.radioButtonNotVisible.Size = new global::System.Drawing.Size(100, 17);
+			this.radioButtonNotVisible.TabIndex = 11;
+			this.radioButtonNotVisible.TabStop = true;
+			this.radioButtonNotVisible.Text = "не отображать";
+			this.radioButtonNotVisible.UseVisualStyleBackColor = true;
+			this.oldTransComboBox.DataSource = this.bindingSource_0;
+			this.oldTransComboBox.DisplayMember = "Name";
+			this.oldTransComboBox.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.oldTransComboBox.FormattingEnabled = true;
+			this.oldTransComboBox.Location = new global::System.Drawing.Point(6, 78);
+			this.oldTransComboBox.Name = "oldTransComboBox";
+			this.oldTransComboBox.Size = new global::System.Drawing.Size(159, 21);
+			this.oldTransComboBox.TabIndex = 21;
+			this.oldTransComboBox.ValueMember = "Id";
+			this.bindingSource_0.DataMember = "tSchm_ObjList";
+			this.bindingSource_0.DataSource = this.class22_0;
+			this.class22_0.DataSetName = "DataSetScheme";
+			this.class22_0.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+			this.oldTransRadioButton.AutoSize = true;
+			this.oldTransRadioButton.Location = new global::System.Drawing.Point(6, 55);
+			this.oldTransRadioButton.Name = "oldTransRadioButton";
+			this.oldTransRadioButton.Size = new global::System.Drawing.Size(151, 17);
+			this.oldTransRadioButton.TabIndex = 20;
+			this.oldTransRadioButton.TabStop = true;
+			this.oldTransRadioButton.Text = "Трансформатор из базы";
+			this.oldTransRadioButton.UseVisualStyleBackColor = true;
+			this.oldTransRadioButton.CheckedChanged += new global::System.EventHandler(this.mdMyceIfu3);
+			this.newTransRadioButton.AutoSize = true;
+			this.newTransRadioButton.Location = new global::System.Drawing.Point(6, 6);
+			this.newTransRadioButton.Name = "newTransRadioButton";
+			this.newTransRadioButton.Size = new global::System.Drawing.Size(142, 17);
+			this.newTransRadioButton.TabIndex = 20;
+			this.newTransRadioButton.TabStop = true;
+			this.newTransRadioButton.Text = "Новый трансформатор";
+			this.newTransRadioButton.UseVisualStyleBackColor = true;
+			this.newTransRadioButton.CheckedChanged += new global::System.EventHandler(this.newTransRadioButton_CheckedChanged);
+			this.newTransNameTextBox.Location = new global::System.Drawing.Point(6, 29);
+			this.newTransNameTextBox.Name = "newTransNameTextBox";
+			this.newTransNameTextBox.Size = new global::System.Drawing.Size(159, 20);
+			this.newTransNameTextBox.TabIndex = 6;
+			this.tabPage2.Controls.Add(this.panel3);
+			this.tabPage2.Controls.Add(this.panel2);
+			this.tabPage2.Location = new global::System.Drawing.Point(4, 22);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Padding = new global::System.Windows.Forms.Padding(3);
+			this.tabPage2.Size = new global::System.Drawing.Size(302, 117);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "Статусы";
+			this.tabPage2.UseVisualStyleBackColor = true;
+			this.panel3.Controls.Add(this.checkBoxKey);
+			this.panel3.Controls.Add(this.groupBoxKey);
+			this.panel3.Location = new global::System.Drawing.Point(158, 3);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new global::System.Drawing.Size(136, 118);
+			this.panel3.TabIndex = 20;
+			this.checkBoxKey.AutoSize = true;
+			this.checkBoxKey.Location = new global::System.Drawing.Point(2, 3);
+			this.checkBoxKey.Name = "checkBoxKey";
+			this.checkBoxKey.Size = new global::System.Drawing.Size(89, 17);
+			this.checkBoxKey.TabIndex = 6;
+			this.checkBoxKey.Text = "Спец. замок";
+			this.checkBoxKey.UseVisualStyleBackColor = true;
+			this.checkBoxKey.CheckedChanged += new global::System.EventHandler(this.checkBoxKey_CheckedChanged);
+			this.groupBoxKey.Controls.Add(this.radioButtonKeyRB);
+			this.groupBoxKey.Controls.Add(this.radioButtonKeyRT);
+			this.groupBoxKey.Controls.Add(this.radioButtonKeyLB);
+			this.groupBoxKey.Controls.Add(this.radioButtonKeyLT);
+			this.groupBoxKey.Controls.Add(this.radioButtonKeyR);
+			this.groupBoxKey.Controls.Add(this.radioButtonKeyB);
+			this.groupBoxKey.Controls.Add(this.radioButtonKeyT);
+			this.groupBoxKey.Controls.Add(this.radioButtonKeyL);
+			this.groupBoxKey.Enabled = false;
+			this.groupBoxKey.Location = new global::System.Drawing.Point(3, 26);
+			this.groupBoxKey.Name = "groupBoxKey";
+			this.groupBoxKey.Size = new global::System.Drawing.Size(131, 85);
+			this.groupBoxKey.TabIndex = 7;
+			this.groupBoxKey.TabStop = false;
+			this.radioButtonKeyRB.AutoSize = true;
+			this.radioButtonKeyRB.Location = new global::System.Drawing.Point(86, 57);
+			this.radioButtonKeyRB.Name = "radioButtonKeyRB";
+			this.radioButtonKeyRB.Size = new global::System.Drawing.Size(40, 17);
+			this.radioButtonKeyRB.TabIndex = 27;
+			this.radioButtonKeyRB.Text = "RB";
+			this.radioButtonKeyRB.UseVisualStyleBackColor = true;
+			this.radioButtonKeyRT.AutoSize = true;
+			this.radioButtonKeyRT.Location = new global::System.Drawing.Point(86, 11);
+			this.radioButtonKeyRT.Name = "radioButtonKeyRT";
+			this.radioButtonKeyRT.Size = new global::System.Drawing.Size(40, 17);
+			this.radioButtonKeyRT.TabIndex = 26;
+			this.radioButtonKeyRT.Text = "RT";
+			this.radioButtonKeyRT.UseVisualStyleBackColor = true;
+			this.radioButtonKeyLB.AutoSize = true;
+			this.radioButtonKeyLB.Location = new global::System.Drawing.Point(4, 57);
+			this.radioButtonKeyLB.Name = "radioButtonKeyLB";
+			this.radioButtonKeyLB.Size = new global::System.Drawing.Size(38, 17);
+			this.radioButtonKeyLB.TabIndex = 25;
+			this.radioButtonKeyLB.Text = "LB";
+			this.radioButtonKeyLB.UseVisualStyleBackColor = true;
+			this.radioButtonKeyLT.AutoSize = true;
+			this.radioButtonKeyLT.Location = new global::System.Drawing.Point(4, 11);
+			this.radioButtonKeyLT.Name = "radioButtonKeyLT";
+			this.radioButtonKeyLT.Size = new global::System.Drawing.Size(38, 17);
+			this.radioButtonKeyLT.TabIndex = 24;
+			this.radioButtonKeyLT.Text = "LT";
+			this.radioButtonKeyLT.UseVisualStyleBackColor = true;
+			this.radioButtonKeyR.AutoSize = true;
+			this.radioButtonKeyR.Location = new global::System.Drawing.Point(86, 34);
+			this.radioButtonKeyR.Name = "radioButtonKeyR";
+			this.radioButtonKeyR.Size = new global::System.Drawing.Size(33, 17);
+			this.radioButtonKeyR.TabIndex = 21;
+			this.radioButtonKeyR.Text = "R";
+			this.radioButtonKeyR.UseVisualStyleBackColor = true;
+			this.radioButtonKeyB.AutoSize = true;
+			this.radioButtonKeyB.Location = new global::System.Drawing.Point(48, 57);
+			this.radioButtonKeyB.Name = "radioButtonKeyB";
+			this.radioButtonKeyB.Size = new global::System.Drawing.Size(32, 17);
+			this.radioButtonKeyB.TabIndex = 23;
+			this.radioButtonKeyB.Text = "B";
+			this.radioButtonKeyB.UseVisualStyleBackColor = true;
+			this.radioButtonKeyT.AutoSize = true;
+			this.radioButtonKeyT.Checked = true;
+			this.radioButtonKeyT.Location = new global::System.Drawing.Point(48, 11);
+			this.radioButtonKeyT.Name = "radioButtonKeyT";
+			this.radioButtonKeyT.Size = new global::System.Drawing.Size(32, 17);
+			this.radioButtonKeyT.TabIndex = 22;
+			this.radioButtonKeyT.TabStop = true;
+			this.radioButtonKeyT.Text = "T";
+			this.radioButtonKeyT.UseVisualStyleBackColor = true;
+			this.radioButtonKeyL.AutoSize = true;
+			this.radioButtonKeyL.Location = new global::System.Drawing.Point(4, 34);
+			this.radioButtonKeyL.Name = "radioButtonKeyL";
+			this.radioButtonKeyL.Size = new global::System.Drawing.Size(31, 17);
+			this.radioButtonKeyL.TabIndex = 20;
+			this.radioButtonKeyL.Text = "L";
+			this.radioButtonKeyL.UseVisualStyleBackColor = true;
+			this.panel2.Controls.Add(this.checkBoxDamage);
+			this.panel2.Controls.Add(this.groupBoxDamage);
+			this.panel2.Location = new global::System.Drawing.Point(8, 3);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new global::System.Drawing.Size(136, 118);
+			this.panel2.TabIndex = 19;
+			this.checkBoxDamage.AutoSize = true;
+			this.checkBoxDamage.Location = new global::System.Drawing.Point(3, 3);
+			this.checkBoxDamage.Name = "checkBoxDamage";
+			this.checkBoxDamage.Size = new global::System.Drawing.Size(84, 17);
+			this.checkBoxDamage.TabIndex = 6;
+			this.checkBoxDamage.Text = "Поврежден";
+			this.checkBoxDamage.UseVisualStyleBackColor = true;
+			this.checkBoxDamage.CheckedChanged += new global::System.EventHandler(this.checkBoxDamage_CheckedChanged);
+			this.groupBoxDamage.Controls.Add(this.radioButtonDamageRB);
+			this.groupBoxDamage.Controls.Add(this.radioButtonDamageRT);
+			this.groupBoxDamage.Controls.Add(this.radioButtonDamageLB);
+			this.groupBoxDamage.Controls.Add(this.radioButtonDamageLT);
+			this.groupBoxDamage.Controls.Add(this.radioButtonDamageR);
+			this.groupBoxDamage.Controls.Add(this.radioButtonDamageB);
+			this.groupBoxDamage.Controls.Add(this.radioButtonDamageT);
+			this.groupBoxDamage.Controls.Add(this.radioButtonDamageL);
+			this.groupBoxDamage.Enabled = false;
+			this.groupBoxDamage.Location = new global::System.Drawing.Point(3, 26);
+			this.groupBoxDamage.Name = "groupBoxDamage";
+			this.groupBoxDamage.Size = new global::System.Drawing.Size(131, 85);
+			this.groupBoxDamage.TabIndex = 7;
+			this.groupBoxDamage.TabStop = false;
+			this.radioButtonDamageRB.AutoSize = true;
+			this.radioButtonDamageRB.Location = new global::System.Drawing.Point(86, 57);
+			this.radioButtonDamageRB.Name = "radioButtonDamageRB";
+			this.radioButtonDamageRB.Size = new global::System.Drawing.Size(40, 17);
+			this.radioButtonDamageRB.TabIndex = 27;
+			this.radioButtonDamageRB.Text = "RB";
+			this.radioButtonDamageRB.UseVisualStyleBackColor = true;
+			this.radioButtonDamageRT.AutoSize = true;
+			this.radioButtonDamageRT.Location = new global::System.Drawing.Point(86, 11);
+			this.radioButtonDamageRT.Name = "radioButtonDamageRT";
+			this.radioButtonDamageRT.Size = new global::System.Drawing.Size(40, 17);
+			this.radioButtonDamageRT.TabIndex = 26;
+			this.radioButtonDamageRT.Text = "RT";
+			this.radioButtonDamageRT.UseVisualStyleBackColor = true;
+			this.radioButtonDamageLB.AutoSize = true;
+			this.radioButtonDamageLB.Location = new global::System.Drawing.Point(4, 57);
+			this.radioButtonDamageLB.Name = "radioButtonDamageLB";
+			this.radioButtonDamageLB.Size = new global::System.Drawing.Size(38, 17);
+			this.radioButtonDamageLB.TabIndex = 25;
+			this.radioButtonDamageLB.Text = "LB";
+			this.radioButtonDamageLB.UseVisualStyleBackColor = true;
+			this.radioButtonDamageLT.AutoSize = true;
+			this.radioButtonDamageLT.Location = new global::System.Drawing.Point(4, 11);
+			this.radioButtonDamageLT.Name = "radioButtonDamageLT";
+			this.radioButtonDamageLT.Size = new global::System.Drawing.Size(38, 17);
+			this.radioButtonDamageLT.TabIndex = 24;
+			this.radioButtonDamageLT.Text = "LT";
+			this.radioButtonDamageLT.UseVisualStyleBackColor = true;
+			this.radioButtonDamageR.AutoSize = true;
+			this.radioButtonDamageR.Location = new global::System.Drawing.Point(86, 34);
+			this.radioButtonDamageR.Name = "radioButtonDamageR";
+			this.radioButtonDamageR.Size = new global::System.Drawing.Size(33, 17);
+			this.radioButtonDamageR.TabIndex = 21;
+			this.radioButtonDamageR.Text = "R";
+			this.radioButtonDamageR.UseVisualStyleBackColor = true;
+			this.radioButtonDamageB.AutoSize = true;
+			this.radioButtonDamageB.Location = new global::System.Drawing.Point(48, 57);
+			this.radioButtonDamageB.Name = "radioButtonDamageB";
+			this.radioButtonDamageB.Size = new global::System.Drawing.Size(32, 17);
+			this.radioButtonDamageB.TabIndex = 23;
+			this.radioButtonDamageB.Text = "B";
+			this.radioButtonDamageB.UseVisualStyleBackColor = true;
+			this.radioButtonDamageT.AutoSize = true;
+			this.radioButtonDamageT.Checked = true;
+			this.radioButtonDamageT.Location = new global::System.Drawing.Point(48, 11);
+			this.radioButtonDamageT.Name = "radioButtonDamageT";
+			this.radioButtonDamageT.Size = new global::System.Drawing.Size(32, 17);
+			this.radioButtonDamageT.TabIndex = 22;
+			this.radioButtonDamageT.TabStop = true;
+			this.radioButtonDamageT.Text = "T";
+			this.radioButtonDamageT.UseVisualStyleBackColor = true;
+			this.radioButtonDamageL.AutoSize = true;
+			this.radioButtonDamageL.Location = new global::System.Drawing.Point(4, 34);
+			this.radioButtonDamageL.Name = "radioButtonDamageL";
+			this.radioButtonDamageL.Size = new global::System.Drawing.Size(31, 17);
+			this.radioButtonDamageL.TabIndex = 20;
+			this.radioButtonDamageL.Text = "L";
+			this.radioButtonDamageL.UseVisualStyleBackColor = true;
+			this.buttonCancel.Anchor = (global::System.Windows.Forms.AnchorStyles.Bottom | global::System.Windows.Forms.AnchorStyles.Right);
+			this.buttonCancel.DialogResult = global::System.Windows.Forms.DialogResult.Cancel;
+			this.buttonCancel.Location = new global::System.Drawing.Point(247, 161);
+			this.buttonCancel.Name = "buttonCancel";
+			this.buttonCancel.Size = new global::System.Drawing.Size(75, 23);
+			this.buttonCancel.TabIndex = 1;
+			this.buttonCancel.Text = "Отмена";
+			this.buttonCancel.UseVisualStyleBackColor = true;
+			this.utoDncCyn1.Anchor = (global::System.Windows.Forms.AnchorStyles.Bottom | global::System.Windows.Forms.AnchorStyles.Left);
+			this.utoDncCyn1.DialogResult = global::System.Windows.Forms.DialogResult.OK;
+			this.utoDncCyn1.Location = new global::System.Drawing.Point(12, 161);
+			this.utoDncCyn1.Name = "buttonOK";
+			this.utoDncCyn1.Size = new global::System.Drawing.Size(75, 23);
+			this.utoDncCyn1.TabIndex = 1;
+			this.utoDncCyn1.Text = "OK";
+			this.utoDncCyn1.UseVisualStyleBackColor = true;
+			base.AcceptButton = this.utoDncCyn1;
+			base.AutoScaleDimensions = new global::System.Drawing.SizeF(6f, 13f);
+			base.AutoScaleMode = global::System.Windows.Forms.AutoScaleMode.Font;
+			base.CancelButton = this.buttonCancel;
+			base.ClientSize = new global::System.Drawing.Size(334, 196);
+			base.Controls.Add(this.utoDncCyn1);
+			base.Controls.Add(this.buttonCancel);
+			base.Controls.Add(this.tabControl1);
+			base.FormBorderStyle = global::System.Windows.Forms.FormBorderStyle.FixedDialog;
+			base.MaximizeBox = false;
+			base.MinimizeBox = false;
+			base.Name = "TransformerToolPropertyForm";
+			this.Text = "Свойства трансформатора";
+			base.FormClosing += new global::System.Windows.Forms.FormClosingEventHandler(this.TransformerToolPropertyForm_FormClosing);
+			this.tabControl1.ResumeLayout(false);
+			this.tabPage1.ResumeLayout(false);
+			this.tabPage1.PerformLayout();
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
+			((global::System.ComponentModel.ISupportInitialize)this.bindingSource_0).EndInit();
+			((global::System.ComponentModel.ISupportInitialize)this.class22_0).EndInit();
+			this.tabPage2.ResumeLayout(false);
+			this.panel3.ResumeLayout(false);
+			this.panel3.PerformLayout();
+			this.groupBoxKey.ResumeLayout(false);
+			this.groupBoxKey.PerformLayout();
+			this.panel2.ResumeLayout(false);
+			this.panel2.PerformLayout();
+			this.groupBoxDamage.ResumeLayout(false);
+			this.groupBoxDamage.PerformLayout();
+			base.ResumeLayout(false);
+		}
+
+		private global::System.ComponentModel.IContainer icontainer_0;
+
+		private global::System.Windows.Forms.TabControl tabControl1;
+
+		private global::System.Windows.Forms.TabPage tabPage1;
+
+		private global::System.Windows.Forms.TabPage tabPage2;
+
+		private global::System.Windows.Forms.Button buttonCancel;
+
+		private global::System.Windows.Forms.Button utoDncCyn1;
+
+		private global::System.Windows.Forms.RadioButton radioButtonRB;
+
+		private global::System.Windows.Forms.RadioButton radioButtonRT;
+
+		private global::System.Windows.Forms.RadioButton radioButtonNotVisible;
+
+		private global::System.Windows.Forms.RadioButton radioButtonLB;
+
+		private global::System.Windows.Forms.RadioButton radioButtonLT;
+
+		private global::System.Windows.Forms.RadioButton radioButtonR;
+
+		private global::System.Windows.Forms.RadioButton radioButtonB;
+
+		private global::System.Windows.Forms.RadioButton radioButtonT;
+
+		private global::System.Windows.Forms.RadioButton aCgDyblRoR;
+
+		private global::System.Windows.Forms.TextBox newTransNameTextBox;
+
+		private global::System.Windows.Forms.RadioButton newTransRadioButton;
+
+		private global::System.Windows.Forms.ComboBox oldTransComboBox;
+
+		private global::System.Windows.Forms.BindingSource bindingSource_0;
+
+		private global::DataSetScheme class22_0;
+
+		private global::System.Windows.Forms.RadioButton oldTransRadioButton;
+
+		private global::System.Windows.Forms.Panel panel1;
+
+		private global::System.Windows.Forms.Panel panel3;
+
+		private global::System.Windows.Forms.CheckBox checkBoxKey;
+
+		private global::System.Windows.Forms.GroupBox groupBoxKey;
+
+		private global::System.Windows.Forms.RadioButton radioButtonKeyRB;
+
+		private global::System.Windows.Forms.RadioButton radioButtonKeyRT;
+
+		private global::System.Windows.Forms.RadioButton radioButtonKeyLB;
+
+		private global::System.Windows.Forms.RadioButton radioButtonKeyLT;
+
+		private global::System.Windows.Forms.RadioButton radioButtonKeyR;
+
+		private global::System.Windows.Forms.RadioButton radioButtonKeyB;
+
+		private global::System.Windows.Forms.RadioButton radioButtonKeyT;
+
+		private global::System.Windows.Forms.RadioButton radioButtonKeyL;
+
+		private global::System.Windows.Forms.Panel panel2;
+
+		private global::System.Windows.Forms.CheckBox checkBoxDamage;
+
+		private global::System.Windows.Forms.GroupBox groupBoxDamage;
+
+		private global::System.Windows.Forms.RadioButton radioButtonDamageRB;
+
+		private global::System.Windows.Forms.RadioButton radioButtonDamageRT;
+
+		private global::System.Windows.Forms.RadioButton radioButtonDamageLB;
+
+		private global::System.Windows.Forms.RadioButton radioButtonDamageLT;
+
+		private global::System.Windows.Forms.RadioButton radioButtonDamageR;
+
+		private global::System.Windows.Forms.RadioButton radioButtonDamageB;
+
+		private global::System.Windows.Forms.RadioButton radioButtonDamageT;
+
+		private global::System.Windows.Forms.RadioButton radioButtonDamageL;
+	}
+}

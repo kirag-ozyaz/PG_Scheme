@@ -1,0 +1,51 @@
+﻿using System;
+
+namespace OfficeLB.Word
+{
+	public enum WdTableFormat
+	{
+		wdTableFormat3DEffects1 = 32,
+		wdTableFormat3DEffects2,
+		wdTableFormat3DEffects3,
+		wdTableFormatClassic1 = 4,
+		wdTableFormatClassic2,
+		wdTableFormatClassic3,
+		wdTableFormatClassic4,
+		wdTableFormatColorful1,
+		wdTableFormatColorful2,
+		wdTableFormatColorful3,
+		wdTableFormatColumns1,
+		wdTableFormatColumns2,
+		wdTableFormatColumns3,
+		wdTableFormatColumns4,
+		wdTableFormatColumns5,
+		wdTableFormatContemporary = 35,
+		wdTableFormatElegant,
+		wdTableFormatGrid1 = 16,
+		wdTableFormatGrid2,
+		wdTableFormatGrid3,
+		wdTableFormatGrid4,
+		wdTableFormatGrid5,
+		wdTableFormatGrid6,
+		wdTableFormatGrid7,
+		wdTableFormatGrid8,
+		wdTableFormatList1,
+		wdTableFormatList2,
+		wdTableFormatList3,
+		wdTableFormatList4,
+		wdTableFormatList5,
+		wdTableFormatList6,
+		wdTableFormatList7,
+		wdTableFormatList8,
+		wdTableFormatNone = 0,
+		wdTableFormatProfessional = 37,
+		wdTableFormatSimple1 = 1,
+		wdTableFormatSimple2,
+		wdTableFormatSimple3,
+		wdTableFormatSubtle1 = 38,
+		wdTableFormatSubtle2,
+		wdTableFormatWeb1,
+		wdTableFormatWeb2,
+		wdTableFormatWeb3
+	}
+}

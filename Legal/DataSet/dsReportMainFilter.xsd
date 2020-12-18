@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportMainFilter" targetNamespace="http://tempuri.org/dsReportMainFilter.xsd" xmlns:mstns="http://tempuri.org/dsReportMainFilter.xsd" xmlns="http://tempuri.org/dsReportMainFilter.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="NotPublic" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GESConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Legal.Properties.Settings.GlobalReference.Default.GESConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportMainFilter" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportMainFilter" msprop:Generator_UserDSName="dsReportMainFilter">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tG_FilterGroupConsumer" msprop:Generator_TableClassName="tG_FilterGroupConsumerDataTable" msprop:Generator_TableVarName="tabletG_FilterGroupConsumer" msprop:Generator_RowChangedName="tG_FilterGroupConsumerRowChanged" msprop:Generator_TablePropName="tG_FilterGroupConsumer" msprop:Generator_RowDeletingName="tG_FilterGroupConsumerRowDeleting" msprop:Generator_RowChangingName="tG_FilterGroupConsumerRowChanging" msprop:Generator_RowEvHandlerName="tG_FilterGroupConsumerRowChangeEventHandler" msprop:Generator_RowDeletedName="tG_FilterGroupConsumerRowDeleted" msprop:Generator_RowClassName="tG_FilterGroupConsumerRow" msprop:Generator_UserTableName="tG_FilterGroupConsumer" msprop:Generator_RowEvArgName="tG_FilterGroupConsumerRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idFilter" msprop:Generator_ColumnVarNameInTable="columnidFilter" msprop:Generator_ColumnPropNameInRow="idFilter" msprop:Generator_ColumnPropNameInTable="idFilterColumn" msprop:Generator_UserColumnName="idFilter" type="xs:int" minOccurs="0" />
+              <xs:element name="idConsumer" msprop:Generator_ColumnVarNameInTable="columnidConsumer" msprop:Generator_ColumnPropNameInRow="idConsumer" msprop:Generator_ColumnPropNameInTable="idConsumerColumn" msprop:Generator_UserColumnName="idConsumer" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tG_NameFilter" msprop:Generator_TableClassName="tG_NameFilterDataTable" msprop:Generator_TableVarName="tabletG_NameFilter" msprop:Generator_RowChangedName="tG_NameFilterRowChanged" msprop:Generator_TablePropName="tG_NameFilter" msprop:Generator_RowDeletingName="tG_NameFilterRowDeleting" msprop:Generator_RowChangingName="tG_NameFilterRowChanging" msprop:Generator_RowEvHandlerName="tG_NameFilterRowChangeEventHandler" msprop:Generator_RowDeletedName="tG_NameFilterRowDeleted" msprop:Generator_RowClassName="tG_NameFilterRow" msprop:Generator_UserTableName="tG_NameFilter" msprop:Generator_RowEvArgName="tG_NameFilterRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="NameFilter" msprop:Generator_ColumnVarNameInTable="columnNameFilter" msprop:Generator_ColumnPropNameInRow="NameFilter" msprop:Generator_ColumnPropNameInTable="NameFilterColumn" msprop:Generator_UserColumnName="NameFilter" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypeFilter" msprop:Generator_ColumnVarNameInTable="columnTypeFilter" msprop:Generator_ColumnPropNameInRow="TypeFilter" msprop:Generator_ColumnPropNameInTable="TypeFilterColumn" msprop:Generator_UserColumnName="TypeFilter" type="xs:int" />
+              <xs:element name="Deleted" msprop:Generator_ColumnVarNameInTable="columnDeleted" msprop:Generator_ColumnPropNameInRow="Deleted" msprop:Generator_ColumnPropNameInTable="DeletedColumn" msprop:Generator_UserColumnName="Deleted" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tFilter" msprop:Generator_TableClassName="tFilterDataTable" msprop:Generator_TableVarName="tabletFilter" msprop:Generator_RowChangedName="tFilterRowChanged" msprop:Generator_TablePropName="tFilter" msprop:Generator_RowDeletingName="tFilterRowDeleting" msprop:Generator_RowChangingName="tFilterRowChanging" msprop:Generator_RowEvHandlerName="tFilterRowChangeEventHandler" msprop:Generator_RowDeletedName="tFilterRowDeleted" msprop:Generator_RowClassName="tFilterRow" msprop:Generator_UserTableName="tFilter" msprop:Generator_RowEvArgName="tFilterRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idClass" msprop:Generator_ColumnVarNameInTable="columnidClass" msprop:Generator_ColumnPropNameInRow="idClass" msprop:Generator_ColumnPropNameInTable="idClassColumn" msprop:Generator_UserColumnName="idClass" type="xs:int" minOccurs="0" />
+              <xs:element name="NameGroup" msprop:Generator_ColumnVarNameInTable="columnNameGroup" msprop:Generator_ColumnPropNameInRow="NameGroup" msprop:Generator_ColumnPropNameInTable="NameGroupColumn" msprop:Generator_UserColumnName="NameGroup" type="xs:string" minOccurs="0" />
+              <xs:element name="NameMember" msprop:Generator_ColumnVarNameInTable="columnNameMember" msprop:Generator_ColumnPropNameInRow="NameMember" msprop:Generator_ColumnPropNameInTable="NameMemberColumn" msprop:Generator_UserColumnName="NameMember" type="xs:string" minOccurs="0" />
+              <xs:element name="Flag" msprop:Generator_ColumnVarNameInTable="columnFlag" msprop:Generator_ColumnPropNameInRow="Flag" msprop:Generator_ColumnPropNameInTable="FlagColumn" msprop:Generator_UserColumnName="Flag" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tG_FilterGroupConsumer" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tG_NameFilter_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tG_NameFilter" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

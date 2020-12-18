@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E260D7E-D0BF-4785-A2B3-14673A622E00}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CalcLossN</RootNamespace>
+    <AssemblyName>CalcLossN</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Contractor">
+      <HintPath>..\..\LIB\Contractor.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Legal">
+      <HintPath>..\..\LIB\Legal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Prv">
+      <HintPath>..\..\LIB\Prv.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinDocking">
+      <HintPath>..\..\LIB\WinDocking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Consumer\FormSelectAddAbn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consumer\FormSelectAddAbn.Designer.cs">
+      <DependentUpon>FormSelectAddAbn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetCalc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCalc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetConsumer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetConsumer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectTrans.Designer.cs">
+      <DependentUpon>FormSelectTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectCable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectCable.Designer.cs">
+      <DependentUpon>FormSelectCable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditCalcCable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditCalcCable.Designer.cs">
+      <DependentUpon>FormAddEditCalcCable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditCalcTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditCalcTrans.Designer.cs">
+      <DependentUpon>FormAddEditCalcTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJournalCalcLoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJournalCalcLoss.Designer.cs">
+      <DependentUpon>FormJournalCalcLoss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Extensions.cs" />
+    <Compile Include="Report\FormReportCalcLoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FormReportCalcLoss.Designer.cs">
+      <DependentUpon>FormReportCalcLoss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FormReportCalcLossTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FormReportCalcLossTrans.Designer.cs">
+      <DependentUpon>FormReportCalcLossTrans.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Consumer\FormSelectAddAbn.resx">
+      <DependentUpon>FormSelectAddAbn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditCalcCable.resx">
+      <DependentUpon>FormAddEditCalcCable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditCalcTrans.resx">
+      <DependentUpon>FormAddEditCalcTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJournalCalcLoss.resx">
+      <DependentUpon>FormJournalCalcLoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FormReportCalcLoss.resx">
+      <DependentUpon>FormReportCalcLoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FormReportCalcLossTrans.resx">
+      <DependentUpon>FormReportCalcLossTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportKL.rdlc" />
+    <EmbeddedResource Include="Report\ReportKLIsolation.rdlc" />
+    <EmbeddedResource Include="Report\ReportKL_old.rdlc" />
+    <EmbeddedResource Include="Report\ReportTrans.rdlc" />
+    <EmbeddedResource Include="Report\ReportTransHH.rdlc" />
+    <EmbeddedResource Include="Report\ReportVL.rdlc" />
+    <EmbeddedResource Include="Report\ReportVLIsolation.rdlc" />
+    <EmbeddedResource Include="Report\ReportVL_old.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSet\DataSetCalc.xsc">
+      <DependentUpon>DataSetCalc.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetCalc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCalc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetCalc.xss">
+      <DependentUpon>DataSetCalc.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetConsumer.xsc">
+      <DependentUpon>DataSetConsumer.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetConsumer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetConsumer.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetConsumer.xss">
+      <DependentUpon>DataSetConsumer.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Add.png" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ElementAccept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ElementAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ElementDel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ElementEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ElementInformation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\refresh 16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\partners.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icon2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

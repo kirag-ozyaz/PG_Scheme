@@ -1,0 +1,25 @@
+﻿
+
+
+
+
+
+
+
+
+
+Export.StatementsForME.ReportsForHeads.FormReportToManager
+                                                  |
+                                              LoadData()
+                                              Send()
+											      |
+Export.StatementsForME.ReportsForHeads.StatementsToHead
+
+
+
+Mail.SendToMail
+
+
+ReferenceTables.Settings--------------------ReferenceTables.FormSettingsSender
+
+

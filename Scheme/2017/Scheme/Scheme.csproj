@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD50C76A-CC24-47D5-B976-F0A612121D32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Scheme</RootNamespace>
+    <AssemblyName>Scheme</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Constants" />
+    <Reference Include="ControlsLbr" />
+    <Reference Include="DataSql" />
+    <Reference Include="Documents" />
+    <Reference Include="FormLbr" />
+    <Reference Include="Legal" />
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\..\Декомпилятор C#\какие-то eis\EIS\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Passport" />
+    <Reference Include="Prv" />
+    <Reference Include="SchemeCtrl2">
+      <HintPath>..\..\Декомпилятор C#\2017-программы\de4dot2019\SchemeCtrl2.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeModel">
+      <HintPath>..\..\Декомпилятор C#\2017-программы\de4dot2019\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telemetry" />
+    <Reference Include="WinDocking" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-{5FCC8386-764D-490D-B043-8029C110F08D}.cs" />
+    <Compile Include="Class0.cs" />
+    <Compile Include="Class10.cs" />
+    <Compile Include="Class11.Designer.cs">
+      <DependentUpon>Class11.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Class12.Designer.cs">
+      <DependentUpon>Class12.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Class13.Designer.cs">
+      <DependentUpon>Class13.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Class17.Designer.cs">
+      <DependentUpon>Class17.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Class18.Designer.cs">
+      <DependentUpon>Class18.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Class19.cs" />
+    <Compile Include="Class62.cs" />
+    <Compile Include="Class63.cs" />
+    <Compile Include="Class7.cs" />
+    <Compile Include="Class8.Designer.cs">
+      <DependentUpon>Class8.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Class9.Designer.cs">
+      <DependentUpon>Class9.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Classes\GeneralFormSettings.cs" />
+    <Compile Include="Delegate1.cs" />
+    <Compile Include="Delegate4.cs" />
+    <Compile Include="EventArgs0.cs" />
+    <Compile Include="Form0.Designer.cs">
+      <DependentUpon>Form0.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\FormCanvasSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCanvasSettings.Designer.cs">
+      <DependentUpon>FormCanvasSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGeneralScheme2.Designer.cs">
+      <DependentUpon>FormGeneralScheme2.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\FormRectScheme2.Designer.cs">
+      <DependentUpon>FormRectScheme2.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\LinkCellPoint\FormLinkCellPoint.Designer.cs">
+      <DependentUpon>FormLinkCellPoint.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\LinkCellPoint\FormLinkCellPointAdd.Designer.cs">
+      <DependentUpon>FormLinkCellPointAdd.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\LinkCellPoint\FormLinkOnOffAbn.Designer.cs">
+      <DependentUpon>FormLinkOnOffAbn.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\LinkSchmAbn\FormLinkSchmAbn.Designer.cs">
+      <DependentUpon>FormLinkSchmAbn.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\LinkSchmAbn\FormLinkSchmAbnAdd.Designer.cs">
+      <DependentUpon>FormLinkSchmAbnAdd.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\LinkSchmTelemetry\FormLinkSchmTelemetry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LinkSchmTelemetry\FormLinkSchmTelemetry.Designer.cs">
+      <DependentUpon>FormLinkSchmTelemetry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LinkSchmTelemetry\FormParameterChoice.Designer.cs">
+      <DependentUpon>FormParameterChoice.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\OPCMessage\FormOPCMessageAddEdit.Designer.cs">
+      <DependentUpon>FormOPCMessageAddEdit.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\OPCMessage\GForm0.Designer.cs">
+      <DependentUpon>GForm0.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\Reports\FormLinkAbnNewAndOld.Designer.cs">
+      <DependentUpon>FormLinkAbnNewAndOld.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\Reports\FormLinkAbnOff.Designer.cs">
+      <DependentUpon>FormLinkAbnOff.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\Reports\FormLogDispatcher.Designer.cs">
+      <DependentUpon>FormLogDispatcher.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\Reports\FormMeasuringReport.Designer.cs">
+      <DependentUpon>FormMeasuringReport.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\Reports\FormPoweringReport.Designer.cs">
+      <DependentUpon>FormPoweringReport.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="aR3nbf8dQp2feLmk31\lSfgApatkdxsVcGcrktoFd.resx" />
+    <EmbeddedResource Include="Class11.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class11.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class12.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class12.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class13.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class13.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class17.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class17.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class18.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class18.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class9.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class9.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form0.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Form0.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Form1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Form2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCanvasSettings.resx">
+      <DependentUpon>FormCanvasSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGeneralScheme2.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormGeneralScheme2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRectScheme2.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormRectScheme2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LinkCellPoint\FormLinkCellPoint.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormLinkCellPoint.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LinkCellPoint\FormLinkCellPointAdd.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormLinkCellPointAdd.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LinkCellPoint\FormLinkOnOffAbn.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormLinkOnOffAbn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LinkSchmAbn\FormLinkSchmAbn.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormLinkSchmAbn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LinkSchmAbn\FormLinkSchmAbnAdd.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormLinkSchmAbnAdd.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LinkSchmTelemetry\FormLinkSchmTelemetry.resx">
+      <DependentUpon>FormLinkSchmTelemetry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LinkSchmTelemetry\FormParameterChoice.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormParameterChoice.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OPCMessage\FormOPCMessageAddEdit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormOPCMessageAddEdit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OPCMessage\GForm0.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GForm0.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\FormLinkAbnNewAndOld.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormLinkAbnNewAndOld.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\FormLinkAbnOff.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormLinkAbnOff.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\FormLogDispatcher.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormLogDispatcher.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\FormMeasuringReport.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormMeasuringReport.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\FormPoweringReport.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormPoweringReport.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\ReportLinkAbnNewAndOld.sql" />
+    <EmbeddedResource Include="Forms\Reports\ReportLinkAbnWithCP.sql" />
+    <EmbeddedResource Include="Forms\Reports\Копия ReportLinkAbnWithCP.sql" />
+    <EmbeddedResource Include="g.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scheme.FileReports.ReportLogDispatcher.rdlc" />
+    <EmbeddedResource Include="Scheme.FileReports.ReportMeasurement.rdlc" />
+    <EmbeddedResource Include="Scheme.FileReports.SwitchReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

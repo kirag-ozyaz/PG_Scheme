@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FAC2420B-0FC9-4334-92C7-FCAE89297028}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Measurement</RootNamespace>
+    <AssemblyName>Measurement</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Contractor">
+      <HintPath>..\LIB\Contractor.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="DXFLibrary">
+      <HintPath>..\LIB\DXFLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLB">
+      <HintPath>..\LIB\ExcelLB.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Domino">
+      <HintPath>..\LIB\Interop.Domino.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Legal">
+      <HintPath>..\LIB\Legal.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\LIB\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\LIB\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="OfficeLB">
+      <HintPath>..\LIB\OfficeLB.dll</HintPath>
+    </Reference>
+    <Reference Include="Passport">
+      <HintPath>..\LIB\Passport.dll</HintPath>
+    </Reference>
+    <Reference Include="PluginInterfaces">
+      <HintPath>..\LIB\PluginInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Prv">
+      <HintPath>..\LIB\Prv.dll</HintPath>
+    </Reference>
+    <Reference Include="Reference">
+      <HintPath>..\LIB\Reference.dll</HintPath>
+    </Reference>
+    <Reference Include="RequestsClient">
+      <HintPath>..\LIB\RequestsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Scheme">
+      <HintPath>..\LIB\Scheme.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeCtrl2">
+      <HintPath>..\LIB\SchemeCtrl2.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeModel">
+      <HintPath>..\LIB\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Services">
+      <HintPath>..\LIB\Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telemetry">
+      <HintPath>..\LIB\Telemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="WinDocking">
+      <HintPath>..\LIB\WinDocking.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WordLB">
+      <HintPath>..\LIB\WordLB.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Documents\SqlDataCommand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetMeasurementN.cs">
+      <DependentUpon>DataSetMeasurementN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetMeasurementN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMeasurementN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Forms\CellData.cs" />
+    <Compile Include="Documents\Forms\FormAddEditMeasHighVoltage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Forms\FormAddEditMeasHighVoltage.Designer.cs">
+      <DependentUpon>FormAddEditMeasHighVoltage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Forms\FormAddEditMeasLowVoltage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Forms\FormAddEditMeasLowVoltage.Designer.cs">
+      <DependentUpon>FormAddEditMeasLowVoltage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Forms\FormAddMeasCable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Forms\FormAmountFreeCapacity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Forms\FormCoefficientLoadihgParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Forms\FormExcessLoadParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Forms\FormMeasurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Forms\FormMeasurement.Designer.cs">
+      <DependentUpon>FormMeasurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Forms\FormMeasurementExistYearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Forms\FormMeasurementExistYearForm.Designer.cs">
+      <DependentUpon>FormMeasurementExistYearForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Forms\FormMeasurementReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Forms\FormMeasurementReports.Designer.cs">
+      <DependentUpon>FormMeasurementReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Forms\MeasAmperageTransfData.cs" />
+    <Compile Include="Documents\Forms\MeasCellData.cs" />
+    <Compile Include="Documents\Forms\MeasurementCheck.cs" />
+    <Compile Include="Documents\Forms\ReportType.cs" />
+    <Compile Include="Documents\Forms\TreeObject.cs" />
+    <Compile Include="Documents\Forms\TypeNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DataSetMeasurementN.xsc">
+      <DependentUpon>DataSetMeasurementN.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetMeasurementN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMeasurementN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetMeasurementN.xss">
+      <DependentUpon>DataSetMeasurementN.xsd</DependentUpon>
+    </None>
+    <None Include="Documents\Res\reference.png" />
+    <None Include="Documents\Res\tssbAddMissingCells.png" />
+    <None Include="Resources\Часто задаваемые вопросы.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\Forms\FormAddEditMeasHighVoltage.resx">
+      <DependentUpon>FormAddEditMeasHighVoltage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Forms\FormAddEditMeasLowVoltage.resx">
+      <DependentUpon>FormAddEditMeasLowVoltage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Forms\FormAddMeasCable.resx">
+      <DependentUpon>FormAddMeasCable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Forms\FormAmountFreeCapacity.resx">
+      <DependentUpon>FormAmountFreeCapacity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Forms\FormCoefficientLoadihgParam.resx">
+      <DependentUpon>FormCoefficientLoadihgParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Forms\FormExcessLoadParam.resx">
+      <DependentUpon>FormExcessLoadParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Forms\FormMeasurement.resx">
+      <DependentUpon>FormMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Forms\FormMeasurementExistYearForm.resx">
+      <DependentUpon>FormMeasurementExistYearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Forms\FormMeasurementReports.resx">
+      <DependentUpon>FormMeasurementReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Report\ReportAmountFreeCapacity.rdlc" />
+    <EmbeddedResource Include="Documents\Report\ReportCoefficientIrregularity.rdlc" />
+    <EmbeddedResource Include="Documents\Report\ReportCoefficientLoading.rdlc" />
+    <EmbeddedResource Include="Documents\Report\ReportExcelessLoad.rdlc" />
+    <EmbeddedResource Include="Documents\Report\ReportMeasHighVoltage.rdlc" />
+    <EmbeddedResource Include="Documents\Report\ReportMeasLowVoltage.rdlc" />
+    <EmbeddedResource Include="Documents\Report\ReportMeasLowVoltageSP.rdlc" />
+    <EmbeddedResource Include="Documents\Report\ReportMeasLowVoltageWithOutNameObj.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documents\Res\btnFAQ.Image.png" />
+    <Content Include="Documents\Res\Excel.png" />
+    <Content Include="Documents\Res\Icon.ico" />
+    <Content Include="Documents\Res\Pogoda.ico" />
+    <Content Include="Documents\Res\Pogoda1.ico" />
+    <Content Include="Documents\Res\Pogoda1.png" />
+    <Content Include="Documents\Res\report_go.ico" />
+    <Content Include="Documents\Res\report_go.png" />
+    <Content Include="Documents\Res\ShowDeletedObject.png" />
+    <Content Include="Documents\Res\sortAZ.png" />
+    <Content Include="Documents\Res\sortZA.png" />
+    <Content Include="Documents\Res\toolStripButton1.Image.png" />
+    <Content Include="Documents\Res\tsbFindNextObj.Image.png" />
+    <Content Include="Documents\Res\tsbFindObj.Image.png" />
+    <Content Include="Documents\Res\tsbMeasDelete.Image.png" />
+    <Content Include="Documents\Res\tsbMeasEdit.Image.png" />
+    <Content Include="Documents\Res\tsbMeasRefresh.Image.png" />
+    <Content Include="Documents\Res\tsbPrint.Image.png" />
+    <Content Include="Documents\Res\tsbSortTree.Image.png" />
+    <Content Include="Documents\Res\tssbMeasAdd.Image.png" />
+    <Content Include="Documents\Res\tssbMeasType.Image.png" />
+    <Content Include="Documents\Res\tssbReports.Image.png" />
+    <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Linq\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

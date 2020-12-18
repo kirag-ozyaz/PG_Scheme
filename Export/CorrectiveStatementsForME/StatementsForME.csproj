@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEE8A10A-13EE-4D1B-92BF-EC7F6F878944}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StatementsForME</RootNamespace>
+    <AssemblyName>StatementsForME</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\LIB\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\LIB\MySQL-6.9.8\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SchemeService\SchemeServiceN1\SchemeService\LIB\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinDocking">
+      <HintPath>..\..\LIB\WinDocking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetStatement.cs">
+      <DependentUpon>DataSetStatement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetStatement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetStatement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormCorrectiveStatements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCorrectiveStatements.Designer.cs">
+      <DependentUpon>FormCorrectiveStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsForHeads\FormReportToManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForHeads\FormReportToManager.Designer.cs">
+      <DependentUpon>FormReportToManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsForHeads\StatementsToHead.cs" />
+    <Compile Include="SendRequestPlanToME.cs" />
+    <Compile Include="SendRequestToME.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ClassLibrarySQL\Library.csproj">
+      <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ReferenceTables\ReferenceTables.csproj">
+      <Project>{70de9a59-49c6-4683-9f6b-3f04c819c1a8}</Project>
+      <Name>ReferenceTables</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Scheme\SchemeModel\SchemeModelN.csproj">
+      <Project>{1e4637ad-f6b6-4cd5-9c9c-5f333ebf4443}</Project>
+      <Name>SchemeModelN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormCorrectiveStatements.resx">
+      <DependentUpon>FormCorrectiveStatements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetTableDamage.sql" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsForHeads\FormReportToManager.resx">
+      <DependentUpon>FormReportToManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsForHeads\ReportToManager.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GetTableRequestForRepair.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSetStatement.xsc">
+      <DependentUpon>DataSetStatement.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetStatement.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetStatement.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetStatement.xss">
+      <DependentUpon>DataSetStatement.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Инструкция по интеграции с системой Надежность %286%29.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GetTableRequestForControl.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GetTableDamage - 0.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReportsForHeads\GetTableDamageToManager.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReportsForHeads\GetTableDamageToManagerUO.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\PrimerError.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

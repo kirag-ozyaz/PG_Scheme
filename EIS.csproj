@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\Декомпилятор C#\EIS_2016-11-07\Deobfuscated\EIS.exe-->
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.1.20.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD405314-4B0D-437F-91E5-1857E73DFE02}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>EIS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>EIS</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>eis.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>773D00CE3272852DFB0D1057BC6FA4921731449E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>EIS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp">
+      <HintPath>..\WebBrowserN2\LIBs\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms">
+      <HintPath>..\WebBrowserN2\LIBs\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlsLbr">
+      <HintPath>LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>LIB\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Documents">
+      <HintPath>LIB\Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="FastTree, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LIB\FastTree.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="OfficeLB">
+      <HintPath>LIB\OfficeLB.dll</HintPath>
+    </Reference>
+    <Reference Include="Passport">
+      <HintPath>LIB\Passport.dll</HintPath>
+    </Reference>
+    <Reference Include="PluginInterfaces">
+      <HintPath>LIB\PluginInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Reference">
+      <HintPath>LIB\Reference.dll</HintPath>
+    </Reference>
+    <Reference Include="RequestsClient">
+      <HintPath>LIB\RequestsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Scheme">
+      <HintPath>LIB\Scheme.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeCtrl2">
+      <HintPath>LIB\SchemeCtrl2.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeModel">
+      <HintPath>LIB\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Services">
+      <HintPath>LIB\Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="Telemetry">
+      <HintPath>LIB\Telemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="WinDocking">
+      <HintPath>LIB\WinDocking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\DotfuscatorAttribute.cs" />
+    <Compile Include="Classes\ChekerDownloader.cs" />
+    <Compile Include="Forms\FormAboutUlges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\UpdatetSChm_ObjList.cs" />
+    <Compile Include="Classes\ChekerDownloaderFromFolder.cs" />
+    <Compile Include="Classes\ChekerDownloaderFromFTP.cs" />
+    <Compile Include="Classes\Compress.cs" />
+    <Compile Include="Forms\FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMain.Plugin.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormUpdateSettings.Designer.cs">
+      <DependentUpon>FormUpdateSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormWindowsList.Designer.cs">
+      <DependentUpon>FormWindowsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\FormConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMain.MDI.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\MemoryManagement.cs" />
+    <Compile Include="Forms\FormReportEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormUpdateSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWindowsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\MainEventsArgs.cs" />
+    <Compile Include="Classes\MainEventHandler.cs" />
+    <Compile Include="Classes\ReportsEvents.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAboutUlges.resx">
+      <DependentUpon>FormAboutUlges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\dm.resx" />
+    <EmbeddedResource Include="Forms\FormConnect.resx">
+      <DependentUpon>FormConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormMain1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReportEvent.resx">
+      <DependentUpon>FormReportEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormUpdateSettings.resx">
+      <DependentUpon>FormUpdateSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWindowsList.resx">
+      <DependentUpon>FormWindowsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="EIS_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\1329825419_cube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppClient.jpg" />
+    <None Include="Resources\Electricity.ico" />
+    <None Include="Resources\Electricity2.ico" />
+    <None Include="Resources\file_extension_log.png" />
+    <None Include="Resources\gohome.png" />
+    <None Include="Resources\JournalOrder.png" />
+    <None Include="Resources\mapControler.ico" />
+    <None Include="Resources\repair.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\report_key.png" />
+    <None Include="Resources\RZA.png" />
+    <None Include="Resources\save.ico" />
+    <None Include="Resources\sberbank3.png" />
+    <None Include="Resources\Scheme.png" />
+    <None Include="Resources\Seal.ico" />
+    <None Include="Resources\showel.png" />
+    <None Include="Resources\stock_task.png" />
+    <None Include="Resources\WorkersGo.png" />
+    <None Include="Resources\Обновить.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClassesPlug\SelectSqlData.txt" />
+    <Content Include="eis.ico" />
+    <None Include="Legal\Resources\Export To Document1.png" />
+    <None Include="Legal\Resources\Import Document1.png" />
+    <None Include="Legal\Resources\address-book1.png" />
+    <None Include="Legal\Resources\Register1.png" />
+    <Content Include="Plan.txt" />
+    <None Include="Resources\LizMAP.png" />
+    <None Include="Resources\Logger.png" />
+    <None Include="Resources\partners.png" />
+    <Content Include="TextFile1.txt" />
+    <Content Include="План.txt" />
+    <None Include="Legal\Resources\blog.png" />
+    <None Include="Legal\Resources\object.png" />
+    <None Include="Resources\FL.png" />
+    <None Include="Resources\logo_full_trans.bmp" />
+    <None Include="Resources\logo_full.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RDLC\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EIS_Consumer\Consumer\Consumer.csproj">
+      <Project>{e0a8bbe0-d7cb-481f-93da-b772042b8dc4}</Project>
+      <Name>Consumer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EIS_Consumer\Legal\Legal.csproj">
+      <Project>{31fd9fed-6cab-4b84-ac90-037df9ce7f67}</Project>
+      <Name>Legal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EIS_Consumer\Prv\Prv.csproj">
+      <Project>{c31d5809-3384-49a0-9818-91aabd08e5ba}</Project>
+      <Name>Prv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBrowserN2\CefSharp.Net\CefSharp.Net.csproj">
+      <Project>{a4394e7b-1155-43a6-989e-8ab72dddc9e4}</Project>
+      <Name>CefSharp.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBrowserN2\CefSharp.WinForms.WebBrowser\CefSharp.WinForms.WebBrowser.csproj">
+      <Project>{c043fff7-5f71-4ffc-989a-e09e18548589}</Project>
+      <Name>CefSharp.WinForms.WebBrowser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebBrowser\WebBrowser.csproj">
+      <Project>{11c1ff2c-cb55-4595-abb6-275d3360260b}</Project>
+      <Name>WebBrowser</Name>
+    </ProjectReference>
+    <ProjectReference Include="ASCAPC\ASCAPC.csproj">
+      <Project>{47abd48f-3abd-4f34-b24a-9e536bc4dff3}</Project>
+      <Name>ASCAPC</Name>
+    </ProjectReference>
+    <ProjectReference Include="Documents\CalcLossN\CalcLossN\CalcLossN.csproj">
+      <Project>{5e260d7e-d0bf-4785-a2b3-14673a622e00}</Project>
+      <Name>CalcLossN</Name>
+    </ProjectReference>
+    <ProjectReference Include="ClassLibrarySQL\Library.csproj">
+      <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="Documents\DailyReportN\DailyReportN.csproj">
+      <Project>{40464f08-a703-4d2e-a95b-782eaa061689}</Project>
+      <Name>DailyReportN</Name>
+    </ProjectReference>
+    <ProjectReference Include="Documents\DailyReport\DailyReport.csproj">
+      <Project>{e6335a9d-44b0-48f8-b5fa-39232255cefb}</Project>
+      <Name>DailyReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="Documents\NotificationOfRepairs\NotificationOfRepairs.csproj">
+      <Project>{54133342-3c3a-4b79-824a-9e1bf69312f2}</Project>
+      <Name>NotificationOfRepairs</Name>
+    </ProjectReference>
+    <ProjectReference Include="Export\CorrectiveStatementsForME\StatementsForME.csproj">
+      <Project>{bee8a10a-13ee-4d1b-92bf-ec7f6f878944}</Project>
+      <Name>StatementsForME</Name>
+    </ProjectReference>
+    <ProjectReference Include="Export\ExportToPostGIS\ExportToPostGIS.csproj">
+      <Project>{a7b73d01-073c-4840-99da-332a28a9e0d9}</Project>
+      <Name>ExportToPostGIS</Name>
+    </ProjectReference>
+    <ProjectReference Include="Export\UpLoadContractTC\UpLoadContractTC\UpLoadContractTC.csproj">
+      <Project>{14dee20d-0db7-4424-92ee-0e199ccf0d81}</Project>
+      <Name>UpLoadContractTC</Name>
+    </ProjectReference>
+    <ProjectReference Include="Documents\JournalRequestForRepair\RequestForRepair.csproj">
+      <Project>{d4f87949-2a0c-47e0-883e-eca2743d8894}</Project>
+      <Name>RequestForRepair</Name>
+    </ProjectReference>
+    <ProjectReference Include="Documents\Measurement\Measurement.csproj">
+      <Project>{fac2420b-0fc9-4334-92c7-fcae89297028}</Project>
+      <Name>Measurement</Name>
+    </ProjectReference>
+    <ProjectReference Include="ReferenceTables\ReferenceTables.csproj">
+      <Project>{70de9a59-49c6-4683-9f6b-3f04c819c1a8}</Project>
+      <Name>ReferenceTables</Name>
+    </ProjectReference>
+    <ProjectReference Include="Reference\ReferenceMapObj\ReferenceMapObj.csproj">
+      <Project>{6e383301-c781-4b04-89c3-cfb97466afa3}</Project>
+      <Name>ReferenceMapObj</Name>
+    </ProjectReference>
+    <ProjectReference Include="Reference\ReferenceWorker\ReferenceWorker.csproj">
+      <Project>{1750bb36-1f3e-4000-8271-4f06ca02437e}</Project>
+      <Name>ReferenceWorker</Name>
+    </ProjectReference>
+    <ProjectReference Include="Documents\RequestForRepairN\RequestForRepairN.csproj">
+      <Project>{845792f6-128b-45b7-9285-ecf659a17b72}</Project>
+      <Name>RequestForRepairN</Name>
+    </ProjectReference>
+    <ProjectReference Include="SchemeReports\SchemeReports.csproj">
+      <Project>{d50d9e86-805a-493f-a996-8f7e1eb6d985}</Project>
+      <Name>SchemeReports</Name>
+    </ProjectReference>
+    <ProjectReference Include="Scheme\SchemeModel\SchemeModelN.csproj">
+      <Project>{1e4637ad-f6b6-4cd5-9c9c-5f333ebf4443}</Project>
+      <Name>SchemeModelN</Name>
+    </ProjectReference>
+    <ProjectReference Include="Test1\Test1.csproj">
+      <Project>{56da0b96-2f2e-4135-9934-b6d2b1bb9160}</Project>
+      <Name>Test1</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>echo "Копируем библиотеки для веббраузера"
+cd ..\..\..
+set TargetDirWeb=%25cd%25
+echo TargetDirWeb = %25TargetDirWeb%25 
+xcopy.exe "%25TargetDirWeb%25\WebBrowserN2\LIBs\include" "$(TargetDir)" /E /R /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

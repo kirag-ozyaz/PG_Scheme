@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DS1">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Server=192.168.8.252;DataBase=GES;Integrated Security=SSPI;Connect Timeout=0</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>1b6ae84d-7b3a-4fd7-a63a-9d3a7c8c065d</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Data">
+      <Fields>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Dimension">
+          <DataField>Dimension</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Val">
+          <DataField>Val</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NameValue">
+          <DataField>NameValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS1</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Image Name="Image5">
+        <Source>Embedded</Source>
+        <Value>embeddedimage5</Value>
+        <Sizing>Clip</Sizing>
+        <Top>478.39999pt</Top>
+        <Left>7.6pt</Left>
+        <Height>45pt</Height>
+        <Width>99pt</Width>
+        <Style />
+      </Image>
+      <Textbox Name="Textbox26">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>М.П.</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>604.19995pt</Top>
+        <Left>504.5pt</Left>
+        <Height>16.51pt</Height>
+        <Width>32.39pt</Width>
+        <ZIndex>1</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="Textbox15">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>= "4. Нагрузочные потери электроэнергии в ВЛ " &amp; Parameters!AverageVoltage.Value &amp; "кВ от потребления активной электроэнергии за расчетный период составили:"</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>445.69998pt</Top>
+        <Left>0pt</Left>
+        <Height>30.05pt</Height>
+        <Width>19.5cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style />
+      </Textbox>
+      <Image Name="Image4">
+        <Source>Embedded</Source>
+        <Value>embeddedimage4</Value>
+        <Sizing>Clip</Sizing>
+        <Top>400.10001pt</Top>
+        <Left>7.6pt</Left>
+        <Height>20.98pt</Height>
+        <Width>171pt</Width>
+        <ZIndex>3</ZIndex>
+        <Style />
+      </Image>
+      <Textbox Name="Textbox14">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>3. Нагрузочные потери электроэнергии в линии:</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>379.70001pt</Top>
+        <Left>0pt</Left>
+        <Height>15pt</Height>
+        <Width>19.5cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="Textbox13">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2. Нагрузочные потери мощности в линии:
+           Cреднее значение активной мощности за базовый период:</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>244.60001pt</Top>
+        <Left>0pt</Left>
+        <Height>28.59pt</Height>
+        <Width>19.5cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!ActiveResistance.Value</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>213.10001pt</Top>
+        <Left>108.1pt</Left>
+        <Height>18pt</Height>
+        <Width>457.5pt</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+      </Textbox>
+      <Image Name="Image3">
+        <Source>Embedded</Source>
+        <Value>embeddedimage3</Value>
+        <Sizing>Clip</Sizing>
+        <Top>312.5pt</Top>
+        <Left>7.6pt</Left>
+        <Height>43.89999pt</Height>
+        <Width>216pt</Width>
+        <ZIndex>7</ZIndex>
+        <Style />
+      </Image>
+      <Image Name="Image2">
+        <Source>Embedded</Source>
+        <Value>embeddedimage2</Value>
+        <Sizing>Clip</Sizing>
+        <Top>275.60001pt</Top>
+        <Left>7.6pt</Left>
+        <Height>35.8pt</Height>
+        <Width>81pt</Width>
+        <ZIndex>8</ZIndex>
+        <Style />
+      </Image>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>embeddedimage</Value>
+        <Sizing>Clip</Sizing>
+        <Top>202.7pt</Top>
+        <Left>7.6pt</Left>
+        <Height>36.5pt</Height>
+        <Width>98.25pt</Width>
+        <ZIndex>9</ZIndex>
+        <Style />
+      </Image>
+      <Tablix Name="Table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>5.29306in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.02778in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.16111in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.16667in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Параметр</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Значение</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.19444in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Description.Value</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <LeftBorder>
+                          <Width>2pt</Width>
+                        </LeftBorder>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Dimension.Value</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Val.Value</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Table1_Details_Group">
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <NoRowsMessage>Query returned no rows!</NoRowsMessage>
+        <DataSetName>Data</DataSetName>
+        <Top>139.2pt</Top>
+        <Left>0pt</Left>
+        <Height>0.91722cm</Height>
+        <Width>19.00414cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="textbox21">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Расчет:
+1. Активное сопротивление линии:</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox21</rd:DefaultName>
+        <Top>167.89999pt</Top>
+        <Left>0pt</Left>
+        <Height>29.36pt</Height>
+        <Width>19.5cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox19">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!LoadAverage.Value</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>287.39999pt</Top>
+        <Left>90.9pt</Left>
+        <Height>18pt</Height>
+        <Width>465.75pt</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox20">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!LoadPowerLoss1.Value</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>326.39999pt</Top>
+        <Left>225.09999pt</Left>
+        <Height>18pt</Height>
+        <Width>331.48001pt</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox22">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!LoadPowerLoss2.Value</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>356.39999pt</Top>
+        <Left>7.6pt</Left>
+        <Height>18pt</Height>
+        <Width>19.5cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox23">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!LoadLosses2.Value</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>423.95001pt</Top>
+        <Left>7.6pt</Left>
+        <Height>18.75pt</Height>
+        <Width>551.83002pt</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox25">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!CoefficientLoss.Value</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>487.59998pt</Top>
+        <Left>108.1pt</Left>
+        <Height>17.25pt</Height>
+        <Width>441.93997pt</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox24">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!LoadLosses1.Value</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>403.60001pt</Top>
+        <Left>182.39999pt</Left>
+        <Height>17.25pt</Height>
+        <Width>378.73001pt</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox18">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(Ф.И.О.)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>595.60004pt</Top>
+        <Left>439.60001pt</Left>
+        <Height>12pt</Height>
+        <Width>1in</Width>
+        <ZIndex>18</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(подпись)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>595.60004pt</Top>
+        <Left>278pt</Left>
+        <Height>12pt</Height>
+        <Width>1in</Width>
+        <ZIndex>19</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="Textbox1">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(должность)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>595.60004pt</Top>
+        <Left>106.6pt</Left>
+        <Height>12pt</Height>
+        <Width>1in</Width>
+        <ZIndex>20</ZIndex>
+        <Style />
+      </Textbox>
+      <Line Name="Line3">
+        <Top>591.20001pt</Top>
+        <Left>394.60001pt</Left>
+        <Height>0pt</Height>
+        <Width>146.73pt</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line2">
+        <Top>591.20001pt</Top>
+        <Left>232.60001pt</Left>
+        <Height>0pt</Height>
+        <Width>142.99002pt</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line1">
+        <Top>591.20001pt</Top>
+        <Left>16.6pt</Left>
+        <Height>0pt</Height>
+        <Width>207pt</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox17">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>= "Представитель потребителя  " &amp; Parameters!AbnName.Value</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>541.20001pt</Top>
+        <Left>7.6pt</Left>
+        <Height>18pt</Height>
+        <Width>546.57001pt</Width>
+        <ZIndex>24</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="Textbox16">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Согласовано:</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>523.20001pt</Top>
+        <Left>7.6pt</Left>
+        <Height>13.5pt</Height>
+        <Width>100.85002pt</Width>
+        <ZIndex>25</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Исходные данные:</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>122.4pt</Top>
+        <Left>0pt</Left>
+        <Height>12.75pt</Height>
+        <Width>545.06pt</Width>
+        <ZIndex>26</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Расчет произведен в соответствии с Приложением №1 к инструкции по организации в Министерстве энергетики Российской Федерации работы по расчету и обоснованию нормативов технологических потерь электроэнергии при ее передаче по электрическим сетям, утвержденной приказом Министерства энергетики Российской Федерации</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>48.4pt</Top>
+        <Left>0pt</Left>
+        <Height>71.47pt</Height>
+        <Width>544.41003pt</Width>
+        <ZIndex>27</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Расчет потерь  электрической энергии в ВЛ " &amp; Parameters!AverageVoltage.Value &amp; "кВ " &amp; 
+"находящейся на балансе потребителя " &amp; 
+Parameters!AbnName.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0pt</Top>
+        <Left>0pt</Left>
+        <Height>48.84pt</Height>
+        <Width>544.29999pt</Width>
+        <ZIndex>28</ZIndex>
+        <Style />
+      </Textbox>
+    </ReportItems>
+    <Height>620.71002pt</Height>
+    <Style>
+      <RightBorder>
+        <Width>0.25pt</Width>
+      </RightBorder>
+    </Style>
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="AbnName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AbnName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ActiveResistance">
+      <DataType>String</DataType>
+      <Prompt>ActiveResistance</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LoadPowerLoss1">
+      <DataType>String</DataType>
+      <Prompt>LoadPowerLoss1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LoadPowerLoss2">
+      <DataType>String</DataType>
+      <Prompt>LoadPowerLoss2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LoadAverage">
+      <DataType>String</DataType>
+      <Prompt>LoadAverage</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LoadLosses1">
+      <DataType>String</DataType>
+      <Prompt>LoadLosses1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LoadLosses2">
+      <DataType>String</DataType>
+      <Prompt>LoadLosses2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CoefficientLoss">
+      <DataType>String</DataType>
+      <Prompt>CoefficientLoss</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AverageVoltage">
+      <DataType>String</DataType>
+      <Prompt>AverageVoltage</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>8in</Width>
+  <Page>
+    <PageHeader>
+      <Height>0pt</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style />
+    </PageHeader>
+    <PageFooter>
+      <Height>0pt</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style />
+    </PageFooter>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
+    <Style />
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="embeddedimage2">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAGQAAAAvCAYAAAAVfW/7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAA8tJREFUeF7tW0mO6jAQ5V8tEovmNgixyjWyQhE3gQ1SjkEvWOQY/h7iVNlOwA7x0HYstVpNjId6fq6qV+l/hLbd1tKxAANka+lYYJfOUraV8NsqPzN05LTbsWsYfvYN6ceN9qTZi2fVBX16PSjfOVzhWUgbZQgINd/jNAMGfXaHZ5Vi9CdpJVCRwMiUIWxbN1JLhpw7dMB70v4AczBDCBmY9dMiNoXkhpgrT4ZI4zJQjjewKmYOu7IQE56XirPqdA8PAp4xW0BMhgjfcTjXpBrYAwzpBKMUXxMHmGwBGR27ZAj3HRVp7g0AMjCkvzJ2VKR9xQGhAIboPmTwHUfqT16txpDBdyi+Jh4wZTDkUQMDflWGCN9BmfMbD4QCGDL4BOYX6MnvjuI3bwpDbiLqYsyZaq+GHPScRv7tKRrLlCGQ/O32Fb2iEAMQQ+ojY86JxmTTjfsW7oPkeGIc9nl1eXqhVLaA4HxDCX0RQ1iYa5eRDz4pQBSWLSBSHjGiJ8QQxg6UpcyfeAni3NW2IleyBWRkiB49IYbYJoF9wKQxU0BWPLJ0KB4UBMpTNEBQdDIVXQS4Q9c15RqjSfW4nnX+a8wixzAZMqmGYkl7PipZc2HJjCXtEegwmoDwJEoooviO7c5SJT2QJgGJIQxgKOMPJDwagEjVU78zb/weDXeXhjF4erNogKB6gZKJopPiKUNNzzRxVmQ4dUMlJVBJS0nziWMu/7OqgCCHrtSkB03I53LAR2n18D8a7S3djwKIqAsIP5GK+ul6CIyDNCcOrvC569ps+iuAiASI/RQW2tpYKlAfBMgNXp/Zt9RzhG0QxdlcWeHX52qNpfsBQLAKGkBEc91g
+Kf1HQCD/eFOw0a2iSdn1gxCowKFQOQLj/iqAApCJ6IoZ930Tcorsx6IKkdnLYo7UftR+n0Yt/flytZeBOHnyRd6iyC40WPBVYXMDEFUSP0RZsda7HBCmeU0KbmLTmGEserOrzLmZ1723VvlDNXO5vp6/4xvvlaDlgAyVt5EJlDHiTUDBEDhhInqzLQa5G9nhG1w4hZAe8i60Pn59W1YSHaa27bocEN33jJU581pQ36G1XZr/fpB3xWOEvsvvAJm0melD/Jt2yQxIo0soCvQAiOlDlpjL+3cSzbtWBwTymcTll9n/E/F+FN5OsDogcbdjP7uIpphMk1YFtFBAcOCRFpMLBQS9XZNYBbRMQJQXrkPr2u+v1SIBwdJ4GgoCgFQcIIqqPehZn4VU+2Dh257FAfKtwXx/fwPEt4Udx98AcTSY7+4bIL4t7Dj+fzKJs9L+fRhwAAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="embeddedimage4">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="embeddedimage3">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="embeddedimage">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAIMAAAA1CAYAAABiDlgOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAABJVJREFUeF7tXEuOozAQpa+GlEXnNhHqFddgFUV9k/QmUo6RLLLgGB6XsV1lfoEEXCZTkWYx6YCLx3PVqw98Kf3J5CMIAAJABvkIAsYpCAzcCJxVqfck7Ev/73BlMUrIwAJ7a9G/AonwfVI1k01CBibgg2UvSIb8eGOzSMjABj0uXB9z6xlydXrwGSRk4MPernxTp53TC4U6M9ojZGAEv1n6qgonHncVm16QbIKdCNqAe6VyS4b8l0s6NkCIZ2AmRP2795lE8cdrjJCBF391Pji9wCsexTMwE0FphXD6tmRo1ReMx4isIcQzcBLicfJ6ITvQPKJWFWQYkSuRQgZOMpDK456IR1d3iK0hhAxcZKAl6HZvwvw/voYQMnCRIcF1W2QgBZA+tu5Oiq9yniB6H2ZS1zNcSp/35kdXBCGqNytZS6Yfhn9Sl9MlA4llxQVtvSXSTEkKvQ8zpkMGrIjtVUU6aEPffxge//XltMhg81vQC0HBY+j7tLGrf11rGHJ2m8eTXkC2iAY660ZTrqp72lhMsa4jIP0I1o8bvSJEyArdY9vG5/qTKaN5vAYq1bWVzqEmmn9NxlOaohDg0+Bi6gMet/nn5D4iJAOZuAlm8iIyH2v1rbnAV7ObgADLzQvc7jqvauFluo76e97eo26K+37HFAyxbR6QoTtxQ4Y1N8p48BCO2ItX9AzR9io3wymhxmrv8nBzTbhJvYUoPG4NLxKQARmFOwh36nZCBAI1XesEHmmCljC/N2ECJpUALzuxFLm5tCQpCBn6J25i99vpTn66m54B/6jU3u2wEc/WEMHubKcxJntCwC1+6XiMBLNCLemWIhmoyqbdMhJzuSdxZu8C
+EtOHQ4QNhZ5YLjRu0RPORig4wJOBeoCgdUrbrHQnUpUOStpO7GD3rVvafke9v3KZk6aO3fX5HeJCy7gGeMWe1I9pyNCTReBOgjyaPu2DfXfQGOZ3AGjQj7eXrQnj//7MpS+OFJk6HtMAziN6+9xxabn+xeHpOeFbXUuawpSkdO3WqY9F8xwAxG7GJ4VGgRz0DLouEeMOJLTG22RoPEgTEmgvA1W29RzRPcNUlAc0Q7L2Tr2u+b97iwygWp1HwJk9HXMPupBBQ0fKngGo3JNN0Mmj+bBu84jXyeCzDKu6XezVRGieEHIxF2N3utkILbnHnz1MhTqvkyGVK9iQHZjdaMI5DUXmRzLm3o+QIRKZIKQaz0g8amGqmJCdkTS8LyuLZKOQIRLQfpneSbIrvrBjcuVzecOFDMtjOnrG3l6PvJ8h8l1IYrn+J6gmVUoj2C+eIQLIuARqA3xDy8RKaQQ7hQwRQPZLkKYfVmzTEI9go5AhIhlwJpPOTGLvp5mU0u9rgF5Kq47jtcaK2YaQIRoZhgdtgvkD0sOBymjoQdZtqwsZopFh/kK+K2wOBQ+y3AxnnzVChvn3KNoRtPfTFKbEM0QDP7WF2p6hXPnRRvEMqTHA2RP0LOg09XrPugoZUiVDr13rhgohw6bIABXM9SawhAybIsO6xgoZ1sV3U2cXMmzqdq1rrJBhXXw3dXYhw6Zu17rG/gNUpdIxKKZ3EgAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="embeddedimage5">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataElementName>Report</DataElementName>
+  <rd:ReportID>0b0eac3e-ff18-452e-96d9-f07c4f082ba1</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

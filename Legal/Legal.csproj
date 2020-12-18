@@ -1,0 +1,1961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31FD9FED-6CAB-4B84-AC90-037DF9CE7F67}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Legal</RootNamespace>
+    <AssemblyName>Legal</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugServer|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugServer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugClient|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugClient\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseUlges|AnyCPU'">
+    <OutputPath>bin\ReleaseUlges\</OutputPath>
+    <DefineConstants>TRACE;ReleaseUlges</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugUlges|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugUlges\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Constants, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlsLbr, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Documents">
+      <HintPath>..\LIB\Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Library">
+      <HintPath>..\ClassLibrarySQL\bin\Release\Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\LIB\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\LIB\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="OfficeLB, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\OfficeLB.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SchemeModel, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\LIBS\System.Windows.Forms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design">
+      <HintPath>..\LIBS\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Enums.cs" />
+    <Compile Include="Classes\MultiColumnComboBoxExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\NumByWords.cs" />
+    <Compile Include="Classes\WordDocument.cs" />
+    <Compile Include="Classes\WordSelection.cs" />
+    <Compile Include="DataSet\DataSetAbn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAbn.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetLAbn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLAbn.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetLObj.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLObj.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnAddEdit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnAddEdit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnAddress.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnAddress.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnAddressList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnAddressList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnAddressSelect.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnAddressSelect.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnCard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnCard.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnChief.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnChief.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnContact.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnContact.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnDocum.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnDocum.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnDogObj.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnDogObj.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnObjAct.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnObjAct.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAbnStatus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAbnStatus.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsAddress.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAddress.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsCalc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCalc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsCnt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCnt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsCntVal1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCntVal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsDop.cs">
+      <DependentUpon>dsDop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsDop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsFind.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFind.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsObj.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsObj.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsReportMainFilter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportMainFilter.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsScan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsScan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct.Designer.cs">
+      <DependentUpon>FormDocAct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormActBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormActBase.Designer.cs">
+      <DependentUpon>FormActBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct_DemUst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct_DemUst.Designer.cs">
+      <DependentUpon>FormDocAct_DemUst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActCheck\Form_Journal_ActReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActCheck\Form_Journal_ActReplace.Designer.cs">
+      <DependentUpon>Form_Journal_ActReplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActCheck\Form_Journal_MeterDemontag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActCheck\Form_Journal_MeterDemontag.Designer.cs">
+      <DependentUpon>Form_Journal_MeterDemontag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormCalcPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormCalcPeriod.Designer.cs">
+      <DependentUpon>FormCalcPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormCntVal_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormCntVal_Log.Designer.cs">
+      <DependentUpon>FormCntVal_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormDocCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormDocCopy.Designer.cs">
+      <DependentUpon>FormDocCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormEnterTariff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormEnterTariff.Designer.cs">
+      <DependentUpon>FormEnterTariff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormEnterTariff_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormEnterTariff_Edit.Designer.cs">
+      <DependentUpon>FormEnterTariff_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormFactRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormFactRegister.Designer.cs">
+      <DependentUpon>FormFactRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormGroupDocSchet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormGroupDocSchet.Designer.cs">
+      <DependentUpon>FormGroupDocSchet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormInputCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormInputCheck.Designer.cs">
+      <DependentUpon>FormInputCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormCntValTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormCntValTest.Designer.cs">
+      <DependentUpon>FormCntValTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormGroupDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormGroupDoc.Designer.cs">
+      <DependentUpon>FormGroupDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormNumberFact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormNumberFact.Designer.cs">
+      <DependentUpon>FormNumberFact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormNumberFactAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormNumberFactAdd.Designer.cs">
+      <DependentUpon>FormNumberFactAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormOverPower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormOverPower.Designer.cs">
+      <DependentUpon>FormOverPower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormPassword.Designer.cs">
+      <DependentUpon>FormPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormPowerEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormPowerEnter.Designer.cs">
+      <DependentUpon>FormPowerEnter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportCorrect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportCorrect.Designer.cs">
+      <DependentUpon>FormReportCorrect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportHouseAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportHouseAll.Designer.cs">
+      <DependentUpon>FormReportHouseAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportHouseDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportHouseDetail.Designer.cs">
+      <DependentUpon>FormReportHouseDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportMain.Designer.cs">
+      <DependentUpon>FormReportMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportMainFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportMainFilter.Designer.cs">
+      <DependentUpon>FormReportMainFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportMain_Average.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportMain_Average.Designer.cs">
+      <DependentUpon>FormReportMain_Average.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportMeasur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportMeasur.Designer.cs">
+      <DependentUpon>FormReportMeasur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportObjLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportObjLink.Designer.cs">
+      <DependentUpon>FormReportObjLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportObjLinkPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportObjLinkPrint.Designer.cs">
+      <DependentUpon>FormReportObjLinkPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportOper .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportOper .Designer.cs">
+      <DependentUpon>FormReportOper .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormReportPeriod.Designer.cs">
+      <DependentUpon>FormReportPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormVisualParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculat\FormVisualParam.Designer.cs">
+      <DependentUpon>FormVisualParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormAbnDogScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormAbnDogScan.Designer.cs">
+      <DependentUpon>FormAbnDogScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormAbnFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormAbnFiles.Designer.cs">
+      <DependentUpon>FormAbnFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormAbnFilesAddEditFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormAbnFilesAddEditFolder.Designer.cs">
+      <DependentUpon>FormAbnFilesAddEditFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormAbnFilesSelectFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormAbnFilesSelectFolder.Designer.cs">
+      <DependentUpon>FormAbnFilesSelectFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormActBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormActBalance.Designer.cs">
+      <DependentUpon>FormActBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormActExplBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormActExplBalance.Designer.cs">
+      <DependentUpon>FormActExplBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormDocScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormDocScan.Designer.cs">
+      <DependentUpon>FormDocScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormJournalOrdersInspection.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\Document\FormJournalOrdersInspection.Designer.cs">
+      <DependentUpon>FormJournalOrdersInspection.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\Document\FormObjFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormObjFind.Designer.cs">
+      <DependentUpon>FormObjFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormOrderAct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormOrderAct.Designer.cs">
+      <DependentUpon>FormOrderAct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormOrderAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormOrderAddEdit.Designer.cs">
+      <DependentUpon>FormOrderAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormOrderInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormOrderInspection.Designer.cs">
+      <DependentUpon>FormOrderInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\FormOrderObjectAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\FormOrderObjectAdd.Designer.cs">
+      <DependentUpon>FormOrderObjectAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dogovor\FormObjDogovorCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dogovor\FormObjDogovorCopy.Designer.cs">
+      <DependentUpon>FormObjDogovorCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Export\FormExport1C.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export\FormExport1C.Designer.cs">
+      <DependentUpon>FormExport1C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportDispatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportDispatch.Designer.cs">
+      <DependentUpon>FormExportDispatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportGRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportGRP.Designer.cs">
+      <DependentUpon>FormExportGRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportMRSK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportMRSK.Designer.cs">
+      <DependentUpon>FormExportMRSK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportNewAbn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportNewAbn.Designer.cs">
+      <DependentUpon>FormExportNewAbn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportUlenergo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export\FormExportUlenergo.Designer.cs">
+      <DependentUpon>FormExportUlenergo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Export\FormImportDNU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export\FormImportDNU.Designer.cs">
+      <DependentUpon>FormImportDNU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Export\FormImportODN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export\FormImportODN.Designer.cs">
+      <DependentUpon>FormImportODN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnFindAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnFindAddress.Designer.cs">
+      <DependentUpon>FormAbnFindAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnFindShort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnFindShort.Designer.cs">
+      <DependentUpon>FormAbnFindShort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnNameODS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnNameODS.Designer.cs">
+      <DependentUpon>FormAbnNameODS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnParent.Designer.cs">
+      <DependentUpon>FormAbnParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbn_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbn_Log.Designer.cs">
+      <DependentUpon>FormAbn_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormBanks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBanks.Designer.cs">
+      <DependentUpon>FormBanks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnCalc.Designer.cs">
+      <DependentUpon>FormAbnCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnCalcPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnCalcPrint.Designer.cs">
+      <DependentUpon>FormAbnCalcPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct_Check.Designer.cs">
+      <DependentUpon>FormDocAct_Check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct_CheckAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct_CheckAdd.Designer.cs">
+      <DependentUpon>FormDocAct_CheckAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct_SealInstDis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ActCheck\FormDocAct_SealInstDis.Designer.cs">
+      <DependentUpon>FormDocAct_SealInstDis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnFind.Designer.cs">
+      <DependentUpon>FormAbnFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnSelectSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnSelectSign.Designer.cs">
+      <DependentUpon>FormAbnSelectSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnStat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnStat.Designer.cs">
+      <DependentUpon>FormAbnStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbn.Designer.cs">
+      <DependentUpon>FormAbn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnAddress.Designer.cs">
+      <DependentUpon>FormAbnAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnAddressHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnAddressHistory.Designer.cs">
+      <DependentUpon>FormAbnAddressHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnAddressSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnAddressSelect.Designer.cs">
+      <DependentUpon>FormAbnAddressSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnAddEdit.Designer.cs">
+      <DependentUpon>FormAbnAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnChief.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnChief.Designer.cs">
+      <DependentUpon>FormAbnChief.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnChiefHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnChiefHistory.Designer.cs">
+      <DependentUpon>FormAbnChiefHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnContact.Designer.cs">
+      <DependentUpon>FormAbnContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnContactAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnContactAdd.Designer.cs">
+      <DependentUpon>FormAbnContactAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnDetails.Designer.cs">
+      <DependentUpon>FormAbnDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnDetailsHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnDetailsHistory.Designer.cs">
+      <DependentUpon>FormAbnDetailsHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnDocum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnDocum.Designer.cs">
+      <DependentUpon>FormAbnDocum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnDoc_Dogovor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnDoc_Dogovor.Designer.cs">
+      <DependentUpon>FormAbnDoc_Dogovor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnDogObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnDogObj.Designer.cs">
+      <DependentUpon>FormAbnDogObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAbnStatusHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbnStatusHistory.Designer.cs">
+      <DependentUpon>FormAbnStatusHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAuthorizedPerson .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAuthorizedPerson .Designer.cs">
+      <DependentUpon>FormAuthorizedPerson .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormClosePeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormClosePeriod.Designer.cs">
+      <DependentUpon>FormClosePeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCntVal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCntVal.Designer.cs">
+      <DependentUpon>FormCntVal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCntValEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCntValEnter.Designer.cs">
+      <DependentUpon>FormCntValEnter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCntValMeter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCntValMeter.Designer.cs">
+      <DependentUpon>FormCntValMeter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLAbn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLAbn.Designer.cs">
+      <DependentUpon>FormLAbn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLCnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLCnt.Designer.cs">
+      <DependentUpon>FormLCnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLObj.Designer.cs">
+      <DependentUpon>FormLObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMeterEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMeterEnter.Designer.cs">
+      <DependentUpon>FormMeterEnter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNewFileName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNewFileName.Designer.cs">
+      <DependentUpon>FormNewFileName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNumberMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNumberMonth.Designer.cs">
+      <DependentUpon>FormNumberMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormObjSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormObjSelect.Designer.cs">
+      <DependentUpon>FormObjSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormActPrint_Correct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormActPrint_Correct.Designer.cs">
+      <DependentUpon>FormActPrint_Correct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormNotification.Designer.cs">
+      <DependentUpon>FormNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormActPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormActPrint.Designer.cs">
+      <DependentUpon>FormActPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormBankReqPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormBankReqPrint.Designer.cs">
+      <DependentUpon>FormBankReqPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormFactPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormFactPrint.Designer.cs">
+      <DependentUpon>FormFactPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormInvPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormInvPrint.Designer.cs">
+      <DependentUpon>FormInvPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormMeterData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormMeterData.Designer.cs">
+      <DependentUpon>FormMeterData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormObjectData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormObjectData.Designer.cs">
+      <DependentUpon>FormObjectData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormRegisterPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormRegisterPrint.Designer.cs">
+      <DependentUpon>FormRegisterPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormFactPrint_Correct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormFactPrint_Correct.Designer.cs">
+      <DependentUpon>FormFactPrint_Correct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormRepOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormRepOrder.Designer.cs">
+      <DependentUpon>FormRepOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormRepUniversal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRep\FormRepUniversal.Designer.cs">
+      <DependentUpon>FormRepUniversal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSchetPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSchetPrint.Designer.cs">
+      <DependentUpon>FormSchetPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GraphicsInspector\GraphicsPointView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GraphicsInspector\GraphicsPointView.Designer.cs">
+      <DependentUpon>GraphicsPointView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormCountMeter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormCountMeter.Designer.cs">
+      <DependentUpon>FormCountMeter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeasurementsHour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeasurementsHour.Designer.cs">
+      <DependentUpon>FormMeasurementsHour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeasurementsHour_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeasurementsHour_Edit.Designer.cs">
+      <DependentUpon>FormMeasurementsHour_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeasurementsOfCounters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeasurementsOfCounters.Designer.cs">
+      <DependentUpon>FormMeasurementsOfCounters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeterParameters_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeterParameters_Log.Designer.cs">
+      <DependentUpon>FormMeterParameters_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeterVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeterVerification.Designer.cs">
+      <DependentUpon>FormMeterVerification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeter_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeter_Log.Designer.cs">
+      <DependentUpon>FormMeter_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormNewPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormNewPoint.Designer.cs">
+      <DependentUpon>FormNewPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormAddTariff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormAddTariff.Designer.cs">
+      <DependentUpon>FormAddTariff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormLCnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormLCnt.Designer.cs">
+      <DependentUpon>FormLCnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeterAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormMeterAddEdit.Designer.cs">
+      <DependentUpon>FormMeterAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Meter\FormPointKLoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meter\FormPointKLoss.Designer.cs">
+      <DependentUpon>FormPointKLoss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormMeasurementsOfObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormMeasurementsOfObject.Designer.cs">
+      <DependentUpon>FormMeasurementsOfObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormMeasurementsOfObject_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormMeasurementsOfObject_Edit.Designer.cs">
+      <DependentUpon>FormMeasurementsOfObject_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjCopy.Designer.cs">
+      <DependentUpon>FormObjCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjFlagAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjFlagAdd.Designer.cs">
+      <DependentUpon>FormObjFlagAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormAddEditConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormAddEditConnect.Designer.cs">
+      <DependentUpon>FormAddEditConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjDog_Linking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjDog_Linking.Designer.cs">
+      <DependentUpon>FormObjDog_Linking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjEditComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjEditComment.Designer.cs">
+      <DependentUpon>FormObjEditComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjAE.Designer.cs">
+      <DependentUpon>FormObjAE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormLObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormLObj.Designer.cs">
+      <DependentUpon>FormLObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjHistory.Designer.cs">
+      <DependentUpon>FormObjHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjKLossTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjKLossTrans.Designer.cs">
+      <DependentUpon>FormObjKLossTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjPower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormObjPower.Designer.cs">
+      <DependentUpon>FormObjPower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormObj_Linking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormObj_Linking.Designer.cs">
+      <DependentUpon>FormObj_Linking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Object\FormReportPower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Object\FormReportPower.Designer.cs">
+      <DependentUpon>FormReportPower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prognosis\FormPrognosisMonthAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prognosis\FormPrognosisMonthAdd.Designer.cs">
+      <DependentUpon>FormPrognosisMonthAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Test\FormTestDocSum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Test\FormTestDocSum.Designer.cs">
+      <DependentUpon>FormTestDocSum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Test\FormTestSchetFact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Test\FormTestSchetFact.Designer.cs">
+      <DependentUpon>FormTestSchetFact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UnloadingGWC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UnloadingGWC.Designer.cs">
+      <DependentUpon>UnloadingGWC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormFindObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormFindObject.Designer.cs">
+      <DependentUpon>FormFindObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SUB\EIS\1\EIS_Consumer\Prv\Prv.csproj">
+      <Project>{c31d5809-3384-49a0-9818-91aabd08e5ba}</Project>
+      <Name>Prv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scheme\SchemeModel\SchemeModelN.csproj">
+      <Project>{1e4637ad-f6b6-4cd5-9c9c-5f333ebf4443}</Project>
+      <Name>SchemeModelN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Classes\MultiColumnComboBoxExt.resx">
+      <DependentUpon>MultiColumnComboBoxExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActCheck\FormActBase.resx">
+      <DependentUpon>FormActBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActCheck\FormDocAct.resx">
+      <DependentUpon>FormDocAct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActCheck\FormDocAct_DemUst.resx">
+      <DependentUpon>FormDocAct_DemUst.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActCheck\Form_Journal_ActReplace.resx">
+      <DependentUpon>Form_Journal_ActReplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActCheck\Form_Journal_MeterDemontag.resx">
+      <DependentUpon>Form_Journal_MeterDemontag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormCalcPeriod.resx">
+      <DependentUpon>FormCalcPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormCntVal_Log.resx">
+      <DependentUpon>FormCntVal_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormDocCopy.resx">
+      <DependentUpon>FormDocCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormEnterTariff.resx">
+      <DependentUpon>FormEnterTariff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormEnterTariff_Edit.resx">
+      <DependentUpon>FormEnterTariff_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormFactRegister.resx">
+      <DependentUpon>FormFactRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormGroupDocSchet.resx">
+      <DependentUpon>FormGroupDocSchet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormInputCheck.resx">
+      <DependentUpon>FormInputCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormCntValTest.resx">
+      <DependentUpon>FormCntValTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormGroupDoc.resx">
+      <DependentUpon>FormGroupDoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormNumberFact.resx">
+      <DependentUpon>FormNumberFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormNumberFactAdd.resx">
+      <DependentUpon>FormNumberFactAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormOverPower.resx">
+      <DependentUpon>FormOverPower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormPassword.resx">
+      <DependentUpon>FormPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormPowerEnter.resx">
+      <DependentUpon>FormPowerEnter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportCorrect.resx">
+      <DependentUpon>FormReportCorrect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportHouseAll.resx">
+      <DependentUpon>FormReportHouseAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportHouseDetail.resx">
+      <DependentUpon>FormReportHouseDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportMain.resx">
+      <DependentUpon>FormReportMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportMainFilter.resx">
+      <DependentUpon>FormReportMainFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportMain_Average.resx">
+      <DependentUpon>FormReportMain_Average.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportMeasur.resx">
+      <DependentUpon>FormReportMeasur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportObjLink.resx">
+      <DependentUpon>FormReportObjLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportObjLinkPrint.resx">
+      <DependentUpon>FormReportObjLinkPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportOper .resx">
+      <DependentUpon>FormReportOper .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormReportPeriod.resx">
+      <DependentUpon>FormReportPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\FormVisualParam.resx">
+      <DependentUpon>FormVisualParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculat\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\ReportObjLinkPrint-1.rdlc" />
+    <EmbeddedResource Include="Reports\ReportObjLinkPrint.rdlc" />
+    <EmbeddedResource Include="Forms\Document\FormAbnDogScan.resx">
+      <DependentUpon>FormAbnDogScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormAbnFiles.resx">
+      <DependentUpon>FormAbnFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormAbnFilesAddEditFolder.resx">
+      <DependentUpon>FormAbnFilesAddEditFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormAbnFilesSelectFolder.resx">
+      <DependentUpon>FormAbnFilesSelectFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormActBalance.resx">
+      <DependentUpon>FormActBalance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormActExplBalance.resx">
+      <DependentUpon>FormActExplBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormDocScan.resx">
+      <DependentUpon>FormDocScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormJournalOrdersInspection.resx">
+      <DependentUpon>FormJournalOrdersInspection.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormObjFind.resx">
+      <DependentUpon>FormObjFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormOrderAct.resx">
+      <DependentUpon>FormOrderAct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormOrderAddEdit.resx">
+      <DependentUpon>FormOrderAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormOrderInspection.resx">
+      <DependentUpon>FormOrderInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\FormOrderObjectAdd.resx">
+      <DependentUpon>FormOrderObjectAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dogovor\FormObjDogovorCopy.resx">
+      <DependentUpon>FormObjDogovorCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export\FormExport1C.resx">
+      <DependentUpon>FormExport1C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export\FormExportDispatch.resx">
+      <DependentUpon>FormExportDispatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export\FormExportGRP.resx">
+      <DependentUpon>FormExportGRP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export\FormExportMRSK.resx">
+      <DependentUpon>FormExportMRSK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export\FormExportNewAbn.resx">
+      <DependentUpon>FormExportNewAbn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export\FormExportUlenergo.resx">
+      <DependentUpon>FormExportUlenergo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export\FormImportDNU.resx">
+      <DependentUpon>FormImportDNU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export\FormImportODN.resx">
+      <DependentUpon>FormImportODN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnCalc.resx">
+      <DependentUpon>FormAbnCalc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnCalcPrint.resx">
+      <DependentUpon>FormAbnCalcPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActCheck\FormDocAct_Check.resx">
+      <DependentUpon>FormDocAct_Check.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActCheck\FormDocAct_CheckAdd.resx">
+      <DependentUpon>FormDocAct_CheckAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActCheck\FormDocAct_SealInstDis.resx">
+      <DependentUpon>FormDocAct_SealInstDis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnFind.resx">
+      <DependentUpon>FormAbnFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnFindAddress.resx">
+      <DependentUpon>FormAbnFindAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnFindShort.resx">
+      <DependentUpon>FormAbnFindShort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnNameODS.resx">
+      <DependentUpon>FormAbnNameODS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnParent.resx">
+      <DependentUpon>FormAbnParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnSelectSign.resx">
+      <DependentUpon>FormAbnSelectSign.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnStat.resx">
+      <DependentUpon>FormAbnStat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbn.resx">
+      <DependentUpon>FormAbn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnAddress.resx">
+      <DependentUpon>FormAbnAddress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnAddressHistory.resx">
+      <DependentUpon>FormAbnAddressHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnAddressSelect.resx">
+      <DependentUpon>FormAbnAddressSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnAddEdit.resx">
+      <DependentUpon>FormAbnAddEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnChief.resx">
+      <DependentUpon>FormAbnChief.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnChiefHistory.resx">
+      <DependentUpon>FormAbnChiefHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnContact.resx">
+      <DependentUpon>FormAbnContact.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnContactAdd.resx">
+      <DependentUpon>FormAbnContactAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnDetails.resx">
+      <DependentUpon>FormAbnDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnDetailsHistory.resx">
+      <DependentUpon>FormAbnDetailsHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnDocum.resx">
+      <DependentUpon>FormAbnDocum.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnDoc_Dogovor.resx">
+      <DependentUpon>FormAbnDoc_Dogovor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnDogObj.resx">
+      <DependentUpon>FormAbnDogObj.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbnStatusHistory.resx">
+      <DependentUpon>FormAbnStatusHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbn_Log.resx">
+      <DependentUpon>FormAbn_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAuthorizedPerson .resx">
+      <DependentUpon>FormAuthorizedPerson .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormBanks.resx">
+      <DependentUpon>FormBanks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormClosePeriod.resx">
+      <DependentUpon>FormClosePeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCntVal.resx">
+      <DependentUpon>FormCntVal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCntValEnter.resx">
+      <DependentUpon>FormCntValEnter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCntValMeter.resx">
+      <DependentUpon>FormCntValMeter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLAbn.resx">
+      <DependentUpon>FormLAbn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLCnt.resx">
+      <DependentUpon>FormLCnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLObj.resx">
+      <DependentUpon>FormLObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMeterEnter.resx">
+      <DependentUpon>FormMeterEnter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNewFileName.resx">
+      <DependentUpon>FormNewFileName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNumberMonth.resx">
+      <DependentUpon>FormNumberMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormObjSelect.resx">
+      <DependentUpon>FormObjSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormActPrint.resx">
+      <DependentUpon>FormActPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormActPrint_Correct.resx">
+      <DependentUpon>FormActPrint_Correct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormBankReqPrint.resx">
+      <DependentUpon>FormBankReqPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormFactPrint.resx">
+      <DependentUpon>FormFactPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormInvPrint.resx">
+      <DependentUpon>FormInvPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormMeterData.resx">
+      <DependentUpon>FormMeterData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormNotification.resx">
+      <DependentUpon>FormNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormObjectData.resx">
+      <DependentUpon>FormObjectData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormRegisterPrint.resx">
+      <DependentUpon>FormRegisterPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormFactPrint_Correct.resx">
+      <DependentUpon>FormFactPrint_Correct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormRepOrder.resx">
+      <DependentUpon>FormRepOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRep\FormRepUniversal.resx">
+      <DependentUpon>FormRepUniversal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSchetPrint.resx">
+      <DependentUpon>FormSchetPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GraphicsInspector\GraphicsPointView.resx">
+      <DependentUpon>GraphicsPointView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormAddTariff.resx">
+      <DependentUpon>FormAddTariff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormCountMeter.resx">
+      <DependentUpon>FormCountMeter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormLCnt.resx">
+      <DependentUpon>FormLCnt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormMeasurementsHour.resx">
+      <DependentUpon>FormMeasurementsHour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormMeasurementsHour_Edit.resx">
+      <DependentUpon>FormMeasurementsHour_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormMeasurementsOfCounters.resx">
+      <DependentUpon>FormMeasurementsOfCounters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormMeterAddEdit.resx">
+      <DependentUpon>FormMeterAddEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormMeterParameters_Log.resx">
+      <DependentUpon>FormMeterParameters_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormMeterVerification.resx">
+      <DependentUpon>FormMeterVerification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormMeter_Log.resx">
+      <DependentUpon>FormMeter_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormNewPoint.resx">
+      <DependentUpon>FormNewPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meter\FormPointKLoss.resx">
+      <DependentUpon>FormPointKLoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormAddEditConnect.resx">
+      <DependentUpon>FormAddEditConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormMeasurementsOfObject.resx">
+      <DependentUpon>FormMeasurementsOfObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormMeasurementsOfObject_Edit.resx">
+      <DependentUpon>FormMeasurementsOfObject_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormObjAE.resx">
+      <DependentUpon>FormObjAE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormLObj.resx">
+      <DependentUpon>FormLObj.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormObjCopy.resx">
+      <DependentUpon>FormObjCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormObjDog_Linking.resx">
+      <DependentUpon>FormObjDog_Linking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormObjEditComment.resx">
+      <DependentUpon>FormObjEditComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormObjFlagAdd.resx">
+      <DependentUpon>FormObjFlagAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormObjHistory.resx">
+      <DependentUpon>FormObjHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormObjKLossTrans.resx">
+      <DependentUpon>FormObjKLossTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormObjPower.resx">
+      <DependentUpon>FormObjPower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormObj_Linking.resx">
+      <DependentUpon>FormObj_Linking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Object\FormReportPower.resx">
+      <DependentUpon>FormReportPower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prognosis\FormPrognosisMonthAdd.resx">
+      <DependentUpon>FormPrognosisMonthAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Test\FormTestDocSum.resx">
+      <DependentUpon>FormTestDocSum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Test\FormTestSchetFact.resx">
+      <DependentUpon>FormTestSchetFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UnloadingGWC.resx">
+      <DependentUpon>UnloadingGWC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormFindObject.resx">
+      <DependentUpon>FormFindObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportAct_Correct.rdlc" />
+    <EmbeddedResource Include="Reports\ReportNotification2.rdlc" />
+    <EmbeddedResource Include="Reports\ReportCheck.rdlc" />
+    <EmbeddedResource Include="Reports\ReportGraphicMastersAllG.rdlc" />
+    <EmbeddedResource Include="Reports\ReportGraphicMastersAll.rdlc" />
+    <EmbeddedResource Include="Reports\ReportGaphicMastersG.rdlc" />
+    <EmbeddedResource Include="Reports\ReportGraphicMasters.rdlc" />
+    <EmbeddedResource Include="Reports\ReportBanqReq.rdlc" />
+    <EmbeddedResource Include="Reports\ReportFact201707.rdlc" />
+    <EmbeddedResource Include="Reports\ReportGraphicOrder.rdlc" />
+    <EmbeddedResource Include="Reports\ReportMeterData.rdlc" />
+    <EmbeddedResource Include="Reports\ReportNotification.rdlc" />
+    <EmbeddedResource Include="Reports\ReportObjectData.rdlc" />
+    <EmbeddedResource Include="Reports\ReportRegister.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSchet.rdlc" />
+    <EmbeddedResource Include="Reports\ReportAct.rdlc" />
+    <EmbeddedResource Include="Reports\ReportInv.rdlc" />
+    <EmbeddedResource Include="Reports\ReportGraphicMastersNoObsl.rdlc" />
+    <EmbeddedResource Include="Reports\ReportObjectData1.rdlc" />
+    <EmbeddedResource Include="Reports\ReportFact_Correct.rdlc" />
+    <EmbeddedResource Include="Reports\ReportFact201201.rdlc" />
+    <EmbeddedResource Include="Reports\ReportFact.rdlc" />
+    <EmbeddedResource Include="Reports\ReportFact_Correct201707.rdlc" />
+    <EmbeddedResource Include="Reports\ReportFact_Correct201201.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DataSet\DataSetAbn.xsc">
+      <DependentUpon>DataSetAbn.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetAbn.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAbn.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetAbn.xss">
+      <DependentUpon>DataSetAbn.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetLAbn.xsc">
+      <DependentUpon>DataSetLAbn.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetLAbn.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLAbn.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetLAbn.xss">
+      <DependentUpon>DataSetLAbn.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetLObj.xsc">
+      <DependentUpon>DataSetLObj.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetLObj.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLObj.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetLObj.xss">
+      <DependentUpon>DataSetLObj.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnAddEdit.xsc">
+      <DependentUpon>dsAbnAddEdit.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnAddEdit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnAddEdit.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnAddEdit.xss">
+      <DependentUpon>dsAbnAddEdit.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet\dsAbnObjAct.xsc">
+      <DependentUpon>dsAbnObjAct.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnObjAct.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnObjAct.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnObjAct.xss">
+      <DependentUpon>dsAbnObjAct.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsCalc.xsc">
+      <DependentUpon>dsCalc.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsCalc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCalc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsCalc.xss">
+      <DependentUpon>dsCalc.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsDop.xsc">
+      <DependentUpon>dsDop.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsDop.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDop.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsDop.xss">
+      <DependentUpon>dsDop.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsFind.xsc">
+      <DependentUpon>dsFind.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsFind.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFind.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsFind.xss">
+      <DependentUpon>dsFind.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsReportMainFilter.xsc">
+      <DependentUpon>dsReportMainFilter.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsReportMainFilter.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportMainFilter.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsReportMainFilter.xss">
+      <DependentUpon>dsReportMainFilter.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsScan.xsc">
+      <DependentUpon>dsScan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsScan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsScan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsScan.xss">
+      <DependentUpon>dsScan.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet\dsAbnStatus.xsc">
+      <DependentUpon>dsAbnStatus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnStatus.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnStatus.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnStatus.xss">
+      <DependentUpon>dsAbnStatus.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet\dsAbnDetails.xsc">
+      <DependentUpon>dsAbnDetails.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnDetails.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnDetails.xss">
+      <DependentUpon>dsAbnDetails.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet\dsAbnChief.xsc">
+      <DependentUpon>dsAbnChief.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnChief.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnChief.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnChief.xss">
+      <DependentUpon>dsAbnChief.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnContact.xsc">
+      <DependentUpon>dsAbnContact.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnContact.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnContact.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnContact.xss">
+      <DependentUpon>dsAbnContact.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAddress.xsc">
+      <DependentUpon>dsAddress.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAddress.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAddress.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAddress.xss">
+      <DependentUpon>dsAddress.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsObj.xsc">
+      <DependentUpon>dsObj.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsObj.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsObj.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsObj.xss">
+      <DependentUpon>dsObj.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet\dsAbnAddress.xsc">
+      <DependentUpon>dsAbnAddress.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnAddress.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnAddress.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnAddress.xss">
+      <DependentUpon>dsAbnAddress.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnAddressList.xsc">
+      <DependentUpon>dsAbnAddressList.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnAddressList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnAddressList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnAddressList.xss">
+      <DependentUpon>dsAbnAddressList.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnAddressSelect.xsc">
+      <DependentUpon>dsAbnAddressSelect.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnAddressSelect.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnAddressSelect.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnAddressSelect.xss">
+      <DependentUpon>dsAbnAddressSelect.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnCard.xsc">
+      <DependentUpon>dsAbnCard.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnCard.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnCard.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnCard.xss">
+      <DependentUpon>dsAbnCard.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnDocum.xsc">
+      <DependentUpon>dsAbnDocum.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnDocum.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnDocum.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnDocum.xss">
+      <DependentUpon>dsAbnDocum.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnDogObj.xsc">
+      <DependentUpon>dsAbnDogObj.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsAbnDogObj.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAbnDogObj.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsAbnDogObj.xss">
+      <DependentUpon>dsAbnDogObj.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsCnt.xsc">
+      <DependentUpon>dsCnt.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsCnt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCnt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsCnt.xss">
+      <DependentUpon>dsCnt.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsCntVal.xsc">
+      <DependentUpon>dsCntVal.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsCntVal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCntVal1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsCntVal.xss">
+      <DependentUpon>dsCntVal.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet\dsInfo.xsc">
+      <DependentUpon>dsInfo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsInfo.xss">
+      <DependentUpon>dsInfo.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{851CD9E4-0C87-462A-82DF-83A0B5C8DBD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reference</RootNamespace>
+    <AssemblyName>Reference</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Constants" />
+    <Reference Include="ControlsLbr">
+      <HintPath>..\..\..\EIS (Original)\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\..\..\2017-программы\de4dot2018\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\..\..\EIS (Original)\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-{5EA7CB54-5D42-4729-8140-F5E810D26705}.cs" />
+    <Compile Include="Class0.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class20.cs" />
+    <Compile Include="Class37.cs" />
+    <Compile Include="Class48.cs" />
+    <Compile Include="Class69.cs" />
+    <Compile Include="Class70.cs" />
+    <Compile Include="Class72.cs" />
+    <Compile Include="Class73.cs" />
+    <Compile Include="FormAddUpdClassifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddUpdClassifier.Designer.cs">
+      <DependentUpon>FormAddUpdClassifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGroupWorkerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGroupWorkerAdd.Designer.cs">
+      <DependentUpon>FormGroupWorkerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJobTitlesAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJobTitlesAddEdit.Designer.cs">
+      <DependentUpon>FormJobTitlesAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKladrAddEditPunkts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKladrAddEditPunkts.Designer.cs">
+      <DependentUpon>FormKladrAddEditPunkts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKladrAddEditStreet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKladrAddEditStreet.Designer.cs">
+      <DependentUpon>FormKladrAddEditStreet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCable.Designer.cs">
+      <DependentUpon>FormCable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCableAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCableAdd.Designer.cs">
+      <DependentUpon>FormCableAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormClassifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormClassifier.Designer.cs">
+      <DependentUpon>FormClassifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCounter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCounter.Designer.cs">
+      <DependentUpon>FormCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCounterAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCounterAddEdit.Designer.cs">
+      <DependentUpon>FormCounterAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDivisions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDivisions.Designer.cs">
+      <DependentUpon>FormDivisions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDivisionsAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDivisionsAddEdit.Designer.cs">
+      <DependentUpon>FormDivisionsAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEquipment.Designer.cs">
+      <DependentUpon>FormEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEquipmentChar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEquipmentChar.Designer.cs">
+      <DependentUpon>FormEquipmentChar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGroupWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGroupWorker.Designer.cs">
+      <DependentUpon>FormGroupWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormJobTitleAddEditPadez.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormJobTitleAddEditPadez.Designer.cs">
+      <DependentUpon>FormJobTitleAddEditPadez.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormJobTitles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormJobTitles.Designer.cs">
+      <DependentUpon>FormJobTitles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormKladr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKladr.Designer.cs">
+      <DependentUpon>FormKladr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormKladrSocr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKladrSocr.Designer.cs">
+      <DependentUpon>FormKladrSocr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTrans.Designer.cs">
+      <DependentUpon>FormTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTransAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTransAddEdit.Designer.cs">
+      <DependentUpon>FormTransAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTransformerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTransformerAdd.Designer.cs">
+      <DependentUpon>FormTransformerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTrasformer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTrasformer.Designer.cs">
+      <DependentUpon>FormTrasformer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormWorkerAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWorkerAddEdit.Designer.cs">
+      <DependentUpon>FormWorkerAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormWorkerContactAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWorkerContactAddEdit.Designer.cs">
+      <DependentUpon>FormWorkerContactAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormWorkerGroupAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWorkerGroupAddEdit.Designer.cs">
+      <DependentUpon>FormWorkerGroupAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormWorkerGroupElectricalAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWorkerGroupElectricalAddEdit.Designer.cs">
+      <DependentUpon>FormWorkerGroupElectricalAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormWorkers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWorkers.Designer.cs">
+      <DependentUpon>FormWorkers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapObj\FormMapObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapObj\FormMapObj.Designer.cs">
+      <DependentUpon>FormMapObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapObj\FormMapObjAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapObj\FormMapObjAddEdit.Designer.cs">
+      <DependentUpon>FormMapObjAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapObj\FormMapObjParamAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapObj\FormMapObjParamAddEdit.Designer.cs">
+      <DependentUpon>FormMapObjParamAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Worker\FormWorkerAddEditPadez.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Worker\FormWorkerAddEditPadez.Designer.cs">
+      <DependentUpon>FormWorkerAddEditPadez.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Worker\FormWorkerOrganization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Worker\FormWorkerOrganization.Designer.cs">
+      <DependentUpon>FormWorkerOrganization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="aR3nbf8dQp2feLmk31\lSfgApatkdxsVcGcrktoFd.resx" />
+    <EmbeddedResource Include="FormAddUpdClassifier.resx">
+      <DependentUpon>FormAddUpdClassifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGroupWorkerAdd.resx">
+      <DependentUpon>FormGroupWorkerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJobTitlesAddEdit.resx">
+      <DependentUpon>FormJobTitlesAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKladrAddEditPunkts.resx">
+      <DependentUpon>FormKladrAddEditPunkts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKladrAddEditStreet.resx">
+      <DependentUpon>FormKladrAddEditStreet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCable.resx">
+      <DependentUpon>FormCable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCableAdd.resx">
+      <DependentUpon>FormCableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormClassifier.resx">
+      <DependentUpon>FormClassifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCounter.resx">
+      <DependentUpon>FormCounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCounterAddEdit.resx">
+      <DependentUpon>FormCounterAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDivisions.resx">
+      <DependentUpon>FormDivisions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDivisionsAddEdit.resx">
+      <DependentUpon>FormDivisionsAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEquipment.resx">
+      <DependentUpon>FormEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEquipmentChar.resx">
+      <DependentUpon>FormEquipmentChar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGroupWorker.resx">
+      <DependentUpon>FormGroupWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormJobTitleAddEditPadez.resx">
+      <DependentUpon>FormJobTitleAddEditPadez.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormJobTitles.resx">
+      <DependentUpon>FormJobTitles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormKladr.resx">
+      <DependentUpon>FormKladr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormKladrSocr.resx">
+      <DependentUpon>FormKladrSocr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTrans.resx">
+      <DependentUpon>FormTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTransAddEdit.resx">
+      <DependentUpon>FormTransAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTransformerAdd.resx">
+      <DependentUpon>FormTransformerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTrasformer.resx">
+      <DependentUpon>FormTrasformer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWorkerAddEdit.resx">
+      <DependentUpon>FormWorkerAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWorkerContactAddEdit.resx">
+      <DependentUpon>FormWorkerContactAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWorkerGroupAddEdit.resx">
+      <DependentUpon>FormWorkerGroupAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWorkerGroupElectricalAddEdit.resx">
+      <DependentUpon>FormWorkerGroupElectricalAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWorkers.resx">
+      <DependentUpon>FormWorkers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapObj\FormMapObj.resx">
+      <DependentUpon>FormMapObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapObj\FormMapObjAddEdit.resx">
+      <DependentUpon>FormMapObjAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapObj\FormMapObjParamAddEdit.resx">
+      <DependentUpon>FormMapObjParamAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Worker\FormWorkerAddEditPadez.resx">
+      <DependentUpon>FormWorkerAddEditPadez.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Worker\FormWorkerOrganization.resx">
+      <DependentUpon>FormWorkerOrganization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="g.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

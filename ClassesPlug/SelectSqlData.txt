@@ -1,0 +1,94 @@
+﻿// FormLbr.FormBase
+[MethodImpl(MethodImplOptions.NoInlining)]
+public bool SelectSqlData(DataTable dt, bool withGetSqlPermission, string where = "", int? timeOut = null, bool distinct = false, int countRows = 0)
+{
+	DataTable dataTable;
+	if (withGetSqlPermission)
+	{
+		dataTable = this.GetSqlPermissions(new string[]
+		{
+			dt.TableName
+		});
+	}
+	else
+	{
+		dataTable = new DataTable();
+	}
+	using (SqlConnection sqlConnection = new SqlConnection(this.SqlSettings.GetConnectionString()))
+	{
+		try
+		{
+			string text = "select ";
+			if (distinct)
+			{
+				text += "distinct ";
+			}
+			if (countRows > 0)
+			{
+				text = text + "top " + countRows.ToString() + " ";
+			}
+			if (withGetSqlPermission)
+			{
+				DataRow[] array = dataTable.Select("Operation = 'select'");
+				for (int i = 0; i < array.Length; i++)
+				{
+					DataRow dataRow = array[i];
+					if (dt.Columns.Count > 0)
+					{
+						if (dt.Columns.Contains(dataRow["ColumnName"].ToString()))
+						{
+							text = string.Concat(new object[]
+							{
+								text,
+								"[",
+								dt.TableName,
+								"].[",
+								dataRow["ColumnName"],
+								"], "
+							});
+						}
+					}
+					else
+					{
+						text = string.Concat(new object[]
+						{
+							text,
+							"[",
+							dt.TableName,
+							"].[",
+							dataRow["ColumnName"],
+							"], "
+						});
+					}
+				}
+				text = text.Remove(text.LastIndexOf(", "));
+			}
+			else
+			{
+				text += " * ";
+			}
+			text = text + " from " + dt.TableName + " ";
+			text += where;
+			dt.Clear();
+			sqlConnection.Open();
+			using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(text, sqlConnection))
+			{
+				if (timeOut.HasValue)
+				{
+					sqlDataAdapter.SelectCommand.CommandTimeout = timeOut.Value;
+				}
+				sqlDataAdapter.Fill(dt);
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, ex.Source);
+			return false;
+		}
+		finally
+		{
+			sqlConnection.Close();
+		}
+	}
+	return true;
+}

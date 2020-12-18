@@ -1,0 +1,75 @@
+CREATE TYPE public.box2df (
+  INPUT = public.box2df_in,
+  OUTPUT = public.box2df_out,
+  INTERNALLENGTH = 16,
+  DELIMITER = ',',
+  ALIGNMENT = double,
+  STORAGE = PLAIN
+);
+
+
+ALTER TYPE public.box2df
+  OWNER TO postgres;
+  
+  CREATE TYPE public.geography (
+  INPUT = public.geography_in,
+  OUTPUT = public.geography_out,
+  INTERNALLENGTH = VARIABLE,
+  EXTERNALLENGTH = public.geography_analyze,
+  DELIMITER = ':',
+  SEND = public.geography_send,
+  RECEIVE = public.geography_recv,
+  ALIGNMENT = double,
+  STORAGE = MAIN
+);
+
+COMMENT ON TYPE public.geography
+IS 'postgis type: Ellipsoidal spatial data type.';
+
+
+ALTER TYPE public.geography
+  OWNER TO postgres;
+  
+  CREATE TYPE public.gidx (
+  INPUT = public.gidx_in,
+  OUTPUT = public.gidx_out,
+  INTERNALLENGTH = VARIABLE,
+  DELIMITER = ',',
+  ALIGNMENT = double,
+  STORAGE = PLAIN
+);
+
+
+ALTER TYPE public.gidx
+  OWNER TO postgres;
+  
+  
+  CREATE TYPE public.pgis_abs (
+  INPUT = public.pgis_abs_in,
+  OUTPUT = public.pgis_abs_out,
+  INTERNALLENGTH = 16,
+  DELIMITER = ',',
+  ALIGNMENT = double,
+  STORAGE = PLAIN
+);
+
+
+ALTER TYPE public.pgis_abs
+  OWNER TO postgres;
+  
+  
+  CREATE TYPE public.raster (
+  INPUT = public.raster_in,
+  OUTPUT = public.raster_out,
+  INTERNALLENGTH = VARIABLE,
+  DELIMITER = ',',
+  ALIGNMENT = double,
+  STORAGE = EXTENDED
+);
+
+COMMENT ON TYPE public.raster
+IS 'postgis raster type: raster spatial data type.';
+
+
+ALTER TYPE public.raster
+  OWNER TO postgres;

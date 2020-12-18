@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6335A9D-44B0-48F8-B5FA-39232255CEFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DailyReport</RootNamespace>
+    <AssemblyName>DailyReport</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlsLbr">
+      <HintPath>..\LIB\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>..\LIB\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="DXFLibrary">
+      <HintPath>..\LIB\DXFLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>..\LIB\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Legal">
+      <HintPath>..\LIB\Legal.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>..\LIB\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\LIB\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\LIB\MySQL-6.9.8\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OfficeLB">
+      <HintPath>..\LIB\OfficeLB.dll</HintPath>
+    </Reference>
+    <Reference Include="RequestsClient">
+      <HintPath>..\LIB\RequestsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="SchemeModel">
+      <HintPath>..\LIB\SchemeModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSets\DataSetN.cs">
+      <DependentUpon>DataSetN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsDamage.cs">
+      <DependentUpon>dsDamage.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsDamage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDamage.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Class\_Mail.cs" />
+    <Compile Include="Documents\Class\Class33.cs" />
+    <Compile Include="Documents\Class\CreateReferenceTables.cs" />
+    <Compile Include="Documents\Class\FindElement.cs" />
+    <Compile Include="Documents\Class\ImportDataSESNO.cs" />
+    <Compile Include="Documents\Class\ImportOldData.cs" />
+    <Compile Include="Documents\Class\ImportOldDefectExcel.cs" />
+    <Compile Include="Documents\Class\LoadOldDamageLV.cs" />
+    <Compile Include="Documents\Form\ActDetection\FormActDetectionAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\ActDetection\FormJournalActDetection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\ActDetection\FormJournalActDetectionN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\FormChooseDateOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\JournalDamage\FormChooseDamageCharacter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\JournalDamage\FormDamageHVAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\JournalDamage\FormDamageLVAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\JournalDamage\FormDamageSettingMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\JournalDamage\FormDefectAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\JournalDamage\FormJournalDamage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\JournalDamage\FormSelectDamage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\FormSelectLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\FormSelectSchmObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\FormTagContactAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\Temperature\FormJournalTemperature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Form\Temperature\FormTemperatureAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Report\Approver.cs" />
+    <Compile Include="Documents\Report\FormReportDailyDefect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Report\FormReportDailyHV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Report\FormReportDailyLV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Report\FormReportDetectionCrash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Report\FormReportInterruptLV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Linq\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSets\DataSetN.xsc">
+      <DependentUpon>DataSetN.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetN.xss">
+      <DependentUpon>DataSetN.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsDamage.xsc">
+      <DependentUpon>dsDamage.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsDamage.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDamage.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsDamage.xss">
+      <DependentUpon>dsDamage.xsd</DependentUpon>
+    </None>
+    <None Include="Documents\Form\JournalDamage\Reports\ReportActDetection.rdlc" />
+    <None Include="Documents\Form\JournalDamage\Reports\ReportDailyDefect.rdlc" />
+    <None Include="Documents\Form\JournalDamage\Reports\ReportDailyDefectFull.rdlc" />
+    <None Include="Documents\Form\JournalDamage\Reports\ReportDailyHV.rdlc" />
+    <None Include="Documents\Form\JournalDamage\Reports\ReportDailyLV.rdlc" />
+    <None Include="Documents\Form\JournalDamage\Reports\ReportEmergencyShutdown.rdlc" />
+    <None Include="Documents\Form\JournalDamage\Reports\reportInterruptLV.rdlc" />
+    <None Include="Properties\Add.png" />
+    <None Include="Properties\arrowDown.png" />
+    <None Include="Properties\arrowNext.png" />
+    <None Include="Properties\arrowPrev.png" />
+    <None Include="Properties\arrowUP.png" />
+    <None Include="Properties\CopyBuffer.png" />
+    <None Include="Properties\Delete.png" />
+    <None Include="Properties\Edit.png" />
+    <None Include="Properties\ElementAccept.png" />
+    <None Include="Properties\ElementAdd.png" />
+    <None Include="Properties\ElementDel.png" />
+    <None Include="Properties\ElementEdit.png" />
+    <None Include="Properties\ElementInformation.png" />
+    <None Include="Properties\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\Form\ActDetection\FormJournalActDetection.resx">
+      <DependentUpon>FormJournalActDetection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Form\ActDetection\FormJournalActDetectionN.resx">
+      <DependentUpon>FormJournalActDetectionN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Form\Temperature\FormJournalTemperature.resx">
+      <DependentUpon>FormJournalTemperature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Form\Temperature\FormTemperatureAddEdit.resx">
+      <DependentUpon>FormTemperatureAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\RDLC\ReportAccidents.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportAccidentsA3.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportActDetection.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportDailyDefect.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportDailyDefectFull.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportDailyHV.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportDailyLV.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportEmergencyShutdown.rdlc" />
+    <EmbeddedResource Include="Documents\RDLC\ReportInterruptLV.rdlc" />
+    <EmbeddedResource Include="Documents\Report\FormReportDetectionCrash.resx">
+      <DependentUpon>FormReportDetectionCrash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documents\Form\JournalDamage\SQL\GetTransformerSchmObj.sql" />
+    <Content Include="Documents\Form\JournalDamage\SQL\ReportDailyDefect.sql" />
+    <Content Include="Documents\Form\JournalDamage\SQL\ReportDailyHV.sql" />
+    <Content Include="Documents\Form\JournalDamage\SQL\ReportDailyLV.sql" />
+    <Content Include="Documents\Form\JournalDamage\SQL\ReportDetectionCrashByMonth.sql" />
+    <Content Include="Documents\Form\JournalDamage\SQL\ReportDetectionCrashByNetRegion.sql" />
+    <Content Include="Documents\Form\JournalDamage\SQL\ReportDetectionNoAdmissKWTByNetReg.sql" />
+    <Content Include="Documents\Form\JournalDamage\SQL\ReportDetectionReasonCrash.sql" />
+    <Content Include="Documents\Form\JournalDamage\SQL\ReportDetectionReasonCrashEquip.sql" />
+    <None Include="Properties\report_go.ico" />
+    <None Include="Properties\repair_Crash1.ico" />
+    <None Include="Properties\repair.ico" />
+    <None Include="Properties\Pogoda.ico" />
+    <None Include="Properties\sortZA.png" />
+    <None Include="Properties\sortAZ.png" />
+    <None Include="Properties\Sort.png" />
+    <None Include="Properties\ShowDeletedObject.png" />
+    <None Include="Properties\report1.png" />
+    <None Include="Properties\report_go.png" />
+    <None Include="Properties\Report.png" />
+    <None Include="Properties\Refresh.png" />
+    <None Include="Properties\refresh 16.png" />
+    <None Include="Properties\Print.png" />
+    <None Include="Properties\Pogoda1.png" />
+    <None Include="Properties\FAQ.png" />
+    <Content Include="Documents\SQL\GetTransformerSchmObj.sql" />
+    <Content Include="Documents\SQL\Report81Total.sql" />
+    <Content Include="Documents\SQL\ReportAccidents.sql" />
+    <Content Include="Documents\SQL\ReportDailyDefect.sql" />
+    <Content Include="Documents\SQL\ReportDailyDefectWithLocation.sql" />
+    <Content Include="Documents\SQL\ReportDailyHV.sql" />
+    <Content Include="Documents\SQL\ReportDailyLV.sql" />
+    <Content Include="Documents\SQL\ReportDetectionCrashByMonth.sql" />
+    <Content Include="Documents\SQL\ReportDetectionCrashByNetRegion.sql" />
+    <Content Include="Documents\SQL\ReportDetectionNoAdmissKWTByNetReg.sql" />
+    <Content Include="Documents\SQL\ReportDetectionReasonCrash.sql" />
+    <Content Include="Documents\SQL\ReportDetectionReasonCrashEquip.sql" />
+    <Content Include="Properties\filter.png" />
+    <Content Include="Properties\filter_delete.png" />
+    <Content Include="Properties\Find.png" />
+    <Content Include="Properties\FindNext.png" />
+    <None Include="Properties\FindNextObj.png" />
+    <None Include="Properties\FindObj.png" />
+    <Content Include="Properties\FindPrev.png" />
+    <None Include="Properties\Import2.png" />
+    <None Include="Properties\Load.png" />
+    <None Include="Properties\Icon.ico" />
+    <Content Include="Properties\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ClassLibrarySQL\Library.csproj">
+      <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JournalRequestForRepair\RequestForRepair.csproj">
+      <Project>{d4f87949-2a0c-47e0-883e-eca2743d8894}</Project>
+      <Name>RequestForRepair</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

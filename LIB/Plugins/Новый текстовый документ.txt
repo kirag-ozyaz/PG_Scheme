@@ -1,0 +1,18 @@
+C:\Windows>\\ULGES-FS\software\Ulges\EIS\Plugins\curl.exe -k -U ulges\ftp_user:f
+1le-tp -x ulges-proxy:8080 -i -X POST -H "Content-Type: application/json" -X POS
+T -d "{\"app\":\"nadezhnost\",\"app_ver\":\"1256\",\"body\":{\"auth\":{\"login\"
+:\"vasinee\",\"pwd\":\"IPay31k\"},\"type\":\"adjacentTso\",\"data\":[\"2232\"]}}
+" https://nadezhnost.minenergo.gov.ru/integration/
+HTTP/1.1 403 Forbidden
+Mime-Version: 1.0
+Date: Wed, 24 Apr 2019 15:11:48 +04
+Via: 1.1 ciscowsa.ulges.mv.ru:8080 (Cisco-WSA/10.1.4-017)
+Content-Type: text/html
+Connection: keep-alive
+Proxy-Connection: keep-alive
+Content-Length: 2928
+
+curl: (56) Received HTTP code 403 from proxy after CONNECT
+
+C:\Windows>pause
+Для продолжения нажмите любую клавишу . . .

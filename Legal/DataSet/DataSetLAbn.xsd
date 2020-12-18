@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetLAbn" targetNamespace="http://tempuri.org/DataSetLAbn.xsd" xmlns:mstns="http://tempuri.org/DataSetLAbn.xsd" xmlns="http://tempuri.org/DataSetLAbn.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="NotPublic" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GESConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Legal.Properties.Settings.GlobalReference.Default.GESConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GESConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Legal.Properties.Settings.GlobalReference.Default.GESConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetLAbn" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetLAbn" msprop:Generator_UserDSName="DataSetLAbn">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vG_Abn" msprop:Generator_TableClassName="vG_AbnDataTable" msprop:Generator_TableVarName="tablevG_Abn" msprop:Generator_TablePropName="vG_Abn" msprop:Generator_RowDeletingName="vG_AbnRowDeleting" msprop:Generator_RowChangingName="vG_AbnRowChanging" msprop:Generator_RowEvHandlerName="vG_AbnRowChangeEventHandler" msprop:Generator_RowDeletedName="vG_AbnRowDeleted" msprop:Generator_UserTableName="vG_Abn" msprop:Generator_RowChangedName="vG_AbnRowChanged" msprop:Generator_RowEvArgName="vG_AbnRowChangeEvent" msprop:Generator_RowClassName="vG_AbnRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="CodeAbonent" msprop:Generator_ColumnVarNameInTable="columnCodeAbonent" msprop:Generator_ColumnPropNameInRow="CodeAbonent" msprop:Generator_ColumnPropNameInTable="CodeAbonentColumn" msprop:Generator_UserColumnName="CodeAbonent" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idWorker" msprop:Generator_ColumnVarNameInTable="columnidWorker" msprop:Generator_ColumnPropNameInRow="idWorker" msprop:Generator_ColumnPropNameInTable="idWorkerColumn" msprop:Generator_UserColumnName="idWorker" type="xs:int" />
+              <xs:element name="Famil" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFamil" msprop:Generator_ColumnPropNameInRow="Famil" msprop:Generator_ColumnPropNameInTable="FamilColumn" msprop:Generator_UserColumnName="Famil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypeDog" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTypeDog" msprop:Generator_ColumnPropNameInRow="TypeDog" msprop:Generator_ColumnPropNameInTable="TypeDogColumn" msprop:Generator_UserColumnName="TypeDog" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CountObj" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCountObj" msprop:Generator_ColumnPropNameInRow="CountObj" msprop:Generator_ColumnPropNameInTable="CountObjColumn" msprop:Generator_UserColumnName="CountObj" type="xs:int" minOccurs="0" />
+              <xs:element name="CountMeter" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCountMeter" msprop:Generator_ColumnPropNameInRow="CountMeter" msprop:Generator_ColumnPropNameInTable="CountMeterColumn" msprop:Generator_UserColumnName="CountMeter" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vG_Customer" msprop:Generator_TableClassName="vG_CustomerDataTable" msprop:Generator_TableVarName="tablevG_Customer" msprop:Generator_TablePropName="vG_Customer" msprop:Generator_RowDeletingName="vG_CustomerRowDeleting" msprop:Generator_RowChangingName="vG_CustomerRowChanging" msprop:Generator_RowEvHandlerName="vG_CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="vG_CustomerRowDeleted" msprop:Generator_UserTableName="vG_Customer" msprop:Generator_RowChangedName="vG_CustomerRowChanged" msprop:Generator_RowEvArgName="vG_CustomerRowChangeEvent" msprop:Generator_RowClassName="vG_CustomerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="CodeAbonent" msprop:Generator_ColumnVarNameInTable="columnCodeAbonent" msprop:Generator_ColumnPropNameInRow="CodeAbonent" msprop:Generator_ColumnPropNameInTable="CodeAbonentColumn" msprop:Generator_UserColumnName="CodeAbonent" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idWorker" msprop:Generator_ColumnVarNameInTable="columnidWorker" msprop:Generator_ColumnPropNameInRow="idWorker" msprop:Generator_ColumnPropNameInTable="idWorkerColumn" msprop:Generator_UserColumnName="idWorker" type="xs:int" minOccurs="0" />
+              <xs:element name="Famil" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFamil" msprop:Generator_ColumnPropNameInRow="Famil" msprop:Generator_ColumnPropNameInTable="FamilColumn" msprop:Generator_UserColumnName="Famil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypeDog" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTypeDog" msprop:Generator_ColumnPropNameInRow="TypeDog" msprop:Generator_ColumnPropNameInTable="TypeDogColumn" msprop:Generator_UserColumnName="TypeDog" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CountObj" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCountObj" msprop:Generator_ColumnPropNameInRow="CountObj" msprop:Generator_ColumnPropNameInTable="CountObjColumn" msprop:Generator_UserColumnName="CountObj" type="xs:int" minOccurs="0" />
+              <xs:element name="CountMeter" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCountMeter" msprop:Generator_ColumnPropNameInRow="CountMeter" msprop:Generator_ColumnPropNameInTable="CountMeterColumn" msprop:Generator_UserColumnName="CountMeter" type="xs:int" minOccurs="0" />
+              <xs:element name="CodeAbnStr" msprop:Generator_ColumnVarNameInTable="columnCodeAbnStr" msprop:Generator_ColumnPropNameInRow="CodeAbnStr" msprop:Generator_ColumnPropNameInTable="CodeAbnStrColumn" msprop:Generator_UserColumnName="CodeAbnStr" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vG_Abn" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

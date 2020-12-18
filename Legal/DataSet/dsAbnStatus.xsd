@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAbnStatus" targetNamespace="http://tempuri.org/dsAbnStatus.xsd" xmlns:mstns="http://tempuri.org/dsAbnStatus.xsd" xmlns="http://tempuri.org/dsAbnStatus.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="NotPublic" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GESConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Legal.Properties.Settings.GlobalReference.Default.GESConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAbnStatus" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsAbnStatus" msprop:Generator_UserDSName="dsAbnStatus">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vAbnStatus" msprop:Generator_UserTableName="vAbnStatus" msprop:Generator_RowEvArgName="vAbnStatusRowChangeEvent" msprop:Generator_TableVarName="tablevAbnStatus" msprop:Generator_TablePropName="vAbnStatus" msprop:Generator_RowDeletingName="vAbnStatusRowDeleting" msprop:Generator_RowChangingName="vAbnStatusRowChanging" msprop:Generator_RowDeletedName="vAbnStatusRowDeleted" msprop:Generator_TableClassName="vAbnStatusDataTable" msprop:Generator_RowChangedName="vAbnStatusRowChanged" msprop:Generator_RowEvHandlerName="vAbnStatusRowChangeEventHandler" msprop:Generator_RowClassName="vAbnStatusRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tAbnStatus" msprop:Generator_UserTableName="tAbnStatus" msprop:Generator_RowEvArgName="tAbnStatusRowChangeEvent" msprop:Generator_TableVarName="tabletAbnStatus" msprop:Generator_TablePropName="tAbnStatus" msprop:Generator_RowDeletingName="tAbnStatusRowDeleting" msprop:Generator_RowChangingName="tAbnStatusRowChanging" msprop:Generator_RowDeletedName="tAbnStatusRowDeleted" msprop:Generator_TableClassName="tAbnStatusDataTable" msprop:Generator_RowChangedName="tAbnStatusRowChanged" msprop:Generator_RowEvHandlerName="tAbnStatusRowChangeEventHandler" msprop:Generator_RowClassName="tAbnStatusRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idAbn" msprop:Generator_ColumnVarNameInTable="columnidAbn" msprop:Generator_ColumnPropNameInRow="idAbn" msprop:Generator_ColumnPropNameInTable="idAbnColumn" msprop:Generator_UserColumnName="idAbn" type="xs:int" />
+              <xs:element name="isActive" msprop:Generator_ColumnVarNameInTable="columnisActive" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_UserColumnName="isActive" type="xs:boolean" />
+              <xs:element name="idReason" msprop:Generator_ColumnVarNameInTable="columnidReason" msprop:Generator_ColumnPropNameInRow="idReason" msprop:Generator_ColumnPropNameInTable="idReasonColumn" msprop:Generator_UserColumnName="idReason" type="xs:int" minOccurs="0" />
+              <xs:element name="DateChange" msprop:Generator_ColumnVarNameInTable="columnDateChange" msprop:Generator_ColumnPropNameInRow="DateChange" msprop:Generator_ColumnPropNameInTable="DateChangeColumn" msprop:Generator_UserColumnName="DateChange" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vG_AbnStatusReason" msprop:Generator_TableClassName="vG_AbnStatusReasonDataTable" msprop:Generator_RowEvArgName="vG_AbnStatusReasonRowChangeEvent" msprop:Generator_TableVarName="tablevG_AbnStatusReason" msprop:Generator_TablePropName="vG_AbnStatusReason" msprop:Generator_RowDeletingName="vG_AbnStatusReasonRowDeleting" msprop:Generator_UserTableName="vG_AbnStatusReason" msprop:Generator_RowChangingName="vG_AbnStatusReasonRowChanging" msprop:Generator_RowDeletedName="vG_AbnStatusReasonRowDeleted" msprop:Generator_RowChangedName="vG_AbnStatusReasonRowChanged" msprop:Generator_RowEvHandlerName="vG_AbnStatusReasonRowChangeEventHandler" msprop:Generator_RowClassName="vG_AbnStatusReasonRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idAbn" msprop:Generator_ColumnVarNameInTable="columnidAbn" msprop:Generator_ColumnPropNameInRow="idAbn" msprop:Generator_ColumnPropNameInTable="idAbnColumn" msprop:Generator_UserColumnName="idAbn" type="xs:int" />
+              <xs:element name="isActive" msprop:Generator_ColumnVarNameInTable="columnisActive" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_UserColumnName="isActive" type="xs:boolean" />
+              <xs:element name="idReason" msprop:Generator_ColumnVarNameInTable="columnidReason" msprop:Generator_ColumnPropNameInRow="idReason" msprop:Generator_ColumnPropNameInTable="idReasonColumn" msprop:Generator_UserColumnName="idReason" type="xs:int" minOccurs="0" />
+              <xs:element name="DateChange" msprop:Generator_ColumnVarNameInTable="columnDateChange" msprop:Generator_ColumnPropNameInRow="DateChange" msprop:Generator_ColumnPropNameInTable="DateChangeColumn" msprop:Generator_UserColumnName="DateChange" type="xs:dateTime" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vAbnStatus" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="tAbnStatus_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tAbnStatus" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="vG_AbnStatusReason_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vG_AbnStatusReason" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

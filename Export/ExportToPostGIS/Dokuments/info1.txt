@@ -1,0 +1,32 @@
+﻿/****** Скрипт для команды SelectTopNRows из среды SSMS  ******/
+SELECT TOP 1000 [id]
+      ,[Name]
+      ,[TypeLabel]
+      ,[idParent]
+      ,[XmlCoords]
+      ,[NameP]
+      ,[Tag]
+      ,[ExtendedTypeLabel]
+  FROM [GES].[dbo].[tSchm_Label]
+  order by id desc
+
+
+--UPDATE [dbo].[tSchm_Label]
+--   SET [XmlCoords] = '<Obj X1="0" Y1="0" />'
+-- WHERE id = 7791
+
+-- INSERT INTO [dbo].[tSchm_Label]
+--           ([Name]
+--           ,[TypeLabel]
+--           ,[idParent]
+--           ,[XmlCoords]
+--           ,[Tag]
+--           ,[ExtendedTypeLabel])
+--     VALUES
+--           ('test 2'
+--           ,6
+--           ,null
+--           ,'<Obj X1="1" Y1="1" />'
+--           ,null
+--           ,null)
+--GO

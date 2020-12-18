@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile CurrentProfile="(Default)" GeneratedClassNamespace="Passport.Properties" GeneratedClassName="Settings" xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="GESConnectionString" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=SALE-SQL;Initial Catalog=GES;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="GESConnectionString1" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=SALE-IIS;Initial Catalog=GES;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="GESConnectionString2" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=ulges-sql;Initial Catalog=GES;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="GESConnectionString3" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=CODER-SQL;Initial Catalog=GES;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="ClientPassportPanelCacheConnectionString" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=|DataDirectory|\Cache\PassportPanelCache.sdf</Value>
+    </Setting>
+    <Setting Name="GESConnectionString4" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=CODER-SQL;Initial Catalog=GES;User ID=yura;Password=Shks94hpPsql</Value>
+    </Setting>
+    <Setting Name="GESConnectionString5" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=CODER-SERVER;Initial Catalog=GES;Persist Security Info=True;User ID=yura;Password=Shks94hpPcoder</Value>
+    </Setting>
+    <Setting Name="GESConnectionString6" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=192.168.8.252;Initial Catalog=GES;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="GESConnectionString7" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=ulges-sql2;Initial Catalog=GES;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="KabConnectionString" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=ulges-sql;Initial Catalog=Kab;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="GES_RESConnectionString" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=192.168.10.7\SQLEXPRESS;Initial Catalog=GES_RES;User ID=admin;Password=coder.ul2012_admin</Value>
+    </Setting>
+    <Setting Name="GESConnectionString8" Type="(Connection string)" Scope="Application">
+      <Value Profile="(Default)">Data Source=coder-sergey;Initial Catalog=GES;User ID=sasha;Password="cegth pfobnf"</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FF4A86C-0D2E-4328-8085-C336DDE07A4B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JournalRequest</RootNamespace>
+    <AssemblyName>JournalRequest</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Задача.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlsLbr">
+      <HintPath>LIBS\ControlsLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSql">
+      <HintPath>LIBS\DataSql.dll</HintPath>
+    </Reference>
+    <Reference Include="FormLbr">
+      <HintPath>LIBS\FormLbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\FileInfo.cs" />
+    <Compile Include="DataSets\DataSetGES.cs">
+      <DependentUpon>DataSetGES.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetGES.Designer.cs" />
+    <Compile Include="DataSets\DataSetGES1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormJournalRequest.cs2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJournalRequest.cs2.Designer.cs">
+      <DependentUpon>FormJournalRequest.cs2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEditRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEditRequest.designer.cs">
+      <DependentUpon>FormAddEditRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditRequeststatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditRequeststatus.designer.cs">
+      <DependentUpon>FormEditRequeststatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJournalRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJournalRequest.designer.cs">
+      <DependentUpon>FormJournalRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportRequest.designer.cs">
+      <DependentUpon>FormReportRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormJournalRequest.cs2.resx">
+      <DependentUpon>FormJournalRequest.cs2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEditRequest.resx">
+      <DependentUpon>FormAddEditRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditRequeststatus.resx">
+      <DependentUpon>FormEditRequeststatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJournalRequest.resx">
+      <DependentUpon>FormJournalRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportRequest.resx">
+      <DependentUpon>FormReportRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="DataSets\DataSetGES.xsc">
+      <DependentUpon>DataSetGES.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetGES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGES1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\DataSetGES.xss">
+      <DependentUpon>DataSetGES.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="job.txt" />
+    <Content Include="Resources\ButtonEdit.png" />
+    <Content Include="Resources\CopyBuffer.png" />
+    <Content Include="Resources\document-list.png" />
+    <Content Include="Resources\ElementAccept.png" />
+    <Content Include="Resources\ElementAdd.png" />
+    <Content Include="Resources\ElementDel.png" />
+    <Content Include="Resources\ElementEdit.png" />
+    <Content Include="Resources\ElementError.png" />
+    <Content Include="Resources\ElementGo.png" />
+    <Content Include="Resources\ElementInformation.png" />
+    <Content Include="Resources\ElementInformation1.png" />
+    <Content Include="Resources\email.png" />
+    <Content Include="Resources\filter.png" />
+    <Content Include="Resources\filter_delete.png" />
+    <Content Include="Resources\Filtr.png" />
+    <Content Include="Resources\Find.png" />
+    <Content Include="Resources\FindNext.png" />
+    <Content Include="Resources\FindPrev.png" />
+    <Content Include="Resources\individualIcon.ico" />
+    <Content Include="Resources\individualuser.png" />
+    <Content Include="Resources\individualuserDelete.png" />
+    <Content Include="Resources\individualuserEdit.png" />
+    <Content Include="Resources\individual_add.png" />
+    <Content Include="Resources\JournalOrder.png" />
+    <Content Include="Resources\legalIcon.ico" />
+    <Content Include="Resources\legaluser.png" />
+    <Content Include="Resources\legaluserEdit.png" />
+    <Content Include="Resources\legal_add.png" />
+    <Content Include="Resources\legal_add_delete.png" />
+    <Content Include="Resources\microsoftoffice2007excel_7581.png" />
+    <Content Include="Resources\Orderclose.png" />
+    <None Include="Resources\planirovshhik_row.png" />
+    <Content Include="Resources\printer.png" />
+    <Content Include="Resources\refresh 16.png" />
+    <Content Include="Resources\refresh 161.png" />
+    <Content Include="Resources\save.ico" />
+    <Content Include="Resources\search2.png" />
+    <None Include="Resources\telefon1.png" />
+    <Content Include="Resources\Задача.ico" />
+    <Content Include="Resources\Редактор текта\Жирный.png" />
+    <Content Include="Resources\Точки20.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

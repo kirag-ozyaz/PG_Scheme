@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheme", "Scheme\Scheme.csproj", "{CD6AAA0D-F240-4490-AD6D-88B2F43A0929}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchemeCtrl2", "SchemeCtrl2\SchemeCtrl2.csproj", "{21E0FE24-31CD-4CB7-92B0-D91C95938EC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD6AAA0D-F240-4490-AD6D-88B2F43A0929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6AAA0D-F240-4490-AD6D-88B2F43A0929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6AAA0D-F240-4490-AD6D-88B2F43A0929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6AAA0D-F240-4490-AD6D-88B2F43A0929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21E0FE24-31CD-4CB7-92B0-D91C95938EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21E0FE24-31CD-4CB7-92B0-D91C95938EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21E0FE24-31CD-4CB7-92B0-D91C95938EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21E0FE24-31CD-4CB7-92B0-D91C95938EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74650256-3FD0-4D4E-8363-A29052AFD00A}
+	EndGlobalSection
+EndGlobal

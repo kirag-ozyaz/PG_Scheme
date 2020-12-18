@@ -1,0 +1,103 @@
+
+S:\Ulges\EIS\Plugins>S:\Ulges\EIS\Plugins\curl.exe  -U ulges\ftp_user:f1le-tp -x ulges-proxy:8080 -T S:\Ulges\Site\oper_otkl.php ftp://ulges:kil777o@pike.z8.ru/www/site1/public_html/consumer/rabota/ 
+<!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/Dtd/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Уведомление. Политика: общие требования</title><style type="text/css">
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color:#333333;
+  background-color: #ffffff;
+}
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  padding-top: 0px;
+  color: #2970A6;
+}
+a:link {
+    color: #2970A6;
+  text-decoration: none;
+}
+a:hover {
+    color: #2970A6;
+  text-decoration: underline;
+}
+p.buttonlink {
+  margin-bottom: 24px;
+}
+.copyright {
+  font-size: 12px;
+  color: #666666;
+  margin: 5px 5px 0px 30px;
+
+}
+.details {
+  font-size: 14px;
+  color: #969696;
+  border: none;
+  padding: 20px 20px 20px 20px;
+  margin: 0px 10px 10px 35px;
+}
+
+.shadow {
+  border: 3px solid #9f9f9f;
+  padding: 10px 25px 10px 25px;
+  margin: 10px 35px 0px 30px;
+  background-color: #ffffff;
+  width: 600px;
+
+  -moz-box-shadow: 3px 3px 3px #cccccc;
+  -webkit-box-shadow: 3px 3px 3px #cccccc;
+  box-shadow: 3px 3px 3px #cccccc;
+  /* For IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='cccccc')";
+  /* For IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='cccccc');
+}
+.logo {
+  border: none;
+  margin: 5px 5px 0px 30px;
+}
+</style>
+</head>
+
+<body>
+<div class="logo"><img src="https://192.168.4.254:8443/images/logos/ironport_logo.gif" border="0"></div><p>&nbsp;</p>
+<div class="shadow">
+
+<h1>Эта страница не может быть отображена</h1>
+
+<p>Согласно вашей корпоративной политике безопасности, этот web-сайт
+(&nbsp;ftp://pike.z8.ru/www/site1/public_html/consumer/rabota/oper_otkl.php&nbsp;)
+заблокирован, поскольку было установлено, что он представляет собой угрозу безопасности
+компьютера или корпоративной сети.
+Доступ также мог быть заблокирован, поскольку запрос поступил
+с неопознанного или неавторизованного компьютера.</p>
+
+
+
+<p>
+По любым вопросам обращайтесь в отдел автоматизации ,&thinsp; указав приведенные ниже коды.
+</p>
+
+</div>
+
+<div class="details"><p>
+Дата: Mon, 07 Sep 2015 05:28:26 GMT<br />
+Имя пользователя: ULGES\ftp_user@NTLM<br />
+IP-адрес источника: 192.168.1.244<br />
+URL-адрес: PUT ftp://pike.z8.ru/www/site1/public_html/consumer/rabota/oper_otkl.php<br />
+Категория: <br />
+Причина: BLOCK-PROTOCOL<br />
+Уведомление: POLICY
+</p></div>
+</body>
+</html>
+
+S:\Ulges\EIS\Plugins>rem S:\Ulges\EIS\Plugins\curl.exe  -U ulges\ftp_user:f1le-tp -x ulges-proxy:8080 -T S:\Ulges\Site\oper_otkl ftp://ulges:kil777o@pike.z8.ru/www/site1/public_html/consumer/rabota/ 

@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetCalc" targetNamespace="http://tempuri.org/DataSetCalc.xsd" xmlns:mstns="http://tempuri.org/DataSetCalc.xsd" xmlns="http://tempuri.org/DataSetCalc.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GESConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CalcLossN.Properties.Settings.GlobalReference.Default.GESConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetCalc" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetCalc" msprop:Generator_UserDSName="DataSetCalc">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tR_Classifier" msprop:Generator_TableClassName="tR_ClassifierDataTable" msprop:Generator_TableVarName="tabletR_Classifier" msprop:Generator_TablePropName="tR_Classifier" msprop:Generator_RowDeletingName="tR_ClassifierRowDeleting" msprop:Generator_RowChangingName="tR_ClassifierRowChanging" msprop:Generator_RowEvHandlerName="tR_ClassifierRowChangeEventHandler" msprop:Generator_RowDeletedName="tR_ClassifierRowDeleted" msprop:Generator_UserTableName="tR_Classifier" msprop:Generator_RowChangedName="tR_ClassifierRowChanged" msprop:Generator_RowEvArgName="tR_ClassifierRowChangeEvent" msprop:Generator_RowClassName="tR_ClassifierRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SocrName" msprop:Generator_ColumnVarNameInTable="columnSocrName" msprop:Generator_ColumnPropNameInRow="SocrName" msprop:Generator_ColumnPropNameInTable="SocrNameColumn" msprop:Generator_UserColumnName="SocrName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ParentId" msprop:Generator_ColumnVarNameInTable="columnParentId" msprop:Generator_ColumnPropNameInRow="ParentId" msprop:Generator_ColumnPropNameInTable="ParentIdColumn" msprop:Generator_UserColumnName="ParentId" type="xs:int" minOccurs="0" />
+              <xs:element name="ParentKey" msprop:Generator_ColumnVarNameInTable="columnParentKey" msprop:Generator_ColumnPropNameInRow="ParentKey" msprop:Generator_ColumnPropNameInTable="ParentKeyColumn" msprop:Generator_UserColumnName="ParentKey" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherId" msprop:Generator_ColumnVarNameInTable="columnOtherId" msprop:Generator_ColumnPropNameInRow="OtherId" msprop:Generator_ColumnPropNameInTable="OtherIdColumn" msprop:Generator_UserColumnName="OtherId" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="IsGroup" msprop:Generator_ColumnVarNameInTable="columnIsGroup" msprop:Generator_ColumnPropNameInRow="IsGroup" msprop:Generator_ColumnPropNameInTable="IsGroupColumn" msprop:Generator_UserColumnName="IsGroup" type="xs:boolean" />
+              <xs:element name="Deleted" msprop:Generator_ColumnVarNameInTable="columnDeleted" msprop:Generator_ColumnPropNameInRow="Deleted" msprop:Generator_ColumnPropNameInTable="DeletedColumn" msprop:Generator_UserColumnName="Deleted" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vJ_CalcLoss" msprop:Generator_TableClassName="vJ_CalcLossDataTable" msprop:Generator_TableVarName="tablevJ_CalcLoss" msprop:Generator_TablePropName="vJ_CalcLoss" msprop:Generator_RowDeletingName="vJ_CalcLossRowDeleting" msprop:Generator_RowChangingName="vJ_CalcLossRowChanging" msprop:Generator_RowEvHandlerName="vJ_CalcLossRowChangeEventHandler" msprop:Generator_RowDeletedName="vJ_CalcLossRowDeleted" msprop:Generator_UserTableName="vJ_CalcLoss" msprop:Generator_RowChangedName="vJ_CalcLossRowChanged" msprop:Generator_RowEvArgName="vJ_CalcLossRowChangeEvent" msprop:Generator_RowClassName="vJ_CalcLossRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="num" msprop:Generator_ColumnVarNameInTable="columnnum" msprop:Generator_ColumnPropNameInRow="num" msprop:Generator_ColumnPropNameInTable="numColumn" msprop:Generator_UserColumnName="num" type="xs:int" minOccurs="0" />
+              <xs:element name="idTypeCalc" msprop:Generator_ColumnVarNameInTable="columnidTypeCalc" msprop:Generator_ColumnPropNameInRow="idTypeCalc" msprop:Generator_ColumnPropNameInTable="idTypeCalcColumn" msprop:Generator_UserColumnName="idTypeCalc" type="xs:int" />
+              <xs:element name="typeCalc" msprop:Generator_ColumnVarNameInTable="columntypeCalc" msprop:Generator_ColumnPropNameInRow="typeCalc" msprop:Generator_ColumnPropNameInTable="typeCalcColumn" msprop:Generator_UserColumnName="typeCalc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nameCalc" msprop:Generator_ColumnVarNameInTable="columnnameCalc" msprop:Generator_ColumnPropNameInRow="nameCalc" msprop:Generator_ColumnPropNameInTable="nameCalcColumn" msprop:Generator_UserColumnName="nameCalc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idAbn" msprop:Generator_ColumnVarNameInTable="columnidAbn" msprop:Generator_ColumnPropNameInRow="idAbn" msprop:Generator_ColumnPropNameInTable="idAbnColumn" msprop:Generator_UserColumnName="idAbn" type="xs:int" minOccurs="0" />
+              <xs:element name="nameAbn" msprop:Generator_ColumnVarNameInTable="columnnameAbn" msprop:Generator_ColumnPropNameInRow="nameAbn" msprop:Generator_ColumnPropNameInTable="nameAbnColumn" msprop:Generator_UserColumnName="nameAbn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codeAbonent" msprop:Generator_ColumnVarNameInTable="columncodeAbonent" msprop:Generator_ColumnPropNameInRow="codeAbonent" msprop:Generator_ColumnPropNameInTable="codeAbonentColumn" msprop:Generator_UserColumnName="codeAbonent" type="xs:int" minOccurs="0" />
+              <xs:element name="idAbnObj" msprop:Generator_ColumnVarNameInTable="columnidAbnObj" msprop:Generator_ColumnPropNameInRow="idAbnObj" msprop:Generator_ColumnPropNameInTable="idAbnObjColumn" msprop:Generator_UserColumnName="idAbnObj" type="xs:int" />
+              <xs:element name="nameObj" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnameObj" msprop:Generator_ColumnPropNameInRow="nameObj" msprop:Generator_ColumnPropNameInTable="nameObjColumn" msprop:Generator_UserColumnName="nameObj" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="385" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idAbnBalance" msprop:Generator_ColumnVarNameInTable="columnidAbnBalance" msprop:Generator_ColumnPropNameInRow="idAbnBalance" msprop:Generator_ColumnPropNameInTable="idAbnBalanceColumn" msprop:Generator_UserColumnName="idAbnBalance" type="xs:int" />
+              <xs:element name="nameAbnBalance" msprop:Generator_ColumnVarNameInTable="columnnameAbnBalance" msprop:Generator_ColumnPropNameInRow="nameAbnBalance" msprop:Generator_ColumnPropNameInTable="nameAbnBalanceColumn" msprop:Generator_UserColumnName="nameAbnBalance" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tpName" msprop:Generator_ColumnVarNameInTable="columntpName" msprop:Generator_ColumnPropNameInRow="tpName" msprop:Generator_ColumnPropNameInTable="tpNameColumn" msprop:Generator_UserColumnName="tpName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateCalc" msprop:Generator_ColumnVarNameInTable="columnDateCalc" msprop:Generator_ColumnPropNameInRow="DateCalc" msprop:Generator_ColumnPropNameInTable="DateCalcColumn" msprop:Generator_UserColumnName="DateCalc" type="xs:dateTime" />
+              <xs:element name="idOwner" msprop:Generator_ColumnVarNameInTable="columnidOwner" msprop:Generator_ColumnPropNameInRow="idOwner" msprop:Generator_ColumnPropNameInTable="idOwnerColumn" msprop:Generator_UserColumnName="idOwner" type="xs:int" minOccurs="0" />
+              <xs:element name="nameOwner" msprop:Generator_ColumnVarNameInTable="columnnameOwner" msprop:Generator_ColumnPropNameInRow="nameOwner" msprop:Generator_ColumnPropNameInTable="nameOwnerColumn" msprop:Generator_UserColumnName="nameOwner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isActive" msprop:Generator_ColumnVarNameInTable="columnisActive" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_UserColumnName="isActive" type="xs:boolean" />
+              <xs:element name="deleted" msprop:Generator_ColumnVarNameInTable="columndeleted" msprop:Generator_ColumnPropNameInRow="deleted" msprop:Generator_ColumnPropNameInTable="deletedColumn" msprop:Generator_UserColumnName="deleted" type="xs:boolean" />
+              <xs:element name="CoeffLosses" msprop:Generator_ColumnVarNameInTable="columnCoeffLosses" msprop:Generator_ColumnPropNameInRow="CoeffLosses" msprop:Generator_ColumnPropNameInTable="CoeffLossesColumn" msprop:Generator_UserColumnName="CoeffLosses" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tJ_CalcLoss" msprop:Generator_TableClassName="tJ_CalcLossDataTable" msprop:Generator_TableVarName="tabletJ_CalcLoss" msprop:Generator_TablePropName="tJ_CalcLoss" msprop:Generator_RowDeletingName="tJ_CalcLossRowDeleting" msprop:Generator_RowChangingName="tJ_CalcLossRowChanging" msprop:Generator_RowEvHandlerName="tJ_CalcLossRowChangeEventHandler" msprop:Generator_RowDeletedName="tJ_CalcLossRowDeleted" msprop:Generator_UserTableName="tJ_CalcLoss" msprop:Generator_RowChangedName="tJ_CalcLossRowChanged" msprop:Generator_RowEvArgName="tJ_CalcLossRowChangeEvent" msprop:Generator_RowClassName="tJ_CalcLossRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="num" msprop:Generator_ColumnVarNameInTable="columnnum" msprop:Generator_ColumnPropNameInRow="num" msprop:Generator_ColumnPropNameInTable="numColumn" msprop:Generator_UserColumnName="num" type="xs:int" minOccurs="0" />
+              <xs:element name="typeCalc" msprop:Generator_ColumnVarNameInTable="columntypeCalc" msprop:Generator_ColumnPropNameInRow="typeCalc" msprop:Generator_ColumnPropNameInTable="typeCalcColumn" msprop:Generator_UserColumnName="typeCalc" type="xs:int" />
+              <xs:element name="nameCalc" msprop:Generator_ColumnVarNameInTable="columnnameCalc" msprop:Generator_ColumnPropNameInRow="nameCalc" msprop:Generator_ColumnPropNameInTable="nameCalcColumn" msprop:Generator_UserColumnName="nameCalc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idAbn" msprop:Generator_ColumnVarNameInTable="columnidAbn" msprop:Generator_ColumnPropNameInRow="idAbn" msprop:Generator_ColumnPropNameInTable="idAbnColumn" msprop:Generator_UserColumnName="idAbn" type="xs:int" minOccurs="0" />
+              <xs:element name="idAbnObj" msprop:Generator_ColumnVarNameInTable="columnidAbnObj" msprop:Generator_ColumnPropNameInRow="idAbnObj" msprop:Generator_ColumnPropNameInTable="idAbnObjColumn" msprop:Generator_UserColumnName="idAbnObj" type="xs:int" />
+              <xs:element name="idAbnBalance" msprop:Generator_ColumnVarNameInTable="columnidAbnBalance" msprop:Generator_ColumnPropNameInRow="idAbnBalance" msprop:Generator_ColumnPropNameInTable="idAbnBalanceColumn" msprop:Generator_UserColumnName="idAbnBalance" type="xs:int" />
+              <xs:element name="tpName" msprop:Generator_ColumnVarNameInTable="columntpName" msprop:Generator_ColumnPropNameInRow="tpName" msprop:Generator_ColumnPropNameInTable="tpNameColumn" msprop:Generator_UserColumnName="tpName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateCalc" msprop:Generator_ColumnVarNameInTable="columnDateCalc" msprop:Generator_ColumnPropNameInRow="DateCalc" msprop:Generator_ColumnPropNameInTable="DateCalcColumn" msprop:Generator_UserColumnName="DateCalc" type="xs:dateTime" />
+              <xs:element name="idOwner" msprop:Generator_ColumnVarNameInTable="columnidOwner" msprop:Generator_ColumnPropNameInRow="idOwner" msprop:Generator_ColumnPropNameInTable="idOwnerColumn" msprop:Generator_UserColumnName="idOwner" type="xs:int" minOccurs="0" />
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isActive" msprop:Generator_ColumnVarNameInTable="columnisActive" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_UserColumnName="isActive" type="xs:boolean" />
+              <xs:element name="deleted" msprop:Generator_ColumnVarNameInTable="columndeleted" msprop:Generator_ColumnPropNameInRow="deleted" msprop:Generator_ColumnPropNameInTable="deletedColumn" msprop:Generator_UserColumnName="deleted" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tJ_CalcLossFile" msprop:Generator_TableClassName="tJ_CalcLossFileDataTable" msprop:Generator_TableVarName="tabletJ_CalcLossFile" msprop:Generator_TablePropName="tJ_CalcLossFile" msprop:Generator_RowDeletingName="tJ_CalcLossFileRowDeleting" msprop:Generator_RowChangingName="tJ_CalcLossFileRowChanging" msprop:Generator_RowEvHandlerName="tJ_CalcLossFileRowChangeEventHandler" msprop:Generator_RowDeletedName="tJ_CalcLossFileRowDeleted" msprop:Generator_UserTableName="tJ_CalcLossFile" msprop:Generator_RowChangedName="tJ_CalcLossFileRowChanged" msprop:Generator_RowEvArgName="tJ_CalcLossFileRowChangeEvent" msprop:Generator_RowClassName="tJ_CalcLossFileRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idCalc" msprop:Generator_ColumnVarNameInTable="columnidCalc" msprop:Generator_ColumnPropNameInRow="idCalc" msprop:Generator_ColumnPropNameInTable="idCalcColumn" msprop:Generator_UserColumnName="idCalc" type="xs:int" />
+              <xs:element name="FileName" msprop:Generator_ColumnVarNameInTable="columnFileName" msprop:Generator_ColumnPropNameInRow="FileName" msprop:Generator_ColumnPropNameInTable="FileNameColumn" msprop:Generator_UserColumnName="FileName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="File" msprop:Generator_ColumnVarNameInTable="columnFile" msprop:Generator_ColumnPropNameInRow="File" msprop:Generator_ColumnPropNameInTable="FileColumn" msprop:Generator_UserColumnName="File" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="dateIn" msprop:Generator_ColumnVarNameInTable="columndateIn" msprop:Generator_ColumnPropNameInRow="dateIn" msprop:Generator_ColumnPropNameInTable="dateInColumn" msprop:Generator_UserColumnName="dateIn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tJ_CalcLossCable" msprop:Generator_TableClassName="tJ_CalcLossCableDataTable" msprop:Generator_TableVarName="tabletJ_CalcLossCable" msprop:Generator_TablePropName="tJ_CalcLossCable" msprop:Generator_RowDeletingName="tJ_CalcLossCableRowDeleting" msprop:Generator_RowChangingName="tJ_CalcLossCableRowChanging" msprop:Generator_RowEvHandlerName="tJ_CalcLossCableRowChangeEventHandler" msprop:Generator_RowDeletedName="tJ_CalcLossCableRowDeleted" msprop:Generator_UserTableName="tJ_CalcLossCable" msprop:Generator_RowChangedName="tJ_CalcLossCableRowChanged" msprop:Generator_RowEvArgName="tJ_CalcLossCableRowChangeEvent" msprop:Generator_RowClassName="tJ_CalcLossCableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idCalc" msprop:Generator_ColumnVarNameInTable="columnidCalc" msprop:Generator_ColumnPropNameInRow="idCalc" msprop:Generator_ColumnPropNameInTable="idCalcColumn" msprop:Generator_UserColumnName="idCalc" type="xs:int" />
+              <xs:element name="makeupCable" msprop:Generator_ColumnVarNameInTable="columnmakeupCable" msprop:Generator_ColumnPropNameInRow="makeupCable" msprop:Generator_ColumnPropNameInTable="makeupCableColumn" msprop:Generator_UserColumnName="makeupCable" type="xs:int" />
+              <xs:element name="lenghtCable" msprop:Generator_ColumnVarNameInTable="columnlenghtCable" msprop:Generator_ColumnPropNameInRow="lenghtCable" msprop:Generator_ColumnPropNameInTable="lenghtCableColumn" msprop:Generator_UserColumnName="lenghtCable" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UdResistance" msprop:Generator_ColumnVarNameInTable="columnUdResistance" msprop:Generator_ColumnPropNameInRow="UdResistance" msprop:Generator_ColumnPropNameInTable="UdResistanceColumn" msprop:Generator_UserColumnName="UdResistance" type="xs:double" minOccurs="0" />
+              <xs:element name="Voltage" msprop:Generator_ColumnVarNameInTable="columnVoltage" msprop:Generator_ColumnPropNameInRow="Voltage" msprop:Generator_ColumnPropNameInTable="VoltageColumn" msprop:Generator_UserColumnName="Voltage" type="xs:double" minOccurs="0" />
+              <xs:element name="consumption" msprop:Generator_ColumnVarNameInTable="columnconsumption" msprop:Generator_ColumnPropNameInRow="consumption" msprop:Generator_ColumnPropNameInTable="consumptionColumn" msprop:Generator_UserColumnName="consumption" type="xs:int" minOccurs="0" />
+              <xs:element name="period" msprop:Generator_ColumnVarNameInTable="columnperiod" msprop:Generator_ColumnPropNameInRow="period" msprop:Generator_ColumnPropNameInTable="periodColumn" msprop:Generator_UserColumnName="period" type="xs:int" minOccurs="0" />
+              <xs:element name="CoeffPowerReactive" msprop:Generator_ColumnVarNameInTable="columnCoeffPowerReactive" msprop:Generator_ColumnPropNameInRow="CoeffPowerReactive" msprop:Generator_ColumnPropNameInTable="CoeffPowerReactiveColumn" msprop:Generator_UserColumnName="CoeffPowerReactive" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SquareCoeffFromGraph" msprop:Generator_ColumnVarNameInTable="columnSquareCoeffFromGraph" msprop:Generator_ColumnPropNameInRow="SquareCoeffFromGraph" msprop:Generator_ColumnPropNameInTable="SquareCoeffFromGraphColumn" msprop:Generator_UserColumnName="SquareCoeffFromGraph" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CoeffDifferences" msprop:Generator_ColumnVarNameInTable="columnCoeffDifferences" msprop:Generator_ColumnPropNameInRow="CoeffDifferences" msprop:Generator_ColumnPropNameInTable="CoeffDifferencesColumn" msprop:Generator_UserColumnName="CoeffDifferences" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CountChain" msprop:Generator_ColumnVarNameInTable="columnCountChain" msprop:Generator_ColumnPropNameInRow="CountChain" msprop:Generator_ColumnPropNameInTable="CountChainColumn" msprop:Generator_UserColumnName="CountChain" type="xs:int" minOccurs="0" />
+              <xs:element name="ActiveResistance" msprop:Generator_ColumnVarNameInTable="columnActiveResistance" msprop:Generator_ColumnPropNameInRow="ActiveResistance" msprop:Generator_ColumnPropNameInTable="ActiveResistanceColumn" msprop:Generator_UserColumnName="ActiveResistance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LoadPowerLoss" msprop:Generator_ColumnVarNameInTable="columnLoadPowerLoss" msprop:Generator_ColumnPropNameInRow="LoadPowerLoss" msprop:Generator_ColumnPropNameInTable="LoadPowerLossColumn" msprop:Generator_UserColumnName="LoadPowerLoss" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LoadAverage" msprop:Generator_ColumnVarNameInTable="columnLoadAverage" msprop:Generator_ColumnPropNameInRow="LoadAverage" msprop:Generator_ColumnPropNameInTable="LoadAverageColumn" msprop:Generator_UserColumnName="LoadAverage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LoadLosses" msprop:Generator_ColumnVarNameInTable="columnLoadLosses" msprop:Generator_ColumnPropNameInRow="LoadLosses" msprop:Generator_ColumnPropNameInTable="LoadLossesColumn" msprop:Generator_UserColumnName="LoadLosses" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UnitYearLoss" msprop:Generator_ColumnVarNameInTable="columnUnitYearLoss" msprop:Generator_ColumnPropNameInRow="UnitYearLoss" msprop:Generator_ColumnPropNameInTable="UnitYearLossColumn" msprop:Generator_UserColumnName="UnitYearLoss" type="xs:double" minOccurs="0" />
+              <xs:element name="YearLoss" msprop:Generator_ColumnVarNameInTable="columnYearLoss" msprop:Generator_ColumnPropNameInRow="YearLoss" msprop:Generator_ColumnPropNameInTable="YearLossColumn" msprop:Generator_UserColumnName="YearLoss" type="xs:double" minOccurs="0" />
+              <xs:element name="SumLoadLosses" msprop:Generator_ColumnVarNameInTable="columnSumLoadLosses" msprop:Generator_ColumnPropNameInRow="SumLoadLosses" msprop:Generator_ColumnPropNameInTable="SumLoadLossesColumn" msprop:Generator_UserColumnName="SumLoadLosses" type="xs:double" minOccurs="0" />
+              <xs:element name="CoeffLosses" msprop:Generator_ColumnVarNameInTable="columnCoeffLosses" msprop:Generator_ColumnPropNameInRow="CoeffLosses" msprop:Generator_ColumnPropNameInTable="CoeffLossesColumn" msprop:Generator_UserColumnName="CoeffLosses" type="xs:decimal" minOccurs="0" />
+              <xs:element name="isIsolation" msprop:Generator_ColumnVarNameInTable="columnisIsolation" msprop:Generator_ColumnPropNameInRow="isIsolation" msprop:Generator_ColumnPropNameInTable="isIsolationColumn" msprop:Generator_UserColumnName="isIsolation" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CoeffIsolation" msprop:Generator_ColumnVarNameInTable="columnCoeffIsolation" msprop:Generator_ColumnPropNameInRow="CoeffIsolation" msprop:Generator_ColumnPropNameInTable="CoeffIsolationColumn" msprop:Generator_UserColumnName="CoeffIsolation" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IsolationLosses" msprop:Generator_ColumnVarNameInTable="columnIsolationLosses" msprop:Generator_ColumnPropNameInRow="IsolationLosses" msprop:Generator_ColumnPropNameInTable="IsolationLossesColumn" msprop:Generator_UserColumnName="IsolationLosses" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tJ_CalcLossTrans" msprop:Generator_TableClassName="tJ_CalcLossTransDataTable" msprop:Generator_TableVarName="tabletJ_CalcLossTrans" msprop:Generator_TablePropName="tJ_CalcLossTrans" msprop:Generator_RowDeletingName="tJ_CalcLossTransRowDeleting" msprop:Generator_RowChangingName="tJ_CalcLossTransRowChanging" msprop:Generator_RowEvHandlerName="tJ_CalcLossTransRowChangeEventHandler" msprop:Generator_RowDeletedName="tJ_CalcLossTransRowDeleted" msprop:Generator_UserTableName="tJ_CalcLossTrans" msprop:Generator_RowChangedName="tJ_CalcLossTransRowChanged" msprop:Generator_RowEvArgName="tJ_CalcLossTransRowChangeEvent" msprop:Generator_RowClassName="tJ_CalcLossTransRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idCalc" msprop:Generator_ColumnVarNameInTable="columnidCalc" msprop:Generator_ColumnPropNameInRow="idCalc" msprop:Generator_ColumnPropNameInTable="idCalcColumn" msprop:Generator_UserColumnName="idCalc" type="xs:int" />
+              <xs:element name="numTrans" msprop:Generator_ColumnVarNameInTable="columnnumTrans" msprop:Generator_ColumnPropNameInRow="numTrans" msprop:Generator_ColumnPropNameInTable="numTransColumn" msprop:Generator_UserColumnName="numTrans" type="xs:int" minOccurs="0" />
+              <xs:element name="makeupTrans" msprop:Generator_ColumnVarNameInTable="columnmakeupTrans" msprop:Generator_ColumnPropNameInRow="makeupTrans" msprop:Generator_ColumnPropNameInTable="makeupTransColumn" msprop:Generator_UserColumnName="makeupTrans" type="xs:int" />
+              <xs:element name="RatedPower" msprop:Generator_ColumnVarNameInTable="columnRatedPower" msprop:Generator_ColumnPropNameInRow="RatedPower" msprop:Generator_ColumnPropNameInTable="RatedPowerColumn" msprop:Generator_UserColumnName="RatedPower" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NoLoadLoss" msprop:Generator_ColumnVarNameInTable="columnNoLoadLoss" msprop:Generator_ColumnPropNameInRow="NoLoadLoss" msprop:Generator_ColumnPropNameInTable="NoLoadLossColumn" msprop:Generator_UserColumnName="NoLoadLoss" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ShortCircuitLoss" msprop:Generator_ColumnVarNameInTable="columnShortCircuitLoss" msprop:Generator_ColumnPropNameInRow="ShortCircuitLoss" msprop:Generator_ColumnPropNameInTable="ShortCircuitLossColumn" msprop:Generator_UserColumnName="ShortCircuitLoss" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Consumption" msprop:Generator_ColumnVarNameInTable="columnConsumption" msprop:Generator_ColumnPropNameInRow="Consumption" msprop:Generator_ColumnPropNameInTable="ConsumptionColumn" msprop:Generator_UserColumnName="Consumption" type="xs:int" minOccurs="0" />
+              <xs:element name="RatedVoltage" msprop:Generator_ColumnVarNameInTable="columnRatedVoltage" msprop:Generator_ColumnPropNameInRow="RatedVoltage" msprop:Generator_ColumnPropNameInTable="RatedVoltageColumn" msprop:Generator_UserColumnName="RatedVoltage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Period" msprop:Generator_ColumnVarNameInTable="columnPeriod" msprop:Generator_ColumnPropNameInRow="Period" msprop:Generator_ColumnPropNameInTable="PeriodColumn" msprop:Generator_UserColumnName="Period" type="xs:int" minOccurs="0" />
+              <xs:element name="MiddleVoltage" msprop:Generator_ColumnVarNameInTable="columnMiddleVoltage" msprop:Generator_ColumnPropNameInRow="MiddleVoltage" msprop:Generator_ColumnPropNameInTable="MiddleVoltageColumn" msprop:Generator_UserColumnName="MiddleVoltage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CoeffPowerReactive" msprop:Generator_ColumnVarNameInTable="columnCoeffPowerReactive" msprop:Generator_ColumnPropNameInRow="CoeffPowerReactive" msprop:Generator_ColumnPropNameInTable="CoeffPowerReactiveColumn" msprop:Generator_UserColumnName="CoeffPowerReactive" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SquareCoeffFromGraph" msprop:Generator_ColumnVarNameInTable="columnSquareCoeffFromGraph" msprop:Generator_ColumnPropNameInRow="SquareCoeffFromGraph" msprop:Generator_ColumnPropNameInTable="SquareCoeffFromGraphColumn" msprop:Generator_UserColumnName="SquareCoeffFromGraph" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CoeffDifference" msprop:Generator_ColumnVarNameInTable="columnCoeffDifference" msprop:Generator_ColumnPropNameInRow="CoeffDifference" msprop:Generator_ColumnPropNameInTable="CoeffDifferenceColumn" msprop:Generator_UserColumnName="CoeffDifference" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LossElectrHH" msprop:Generator_ColumnVarNameInTable="columnLossElectrHH" msprop:Generator_ColumnPropNameInRow="LossElectrHH" msprop:Generator_ColumnPropNameInTable="LossElectrHHColumn" msprop:Generator_UserColumnName="LossElectrHH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ActiveResistance" msprop:Generator_ColumnVarNameInTable="columnActiveResistance" msprop:Generator_ColumnPropNameInRow="ActiveResistance" msprop:Generator_ColumnPropNameInTable="ActiveResistanceColumn" msprop:Generator_UserColumnName="ActiveResistance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LoadPowerLoss" msprop:Generator_ColumnVarNameInTable="columnLoadPowerLoss" msprop:Generator_ColumnPropNameInRow="LoadPowerLoss" msprop:Generator_ColumnPropNameInTable="LoadPowerLossColumn" msprop:Generator_UserColumnName="LoadPowerLoss" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LoadAverage" msprop:Generator_ColumnVarNameInTable="columnLoadAverage" msprop:Generator_ColumnPropNameInRow="LoadAverage" msprop:Generator_ColumnPropNameInTable="LoadAverageColumn" msprop:Generator_UserColumnName="LoadAverage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LoadLosses" msprop:Generator_ColumnVarNameInTable="columnLoadLosses" msprop:Generator_ColumnPropNameInRow="LoadLosses" msprop:Generator_ColumnPropNameInTable="LoadLossesColumn" msprop:Generator_UserColumnName="LoadLosses" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CoeffLosses" msprop:Generator_ColumnVarNameInTable="columnCoeffLosses" msprop:Generator_ColumnPropNameInRow="CoeffLosses" msprop:Generator_ColumnPropNameInTable="CoeffLossesColumn" msprop:Generator_UserColumnName="CoeffLosses" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tJ_CalcLossTransHH" msprop:Generator_TableClassName="tJ_CalcLossTransHHDataTable" msprop:Generator_TableVarName="tabletJ_CalcLossTransHH" msprop:Generator_TablePropName="tJ_CalcLossTransHH" msprop:Generator_RowDeletingName="tJ_CalcLossTransHHRowDeleting" msprop:Generator_RowChangingName="tJ_CalcLossTransHHRowChanging" msprop:Generator_RowEvHandlerName="tJ_CalcLossTransHHRowChangeEventHandler" msprop:Generator_RowDeletedName="tJ_CalcLossTransHHRowDeleted" msprop:Generator_UserTableName="tJ_CalcLossTransHH" msprop:Generator_RowChangedName="tJ_CalcLossTransHHRowChanged" msprop:Generator_RowEvArgName="tJ_CalcLossTransHHRowChangeEvent" msprop:Generator_RowClassName="tJ_CalcLossTransHHRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idCalc" msprop:Generator_ColumnVarNameInTable="columnidCalc" msprop:Generator_ColumnPropNameInRow="idCalc" msprop:Generator_ColumnPropNameInTable="idCalcColumn" msprop:Generator_UserColumnName="idCalc" type="xs:int" />
+              <xs:element name="idTrans" msprop:Generator_ColumnVarNameInTable="columnidTrans" msprop:Generator_ColumnPropNameInRow="idTrans" msprop:Generator_ColumnPropNameInTable="idTransColumn" msprop:Generator_UserColumnName="idTrans" type="xs:int" minOccurs="0" />
+              <xs:element name="month01" msprop:Generator_ColumnVarNameInTable="columnmonth01" msprop:Generator_ColumnPropNameInRow="month01" msprop:Generator_ColumnPropNameInTable="month01Column" msprop:Generator_UserColumnName="month01" type="xs:int" minOccurs="0" />
+              <xs:element name="month02" msprop:Generator_ColumnVarNameInTable="columnmonth02" msprop:Generator_ColumnPropNameInRow="month02" msprop:Generator_ColumnPropNameInTable="month02Column" msprop:Generator_UserColumnName="month02" type="xs:int" minOccurs="0" />
+              <xs:element name="month03" msprop:Generator_ColumnVarNameInTable="columnmonth03" msprop:Generator_ColumnPropNameInRow="month03" msprop:Generator_ColumnPropNameInTable="month03Column" msprop:Generator_UserColumnName="month03" type="xs:int" minOccurs="0" />
+              <xs:element name="month04" msprop:Generator_ColumnVarNameInTable="columnmonth04" msprop:Generator_ColumnPropNameInRow="month04" msprop:Generator_ColumnPropNameInTable="month04Column" msprop:Generator_UserColumnName="month04" type="xs:int" minOccurs="0" />
+              <xs:element name="month05" msprop:Generator_ColumnVarNameInTable="columnmonth05" msprop:Generator_ColumnPropNameInRow="month05" msprop:Generator_ColumnPropNameInTable="month05Column" msprop:Generator_UserColumnName="month05" type="xs:int" minOccurs="0" />
+              <xs:element name="month06" msprop:Generator_ColumnVarNameInTable="columnmonth06" msprop:Generator_ColumnPropNameInRow="month06" msprop:Generator_ColumnPropNameInTable="month06Column" msprop:Generator_UserColumnName="month06" type="xs:int" minOccurs="0" />
+              <xs:element name="month07" msprop:Generator_ColumnVarNameInTable="columnmonth07" msprop:Generator_ColumnPropNameInRow="month07" msprop:Generator_ColumnPropNameInTable="month07Column" msprop:Generator_UserColumnName="month07" type="xs:int" minOccurs="0" />
+              <xs:element name="month08" msprop:Generator_ColumnVarNameInTable="columnmonth08" msprop:Generator_ColumnPropNameInRow="month08" msprop:Generator_ColumnPropNameInTable="month08Column" msprop:Generator_UserColumnName="month08" type="xs:int" minOccurs="0" />
+              <xs:element name="month09" msprop:Generator_ColumnVarNameInTable="columnmonth09" msprop:Generator_ColumnPropNameInRow="month09" msprop:Generator_ColumnPropNameInTable="month09Column" msprop:Generator_UserColumnName="month09" type="xs:int" minOccurs="0" />
+              <xs:element name="month10" msprop:Generator_ColumnVarNameInTable="columnmonth10" msprop:Generator_ColumnPropNameInRow="month10" msprop:Generator_ColumnPropNameInTable="month10Column" msprop:Generator_UserColumnName="month10" type="xs:int" minOccurs="0" />
+              <xs:element name="month11" msprop:Generator_ColumnVarNameInTable="columnmonth11" msprop:Generator_ColumnPropNameInRow="month11" msprop:Generator_ColumnPropNameInTable="month11Column" msprop:Generator_UserColumnName="month11" type="xs:int" minOccurs="0" />
+              <xs:element name="month12" msprop:Generator_ColumnVarNameInTable="columnmonth12" msprop:Generator_ColumnPropNameInRow="month12" msprop:Generator_ColumnPropNameInTable="month12Column" msprop:Generator_UserColumnName="month12" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tAbn" msprop:Generator_TableClassName="tAbnDataTable" msprop:Generator_TableVarName="tabletAbn" msprop:Generator_TablePropName="tAbn" msprop:Generator_RowDeletingName="tAbnRowDeleting" msprop:Generator_RowChangingName="tAbnRowChanging" msprop:Generator_RowEvHandlerName="tAbnRowChangeEventHandler" msprop:Generator_RowDeletedName="tAbnRowDeleted" msprop:Generator_UserTableName="tAbn" msprop:Generator_RowChangedName="tAbnRowChanged" msprop:Generator_RowEvArgName="tAbnRowChangeEvent" msprop:Generator_RowClassName="tAbnRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="CodeAbonent" msprop:Generator_ColumnVarNameInTable="columnCodeAbonent" msprop:Generator_ColumnPropNameInRow="CodeAbonent" msprop:Generator_ColumnPropNameInTable="CodeAbonentColumn" msprop:Generator_UserColumnName="CodeAbonent" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypeAbn" msprop:Generator_ColumnVarNameInTable="columnTypeAbn" msprop:Generator_ColumnPropNameInRow="TypeAbn" msprop:Generator_ColumnPropNameInTable="TypeAbnColumn" msprop:Generator_UserColumnName="TypeAbn" type="xs:int" />
+              <xs:element name="idWorker" msprop:Generator_ColumnVarNameInTable="columnidWorker" msprop:Generator_ColumnPropNameInRow="idWorker" msprop:Generator_ColumnPropNameInTable="idWorkerColumn" msprop:Generator_UserColumnName="idWorker" type="xs:int" />
+              <xs:element name="Deleted" msprop:Generator_ColumnVarNameInTable="columnDeleted" msprop:Generator_ColumnPropNameInRow="Deleted" msprop:Generator_ColumnPropNameInTable="DeletedColumn" msprop:Generator_UserColumnName="Deleted" type="xs:boolean" />
+              <xs:element name="CodeAbnId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCodeAbnId" msprop:Generator_ColumnPropNameInRow="CodeAbnId" msprop:Generator_ColumnPropNameInTable="CodeAbnIdColumn" msprop:Generator_UserColumnName="CodeAbnId" type="xs:int" minOccurs="0" />
+              <xs:element name="CodeAbnStr" msprop:Generator_ColumnVarNameInTable="columnCodeAbnStr" msprop:Generator_ColumnPropNameInRow="CodeAbnStr" msprop:Generator_ColumnPropNameInTable="CodeAbnStrColumn" msprop:Generator_UserColumnName="CodeAbnStr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vAbnObjAddress" msprop:Generator_TableClassName="vAbnObjAddressDataTable" msprop:Generator_TableVarName="tablevAbnObjAddress" msprop:Generator_TablePropName="vAbnObjAddress" msprop:Generator_RowDeletingName="vAbnObjAddressRowDeleting" msprop:Generator_RowChangingName="vAbnObjAddressRowChanging" msprop:Generator_RowEvHandlerName="vAbnObjAddressRowChangeEventHandler" msprop:Generator_RowDeletedName="vAbnObjAddressRowDeleted" msprop:Generator_UserTableName="vAbnObjAddress" msprop:Generator_RowChangedName="vAbnObjAddressRowChanged" msprop:Generator_RowEvArgName="vAbnObjAddressRowChangeEvent" msprop:Generator_RowClassName="vAbnObjAddressRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idAbn" msprop:Generator_ColumnVarNameInTable="columnidAbn" msprop:Generator_ColumnPropNameInRow="idAbn" msprop:Generator_ColumnPropNameInTable="idAbnColumn" msprop:Generator_UserColumnName="idAbn" type="xs:int" minOccurs="0" />
+              <xs:element name="idMap" msprop:Generator_ColumnVarNameInTable="columnidMap" msprop:Generator_ColumnPropNameInRow="idMap" msprop:Generator_ColumnPropNameInTable="idMapColumn" msprop:Generator_UserColumnName="idMap" type="xs:int" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idCity" msprop:Generator_ColumnVarNameInTable="columnidCity" msprop:Generator_ColumnPropNameInRow="idCity" msprop:Generator_ColumnPropNameInTable="idCityColumn" msprop:Generator_UserColumnName="idCity" type="xs:int" minOccurs="0" />
+              <xs:element name="City" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="51" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idRaion" msprop:Generator_ColumnVarNameInTable="columnidRaion" msprop:Generator_ColumnPropNameInRow="idRaion" msprop:Generator_ColumnPropNameInTable="idRaionColumn" msprop:Generator_UserColumnName="idRaion" type="xs:int" minOccurs="0" />
+              <xs:element name="Raion" msprop:Generator_ColumnVarNameInTable="columnRaion" msprop:Generator_ColumnPropNameInRow="Raion" msprop:Generator_ColumnPropNameInTable="RaionColumn" msprop:Generator_UserColumnName="Raion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idStreet" msprop:Generator_ColumnVarNameInTable="columnidStreet" msprop:Generator_ColumnPropNameInRow="idStreet" msprop:Generator_ColumnPropNameInTable="idStreetColumn" msprop:Generator_UserColumnName="idStreet" type="xs:int" minOccurs="0" />
+              <xs:element name="Street" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStreet" msprop:Generator_ColumnPropNameInRow="Street" msprop:Generator_ColumnPropNameInTable="StreetColumn" msprop:Generator_UserColumnName="Street" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="91" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="House" msprop:Generator_ColumnVarNameInTable="columnHouse" msprop:Generator_ColumnPropNameInRow="House" msprop:Generator_ColumnPropNameInTable="HouseColumn" msprop:Generator_UserColumnName="House" type="xs:int" minOccurs="0" />
+              <xs:element name="HousePrefix" msprop:Generator_ColumnVarNameInTable="columnHousePrefix" msprop:Generator_ColumnPropNameInRow="HousePrefix" msprop:Generator_ColumnPropNameInTable="HousePrefixColumn" msprop:Generator_UserColumnName="HousePrefix" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HouseAll" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHouseAll" msprop:Generator_ColumnPropNameInRow="HouseAll" msprop:Generator_ColumnPropNameInTable="HouseAllColumn" msprop:Generator_UserColumnName="HouseAll" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsHouse" msprop:Generator_ColumnVarNameInTable="columnIsHouse" msprop:Generator_ColumnPropNameInRow="IsHouse" msprop:Generator_ColumnPropNameInTable="IsHouseColumn" msprop:Generator_UserColumnName="IsHouse" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Index" msprop:Generator_ColumnVarNameInTable="columnIndex" msprop:Generator_ColumnPropNameInRow="Index" msprop:Generator_ColumnPropNameInTable="IndexColumn" msprop:Generator_UserColumnName="Index" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Latitude" msprop:Generator_ColumnVarNameInTable="columnLatitude" msprop:Generator_ColumnPropNameInRow="Latitude" msprop:Generator_ColumnPropNameInTable="LatitudeColumn" msprop:Generator_UserColumnName="Latitude" type="xs:double" minOccurs="0" />
+              <xs:element name="Longitude" msprop:Generator_ColumnVarNameInTable="columnLongitude" msprop:Generator_ColumnPropNameInRow="Longitude" msprop:Generator_ColumnPropNameInTable="LongitudeColumn" msprop:Generator_UserColumnName="Longitude" type="xs:double" minOccurs="0" />
+              <xs:element name="idObjParent" msprop:Generator_ColumnVarNameInTable="columnidObjParent" msprop:Generator_ColumnPropNameInRow="idObjParent" msprop:Generator_ColumnPropNameInTable="idObjParentColumn" msprop:Generator_UserColumnName="idObjParent" type="xs:int" minOccurs="0" />
+              <xs:element name="TypeObj" msprop:Generator_ColumnVarNameInTable="columnTypeObj" msprop:Generator_ColumnPropNameInRow="TypeObj" msprop:Generator_ColumnPropNameInTable="TypeObjColumn" msprop:Generator_UserColumnName="TypeObj" type="xs:int" minOccurs="0" />
+              <xs:element name="TypeObjName" msprop:Generator_ColumnVarNameInTable="columnTypeObjName" msprop:Generator_ColumnPropNameInRow="TypeObjName" msprop:Generator_ColumnPropNameInTable="TypeObjNameColumn" msprop:Generator_UserColumnName="TypeObjName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idObjReg" msprop:Generator_ColumnVarNameInTable="columnidObjReg" msprop:Generator_ColumnPropNameInRow="idObjReg" msprop:Generator_ColumnPropNameInTable="idObjRegColumn" msprop:Generator_UserColumnName="idObjReg" type="xs:int" minOccurs="0" />
+              <xs:element name="TypeObjNew" msprop:Generator_ColumnVarNameInTable="columnTypeObjNew" msprop:Generator_ColumnPropNameInRow="TypeObjNew" msprop:Generator_ColumnPropNameInTable="TypeObjNewColumn" msprop:Generator_UserColumnName="TypeObjNew" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vR_Transformer" msprop:Generator_TableClassName="vR_TransformerDataTable" msprop:Generator_TableVarName="tablevR_Transformer" msprop:Generator_TablePropName="vR_Transformer" msprop:Generator_RowDeletingName="vR_TransformerRowDeleting" msprop:Generator_RowChangingName="vR_TransformerRowChanging" msprop:Generator_RowEvHandlerName="vR_TransformerRowChangeEventHandler" msprop:Generator_RowDeletedName="vR_TransformerRowDeleted" msprop:Generator_UserTableName="vR_Transformer" msprop:Generator_RowChangedName="vR_TransformerRowChanged" msprop:Generator_RowEvArgName="vR_TransformerRowChangeEvent" msprop:Generator_RowClassName="vR_TransformerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="FullName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="123" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Power" msprop:Generator_ColumnVarNameInTable="columnPower" msprop:Generator_ColumnPropNameInRow="Power" msprop:Generator_ColumnPropNameInTable="PowerColumn" msprop:Generator_UserColumnName="Power" type="xs:int" />
+              <xs:element name="HighVoltage" msprop:Generator_ColumnVarNameInTable="columnHighVoltage" msprop:Generator_ColumnPropNameInRow="HighVoltage" msprop:Generator_ColumnPropNameInTable="HighVoltageColumn" msprop:Generator_UserColumnName="HighVoltage" type="xs:decimal" />
+              <xs:element name="LowVoltage" msprop:Generator_ColumnVarNameInTable="columnLowVoltage" msprop:Generator_ColumnPropNameInRow="LowVoltage" msprop:Generator_ColumnPropNameInTable="LowVoltageColumn" msprop:Generator_UserColumnName="LowVoltage" type="xs:decimal" />
+              <xs:element name="RatedAmperHV" msprop:Generator_ColumnVarNameInTable="columnRatedAmperHV" msprop:Generator_ColumnPropNameInRow="RatedAmperHV" msprop:Generator_ColumnPropNameInTable="RatedAmperHVColumn" msprop:Generator_UserColumnName="RatedAmperHV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RatedAmperLV" msprop:Generator_ColumnVarNameInTable="columnRatedAmperLV" msprop:Generator_ColumnPropNameInRow="RatedAmperLV" msprop:Generator_ColumnPropNameInTable="RatedAmperLVColumn" msprop:Generator_UserColumnName="RatedAmperLV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GroupWindings" msprop:Generator_ColumnVarNameInTable="columnGroupWindings" msprop:Generator_ColumnPropNameInRow="GroupWindings" msprop:Generator_ColumnPropNameInTable="GroupWindingsColumn" msprop:Generator_UserColumnName="GroupWindings" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShortCircuitVolt" msprop:Generator_ColumnVarNameInTable="columnShortCircuitVolt" msprop:Generator_ColumnPropNameInRow="ShortCircuitVolt" msprop:Generator_ColumnPropNameInTable="ShortCircuitVoltColumn" msprop:Generator_UserColumnName="ShortCircuitVolt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ShortCircuitLoss" msprop:Generator_ColumnVarNameInTable="columnShortCircuitLoss" msprop:Generator_ColumnPropNameInRow="ShortCircuitLoss" msprop:Generator_ColumnPropNameInTable="ShortCircuitLossColumn" msprop:Generator_UserColumnName="ShortCircuitLoss" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NoLoadLoss" msprop:Generator_ColumnVarNameInTable="columnNoLoadLoss" msprop:Generator_ColumnPropNameInRow="NoLoadLoss" msprop:Generator_ColumnPropNameInTable="NoLoadLossColumn" msprop:Generator_UserColumnName="NoLoadLoss" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Deleted" msprop:Generator_ColumnVarNameInTable="columnDeleted" msprop:Generator_ColumnPropNameInRow="Deleted" msprop:Generator_ColumnPropNameInTable="DeletedColumn" msprop:Generator_UserColumnName="Deleted" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vL_SchmAbn" msprop:Generator_TableClassName="vL_SchmAbnDataTable" msprop:Generator_TableVarName="tablevL_SchmAbn" msprop:Generator_TablePropName="vL_SchmAbn" msprop:Generator_RowDeletingName="vL_SchmAbnRowDeleting" msprop:Generator_RowChangingName="vL_SchmAbnRowChanging" msprop:Generator_RowEvHandlerName="vL_SchmAbnRowChangeEventHandler" msprop:Generator_RowDeletedName="vL_SchmAbnRowDeleted" msprop:Generator_UserTableName="vL_SchmAbn" msprop:Generator_RowChangedName="vL_SchmAbnRowChanged" msprop:Generator_RowEvArgName="vL_SchmAbnRowChangeEvent" msprop:Generator_RowClassName="vL_SchmAbnRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="idSchmObj" msprop:Generator_ColumnVarNameInTable="columnidSchmObj" msprop:Generator_ColumnPropNameInRow="idSchmObj" msprop:Generator_ColumnPropNameInTable="idSchmObjColumn" msprop:Generator_UserColumnName="idSchmObj" type="xs:int" />
+              <xs:element name="schmObjName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnschmObjName" msprop:Generator_ColumnPropNameInRow="schmObjName" msprop:Generator_ColumnPropNameInTable="schmObjNameColumn" msprop:Generator_UserColumnName="schmObjName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1841" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idAbn" msprop:Generator_ColumnVarNameInTable="columnidAbn" msprop:Generator_ColumnPropNameInRow="idAbn" msprop:Generator_ColumnPropNameInTable="idAbnColumn" msprop:Generator_UserColumnName="idAbn" type="xs:int" minOccurs="0" />
+              <xs:element name="idAbnObj" msprop:Generator_ColumnVarNameInTable="columnidAbnObj" msprop:Generator_ColumnPropNameInRow="idAbnObj" msprop:Generator_ColumnPropNameInTable="idAbnObjColumn" msprop:Generator_UserColumnName="idAbnObj" type="xs:int" minOccurs="0" />
+              <xs:element name="idPoint" msprop:Generator_ColumnVarNameInTable="columnidPoint" msprop:Generator_ColumnPropNameInRow="idPoint" msprop:Generator_ColumnPropNameInTable="idPointColumn" msprop:Generator_UserColumnName="idPoint" type="xs:int" minOccurs="0" />
+              <xs:element name="idDoc" msprop:Generator_ColumnVarNameInTable="columnidDoc" msprop:Generator_ColumnPropNameInRow="idDoc" msprop:Generator_ColumnPropNameInTable="idDocColumn" msprop:Generator_UserColumnName="idDoc" type="xs:int" minOccurs="0" />
+              <xs:element name="TypeDoc" msprop:Generator_ColumnVarNameInTable="columnTypeDoc" msprop:Generator_ColumnPropNameInRow="TypeDoc" msprop:Generator_ColumnPropNameInTable="TypeDocColumn" msprop:Generator_UserColumnName="TypeDoc" type="xs:int" minOccurs="0" />
+              <xs:element name="typeDocName" msprop:Generator_ColumnVarNameInTable="columntypeDocName" msprop:Generator_ColumnPropNameInRow="typeDocName" msprop:Generator_ColumnPropNameInTable="typeDocNameColumn" msprop:Generator_UserColumnName="typeDocName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idOwner" msprop:Generator_ColumnVarNameInTable="columnidOwner" msprop:Generator_ColumnPropNameInRow="idOwner" msprop:Generator_ColumnPropNameInTable="idOwnerColumn" msprop:Generator_UserColumnName="idOwner" type="xs:int" minOccurs="0" />
+              <xs:element name="nameOwner" msprop:Generator_ColumnVarNameInTable="columnnameOwner" msprop:Generator_ColumnPropNameInRow="nameOwner" msprop:Generator_ColumnPropNameInTable="nameOwnerColumn" msprop:Generator_UserColumnName="nameOwner" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dateOwner" msprop:Generator_ColumnVarNameInTable="columndateOwner" msprop:Generator_ColumnPropNameInRow="dateOwner" msprop:Generator_ColumnPropNameInTable="dateOwnerColumn" msprop:Generator_UserColumnName="dateOwner" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Docnumber" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDocnumber" msprop:Generator_ColumnPropNameInRow="Docnumber" msprop:Generator_ColumnPropNameInTable="DocnumberColumn" msprop:Generator_UserColumnName="Docnumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="docdate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndocdate" msprop:Generator_ColumnPropNameInRow="docdate" msprop:Generator_ColumnPropNameInTable="docdateColumn" msprop:Generator_UserColumnName="docdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="delDoc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndelDoc" msprop:Generator_ColumnPropNameInRow="delDoc" msprop:Generator_ColumnPropNameInTable="delDocColumn" msprop:Generator_UserColumnName="delDoc" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tUser" msprop:Generator_TableClassName="tUserDataTable" msprop:Generator_TableVarName="tabletUser" msprop:Generator_TablePropName="tUser" msprop:Generator_RowDeletingName="tUserRowDeleting" msprop:Generator_RowChangingName="tUserRowChanging" msprop:Generator_RowEvHandlerName="tUserRowChangeEventHandler" msprop:Generator_RowDeletedName="tUserRowDeleted" msprop:Generator_UserTableName="tUser" msprop:Generator_RowChangedName="tUserRowChanged" msprop:Generator_RowEvArgName="tUserRowChangeEvent" msprop:Generator_RowClassName="tUserRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDUser" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDUser" msprop:Generator_ColumnPropNameInRow="IDUser" msprop:Generator_ColumnPropNameInTable="IDUserColumn" msprop:Generator_UserColumnName="IDUser" type="xs:int" />
+              <xs:element name="IdWorker" msprop:Generator_ColumnVarNameInTable="columnIdWorker" msprop:Generator_ColumnPropNameInRow="IdWorker" msprop:Generator_ColumnPropNameInTable="IdWorkerColumn" msprop:Generator_UserColumnName="IdWorker" type="xs:int" minOccurs="0" />
+              <xs:element name="Login" msprop:Generator_ColumnVarNameInTable="columnLogin" msprop:Generator_ColumnPropNameInRow="Login" msprop:Generator_ColumnPropNameInTable="LoginColumn" msprop:Generator_UserColumnName="Login">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Deleted" msprop:Generator_ColumnVarNameInTable="columnDeleted" msprop:Generator_ColumnPropNameInRow="Deleted" msprop:Generator_ColumnPropNameInTable="DeletedColumn" msprop:Generator_UserColumnName="Deleted" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vR_Cable" msprop:Generator_TableClassName="vR_CableDataTable" msprop:Generator_TableVarName="tablevR_Cable" msprop:Generator_RowChangedName="vR_CableRowChanged" msprop:Generator_TablePropName="vR_Cable" msprop:Generator_RowDeletingName="vR_CableRowDeleting" msprop:Generator_RowChangingName="vR_CableRowChanging" msprop:Generator_RowEvHandlerName="vR_CableRowChangeEventHandler" msprop:Generator_RowDeletedName="vR_CableRowDeleted" msprop:Generator_RowClassName="vR_CableRow" msprop:Generator_UserTableName="vR_Cable" msprop:Generator_RowEvArgName="vR_CableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="FullName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="107" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CableMakeup" msprop:Generator_ColumnVarNameInTable="columnCableMakeup" msprop:Generator_ColumnPropNameInRow="CableMakeup" msprop:Generator_ColumnPropNameInTable="CableMakeupColumn" msprop:Generator_UserColumnName="CableMakeup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Wires" msprop:Generator_ColumnVarNameInTable="columnWires" msprop:Generator_ColumnPropNameInRow="Wires" msprop:Generator_ColumnPropNameInTable="WiresColumn" msprop:Generator_UserColumnName="Wires" type="xs:int" minOccurs="0" />
+              <xs:element name="CrossSection" msprop:Generator_ColumnVarNameInTable="columnCrossSection" msprop:Generator_ColumnPropNameInRow="CrossSection" msprop:Generator_ColumnPropNameInTable="CrossSectionColumn" msprop:Generator_UserColumnName="CrossSection" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amperage" msprop:Generator_ColumnVarNameInTable="columnAmperage" msprop:Generator_ColumnPropNameInRow="Amperage" msprop:Generator_ColumnPropNameInTable="AmperageColumn" msprop:Generator_UserColumnName="Amperage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Resistance" msprop:Generator_ColumnVarNameInTable="columnResistance" msprop:Generator_ColumnPropNameInRow="Resistance" msprop:Generator_ColumnPropNameInTable="ResistanceColumn" msprop:Generator_UserColumnName="Resistance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VoltageTypeName" msprop:Generator_ColumnVarNameInTable="columnVoltageTypeName" msprop:Generator_ColumnPropNameInRow="VoltageTypeName" msprop:Generator_ColumnPropNameInTable="VoltageTypeNameColumn" msprop:Generator_UserColumnName="VoltageTypeName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VoltageValue" msprop:Generator_ColumnVarNameInTable="columnVoltageValue" msprop:Generator_ColumnPropNameInRow="VoltageValue" msprop:Generator_ColumnPropNameInTable="VoltageValueColumn" msprop:Generator_UserColumnName="VoltageValue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Deleted" msprop:Generator_ColumnVarNameInTable="columnDeleted" msprop:Generator_ColumnPropNameInRow="Deleted" msprop:Generator_ColumnPropNameInTable="DeletedColumn" msprop:Generator_UserColumnName="Deleted" type="xs:boolean" />
+              <xs:element name="WiresAddl" msprop:Generator_ColumnVarNameInTable="columnWiresAddl" msprop:Generator_ColumnPropNameInRow="WiresAddl" msprop:Generator_ColumnPropNameInTable="WiresAddlColumn" msprop:Generator_UserColumnName="WiresAddl" type="xs:int" minOccurs="0" />
+              <xs:element name="CrossSectionAddl" msprop:Generator_ColumnVarNameInTable="columnCrossSectionAddl" msprop:Generator_ColumnPropNameInRow="CrossSectionAddl" msprop:Generator_ColumnPropNameInTable="CrossSectionAddlColumn" msprop:Generator_UserColumnName="CrossSectionAddl" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtSource" msprop:Generator_TableClassName="dtSourceDataTable" msprop:Generator_TableVarName="tabledtSource" msprop:Generator_TablePropName="dtSource" msprop:Generator_RowDeletingName="dtSourceRowDeleting" msprop:Generator_RowChangingName="dtSourceRowChanging" msprop:Generator_RowEvHandlerName="dtSourceRowChangeEventHandler" msprop:Generator_RowDeletedName="dtSourceRowDeleted" msprop:Generator_UserTableName="dtSource" msprop:Generator_RowChangedName="dtSourceRowChanged" msprop:Generator_RowEvArgName="dtSourceRowChangeEvent" msprop:Generator_RowClassName="dtSourceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Desription" msprop:Generator_ColumnVarNameInTable="columnDesription" msprop:Generator_ColumnPropNameInRow="Desription" msprop:Generator_ColumnPropNameInTable="DesriptionColumn" msprop:Generator_UserColumnName="Desription" type="xs:string" minOccurs="0" />
+              <xs:element name="Dimension" msprop:Generator_ColumnVarNameInTable="columnDimension" msprop:Generator_ColumnPropNameInRow="Dimension" msprop:Generator_ColumnPropNameInTable="DimensionColumn" msprop:Generator_UserColumnName="Dimension" type="xs:string" minOccurs="0" />
+              <xs:element name="Val" msprop:Generator_ColumnVarNameInTable="columnVal" msprop:Generator_ColumnPropNameInRow="Val" msprop:Generator_ColumnPropNameInTable="ValColumn" msprop:Generator_UserColumnName="Val" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tR_Classifier" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="vJ_CalcLoss_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vJ_CalcLoss" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tJ_CalcLoss_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tJ_CalcLoss" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tJ_CalcLossFile_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tJ_CalcLossFile" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tJ_CalcLossCable_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tJ_CalcLossCable" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tJ_CalcLossTrans_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tJ_CalcLossTrans" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tJ_CalcLossTransHH_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tJ_CalcLossTransHH" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tAbn_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tAbn" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="vR_Transformer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vR_Transformer" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="vL_SchmAbn_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vL_SchmAbn" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tUser_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tUser" />
+      <xs:field xpath="mstns:IDUser" />
+    </xs:unique>
+    <xs:unique name="vR_Cable_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vR_Cable" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
