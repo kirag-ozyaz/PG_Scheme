@@ -230,12 +230,6 @@
   <ItemGroup>
     <None Include="Properties\Trash.png" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Constants-0\Constants.csproj">
-      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
-      <Name>Constants</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

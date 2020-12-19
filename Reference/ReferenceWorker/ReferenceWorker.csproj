@@ -214,10 +214,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Constants-0\Constants.csproj">
-      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
-      <Name>Constants</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ReferenceMapObj\ReferenceMapObj.csproj">
       <Project>{6E383301-C781-4B04-89C3-CFB97466AFA3}</Project>
       <Name>ReferenceMapObj</Name>

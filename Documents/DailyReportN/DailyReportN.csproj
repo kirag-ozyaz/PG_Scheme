@@ -421,10 +421,6 @@
       <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
       <Name>Library</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Constants-0\Constants.csproj">
-      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
-      <Name>Constants</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\ReferenceTables\ReferenceTables.csproj">
       <Project>{70de9a59-49c6-4683-9f6b-3f04c819c1a8}</Project>
       <Name>ReferenceTables</Name>
