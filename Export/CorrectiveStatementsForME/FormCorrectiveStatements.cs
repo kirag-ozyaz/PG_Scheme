@@ -193,5 +193,20 @@ namespace StatementsForME
             //bsForSendToME.DataSource = tableDamage;
             //dgvSendME.DataSource = bsForSendToME;
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            SendRequestToME sendME = new SendRequestToME();
+            sendME.SqlSettings = this.SqlSettings;
+
+            int isSendSiteCrashMe = 1;
+            DataTable tableDamage = sendME.LoadData(isSendSiteCrashMe, dateTimePeriodKWT.Value.Year, dateTimePeriodKWT.Value.Month);
+            foreach (DataRow row in tableDamage.AsEnumerable())
+            {
+                sendME.Send((int)row["id"], SqlSettings);
+            }
+
+            // sendME.Send(SqlSettings);
+        }
     }
 }

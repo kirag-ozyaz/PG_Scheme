@@ -37,6 +37,9 @@
     <Reference Include="DataSql">
       <HintPath>..\LIB\DataSql.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.12.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\DocumentFormat.OpenXml.2.12.0\lib\net35\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="DXFLibrary">
       <HintPath>..\LIB\DXFLibrary.dll</HintPath>
     </Reference>
@@ -80,6 +83,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataSets\DataSetN.cs">
@@ -182,6 +186,7 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="DataSets\DataSetN.xsc">
       <DependentUpon>DataSetN.xsd</DependentUpon>
     </None>
@@ -211,6 +216,7 @@
     <None Include="Documents\Form\JournalDamage\Reports\ReportDailyLV.rdlc" />
     <None Include="Documents\Form\JournalDamage\Reports\ReportEmergencyShutdown.rdlc" />
     <None Include="Documents\Form\JournalDamage\Reports\reportInterruptLV.rdlc" />
+    <None Include="packages.config" />
     <None Include="Properties\Add.png" />
     <None Include="Properties\arrowDown.png" />
     <None Include="Properties\arrowNext.png" />
@@ -310,6 +316,10 @@
     <ProjectReference Include="..\..\ClassLibrarySQL\Library.csproj">
       <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
       <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
     </ProjectReference>
     <ProjectReference Include="..\JournalRequestForRepair\RequestForRepair.csproj">
       <Project>{d4f87949-2a0c-47e0-883e-eca2743d8894}</Project>

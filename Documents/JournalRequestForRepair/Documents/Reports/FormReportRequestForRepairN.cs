@@ -79,6 +79,7 @@ namespace Documents.JournalRequestForRepair
 
             ReportParameter p1 = new ReportParameter("DateBegin", this.dateTimePickerBeg.Value.Date.ToString());
             ReportParameter p2 = new ReportParameter("DateEnd", this.dateTimePickerEnd.Value.Date.ToString());
+            //учитывать согласование
             bool isShowAgreed = !this.checkBoxIsAgreed.Checked;
             ReportParameter p3 = new ReportParameter("ShowAgreed", isShowAgreed.ToString());
             
@@ -208,50 +209,50 @@ namespace Documents.JournalRequestForRepair
             ReportParameter[] parameterArray11 = new ReportParameter[] { parameter };
             this.reportViewerRus1.LocalReport.SetParameters(parameterArray11);
 
-            string str = "'" + this.dateTimePickerBeg.Value.Date.ToString("yyyyMMdd") + "'";
-            string str2 = "'" + this.dateTimePickerEnd.Value.Date.ToString("yyyyMMdd") + " 23:59:59'";
-            string[] textArray1 = new string[] { " ((dateTripBeg >= ", str, " and datetripBEg <= ", str2, ") or (datetripend >= ", str, " and datetripEnd <= ", str2, ") or (datetripBeg <= ", str, " and dateTRipEnd >= ", str2, ")) " };
-            string str3 = string.Concat(textArray1);
+            string strDateBegin = "'" + this.dateTimePickerBeg.Value.Date.ToString("yyyyMMdd") + "'";
+            string strDateEnd = "'" + this.dateTimePickerEnd.Value.Date.ToString("yyyyMMdd") + " 23:59:59'";
+            string[] textArray1 = new string[] { " ((dateTripBeg >= ", strDateBegin, " and datetripBEg <= ", strDateEnd, ") or (datetripend >= ", strDateBegin, " and datetripEnd <= ", strDateEnd, ") or (datetripBeg <= ", strDateBegin, " and dateTRipEnd >= ", strDateEnd, ")) " };
+            string strWhereDate = string.Concat(textArray1);
             if (this.checkedListBoxSR.CheckedItems.Count <= 0)
             {
                 this.dsGES.vJ_RequestForRepairDaily.Clear();
             }
             else
             {
-                string str4 = "";
+                string strSR = "";
                 foreach (object obj2 in this.checkedListBoxSR.CheckedItems)
                 {
                     SRForRepair struct2 = (SRForRepair)obj2;
-                    str4 = str4 + struct2.Id.ToString() + ",";
+                    strSR = strSR + struct2.Id.ToString() + ",";
                 }
-                str4 = " (idSR in (" + str4.Remove(str4.Length - 1) + ")) ";
+                strSR = " (idSR in (" + strSR.Remove(strSR.Length - 1) + ")) ";
                 if (this.cmdDivision.SelectedValue == null)
                 {
                     this.dsGES.vJ_RequestForRepairDaily.Clear();
                 }
                 else
                 {
-                    string str5 = " (idDivision = " + this.cmdDivision.SelectedValue.ToString() + ") ";
-                    string str6 = "";
+                    string strDivision = " (idDivision = " + this.cmdDivision.SelectedValue.ToString() + ") ";
+                    string strSchmObj = "";
                     if (!string.IsNullOrEmpty(this.txtObject.Text))
                     {
-                        str6 = " and (schmObj like '%" + this.txtObject.Text + "%') ";
+                        strSchmObj = " and (schmObj like '%" + this.txtObject.Text + "%') ";
                     }
-                    string str7 = "";
+                    string strAgreed = "";
                     if (this.checkBoxIsAgreed.Checked)
                     {
-                        str7 = " and (Agreed = 1) ";
+                        strAgreed = " and (Agreed = 1) ";
                     }
-                    string str8 = "";
+                    string strCrash = "";
                     if (this.isCrash)
                     {
-                        str8 = " and (Crash = 1) ";
+                        strCrash = " and (Crash = 1) ";
                     }
                     else
                     {
-                        str8 = " and (Crash = 0 or Crash is null) ";
+                        strCrash = " and (Crash = 0 or Crash is null) ";
                     }
-                    base.SelectSqlData(this.dsGES, this.dsGES.vJ_RequestForRepairDaily, true, " where " + str3 + " and " + str4 + " and " + str5 + str6 + str7 + str8 + " and deleted = 0 order by sr, id, datetripBeg");
+                    base.SelectSqlData(this.dsGES, this.dsGES.vJ_RequestForRepairDaily, true, " where " + strWhereDate + " and " + strSR + " and " + strDivision + strSchmObj + strAgreed + strCrash + " and deleted = 0 order by sr, id, datetripBeg");
                     this.FullTableRepairDaily(this.dateTimePickerBeg.Value.Date, this.dateTimePickerEnd.Value.Date);
                 }
             }

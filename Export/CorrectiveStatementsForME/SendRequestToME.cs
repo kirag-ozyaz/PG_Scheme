@@ -312,6 +312,7 @@ namespace StatementsForME
             DataSql.SqlDataConnect sqlDataConnect = new DataSql.SqlDataConnect();
 
             // проверим есть ли данные простым запросом, чтобы не запускать тяжелый
+            // Log.Write(LogLevel.Info, "SchemeService", "StatementsForME", "RequestForRepairCrashME", "LoadData: Проверим есть ли данные (3)", null);
             using (SqlConnection sqlConnection = new SqlConnection(SqlSettings.GetConnectionString() + ";Connection Timeout=1000"))
             {
                 try
@@ -338,6 +339,7 @@ namespace StatementsForME
                 }
             }
 
+            // Log.Write(LogLevel.Info, "SchemeService", "StatementsForME", "RequestForRepairCrashME", "LoadData: Начали загрузку данных (3)", null);
             // запускаем тяжеловеса
             using (SqlConnection sqlConnection = new SqlConnection(SqlSettings.GetConnectionString() + ";Connection Timeout=1000"))
             {
@@ -397,8 +399,17 @@ namespace StatementsForME
         }
         public void Send(SQLSettings sqlSettings)
         {
+            // Log.Write(LogLevel.Info, "SchemeService", "StatementsForME", "Send JSON Instantly", $"Send: зашли в конструктор (3)", null);
             SqlSettings = sqlSettings;
-            SendJSONInstantly();
+            // Log.Write(LogLevel.Info, "SchemeService", "StatementsForME", "Send JSON Instantly", $"Send: Получили SqlSettings = {SqlSettings.ToString()} (3)", null);
+            try
+            {
+                SendJSONInstantly();
+            }
+            catch (Exception ex)
+            {
+                Log.Write(LogLevel.Error, "StatementsForME", "StatementsForME", "Send JSON Instantly", $"Send: Ошибка в конструкторе (3) {ex.Message}", null);
+            }
         }
 
         #region Формирование отправляемых данных (json)
@@ -504,13 +515,15 @@ namespace StatementsForME
         /// метод отправки postResult и получение результата из минэнерго
         /// мгновенная отправка данных при статусе = 1
         /// при любой отправке изменить поле isSendSiteMe
-        private void SendJSONInstantly(string DATA_TYPE = "8.1_online")
+        internal void SendJSONInstantly(string DATA_TYPE = "8.1_online")
         {
+            // Log.Write(LogLevel.Info, "SchemeService", "StatementsForME", "Send JSON Instantly", $"Send: зашли в метод (3)", null);
             int resultat = 0; // "Неправильный тип данных"
             dataTableDamage = LoadData(1);
             dataTableDamage.TableName = "tJ_Damage";
             if (dataTableDamage.Rows.Count == 0)
             {
+                Log.Write(LogLevel.Info, "SchemeService", "StatementsForME", "Send JSON Instantly", $"LoadData: Аварийных событий нет (3)", null);
                 // аварийных событий нет
                 return;
             }
@@ -519,7 +532,11 @@ namespace StatementsForME
 
             // возвращаемый результат от сервака минэнерго
             GetResult objectFromServer = new GetResult();
-            if (dtSetting.Rows.Count == 0) { objectFromServer.result = 10; } // настроек нет
+            if (dtSetting.Rows.Count == 0)
+            {
+                Log.Write(LogLevel.Info, "SchemeService", "StatementsForME", "Send JSON Instantly", $"Setting: Настроек нет (3)", null);
+                objectFromServer.result = 10;
+            } // 
             if ((bool)dtSetting.Rows[0]["SendME"] != true) { objectFromServer.result = 7; } // запрет отправки с нашей стороны
                                                                                             // логинимся
             string login = dtSetting.Rows[0]["Login"].ToString();
@@ -533,6 +550,7 @@ namespace StatementsForME
             //
             string tso_id = "2232";
             // теперь можно сформировать данные
+            // Log.Write(LogLevel.Info, "SchemeService", "StatementsForME", "Send JSON Instantly", $"LoadData: Формируем данные json (3)", null);
             if (objectFromServer.result == 0) // ошибок нет
             {
                 // сформируем таблицу ТСО МЭ
@@ -675,6 +693,7 @@ namespace StatementsForME
                                 objectFromServer = JsonConvert.DeserializeObject<GetResult>(myStreamReader.ReadToEnd());
                             }
                         }
+                        Log.Write(LogLevel.Info, "StatementsForME", "StatementsForME", "SendData - отправка данных", "Удачная отправка данных", null);
                     }
                     catch (Exception ex)
                     {
@@ -685,7 +704,7 @@ namespace StatementsForME
                             code = "-1",
                             details = ex.ToString()
                         };
-                        Log.Write(LogLevel.Error, "StatementsForME", "StatementsForME", "LoadData - отправка данных", ex.Message, null);
+                        Log.Write(LogLevel.Error, "StatementsForME", "StatementsForME", "SendData - отправка данных (ошибка при отправке)", ex.Message, null);
                     }
                 }
             }
@@ -704,13 +723,19 @@ namespace StatementsForME
                     if (objectFromServer.error != null && Array.IndexOf(trueErrorCode, Convert.ToInt32(objectFromServer.error.code)) > 0)
                     {
                         resultat = 20 + Convert.ToInt32(objectFromServer.error.code); // ошибка авторизации
-                        Log.Write(LogLevel.Error, "StatementsForME", "StatementsForME", "LoadData - отправка данных", objectFromServer.error.details, null);
+                        Log.Write(LogLevel.Error, "StatementsForME", "StatementsForME", "SendData - отправка данных", objectFromServer.error.details, null);
                     }
                     else
+                    {
                         resultat = 5; // "Ошибка отправки"
+                        Log.Write(LogLevel.Error, "StatementsForME", "StatementsForME", "SendData - отправка данных (неопределенная от сервера )", resultat.ToString(), null);
+                    }
                 }
                 else
+                {
                     resultat = 5; // "Ошибка отправки"
+                    Log.Write(LogLevel.Error, "StatementsForME", "StatementsForME", "SendData - отправка данных (неопределенная)", resultat.ToString(), null);
+                }
 
                 LibraryTSQL.SqlDataCommand cTSQL = new LibraryTSQL.SqlDataCommand(SqlSettings);
 

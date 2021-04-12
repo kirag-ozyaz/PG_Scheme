@@ -37,6 +37,9 @@
     <Reference Include="DataSql">
       <HintPath>..\LIB\DataSql.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.12.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\DocumentFormat.OpenXml.2.12.0\lib\net35\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="FormLbr">
       <HintPath>..\LIB\FormLbr.dll</HintPath>
     </Reference>
@@ -79,6 +82,7 @@
     <Reference Include="WinDocking">
       <HintPath>..\LIB\WinDocking.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Documents\Reports\FormReportRequestForRepairN.cs">
@@ -189,6 +193,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="DataSets\DataSetN.xsc">
       <DependentUpon>DataSetN.xsd</DependentUpon>
     </None>
@@ -204,6 +209,7 @@
     <EmbeddedResource Include="Documents\RDLC\ReportrequestForRepairFullPeriod.rdlc" />
     <EmbeddedResource Include="Documents\RDLC\ReportrequestForRepairNoAddress.rdlc" />
     <EmbeddedResource Include="Documents\RDLC\ReportrequestForRepairNoAddressPeriod.rdlc" />
+    <None Include="packages.config" />
     <None Include="Resources\FindNext.png" />
   </ItemGroup>
   <ItemGroup>

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DataSql.SQLSettings sqlSettings1 = new DataSql.SQLSettings();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataSet11 = new System.Data.DataSet();
             this.dataTable1 = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -40,10 +40,13 @@
             this.toolStripButtonExportExcel3 = new Library.ToolStripButtonExportExcel(this.components);
             this.toolStripButtonMail1 = new Library.ToolStripButtonMail(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lInterval = new System.Windows.Forms.ToolStripLabel();
+            this.tsbInterval = new System.Windows.Forms.ToolStripTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pageReestrDocs1 = new Library.PageReestrDocs(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.LoadSchemaMain = new System.Windows.Forms.Button();
+            this.rtbSchemaMain = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -85,7 +88,9 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonExportExcel3,
-            this.toolStripButtonMail1});
+            this.toolStripButtonMail1,
+            this.lInterval,
+            this.tsbInterval});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -118,6 +123,20 @@
             this.dataGridView1.Size = new System.Drawing.Size(444, 59);
             this.dataGridView1.TabIndex = 3;
             // 
+            // lInterval
+            // 
+            this.lInterval.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lInterval.Name = "lInterval";
+            this.lInterval.Size = new System.Drawing.Size(62, 22);
+            this.lInterval.Text = "Интервал";
+            // 
+            // tsbInterval
+            // 
+            this.tsbInterval.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tsbInterval.MaxLength = 100;
+            this.tsbInterval.Name = "tsbInterval";
+            this.tsbInterval.Size = new System.Drawing.Size(35, 25);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(16, 28);
@@ -136,22 +155,6 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
-            // pageReestrDocs1
-            // 
-            this.pageReestrDocs1.IdDocument = 0;
-            this.pageReestrDocs1.Location = new System.Drawing.Point(16, 145);
-            this.pageReestrDocs1.Name = "pageReestrDocs1";
-            this.pageReestrDocs1.Size = new System.Drawing.Size(396, 217);
-            sqlSettings1.Autentification = "WINDOWS";
-            sqlSettings1.DBName = "GES";
-            sqlSettings1.ServerDB = "ulges-sql2";
-            sqlSettings1.SqlPasswConnect = "";
-            sqlSettings1.SqlUserConnect = "";
-            this.pageReestrDocs1.SqlSettings = sqlSettings1;
-            this.pageReestrDocs1.TabIndex = 4;
-            this.pageReestrDocs1.TableDocumentDoc = "tJ_DamageDoc";
-            this.pageReestrDocs1.TypeDocument = 0;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(110, 28);
@@ -162,17 +165,37 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // LoadSchemaMain
+            // 
+            this.LoadSchemaMain.Location = new System.Drawing.Point(435, 136);
+            this.LoadSchemaMain.Name = "LoadSchemaMain";
+            this.LoadSchemaMain.Size = new System.Drawing.Size(75, 23);
+            this.LoadSchemaMain.TabIndex = 6;
+            this.LoadSchemaMain.Text = "LoadSchemaMain";
+            this.LoadSchemaMain.UseVisualStyleBackColor = true;
+            this.LoadSchemaMain.Click += new System.EventHandler(this.LoadSchemaMain_Click);
+            // 
+            // rtbSchemaMain
+            // 
+            this.rtbSchemaMain.Location = new System.Drawing.Point(435, 166);
+            this.rtbSchemaMain.Name = "rtbSchemaMain";
+            this.rtbSchemaMain.Size = new System.Drawing.Size(353, 272);
+            this.rtbSchemaMain.TabIndex = 7;
+            this.rtbSchemaMain.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rtbSchemaMain);
+            this.Controls.Add(this.LoadSchemaMain);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.pageReestrDocs1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -203,5 +226,9 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private Library.PageReestrDocs pageReestrDocs1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button LoadSchemaMain;
+        private System.Windows.Forms.RichTextBox rtbSchemaMain;
+        private System.Windows.Forms.ToolStripLabel lInterval;
+        private System.Windows.Forms.ToolStripTextBox tsbInterval;
     }
 }

@@ -29,6 +29,7 @@ internal partial class FormReportDetectionCrash : FormBase
 
 	private void FormReportDetectionCrash_Load(object sender, EventArgs e)
 	{
+        this.chkHV.Checked = true;
 		this.FillComboBoxYear();
 		this.FillDataTableSettings();
 		this.FillReport();
@@ -200,11 +201,19 @@ internal partial class FormReportDetectionCrash : FormBase
 				}
 				using (SqlCommand sqlCommand = new SqlCommand(SqlScripts, sqlConnection))
 				{
-					sqlCommand.CommandType = CommandType.Text;
-					sqlCommand.Parameters.Add("dateBegin", SqlDbType.DateTime).Value = this.dateTimeBegin;
-					sqlCommand.Parameters.Add("dateEnd", SqlDbType.DateTime).Value = this.dateTimeEnd;
-					DataTable dataTable = new DataTable();
-					new SqlDataAdapter(sqlCommand).Fill(dataTable);
+                    sqlCommand.CommandType = CommandType.Text;
+                    sqlCommand.Parameters.Add("dateBegin", SqlDbType.DateTime).Value = this.dateTimeBegin;
+                    sqlCommand.Parameters.Add("dateEnd", SqlDbType.DateTime).Value = this.dateTimeEnd;
+                    if (this.chkLV.Checked)
+                        sqlCommand.Parameters.Add("docNN", SqlDbType.Int).Value = (int)eTypeDocuments.DamageLV;
+                    else
+                        sqlCommand.Parameters.Add("docNN", SqlDbType.Int).Value = DBNull.Value;
+                    if (this.chkHV.Checked)
+                        sqlCommand.Parameters.Add("docVN", SqlDbType.Int).Value = (int)eTypeDocuments.DamageHV;
+                    else
+                        sqlCommand.Parameters.Add("docVN", SqlDbType.Int).Value = DBNull.Value;
+                    DataTable dataTable = new DataTable();
+                    new SqlDataAdapter(sqlCommand).Fill(dataTable);
 					this.AddPrefixToIntegerColumns(dataTable);
 					result = dataTable;
 				}

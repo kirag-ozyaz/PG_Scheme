@@ -312,7 +312,7 @@ namespace SchemeCtrl2.Canvas
 					return;
 				}
 				((DrawingLayer)UndoRedoManager.canvasControl_0.ActiveLayer).AddObject(drawObjectBase_0);
-				drawObjectBase_0.EndDrawEvent += UndoRedoManager.canvasControl_0.drawObjectBase_0_EndDrawEvent;
+				drawObjectBase_0.EndDrawEvent += UndoRedoManager.canvasControl_0.newObject_EndDrawEvent;
 				drawObjectBase_0.DrawNewObjectEvent += UndoRedoManager.canvasControl_0.drawObjectBase_0_DrawNewObjectEvent;
 				if (drawObjectBase_0.GetType() != typeof(LineTool))
 				{

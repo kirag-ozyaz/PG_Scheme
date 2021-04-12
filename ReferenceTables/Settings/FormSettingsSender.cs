@@ -104,7 +104,10 @@ public partial class FormSettingsSender : FormBase
     {
         base.Close();
     }
-
+    /// <summary>
+    /// Сохранить конфигурационные данные
+    /// </summary>
+    /// <returns></returns>
     private XmlDocument CreateXmlConfigSender()
     {
         XmlDocument xmlDocument = new XmlDocument();
@@ -300,7 +303,7 @@ public partial class FormSettingsSender : FormBase
         XmlNode xmlNode12 = xmlDocument.CreateElement("PathCURL");
         xmlNode12.InnerText = this.txtCURL.Text;
         xmlNode.AppendChild(xmlNode12);
-#endregion
+        #endregion
         #region RIC
         XmlNode xmlNodeRIC = xmlDocument.CreateElement("RIC");
         xmlNode.AppendChild(xmlNodeRIC);
@@ -429,9 +432,92 @@ public partial class FormSettingsSender : FormBase
         }
         xmlNodeShedule.Attributes.Append(xmlAttribute);
         #endregion
+        #region Ульяновскэнерго
+        XmlNode xmlNodePlannedUE = xmlDocument.CreateElement("MailPlannedUE");
+        xmlNode.AppendChild(xmlNodePlannedUE);
+        xmlAttribute = xmlDocument.CreateAttribute("useMailUE");
+        xmlAttribute.Value = this.chkUseMailPlannedUE.Checked.ToString();
+        xmlNodePlannedUE.Attributes.Append(xmlAttribute);
+        xmlAttribute = xmlDocument.CreateAttribute("FileNameUE");
+        xmlAttribute.Value = this.txtFileNameReportPlannedUE.Text;
+        xmlNodePlannedUE.Attributes.Append(xmlAttribute);
+        xmlAttribute = xmlDocument.CreateAttribute("OutFormatFileUE");
+        xmlAttribute.Value = this.cmbOutFormatFileUE.SelectedItem.ToString();
+        xmlNodePlannedUE.Attributes.Append(xmlAttribute);
+
+        XmlNode xmlNodeSMTPUE = xmlDocument.CreateElement("SMTPUE");
+        xmlNodePlannedUE.AppendChild(xmlNodeSMTPUE);
+        xmlAttribute = xmlDocument.CreateAttribute("NameUE");
+        xmlAttribute.Value = this.txtSMTPServerPlannedUE.Text;
+        xmlNodeSMTPUE.Attributes.Append(xmlAttribute);
+        xmlAttribute = xmlDocument.CreateAttribute("PortUE");
+        xmlAttribute.Value = this.txtSMTPServerPortPlannedUE.Value.ToString();
+        xmlNodeSMTPUE.Attributes.Append(xmlAttribute);
+        xmlAttribute = xmlDocument.CreateAttribute("LoginUE");
+        xmlAttribute.Value = this.txtLoginSMTPPlannedUE.Text;
+        xmlNodeSMTPUE.Attributes.Append(xmlAttribute);
+        xmlAttribute = xmlDocument.CreateAttribute("PwdUE");
+        xmlAttribute.Value = this.txtPwdSMTPPlannedUE.Text;
+        xmlNodeSMTPUE.Attributes.Append(xmlAttribute);
+
+        XmlNode xmlNodeSenderUE = xmlDocument.CreateElement("SenderUE");
+        xmlNodePlannedUE.AppendChild(xmlNodeSenderUE);
+        xmlAttribute = xmlDocument.CreateAttribute("AddressUE");
+        xmlAttribute.Value = this.txtSenderAddressPlannedUE.Text;
+        xmlNodeSenderUE.Attributes.Append(xmlAttribute);
+        xmlAttribute = xmlDocument.CreateAttribute("NameUE");
+        xmlAttribute.Value = this.txtSenderNamePlannedUE.Text;
+        xmlNodeSenderUE.Attributes.Append(xmlAttribute);
+        XmlNode xmlNodeRecipientsUE = xmlDocument.CreateElement("RecipientsUE");
+        xmlNodePlannedUE.AppendChild(xmlNodeRecipientsUE);
+        for (int i = 0; i < this.dgvRecipientsUE.Rows.Count - 1; i++)
+        {
+            XmlNode xmlNode10 = xmlDocument.CreateElement("RecipientUE");
+            xmlNodeRecipientsUE.AppendChild(xmlNode10);
+            xmlAttribute = xmlDocument.CreateAttribute("AddressUE");
+            xmlAttribute.Value = this.dgvRecipientsUE.Rows[i].Cells[this.addressRecipientDgvUEColumn.Name].Value.ToString();
+            xmlNode10.Attributes.Append(xmlAttribute);
+            xmlAttribute = xmlDocument.CreateAttribute("NameUE");
+            xmlAttribute.Value = this.dgvRecipientsUE.Rows[i].Cells[this.nameRecipientDgvUEColumn.Name].Value.ToString();
+            xmlNode10.Attributes.Append(xmlAttribute);
+        }
+        xmlAttribute = xmlDocument.CreateAttribute("SubjectUE");
+        xmlAttribute.Value = this.txtSubjectPlannedUE.Text;
+        xmlNodePlannedUE.Attributes.Append(xmlAttribute);
+        xmlAttribute = xmlDocument.CreateAttribute("BodyUE");
+        xmlAttribute.Value = this.txtBodyPlannedUE.Text;
+        xmlNodePlannedUE.Attributes.Append(xmlAttribute);
+        XmlNode xmlNodeSheduleUE = xmlDocument.CreateElement("SheduleUE");
+        xmlNodePlannedUE.AppendChild(xmlNodeSheduleUE);
+
+        xmlAttribute = xmlDocument.CreateAttribute("StartUE");
+        xmlAttribute.Value = this.dtpMailPlanned_startUE.Value.ToString("dd.MM.yyyy HH:mm");
+        xmlNodeSheduleUE.Attributes.Append(xmlAttribute);
+
+        xmlAttribute = xmlDocument.CreateAttribute("IntervalUE");
+        xmlAttribute.Value = this.txtIntervalUE.Text;
+        xmlNodeSheduleUE.Attributes.Append(xmlAttribute);
+
+        xmlAttribute = xmlDocument.CreateAttribute("PeriodUE");
+        if (this.rbMailPlanned_hoursUE.Checked)
+        {
+            xmlAttribute.Value = (this.numMailPlanned_hoursUE.Value * 60m).ToString();
+        }
+        if (this.rbMailPlanned_daysUE.Checked)
+        {
+            xmlAttribute.Value = (this.numMailPlanned_daysUE.Value * 24m * 60m).ToString();
+        }
+        if (this.rbMailPlanned_weeksUE.Checked)
+        {
+            xmlAttribute.Value = (this.numMailPlanned_weeksUE.Value * 24m * 60m * 7m).ToString();
+        }
+        xmlNodeSheduleUE.Attributes.Append(xmlAttribute);
+        #endregion
         return xmlDocument;
     }
-
+    /// <summary>
+    /// Загрузить конфигурация
+    /// </summary>
     private void ApplyConfigSender()
     {
         if (this.tblSettings.Rows.Count > 0 && this.tblSettings.Rows[0]["Settings"] != DBNull.Value)
@@ -933,8 +1019,142 @@ public partial class FormSettingsSender : FormBase
                         }
                     }
                 }
+                XmlNode xmlNodeMailPlanned = xmlNodeForRepair.SelectSingleNode("MailPlannedUE");
+                if (xmlNodeMailPlanned != null)
+                {
+                    XmlAttribute xmlAttribute3 = xmlNodeMailPlanned.Attributes["FileNameUE"];
+                    if (xmlAttribute3 != null)
+                    {
+                        this.txtFileNameReportPlannedUE.Text = xmlAttribute3.Value;
+                    }
+                    xmlAttribute3 = xmlNodeMailPlanned.Attributes["OutFormatFileUE"];
+                    if (xmlAttribute3 != null)
+                    {
+                        this.cmbOutFormatFileUE.SelectedItem = xmlAttribute3.Value;
+                    }
+                    xmlAttribute3 = xmlNodeMailPlanned.Attributes["SubjectUE"];
+                    if (xmlAttribute3 != null)
+                    {
+                        this.txtSubjectPlannedUE.Text = xmlAttribute3.Value;
+                    }
+                    xmlAttribute3 = xmlNodeMailPlanned.Attributes["BodyUE"];
+                    if (xmlAttribute3 != null)
+                    {
+                        this.txtBodyPlannedUE.Text = xmlAttribute3.Value;
+                    }
+                    xmlAttribute3 = xmlNodeMailPlanned.Attributes["useMailUE"];
+                    if (xmlAttribute3 != null)
+                    {
+                        this.chkUseMailPlannedUE.Checked = Convert.ToBoolean(xmlAttribute3.Value);
+                    }
+                    else
+                    {
+                        this.chkUseMailPlannedUE.Checked = false;
+                    }
+                    XmlNode xmlNode7 = xmlNodeMailPlanned.SelectSingleNode("SMTPUE");
+                    if (xmlNode7 != null)
+                    {
+                        xmlAttribute3 = xmlNode7.Attributes["NameUE"];
+                        if (xmlAttribute3 != null)
+                        {
+                            this.txtSMTPServerPlannedUE.Text = xmlAttribute3.Value;
+                        }
+                        xmlAttribute3 = xmlNode7.Attributes["PortUE"];
+                        if (xmlAttribute3 != null && !string.IsNullOrEmpty(xmlAttribute3.Value))
+                        {
+                            this.txtSMTPServerPortPlannedUE.Value = Convert.ToInt32(xmlAttribute3.Value);
+                        }
+                        xmlAttribute3 = xmlNode7.Attributes["LoginUE"];
+                        if (xmlAttribute3 != null)
+                        {
+                            this.txtLoginSMTPPlannedUE.Text = xmlAttribute3.Value;
+                        }
+                        xmlAttribute3 = xmlNode7.Attributes["PwdUE"];
+                        if (xmlAttribute3 != null)
+                        {
+                            this.txtPwdSMTPPlannedUE.Text = xmlAttribute3.Value;
+                        }
+                    }
+                    XmlNode xmlNode8 = xmlNodeMailPlanned.SelectSingleNode("SenderUE");
+                    if (xmlNode8 != null)
+                    {
+                        xmlAttribute3 = xmlNode8.Attributes["AddressUE"];
+                        if (xmlAttribute3 != null)
+                        {
+                            this.txtSenderAddressPlannedUE.Text = xmlAttribute3.Value;
+                        }
+                        xmlAttribute3 = xmlNode8.Attributes["NameUE"];
+                        if (xmlAttribute3 != null)
+                        {
+                            this.txtSenderNamePlannedUE.Text = xmlAttribute3.Value;
+                        }
+                    }
+                    this.dgvRecipientsUE.Rows.Clear();
+                    XmlNode xmlNodeRs = xmlNodeMailPlanned.SelectSingleNode("RecipientsUE");
+                    if (xmlNodeRs != null)
+                    {
+                        foreach (XmlNode xmlNodeR in xmlNodeRs.SelectNodes("RecipientUE"))
+                        {
 
-
+                            string Address = "";
+                            string name = "";
+                            xmlAttribute3 = xmlNodeR.Attributes["AddressUE"];
+                            if (xmlAttribute3 != null)
+                            {
+                                Address = xmlAttribute3.Value;
+                            }
+                            xmlAttribute3 = xmlNodeR.Attributes["NameUE"];
+                            if (xmlAttribute3 != null)
+                            {
+                                name = xmlAttribute3.Value;
+                            }
+                            this.dgvRecipientsUE.Rows.Add(new object[]
+                            {
+                                    Address,
+                                    name
+                            });
+                        }
+                    }
+                    XmlNode xmlNodeSheduleUE = xmlNodeMailPlanned.SelectSingleNode("SheduleUE");
+                    if (xmlNodeSheduleUE != null)
+                    {
+                        xmlAttribute3 = xmlNodeSheduleUE.Attributes["StartUE"];
+                        if (xmlAttribute3 != null)
+                        {
+                            this.dtpMailPlanned_startUE.Value = Convert.ToDateTime(xmlAttribute3.Value);
+                        }
+                        xmlAttribute3 = xmlNodeSheduleUE.Attributes["IntervalUE"];
+                        if (xmlAttribute3 != null)
+                        {
+                            this.txtIntervalUE.Text = xmlAttribute3.Value;
+                        }
+                        xmlAttribute3 = xmlNodeSheduleUE.Attributes["PeriodUE"];
+                        if (xmlAttribute3 != null)
+                        {
+                            int Period = Convert.ToInt32(xmlAttribute3.Value);
+                            if (Period == 0)
+                            {
+                                this.rbMailPlanned_hoursUE.Checked = true;
+                                this.numMailPlanned_hoursUE.Value = 0m;
+                            }
+                            if (Period % 10080 == 0)
+                            {
+                                this.rbMailPlanned_weeksUE.Checked = true;
+                                this.numMailPlanned_weeksUE.Value = Period / 10080;
+                            }
+                            else if (Period % 1440 == 0)
+                            {
+                                this.rbMailPlanned_daysUE.Checked = true;
+                                this.numMailPlanned_daysUE.Value = Period / 1440;
+                            }
+                            else
+                            {
+                                this.rbMailPlanned_hoursUE.Checked = true;
+                                this.numMailPlanned_hoursUE.Value = Period / 60;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -1275,6 +1495,40 @@ public partial class FormSettingsSender : FormBase
         {
             this.txtFTP_FileNameSESNO.Text = Path.GetFileName(saveFileDialog.FileName);
         }
+    }
+
+    private void btnChoiseFileMailUE_Click(object sender, EventArgs e)
+    {
+        SaveFileDialog saveFileDialog = new SaveFileDialog();
+        saveFileDialog.Filter = "xls files (*.xls)|*.xls";
+        saveFileDialog.CheckFileExists = false;
+        saveFileDialog.OverwritePrompt = false;
+        saveFileDialog.CheckPathExists = false;
+        saveFileDialog.FileName = this.txtFileNameReportPlannedUE.Text;
+        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+        {
+            this.txtFileNameReportPlannedUE.Text = saveFileDialog.FileName;
+        }
+    }
+
+    private void rbMailPlanned_hoursUE_CheckedChanged(object sender, EventArgs e)
+    {
+        this.numMailPlanned_hoursUE.Enabled = this.rbMailPlanned_hoursUE.Checked;
+        this.numMailPlanned_daysUE.Enabled = this.rbMailPlanned_daysUE.Checked;
+        this.numMailPlanned_weeksUE.Enabled = this.rbMailPlanned_weeksUE.Checked;
+    }
+
+    private void chkUseMailPlannedUE_CheckedChanged(object sender, EventArgs e)
+    {
+        this.txtFileNameReportPlannedUE.Enabled =
+            (this.btnChoiseFileMailUE.Enabled =
+            (this.groupBoxCollectionStartingPointUE.Enabled =
+            (this.groupBoxSMTPUE.Enabled =
+            (this.groupBoxSenderUE.Enabled = 
+            (this.dgvRecipientsUE.Enabled = 
+            (this.txtSubjectPlannedUE.Enabled = 
+            (this.txtBodyPlannedUE.Enabled = 
+            (this.groupBoxSheduleMailPlannedUE.Enabled = this.chkUseMailPlannedUE.Checked))))))));
     }
 }
 

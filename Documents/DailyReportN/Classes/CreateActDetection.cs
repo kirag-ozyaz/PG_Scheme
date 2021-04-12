@@ -712,39 +712,44 @@ internal class CreateActDetection
                 }
                 else// участков кабеля нет, считаем по лицевой части (общие параметры)
                 {
-
-
                     CableMakeup = GetValueParamPassport(idSChmObj, ParametrMarkaPassport).ToString();
                     int.TryParse(GetValueParamPassport(idSChmObj, "Количество жил").ToString(), out Wires);
                     decimal.TryParse(GetValueParamPassport(idSChmObj, "Сечение").ToString(), out CrossSection);
                     int.TryParse(GetValueParamPassport(idSChmObj, "Напряжение").ToString(), out idVoltage);
                 }
                 if (CableMakeup.ToString() == string.Empty || Wires == 0 || CrossSection == 0 || idVoltage == -1)
+                {
+                    MessageBox.Show("Не хватает параметров кабельной линии в паспорте кабеле\r\nПроверте наличие марки кабеля, количества жил, сечение и напряжение !", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return idEquipment;
-
-                var resEquipment = dtSchmMarkCable.AsEnumerable().Where(w => (string)w["CableMakeup"] == CableMakeup && (int)w["Wires"] == Wires && (decimal)w["CrossSection"] == CrossSection && (int)w["idVoltage"] == idVoltage).Select(s => (int)s["id"]);
-
-                if (resEquipment.Count() != 0)
-                {
-                    //  добавить idEquipment в паспорт 
-                    idEquipment = (int)resEquipment.First();
                 }
-                else
+
+                var res1 = dtSchmMarkCable.AsEnumerable().Where(w => (string)w["CableMakeup"] == CableMakeup);
+                var res2 = res1.Where(w => (int)w["Wires"] == Wires);
+                var res3 = res2.Where(w => (decimal)w["CrossSection"] == CrossSection);
+                var resEquipmentPred = res3.Where(w => (int)w["IdVoltage"] == idVoltage);
+                //var resEquipmentPred = dtSchmMarkCable.AsEnumerable().Where(w => (string)w["CableMakeup"] == CableMakeup && (int)w["Wires"] == Wires && (decimal)w["CrossSection"] == CrossSection && (int)w["idVoltage"] == idVoltage);
+                // если данных для выборки из справочника кабелей не хватет
+                // то надо также его создать
+                IEnumerable<int> resEquipment = null;
+                try
                 {
-                    // надо создать элемент в справочнике марок кабеля
-                    if (idVoltage != -1)
+                    resEquipment = resEquipmentPred.Select(s => (int)s["id"]);
+                    //var resEquipment = resEquipmentPred.Select(s => (int)s["id"]);
+
+                    if (resEquipment.Count() != 0)
                     {
-                        DataRow row1 = dtSchmMarkCable.NewRow();
-                        row1["CableMakeup"] = CableMakeup;
-                        row1["Wires"] = Wires;
-                        row1["CrossSection"] = CrossSection;
-                        row1["idVoltage"] = idVoltage;
-                        dtSchmMarkCable.Rows.Add(row1);
-                        LibraryTSQL.cTSQL _cTSQL = new LibraryTSQL.cTSQL();
-                        _cTSQL.SqlSettings = this.Sqlsettings;
-                        idEquipment = _cTSQL.InsertSqlDataOneRowN(row1, false);
-                        // idEquipment = frmBase.InsertSqlDataOneRow(row1);
+                        
+                        idEquipment = (int)resEquipment.First();
                     }
+                    else
+                    {
+                        // надо создать элемент в справочнике марок кабеля
+                        idEquipment = AddSchmMarkCable(dtSchmMarkCable, CableMakeup, Wires, CrossSection, idVoltage);
+                    }
+                }
+                catch
+                {
+                    idEquipment = AddSchmMarkCable(dtSchmMarkCable, CableMakeup, Wires, CrossSection, idVoltage);
                 }
             }
             else
@@ -756,6 +761,38 @@ internal class CreateActDetection
         //}
         // полное имя марки кабеля по наименьшему сечению и общей длине наименьшего сечения
         //string Name = Passport.Classes.SchmObj.GetMinCabSectionString(Sqlsettings, idSChmObj);
+        return idEquipment;
+    }
+    /// <summary>
+    /// Добавим новую элемент в справочник кабелей
+    /// </summary>
+    /// <param name="datatableCabSection"></param>
+    /// <param name="CableMakeup"></param>
+    /// <param name="Wires"></param>
+    /// <param name="CrossSection"></param>
+    /// <param name="idVoltage"></param>
+    /// <returns></returns>
+    internal int AddSchmMarkCable(DataTable datatableCabSection, string CableMakeup, int Wires, decimal CrossSection, int  idVoltage)
+    {
+        //  добавить idEquipment в паспорт 
+        int idEquipment = -1;
+        if (idVoltage != -1)
+        {
+            DataRow row1 = datatableCabSection.NewRow();
+            row1["CableMakeup"] = CableMakeup;
+            row1["Wires"] = Wires;
+            row1["CrossSection"] = CrossSection;
+            row1["idVoltage"] = idVoltage;
+            datatableCabSection.Rows.Add(row1);
+            LibraryTSQL.cTSQL _cTSQL = new LibraryTSQL.cTSQL();
+            _cTSQL.SqlSettings = this.Sqlsettings;
+            idEquipment = _cTSQL.InsertSqlDataOneRowN(row1, false);
+            // idEquipment = frmBase.InsertSqlDataOneRow(row1);
+        }
+        else
+        {
+            MessageBox.Show("Не хватает напряжения в отходящей ячейке (рубильнике)!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
         return idEquipment;
     }
 

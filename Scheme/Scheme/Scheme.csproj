@@ -32,19 +32,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Constants">
-      <HintPath>..\..\..\2017-программы\de4dot2019\Constants-cleaned.dll</HintPath>
+      <HintPath>..\..\LIB\Constants.dll</HintPath>
     </Reference>
     <Reference Include="ControlsLbr">
-      <HintPath>..\..\..\2017-программы\de4dot2018\ControlsLbr.dll</HintPath>
+      <HintPath>..\..\LIB\ControlsLbr.dll</HintPath>
     </Reference>
     <Reference Include="DataSql">
-      <HintPath>..\..\..\2017-программы\de4dot2018\DataSql.dll</HintPath>
+      <HintPath>..\..\LIB\DataSql.dll</HintPath>
     </Reference>
     <Reference Include="Documents">
       <HintPath>..\..\LIB\Documents.dll</HintPath>
     </Reference>
     <Reference Include="FormLbr">
-      <HintPath>..\..\..\2017-программы\de4dot2018\FormLbr-cleaned.dll</HintPath>
+      <HintPath>..\..\LIB\FormLbr.dll</HintPath>
     </Reference>
     <Reference Include="Legal">
       <HintPath>..\..\LIB\Legal.dll</HintPath>
@@ -53,13 +53,13 @@
       <HintPath>..\..\..\какие-то eis\EIS\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Passport">
-      <HintPath>..\..\..\2017-программы\de4dot2019\Passport.dll</HintPath>
+      <HintPath>..\..\LIB\Passport.dll</HintPath>
     </Reference>
     <Reference Include="Prv">
       <HintPath>..\..\LIB\Prv.dll</HintPath>
     </Reference>
     <Reference Include="SchemeModel">
-      <HintPath>..\..\..\2017-программы\de4dot2018\SchemeModel-cleaned.dll</HintPath>
+      <HintPath>..\..\LIB\SchemeModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

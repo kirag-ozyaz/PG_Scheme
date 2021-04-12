@@ -38,6 +38,9 @@
     <Reference Include="DataSql">
       <HintPath>..\..\..\..\Декомпилятор C#\EIS_DotPeek\LIB\DataSql.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.12.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\DocumentFormat.OpenXml.2.12.0\lib\net35\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="FormLbr">
       <HintPath>..\..\..\..\Декомпилятор C#\EIS_DotPeek\LIB\FormLbr.dll</HintPath>
     </Reference>
@@ -50,6 +53,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FormUpload.cs">
@@ -71,6 +75,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

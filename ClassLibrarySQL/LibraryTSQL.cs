@@ -175,7 +175,13 @@ namespace LibraryTSQL
             }
             return true;
         }
-
+        /// <summary>
+        /// обновление таблицы по одному параметру, либо все перечислить через запятую
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="setParam"></param>
+        /// <param name="where"></param>
+        /// <returns></returns>
         public bool UpdateSqlData(DataTable dt, string setParam, string where)
         {
             SqlDataConnect sqlDataConnect = new SqlDataConnect();

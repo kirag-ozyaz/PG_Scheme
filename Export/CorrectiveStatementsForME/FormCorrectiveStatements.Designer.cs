@@ -86,6 +86,7 @@
             this.adjacenttsoarrDataGridViewTextBoxColumn = new ControlsLbr.DataGridViewExcelFilter.DataGridViewFilterTextBoxColumn();
             this.bsTSO = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetStatementBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.tabGeneral.SuspendLayout();
             this.tabCorr.SuspendLayout();
@@ -109,7 +110,8 @@
             this.toolBtnLoad,
             this.toolStripLabel1,
             this.toolStripSeparator2,
-            this.tsbFullXMLTable});
+            this.tsbFullXMLTable,
+            this.toolStripButton1});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(800, 25);
@@ -571,6 +573,16 @@
             this.dataSetStatementBindingSource.DataSource = this.dataSetStatement;
             this.dataSetStatementBindingSource.Position = 0;
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
+            this.toolStripButton1.Text = "Отправить";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // FormCorrectiveStatements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -658,5 +670,6 @@
         private ControlsLbr.DataGridViewExcelFilter.DataGridViewFilterComboBoxColumn isSendSiteMeDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton tsbFullXMLTable;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

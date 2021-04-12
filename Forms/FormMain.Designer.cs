@@ -73,6 +73,8 @@ namespace EIS.Forms
             this.toolMenuItemInputCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemReportsLegal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemCreateAndPrintDocs = new System.Windows.Forms.ToolStripMenuItem();
+            this.формированиеСчетовНаАвансToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem53 = new System.Windows.Forms.ToolStripSeparator();
             this.toolMenuItemReportCharge = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemReportInvoice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemREportPerformance = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,9 +88,10 @@ namespace EIS.Forms
             this.отчетПоСпециаличтамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem44 = new System.Windows.Forms.ToolStripSeparator();
             this.отчетПотребленияПомесячноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ведомостьПоПризнакампоПрямымПеретокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.отчетПоРазногласиямВКонтрольныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ведомостьПоПризнакампоПрямымПеретокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетПоРазногласиямВКонтрольныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemReferenceLegal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemAbonentsLegal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemAbnObjectsLegal = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,6 +100,7 @@ namespace EIS.Forms
             this.toolMenuItemBanksLegal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolMenuItemCountMeter = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemsDocsLegal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemActBalanceInventory = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemDocScan = new System.Windows.Forms.ToolStripMenuItem();
@@ -200,6 +204,7 @@ namespace EIS.Forms
             this.toolMenuItemJournals = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemJRequest = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemJOrder = new System.Windows.Forms.ToolStripMenuItem();
+            this.нарядыНаРаботу2021ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemJRequestForRepair = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem31 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItemJRequestForRepairCrash = new System.Windows.Forms.ToolStripMenuItem();
@@ -248,6 +253,10 @@ namespace EIS.Forms
             this.toolStripMenuItem40 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem41 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem29 = new System.Windows.Forms.ToolStripSeparator();
+            this.tspUploadRepairPlannedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выгрузкаПлановыхРаботНаСайтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.утренняяВыгрузкаРаботРуководителюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выгрузкаАварйныхИПлановыхРаботДляУльяновскЭнергоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemServices = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSecurity = new System.Windows.Forms.ToolStripMenuItem();
@@ -328,6 +337,7 @@ namespace EIS.Forms
             this.тестЗагрузкиМоделиСхемыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem51 = new System.Windows.Forms.ToolStripSeparator();
             this.уведомлениеОбОтключенияхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выгрузкаАварйныхИПлановыхРаботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuWindow = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemWindowsRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemWindowsMinimize = new System.Windows.Forms.ToolStripMenuItem();
@@ -343,7 +353,6 @@ namespace EIS.Forms
             this.backgroundWorkerUpdater = new System.ComponentModel.BackgroundWorker();
             this.TimerMessage = new System.Windows.Forms.Timer(this.components);
             this.toolStripMenuItem52 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMain.SuspendLayout();
             this.menuStripFormMain.SuspendLayout();
             this.contextMenuWindow.SuspendLayout();
@@ -391,7 +400,7 @@ namespace EIS.Forms
             // 
             this.toolLabelConnect.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolLabelConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolLabelConnect.Image = (Image)EIS.Properties.Resources.Disconnect;
+            this.toolLabelConnect.Image = global::EIS.Properties.Resources.Disconnect;
             this.toolLabelConnect.Name = "toolLabelConnect";
             this.toolLabelConnect.Size = new System.Drawing.Size(16, 22);
             this.toolLabelConnect.Text = "Соединение";
@@ -763,6 +772,8 @@ namespace EIS.Forms
             // 
             this.toolMenuItemReportsLegal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolMenuItemCreateAndPrintDocs,
+            this.формированиеСчетовНаАвансToolStripMenuItem,
+            this.toolStripMenuItem53,
             this.toolMenuItemReportCharge,
             this.toolMenuItemReportInvoice,
             this.toolMenuItemREportPerformance,
@@ -790,6 +801,18 @@ namespace EIS.Forms
             this.toolMenuItemCreateAndPrintDocs.Size = new System.Drawing.Size(449, 22);
             this.toolMenuItemCreateAndPrintDocs.Text = "Формирование и печать документов";
             this.toolMenuItemCreateAndPrintDocs.Click += new System.EventHandler(this.toolMenuItemCreateAndPrintDocs_Click);
+            // 
+            // формированиеСчетовНаАвансToolStripMenuItem
+            // 
+            this.формированиеСчетовНаАвансToolStripMenuItem.Name = "формированиеСчетовНаАвансToolStripMenuItem";
+            this.формированиеСчетовНаАвансToolStripMenuItem.Size = new System.Drawing.Size(449, 22);
+            this.формированиеСчетовНаАвансToolStripMenuItem.Text = "Формирование счетов на аванс";
+            this.формированиеСчетовНаАвансToolStripMenuItem.Click += new System.EventHandler(this.формированиеСчетовНаАвансToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem53
+            // 
+            this.toolStripMenuItem53.Name = "toolStripMenuItem53";
+            this.toolStripMenuItem53.Size = new System.Drawing.Size(446, 6);
             // 
             // toolMenuItemReportCharge
             // 
@@ -883,6 +906,13 @@ namespace EIS.Forms
             this.отчетПотребленияПомесячноToolStripMenuItem.Text = "Потребление помесячно по объектам с привязками к схеме";
             this.отчетПотребленияПомесячноToolStripMenuItem.Click += new System.EventHandler(this.отчетПотребленияПомесячноToolStripMenuItem_Click);
             // 
+            // анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem
+            // 
+            this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem.Name = "анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem";
+            this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem.Size = new System.Drawing.Size(449, 22);
+            this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem.Text = "Анализ потребляемой энергии и установленной мощности";
+            this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem.Click += new System.EventHandler(this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem_Click);
+            // 
             // ведомостьПоПризнакампоПрямымПеретокToolStripMenuItem
             // 
             this.ведомостьПоПризнакампоПрямымПеретокToolStripMenuItem.Name = "ведомостьПоПризнакампоПрямымПеретокToolStripMenuItem";
@@ -890,19 +920,19 @@ namespace EIS.Forms
             this.ведомостьПоПризнакампоПрямымПеретокToolStripMenuItem.Text = "Ведомость по признакам (по прямым перетокам)";
             this.ведомостьПоПризнакампоПрямымПеретокToolStripMenuItem.Click += new System.EventHandler(this.ведомостьПоПризнакампоПрямымПеретокToolStripMenuItem_Click);
             // 
+            // ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem
+            // 
+            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem.Name = "ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem";
+            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem.Size = new System.Drawing.Size(449, 22);
+            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem.Text = "Ведомость по признакам с приборами учета";
+            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem.Click += new System.EventHandler(this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem_Click);
+            // 
             // отчетПоРазногласиямВКонтрольныхToolStripMenuItem
             // 
             this.отчетПоРазногласиямВКонтрольныхToolStripMenuItem.Name = "отчетПоРазногласиямВКонтрольныхToolStripMenuItem";
             this.отчетПоРазногласиямВКонтрольныхToolStripMenuItem.Size = new System.Drawing.Size(449, 22);
             this.отчетПоРазногласиямВКонтрольныхToolStripMenuItem.Text = "Отчет по разногласиям в контрольных и расчетных приборах учета";
             this.отчетПоРазногласиямВКонтрольныхToolStripMenuItem.Click += new System.EventHandler(this.отчетПоРазногласиямВКонтрольныхToolStripMenuItem_Click);
-            // 
-            // анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem
-            // 
-            this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem.Name = "анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem";
-            this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem.Size = new System.Drawing.Size(449, 22);
-            this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem.Text = "Анализ потребляемой энергии и установленной мощности";
-            this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem.Click += new System.EventHandler(this.анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem_Click);
             // 
             // toolMenuItemReferenceLegal
             // 
@@ -913,7 +943,8 @@ namespace EIS.Forms
             this.приборыУчетаASOKAToolStripMenuItem,
             this.toolMenuItemBanksLegal,
             this.toolStripMenuItem7,
-            this.toolMenuItemCountMeter});
+            this.toolMenuItemCountMeter,
+            this.реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem});
             this.toolMenuItemReferenceLegal.Name = "toolMenuItemReferenceLegal";
             this.toolMenuItemReferenceLegal.Size = new System.Drawing.Size(204, 22);
             this.toolMenuItemReferenceLegal.Text = "Справочники";
@@ -921,50 +952,57 @@ namespace EIS.Forms
             // toolMenuItemAbonentsLegal
             // 
             this.toolMenuItemAbonentsLegal.Name = "toolMenuItemAbonentsLegal";
-            this.toolMenuItemAbonentsLegal.Size = new System.Drawing.Size(280, 22);
+            this.toolMenuItemAbonentsLegal.Size = new System.Drawing.Size(358, 22);
             this.toolMenuItemAbonentsLegal.Text = "Потребители";
             this.toolMenuItemAbonentsLegal.Click += new System.EventHandler(this.toolMenuItemAbonentsLegal_Click);
             // 
             // toolMenuItemAbnObjectsLegal
             // 
             this.toolMenuItemAbnObjectsLegal.Name = "toolMenuItemAbnObjectsLegal";
-            this.toolMenuItemAbnObjectsLegal.Size = new System.Drawing.Size(280, 22);
+            this.toolMenuItemAbnObjectsLegal.Size = new System.Drawing.Size(358, 22);
             this.toolMenuItemAbnObjectsLegal.Text = "Объекты";
             this.toolMenuItemAbnObjectsLegal.Click += new System.EventHandler(this.toolMenuItemAbnObjectsLegal_Click);
             // 
             // toolMenuItemMeterLegal
             // 
             this.toolMenuItemMeterLegal.Name = "toolMenuItemMeterLegal";
-            this.toolMenuItemMeterLegal.Size = new System.Drawing.Size(280, 22);
+            this.toolMenuItemMeterLegal.Size = new System.Drawing.Size(358, 22);
             this.toolMenuItemMeterLegal.Text = "Приборы учета";
             this.toolMenuItemMeterLegal.Click += new System.EventHandler(this.toolMenuItemMeterLegal_Click);
             // 
             // приборыУчетаASOKAToolStripMenuItem
             // 
             this.приборыУчетаASOKAToolStripMenuItem.Name = "приборыУчетаASOKAToolStripMenuItem";
-            this.приборыУчетаASOKAToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+            this.приборыУчетаASOKAToolStripMenuItem.Size = new System.Drawing.Size(358, 22);
             this.приборыУчетаASOKAToolStripMenuItem.Text = "Приборы учета ASOKA";
             this.приборыУчетаASOKAToolStripMenuItem.Click += new System.EventHandler(this.приборыУчетаASOKAToolStripMenuItem_Click);
             // 
             // toolMenuItemBanksLegal
             // 
             this.toolMenuItemBanksLegal.Name = "toolMenuItemBanksLegal";
-            this.toolMenuItemBanksLegal.Size = new System.Drawing.Size(280, 22);
+            this.toolMenuItemBanksLegal.Size = new System.Drawing.Size(358, 22);
             this.toolMenuItemBanksLegal.Text = "Банки";
             this.toolMenuItemBanksLegal.Click += new System.EventHandler(this.toolMenuItemBanksLegal_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(277, 6);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(355, 6);
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // toolMenuItemCountMeter
             // 
             this.toolMenuItemCountMeter.Name = "toolMenuItemCountMeter";
-            this.toolMenuItemCountMeter.Size = new System.Drawing.Size(280, 22);
+            this.toolMenuItemCountMeter.Size = new System.Drawing.Size(358, 22);
             this.toolMenuItemCountMeter.Text = "Точки учета по уровням напряжения";
             this.toolMenuItemCountMeter.Click += new System.EventHandler(this.toolMenuItemCountMeter_Click);
+            // 
+            // реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem
+            // 
+            this.реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem.Name = "реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem";
+            this.реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem.Size = new System.Drawing.Size(358, 22);
+            this.реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem.Text = "Реестр точек подключения по уровню напряжения";
+            this.реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem.Click += new System.EventHandler(this.реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem_Click);
             // 
             // toolMenuItemsDocsLegal
             // 
@@ -1753,7 +1791,8 @@ namespace EIS.Forms
             this.toolStripSeparator121,
             this.toolMenuItemDailyReport,
             this.toolStripMenuItem22,
-            this.toolStripMenuItem29});
+            this.toolStripMenuItem29,
+            this.tspUploadRepairPlannedToolStripMenuItem});
             this.toolStripMenuItemDocument.Name = "toolStripMenuItemDocument";
             this.toolStripMenuItemDocument.Size = new System.Drawing.Size(82, 20);
             this.toolStripMenuItemDocument.Text = "Документы";
@@ -1778,6 +1817,7 @@ namespace EIS.Forms
             this.toolMenuItemJournals.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolMenuItemJRequest,
             this.toolMenuItemJOrder,
+            this.нарядыНаРаботу2021ToolStripMenuItem,
             this.toolMenuItemJRequestForRepair,
             this.toolStripMenuItem31,
             this.toolMenuItemJRequestForRepairCrash,
@@ -1809,6 +1849,14 @@ namespace EIS.Forms
             this.toolMenuItemJOrder.Size = new System.Drawing.Size(415, 22);
             this.toolMenuItemJOrder.Text = "Наряды";
             this.toolMenuItemJOrder.Click += new System.EventHandler(this.toolMenuItemJOrder_Click);
+            // 
+            // нарядыНаРаботу2021ToolStripMenuItem
+            // 
+            this.нарядыНаРаботу2021ToolStripMenuItem.Image = global::EIS.Properties.Resources.JournalOrder;
+            this.нарядыНаРаботу2021ToolStripMenuItem.Name = "нарядыНаРаботу2021ToolStripMenuItem";
+            this.нарядыНаРаботу2021ToolStripMenuItem.Size = new System.Drawing.Size(415, 22);
+            this.нарядыНаРаботу2021ToolStripMenuItem.Text = "Наряды на работу (2021)";
+            this.нарядыНаРаботу2021ToolStripMenuItem.Click += new System.EventHandler(this.нарядыНаРаботу2021ToolStripMenuItem_Click);
             // 
             // toolMenuItemJRequestForRepair
             // 
@@ -2171,6 +2219,37 @@ namespace EIS.Forms
             this.toolStripMenuItem29.Name = "toolStripMenuItem29";
             this.toolStripMenuItem29.Size = new System.Drawing.Size(393, 6);
             // 
+            // tspUploadRepairPlannedToolStripMenuItem
+            // 
+            this.tspUploadRepairPlannedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.выгрузкаПлановыхРаботНаСайтToolStripMenuItem,
+            this.утренняяВыгрузкаРаботРуководителюToolStripMenuItem,
+            this.выгрузкаАварйныхИПлановыхРаботДляУльяновскЭнергоToolStripMenuItem});
+            this.tspUploadRepairPlannedToolStripMenuItem.Name = "tspUploadRepairPlannedToolStripMenuItem";
+            this.tspUploadRepairPlannedToolStripMenuItem.Size = new System.Drawing.Size(396, 22);
+            this.tspUploadRepairPlannedToolStripMenuItem.Text = "Выгрузки плановых работ";
+            // 
+            // выгрузкаПлановыхРаботНаСайтToolStripMenuItem
+            // 
+            this.выгрузкаПлановыхРаботНаСайтToolStripMenuItem.Name = "выгрузкаПлановыхРаботНаСайтToolStripMenuItem";
+            this.выгрузкаПлановыхРаботНаСайтToolStripMenuItem.Size = new System.Drawing.Size(405, 22);
+            this.выгрузкаПлановыхРаботНаСайтToolStripMenuItem.Text = "Выгрузка  плановых работ на сайт";
+            this.выгрузкаПлановыхРаботНаСайтToolStripMenuItem.Click += new System.EventHandler(this.выгрузкаПлановыхРаботНаСайтToolStripMenuItem_Click);
+            // 
+            // утренняяВыгрузкаРаботРуководителюToolStripMenuItem
+            // 
+            this.утренняяВыгрузкаРаботРуководителюToolStripMenuItem.Name = "утренняяВыгрузкаРаботРуководителюToolStripMenuItem";
+            this.утренняяВыгрузкаРаботРуководителюToolStripMenuItem.Size = new System.Drawing.Size(405, 22);
+            this.утренняяВыгрузкаРаботРуководителюToolStripMenuItem.Text = "Утренняя выгрузка работ руководителю";
+            this.утренняяВыгрузкаРаботРуководителюToolStripMenuItem.Click += new System.EventHandler(this.отчетРуководителюToolStripMenuItem_Click);
+            // 
+            // выгрузкаАварйныхИПлановыхРаботДляУльяновскЭнергоToolStripMenuItem
+            // 
+            this.выгрузкаАварйныхИПлановыхРаботДляУльяновскЭнергоToolStripMenuItem.Name = "выгрузкаАварйныхИПлановыхРаботДляУльяновскЭнергоToolStripMenuItem";
+            this.выгрузкаАварйныхИПлановыхРаботДляУльяновскЭнергоToolStripMenuItem.Size = new System.Drawing.Size(405, 22);
+            this.выгрузкаАварйныхИПлановыхРаботДляУльяновскЭнергоToolStripMenuItem.Text = "Выгрузка аварйных и плановых работ для УльяновскЭнерго";
+            this.выгрузкаАварйныхИПлановыхРаботДляУльяновскЭнергоToolStripMenuItem.Click += new System.EventHandler(this.выгрузкаАварйныхИПлановыхРаботToolStripMenuItem_Click);
+            // 
             // toolStripMenuItemServices
             // 
             this.toolStripMenuItemServices.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2360,7 +2439,8 @@ namespace EIS.Forms
             this.toolStripMenuItem48,
             this.схемаToolStripMenuItem,
             this.toolStripMenuItem51,
-            this.уведомлениеОбОтключенияхToolStripMenuItem});
+            this.уведомлениеОбОтключенияхToolStripMenuItem,
+            this.выгрузкаАварйныхИПлановыхРаботToolStripMenuItem});
             this.tspMenuItemJournalN.Name = "tspMenuItemJournalN";
             this.tspMenuItemJournalN.Size = new System.Drawing.Size(72, 20);
             this.tspMenuItemJournalN.Text = "Журналы";
@@ -2687,6 +2767,7 @@ namespace EIS.Forms
             // 
             // умныйГородToolStripMenuItem
             // 
+            this.умныйГородToolStripMenuItem.Image = global::EIS.Properties.Resources.ЕДС;
             this.умныйГородToolStripMenuItem.Name = "умныйГородToolStripMenuItem";
             this.умныйГородToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.умныйГородToolStripMenuItem.Text = "Умный город";
@@ -2792,6 +2873,13 @@ namespace EIS.Forms
             this.уведомлениеОбОтключенияхToolStripMenuItem.Text = "Уведомление об отключениях";
             this.уведомлениеОбОтключенияхToolStripMenuItem.Click += new System.EventHandler(this.уведомлениеОбОтключенияхToolStripMenuItem_Click);
             // 
+            // выгрузкаАварйныхИПлановыхРаботToolStripMenuItem
+            // 
+            this.выгрузкаАварйныхИПлановыхРаботToolStripMenuItem.Name = "выгрузкаАварйныхИПлановыхРаботToolStripMenuItem";
+            this.выгрузкаАварйныхИПлановыхРаботToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
+            this.выгрузкаАварйныхИПлановыхРаботToolStripMenuItem.Text = "Выгрузка аварийных и плановых работ";
+            this.выгрузкаАварйныхИПлановыхРаботToolStripMenuItem.Click += new System.EventHandler(this.выгрузкаАварйныхИПлановыхРаботToolStripMenuItem_Click);
+            // 
             // contextMenuWindow
             // 
             this.contextMenuWindow.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2893,13 +2981,6 @@ namespace EIS.Forms
             this.toolStripMenuItem52.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem52.Text = "1";
             this.toolStripMenuItem52.Click += new System.EventHandler(this.toolStripMenuItem52_Click);
-            // 
-            // ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem
-            // 
-            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem.Name = "ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem";
-            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem.Size = new System.Drawing.Size(449, 22);
-            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem.Text = "Ведомость по признакам с приборами учета";
-            this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem.Click += new System.EventHandler(this.ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -3251,5 +3332,14 @@ namespace EIS.Forms
         private ToolStripMenuItem уведомлениеОбОтключенияхToolStripMenuItem;
         private ToolStripMenuItem анализПотребляемойЭнергииИУстановленнойМощностиToolStripMenuItem;
         private ToolStripMenuItem ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem;
+        private ToolStripMenuItem выгрузкаАварйныхИПлановыхРаботToolStripMenuItem;
+        private ToolStripMenuItem реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem;
+        private ToolStripMenuItem формированиеСчетовНаАвансToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem53;
+        private ToolStripMenuItem tspUploadRepairPlannedToolStripMenuItem;
+        private ToolStripMenuItem выгрузкаПлановыхРаботНаСайтToolStripMenuItem;
+        private ToolStripMenuItem утренняяВыгрузкаРаботРуководителюToolStripMenuItem;
+        private ToolStripMenuItem выгрузкаАварйныхИПлановыхРаботДляУльяновскЭнергоToolStripMenuItem;
+        private ToolStripMenuItem нарядыНаРаботу2021ToolStripMenuItem;
     }
 }

@@ -11,6 +11,6 @@ namespace SchemeCtrl2.DrawTool
 		CellLine_10 = 676,
 		CellLine_6 = 675,
 		CellLine_04 = 678,
-		CellLine_023
+		CellLine_023 = 679
 	}
 }

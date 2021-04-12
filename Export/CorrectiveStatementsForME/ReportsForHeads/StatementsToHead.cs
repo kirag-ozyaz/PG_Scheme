@@ -76,7 +76,7 @@ namespace StatementsForME
 
         #region блок отправки данных руководителю
         /// <summary>
-        /// отправка почты
+        /// отправка почты (используется текущая дата - Now)
         /// </summary>
         public void Send()
         {

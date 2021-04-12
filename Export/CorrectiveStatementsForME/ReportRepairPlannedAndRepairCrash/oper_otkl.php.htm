@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"lang="ru" xml:lang="ru">
+                            <html>
+                            <meta http-equiv="Content-Language" content="ru" />
+                             <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+                             <head>
+                            <title></title>
+                            <BASEFONT FACE="Arial" SIZE=8>
+                            <style>
+                            td,th{
+	                            background-color:#FFFFFF;
+	                            font-size:small;
+                            }
+                            th{
+	                            text-align:center;
+	                            vertical-align:center;
+                            }
+                            td{
+	                            vertical-align:top;
+                            }
+                            .first-cell{
+	                            width:20%;
+                            }
+                            .last-cell-date{
+	                            width:11%;
+                            }
+                            .last-cell-time{
+	                        width:8%;
+                            }
+                            .cell_sr{
+                                width:100%;
+                            }
+                            </style>
+                            <script type="text/javascript">
+                            function doResize(){
+	                            document.getElementById('t-header').setAttribute('width',document.getElementById('t-data').offsetWidth);
+                            }
+                            </script>
+                            </head>
+                            <body onLoad="doResize()" onResize="doResize()"><table  id="t-header" style = " position:fixed; top:0px; height:85px; z-index:1000;background-color:black;">
+<TR>
+<th    COLSPAN=8><I><B>Оперативная информация об аварийных отключениях на 
+                                23:30 2021-03-08   
+                                </B></I></FONT></tr>
+<TR>
+<th  class="first-cell" ALIGN=CENTER  ROWSPAN=2><B>Отключаемый <br />объект</B>
+			                 <th    ROWSPAN=2><B>Адрес</B>
+			                 <th    COLSPAN=2><B>Отключение</B>
+			                 <th    COLSPAN=2><B>Планируемое <br />включение</B>
+			                 <th    COLSPAN=2><B>Факт. <br />включение</B></tr>
+<TR>
+<th class="last-cell-date"    ><B>Дата</B>
+			                <th class="last-cell-time"    ><B>Время</B>
+			                <th class="last-cell-date"    ><B>Дата</B>
+			                <th class="last-cell-time"    ><B>Время</B>
+			                <th class="last-cell-date"    ><B>Дата</B>
+			                <th class="last-cell-time"    ><B>Время</B></tr>
+</table>
+<TABLE id="t-data" style="width:100%; position:relative;top:75px;background-color:black;">
+<tbody>
+<TR>
+<TD class="cell-sr" COLSPAN=8 style="background-color:#bfffff;">аварийных отключений в электрических сетях МУП "УльГЭС" нет
+</tr>
+</tbody>
+</table>
+</body>
+</html>

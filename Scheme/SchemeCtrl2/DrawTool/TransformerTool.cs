@@ -22,17 +22,17 @@ namespace SchemeCtrl2.DrawTool
 			this.Text = "Т";
 		}
 
-		public TransformerTool(Branch branch)
+		public TransformerTool(Branch branch): base(branch)
 		{
 			
-			base..ctor(branch);
+			//base..ctor(branch);
 			this.Text = "Т";
 		}
 
-		public TransformerTool(DataRow r, Branch branch)
-		{
+		public TransformerTool(DataRow r, Branch branch): base(r, branch)
+        {
 			
-			base..ctor(r, branch);
+			//base..ctor(r, branch);
 		}
 
 		public override bool On

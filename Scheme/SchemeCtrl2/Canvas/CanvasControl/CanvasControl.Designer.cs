@@ -94,9 +94,9 @@ namespace SchemeCtrl2.Canvas
                     {
                         this.backgroundLayer_0.Dispose();
                     }
-                    if (this.list_4 != null)
+                    if (this.ObjectsWithState != null)
                     {
-                        this.list_4.Clear();
+                        this.ObjectsWithState.Clear();
                     }
                     IEnumerable<int> source = from o in this.loadedPoints
                                               select o.Key;
@@ -105,19 +105,19 @@ namespace SchemeCtrl2.Canvas
                         this.loadedPoints[source.First<int>()].Dispose();
                         this.loadedPoints.Remove(source.First<int>());
                     }
-                    if (this.list_0 != null)
+                    if (this.layers != null)
                     {
-                        while (this.list_0.Count > 0)
+                        while (this.layers.Count > 0)
                         {
-                            if (this.list_0[0] is IDisposable)
+                            if (this.layers[0] is IDisposable)
                             {
-                                ((IDisposable)this.list_0[0]).Dispose();
-                                this.list_0.RemoveAt(0);
+                                ((IDisposable)this.layers[0]).Dispose();
+                                this.layers.RemoveAt(0);
                             }
                             else
                             {
-                                this.list_0[0] = null;
-                                this.list_0.RemoveAt(0);
+                                this.layers[0] = null;
+                                this.layers.RemoveAt(0);
                             }
                         }
                     }

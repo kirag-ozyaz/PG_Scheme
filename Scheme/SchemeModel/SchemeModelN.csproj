@@ -34,6 +34,9 @@
     <Reference Include="DataSql">
       <HintPath>..\..\LIB\DataSql.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.12.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\DocumentFormat.OpenXml.2.12.0\lib\net35\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="FormLbr">
       <HintPath>..\..\LIB\FormLbr.dll</HintPath>
     </Reference>
@@ -47,6 +50,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -78,7 +82,9 @@
     <EmbeddedResource Include="g.resx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

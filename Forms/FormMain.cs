@@ -144,6 +144,7 @@ namespace EIS.Forms
             this.tspMenuItemSchedulers.Visible = false;
             this.tspMenuItemJournalN.Visible = false;
             this.tspTOK5.Visible = false;
+            this.tspUploadRepairPlannedToolStripMenuItem.Visible = false;
 #if !DEBUG
             this.tsmiMeasurement.Visible = false;
             this.toolMenuItemDailyReport.Visible = false;
@@ -314,11 +315,11 @@ namespace EIS.Forms
                 string ParentKey = row["ParentKey"].ToString();
                 switch (ParentKey)
                 {
-                    case ";GroupWorker;Administrator;": { this.tspMenuItemSchedulers.Visible = true; this.tspMenuItemJournalN.Visible = true; } break;
+                    case ";GroupWorker;Administrator;": { this.tspUploadRepairPlannedToolStripMenuItem.Visible = true; this.tspMenuItemSchedulers.Visible = true; this.tspMenuItemJournalN.Visible = true; } break;
                     case ";GroupWorker;Map;": {/* this.tspDatatoGIS.Visible = true; */ this.tspMenuItemMap.Visible = true; } break;
                     case ";GroupWorker;GeneralInterfaceLegal;": this.tspMenuItemUE.Visible = true; break;
                     case ";GroupWorker;GrantSKUEE;": AccessToSKUEE = true; break;
-                    case ";GroupWorker;TOK_5;": { this.tspTOK5.Visible = true; break; }
+                    case ";GroupWorker;TOK_5;": { this.tspUploadRepairPlannedToolStripMenuItem.Visible = true;  this.tspTOK5.Visible = true; break; }
                     default: break;
                 }
             }
@@ -2405,6 +2406,49 @@ namespace EIS.Forms
         private void ведомостьПоПризнакамСПриборамиУчетаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.ShowMdiForm(typeof(FormRepAbnObjMeter_Flag));
+        }
+
+        private void выгрузкаАварйныхИПлановыхРаботToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ShowMdiForm(typeof(StatementsForME.FormReportToPlanned));
+        }
+
+        private void реестрТочекПодключенияПоУровнюНапряженияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ShowMdiForm(typeof(FormAbnObjPoint));
+        }
+
+        private void формированиеСчетовНаАвансToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ShowMdiForm(typeof(FormAvans));
+        }
+
+        private void отчетРуководителюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ShowMdiForm(typeof(StatementsForME.FormReportToManager));
+        }
+
+
+        private void выгрузкаПлановыхРаботНаСайтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ShowMdiForm(typeof(StatementsForME.FormReportRepairPlanned));
+        }
+
+        private void нарядыНаРаботу2021ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+                foreach (Form mdiChild in ((Form)this).MdiChildren)
+                {
+                    if (mdiChild.GetType() == typeof(JournalOrder.FormJournalOrder))
+                    {
+                        mdiChild.WindowState = ((Form)this).ActiveMdiChild == null ? FormWindowState.Normal : ((Form)this).ActiveMdiChild.WindowState;
+                        mdiChild.Activate();
+                        mdiChild.Visible = true;
+                        return;
+                    }
+                }
+                this.ShowMdiForm(typeof(JournalOrder.FormJournalOrder));
+            
         }
     }
 }

@@ -487,9 +487,9 @@ namespace SchemeCtrl2.DrawTool
 									if (array5[0]["idGroup"] != DBNull.Value)
 									{
 										int key = Convert.ToInt32(array5[0]["idGroup"]);
-										if (layer.Parent.dictionary_0.ContainsKey(key))
+										if (layer.Parent.groups.ContainsKey(key))
 										{
-											layer.Parent.dictionary_0[key].Add(objectOnLine);
+											layer.Parent.groups[key].Add(objectOnLine);
 										}
 									}
 								}

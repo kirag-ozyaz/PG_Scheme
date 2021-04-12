@@ -95,12 +95,12 @@ namespace SchemeCtrl2.DrawTool
 			
 		}
 
-		public LineCellTool(DataRow r, DrawingLayer l)
-		{
+		public LineCellTool(DataRow r, DrawingLayer l):base(r, l)
+        {
 			
 			this.lineToolType_0 = LineToolType.CellLine_10;
 			this.color_4 = Color.White;
-			base..ctor(r, l);
+			//base..ctor(r, l);
 			foreach (PointTool pointTool in this.ends)
 			{
 				if (pointTool.Parent == null)
@@ -260,18 +260,24 @@ namespace SchemeCtrl2.DrawTool
 							this.Amperages[ap].Conductor = lineTool;
 							lineTool.Amperages.Add(ap, this.Amperages[ap]);
 							this.Amperages.Remove(ap);
-							IEnumerable<CouplingRelation> couplingRelations = base.CouplingRelations;
-							Func<CouplingRelation, bool> predicate;
-							Func<CouplingRelation, bool> <>9__0;
-							if ((predicate = <>9__0) == null)
-							{
-								predicate = (<>9__0 = ((CouplingRelation obj) => obj.amperagePoint == ap));
-							}
-							foreach (CouplingRelation couplingRelation5 in couplingRelations.Where(predicate))
-							{
-								couplingRelation5.amperagePoint = null;
-							}
-						}
+                            foreach (CouplingRelation couplingRelation4 in from obj in base.CouplingRelations
+                                                                           where obj.amperagePoint == ap
+                                                                           select obj)
+                            {
+                                couplingRelation4.amperagePoint = null;
+                            }
+                            //IEnumerable<CouplingRelation> couplingRelations = base.CouplingRelations;
+                            //Func<CouplingRelation, bool> predicate;
+                            //Func<CouplingRelation, bool> <>9__0;
+                            //if ((predicate = <>9__0) == null)
+                            //{
+                            //	predicate = (<>9__0 = ((CouplingRelation obj) => obj.amperagePoint == ap));
+                            //}
+                            //foreach (CouplingRelation couplingRelation5 in couplingRelations.Where(predicate))
+                            //{
+                            //	couplingRelation5.amperagePoint = null;
+                            //}
+                        }
 					}
 				}
 				if (this.Amperages.Count > 0)

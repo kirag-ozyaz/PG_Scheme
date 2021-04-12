@@ -69,6 +69,7 @@
     <Reference Include="WinDocking">
       <HintPath>..\..\LIB\WinDocking.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataSetStatement.cs">
@@ -96,6 +97,20 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ReportRepairPlannedAndRepairCrash\FormReportToPlanned.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportRepairPlannedAndRepairCrash\FormReportToPlanned.Designer.cs">
+      <DependentUpon>FormReportToPlanned.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportRepairPlannedAndRepairCrash\StatementsToPlanned.cs" />
+    <Compile Include="ReportRepairPlanned\FormReportRepairPlanned.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportRepairPlanned\FormReportRepairPlanned.Designer.cs">
+      <DependentUpon>FormReportRepairPlanned.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportRepairPlanned\StatementsPlannedToSrte.cs" />
     <Compile Include="ReportsForHeads\FormReportToManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +125,10 @@
     <ProjectReference Include="..\..\ClassLibrarySQL\Library.csproj">
       <Project>{c406d578-4fba-4344-bfb9-88bca37bbdee}</Project>
       <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Constants-0\Constants.csproj">
+      <Project>{dadab86e-14a3-4238-882b-d0a4225ddea5}</Project>
+      <Name>Constants</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ReferenceTables\ReferenceTables.csproj">
       <Project>{70de9a59-49c6-4683-9f6b-3f04c819c1a8}</Project>
@@ -128,6 +147,15 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportRepairPlannedAndRepairCrash\FormReportToPlanned.resx">
+      <DependentUpon>FormReportToPlanned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportRepairPlannedAndRepairCrash\ReportrequestForRepairFullPeriod.rdlc" />
+    <EmbeddedResource Include="ReportRepairPlannedAndRepairCrash\ReportrequestForRepairFullPeriodGroup.rdlc" />
+    <EmbeddedResource Include="ReportRepairPlannedAndRepairCrash\ReportrequestForRepairFullPeriodGroup1.rdlc" />
+    <EmbeddedResource Include="ReportRepairPlanned\FormReportRepairPlanned.resx">
+      <DependentUpon>FormReportRepairPlanned.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsForHeads\FormReportToManager.resx">
       <DependentUpon>FormReportToManager.cs</DependentUpon>
@@ -150,6 +178,7 @@
     <None Include="DataSetStatement.xss">
       <DependentUpon>DataSetStatement.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,10 +198,16 @@
     <EmbeddedResource Include="ReportsForHeads\GetTableDamageToManagerUO.sql" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ReportRepairPlannedAndRepairCrash\GetTableRepairCrash.sql" />
+    <EmbeddedResource Include="ReportRepairPlannedAndRepairCrash\GetTableRepairPlanned.sql" />
+    <Content Include="ReportRepairPlannedAndRepairCrash\oper_otkl.php.htm" />
+    <Content Include="ReportRepairPlannedAndRepairCrash\plan_rabota.htm" />
+    <Content Include="ReportRepairPlanned\Пример.txt" />
     <Content Include="Resources\PrimerError.txt" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

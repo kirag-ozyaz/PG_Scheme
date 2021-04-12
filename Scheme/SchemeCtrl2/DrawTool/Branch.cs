@@ -12,6 +12,9 @@ using SchemeCtrl2.DrawTool.FormsObj;
 
 namespace SchemeCtrl2.DrawTool
 {
+    /// <summary>
+    /// ветка
+    /// </summary>
 	public class Branch : DrawObjectBase
 	{
 		public CouplingRelation CouplingRelation

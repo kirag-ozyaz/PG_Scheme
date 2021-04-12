@@ -377,58 +377,61 @@ namespace SchemeReports
                     //var row1 = dt1[j];
                     if (dt1[j].Summa != 0)
                     {
-                        // CountCycles - количество циклов прогона по конечной таблице
-                        int CountCycles = Convert.ToInt32(Math.Ceiling((decimal)dt1[j].Summa / (decimal)dt811.AsEnumerable().Count(r => r["Commnets"].ToString() == dt1[j].Cat + "; " + dt1[j].Vol)));
-                        for (int k = 1; k <= CountCycles; k++)
+                        decimal tInt = (decimal)dt811.AsEnumerable().Count(r => r["Commnets"].ToString() == dt1[j].Cat + "; " + dt1[j].Vol);
+                        if (tInt > 0) // почему то не находятся значения
                         {
-                            // заполняем основной список
-                            for (int i = 0; i < dt811.Rows.Count; i++)
+                            // CountCycles - количество циклов прогона по конечной таблице
+                            int CountCycles = Convert.ToInt32(Math.Ceiling((decimal)dt1[j].Summa / tInt));
+                            for (int k = 1; k <= CountCycles; k++)
                             {
-                                if (dt1[j].Summa != 0)
+                                // заполняем основной список
+                                for (int i = 0; i < dt811.Rows.Count; i++)
                                 {
-                                    //DataRow row = dt811.Rows[i];
-                                    if (dt811.Rows[i]["Commnets"].ToString() == dt1[j].Cat + "; " + dt1[j].Vol)
+                                    if (dt1[j].Summa != 0)
                                     {
-                                        // 1 
-                                        int Summa = dt1[j].Summa - 1;
-                                        dt1[j] = new { dt1[j].Cat, dt1[j].Vol, Summa };
-                                        // 2
-                                        int MeterCount = Convert.ToInt32(dt811.Rows[i]["MeterAll"]) + 1;
-                                        dt811.Rows[i]["MeterAll"] = MeterCount ;
-                                        switch (dt1[j].Cat)
+                                        //DataRow row = dt811.Rows[i];
+                                        if (dt811.Rows[i]["Commnets"].ToString() == dt1[j].Cat + "; " + dt1[j].Vol)
                                         {
-                                            case "I":
-                                                dt811.Rows[i]["CategoryReliabilityFirst"] = MeterCount;
-                                                break;
-                                            case "II":
-                                                dt811.Rows[i]["CategoryReliabilitySecond"] = MeterCount;
-                                                break;
-                                            case "III":
-                                                dt811.Rows[i]["CategoryReliabilityThird"] = MeterCount;
-                                                break;
-                                            default:
-                                                dt811.Rows[i]["CategoryReliabilityThird"] = MeterCount;
-                                                break;
+                                            // 1 
+                                            int Summa = dt1[j].Summa - 1;
+                                            dt1[j] = new { dt1[j].Cat, dt1[j].Vol, Summa };
+                                            // 2
+                                            int MeterCount = Convert.ToInt32(dt811.Rows[i]["MeterAll"]) + 1;
+                                            dt811.Rows[i]["MeterAll"] = MeterCount;
+                                            switch (dt1[j].Cat)
+                                            {
+                                                case "I":
+                                                    dt811.Rows[i]["CategoryReliabilityFirst"] = MeterCount;
+                                                    break;
+                                                case "II":
+                                                    dt811.Rows[i]["CategoryReliabilitySecond"] = MeterCount;
+                                                    break;
+                                                case "III":
+                                                    dt811.Rows[i]["CategoryReliabilityThird"] = MeterCount;
+                                                    break;
+                                                default:
+                                                    dt811.Rows[i]["CategoryReliabilityThird"] = MeterCount;
+                                                    break;
+                                            }
+                                            switch (dt1[j].Vol)
+                                            {
+                                                case "ВН":
+                                                    dt811.Rows[i]["LevelVoltageHV"] = MeterCount;
+                                                    break;
+                                                case "СН-1":
+                                                    dt811.Rows[i]["LevelVoltageSV-1"] = MeterCount;
+                                                    break;
+                                                case "СН-2":
+                                                    dt811.Rows[i]["LevelVoltageSV-2"] = MeterCount;
+                                                    break;
+                                                case "НН":
+                                                    dt811.Rows[i]["LevelVoltageLV"] = MeterCount;
+                                                    break;
+                                                default:
+                                                    dt811.Rows[i]["LevelVoltageLV"] = MeterCount;
+                                                    break;
+                                            }
                                         }
-                                        switch (dt1[j].Vol)
-                                        {
-                                            case "ВН":
-                                                dt811.Rows[i]["LevelVoltageHV"] = MeterCount;
-                                                break;
-                                            case "СН-1":
-                                                dt811.Rows[i]["LevelVoltageSV-1"] = MeterCount;
-                                                break;
-                                            case "СН-2":
-                                                dt811.Rows[i]["LevelVoltageSV-2"] = MeterCount;
-                                                break;
-                                            case "НН":
-                                                dt811.Rows[i]["LevelVoltageLV"] = MeterCount;
-                                                break;
-                                            default:
-                                                dt811.Rows[i]["LevelVoltageLV"] = MeterCount;
-                                                break;
-                                        }
-
                                     }
                                 }
                             }

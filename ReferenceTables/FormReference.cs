@@ -125,7 +125,12 @@ namespace Reference
                             base.SelectSqlData(tableResult, true, " ORDER BY Type, IsDefault DESC, Name", null, false, 0);
                             break;
                         }
-
+                    case 5:
+                        {
+                            tableResult.TableName = "tR_Cable";
+                            References.SchemeTables.GetTableMarkCable(tableResult, SqlSettings);
+                            break;
+                        }
                 }
                 //// заполним dgvResultat
                 //// можно и без цикла обойтись, но это чтобы колонки с фильтром появились
@@ -151,7 +156,8 @@ namespace Reference
             this.cmbVedomosty.Items.Add("Список ячеек"); // 2
             this.cmbVedomosty.Items.Add("Справочник всех линий и ячеек схемы"); // 3
             this.cmbVedomosty.Items.Add("Справочник. Классификаторы РИЦ"); // 4
-            //this.cmbVedomosty.Items.Add("Справочник. ТОК-5. Реестр точек измерения"); // 5
+            this.cmbVedomosty.Items.Add("Справочник кабелей"); //5
+            //this.cmbVedomosty.Items.Add("Справочник. ТОК-5. Реестр точек измерения"); // 6
             this.cmbVedomosty.SelectedIndex = 0;
             //this.cmbVedomosty.SelectionLength = 0;
 

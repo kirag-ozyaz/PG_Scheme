@@ -92,6 +92,72 @@ public class Settings
         return resultat;
     }
     /// <summary>
+    /// Вернуть значение из InnerText узла (Nodes)
+    /// </summary>
+    /// <param name="Attribute"></param>
+    /// <param name="typeResult"></param>
+    /// <param name="NodeAttributeParent"></param>
+    /// <returns></returns>
+    public object GetTextNodes(string Attribute, string typeResult = "string", string NodeAttributeParent = "")
+    {
+        object value = null;
+        bool isFlag = false;
+        try
+        {
+            if (typeResult == "bool")
+                value = false;
+            else if (typeResult == "string")
+                value = string.Empty;
+            else if (typeResult == "int")
+                value = 0;
+            else
+                value = null;
+
+            if (NodeAttributeParent != "")
+            {
+                // выбираем из дочерних узлов
+                // xmlNodeParent.ChildNodes.Count > 0
+                // или можно xmlNodeParent.InnerXml
+                XmlNode xmlNodeParent = setting.SelectSingleNode(NodeAttributeParent);
+                if (xmlNodeParent != null)
+                {
+                    value = xmlNodeParent.InnerText;
+                    if (value != null)
+                    {
+                        isFlag = true;
+                    }
+                }
+            }
+            else
+            {
+                // выбираем данные конкретного узла
+                // setting.Attributes.Count > 0
+                value = setting.InnerText;
+                if (value != null)
+                {
+                    isFlag = true;
+                }
+            }
+            //// Вернем хотя бы текст узла (InnerXML)
+            //if (!isFlag)
+            //{
+            //    value = setting.InnerText.ToString();
+            //}
+            if (isFlag)
+            {
+                if (typeResult == "bool")
+                    value = Convert.ToBoolean(value);
+                else if (typeResult == "string")
+                    value = Convert.ToString(value);
+                else if (typeResult == "int")
+                    value = Convert.ToInt32(value);
+                
+            }
+        }
+        catch { }
+        return value;
+    }
+    /// <summary>
     ///  вернуть значение атрибута настроек 
     ///  передачи данных (строковое)
     /// </summary>
@@ -112,6 +178,9 @@ public class Settings
             XmlAttribute xmlAttribute = null;
             if (NodeAttributeParent != "")
             {
+                // выбираем из дочерних узлов
+                // xmlNodeParent.ChildNodes.Count > 0
+                // или можно xmlNodeParent.InnerXml
                 XmlNode xmlNodeParent = setting.SelectSingleNode(NodeAttributeParent);
                 if (xmlNodeParent != null)
                 {
@@ -124,6 +193,8 @@ public class Settings
             }
             else
             {
+                // выбираем данные конкретного узла
+                // setting.Attributes.Count > 0
                 xmlAttribute = setting.Attributes[Attribute];
                 if (xmlAttribute != null)
                 {

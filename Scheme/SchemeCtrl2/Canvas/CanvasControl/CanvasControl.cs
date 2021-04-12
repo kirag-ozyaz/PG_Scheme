@@ -1061,7 +1061,7 @@ namespace SchemeCtrl2.Canvas
 		{
 			get
 			{
-				return this.list_0;
+				return this.layers;
 			}
 		}
 
@@ -1069,9 +1069,9 @@ namespace SchemeCtrl2.Canvas
 		{
 			get
 			{
-				if (this.icanvasLayer_0 == null && this.list_0.Count > 0)
+				if (this.icanvasLayer_0 == null && this.layers.Count > 0)
 				{
-					this.icanvasLayer_0 = this.list_0[0];
+					this.icanvasLayer_0 = this.layers[0];
 				}
 				return this.icanvasLayer_0;
 			}
@@ -1362,11 +1362,11 @@ namespace SchemeCtrl2.Canvas
 		{
 			get
 			{
-				return this.bool_1;
+				return this.monopoly;
 			}
 			set
 			{
-				this.bool_1 = value;
+				this.monopoly = value;
 			}
 		}
 
@@ -1394,7 +1394,7 @@ namespace SchemeCtrl2.Canvas
 		{
 			get
 			{
-				return this.list_4;
+				return this.ObjectsWithState;
 			}
 		}
 
@@ -1403,8 +1403,8 @@ namespace SchemeCtrl2.Canvas
 			
 			this.int_0 = -1;
 			this.ProxySingleton = SchemeCtrl2.WCF.Proxy_Singleton.GetInstance();
-			this.dictionary_0 = new Dictionary<int, GroupDrawObjectBase>();
-			this.list_0 = new List<ICanvasLayer>();
+			this.groups = new Dictionary<int, GroupDrawObjectBase>();
+			this.layers = new List<ICanvasLayer>();
 			this.float_0 = 1f;
 			this.list_1 = new List<DrawObjectBase>();
 			this.list_2 = new List<DrawObjectBase>();
@@ -1419,9 +1419,9 @@ namespace SchemeCtrl2.Canvas
 			this.eTypeCanvas_0 = eTypeCanvas.SchemeMain;
 			this.eSimulationMode_0 = eSimulationMode.Online;
 			this.eCanvasEditingMode_0 = eCanvasEditingMode.ReadOnly;
-			this.bool_1 = true;
+			this.monopoly = true;
 			this.rectangleF_0 = RectangleF.Empty;
-			this.list_4 = new List<LineToolState>();
+			this.ObjectsWithState = new List<LineToolState>();
 			this.list_5 = new List<DrawObjectBase>();
 			this.list_6 = new List<List<DrawObjectBase>>();
 			this.list_7 = new List<DrawObjectBase>();
@@ -1571,11 +1571,11 @@ namespace SchemeCtrl2.Canvas
 				this.Graphics.DrawLine(Pens.Blue, pointF.X, pointF.Y - num, pointF.X, pointF.Y + num);
 				if (base.Enabled)
 				{
-					for (int i = this.list_0.Count - 1; i >= 0; i--)
+					for (int i = this.layers.Count - 1; i >= 0; i--)
 					{
-						if (this.list_0[i] != this.ActiveLayer && this.list_0[i].Visible)
+						if (this.layers[i] != this.ActiveLayer && this.layers[i].Visible)
 						{
-							this.list_0[i].Draw(this, this.rectangleF_1);
+							this.layers[i].Draw(this, this.rectangleF_1);
 						}
 					}
 					try
@@ -2899,7 +2899,7 @@ namespace SchemeCtrl2.Canvas
 							{
 							case Keys.A:
 								this.list_1.Clear();
-								foreach (ICanvasLayer canvasLayer in this.list_0)
+								foreach (ICanvasLayer canvasLayer in this.layers)
 								{
 									foreach (DrawObjectBase drawObjectBase in canvasLayer.Objects)
 									{
@@ -3117,16 +3117,16 @@ namespace SchemeCtrl2.Canvas
 		{
 			this.eCommandType_0 = eCommandType.draw;
 			this.drawObjectBase_0 = drawObjectBase_3;
-			this.drawObjectBase_0.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+			this.drawObjectBase_0.EndDrawEvent += this.newObject_EndDrawEvent;
 			if (drawObjectBase_2 != drawObjectBase_3)
 			{
 				this.drawObjectBase_0.DrawNewObjectEvent += this.drawObjectBase_0_DrawNewObjectEvent;
 			}
 		}
 
-		internal void drawObjectBase_0_EndDrawEvent(DrawObjectBase drawObjectBase_2)
+		internal void newObject_EndDrawEvent(DrawObjectBase drawObjectBase_2)
 		{
-			drawObjectBase_2.EndDrawEvent -= this.drawObjectBase_0_EndDrawEvent;
+			drawObjectBase_2.EndDrawEvent -= this.newObject_EndDrawEvent;
 			DrawObjectsEventArgs e = new DrawObjectsEventArgs(drawObjectBase_2);
 			this.OnDrawingCompleted(e);
 			this.drawObjectBase_0 = null;
@@ -3286,14 +3286,14 @@ namespace SchemeCtrl2.Canvas
 		internal void method_17(LineTool lineTool_0, LineToolEventArgs lineToolEventArgs_0)
 		{
 			LineToolState state = lineToolEventArgs_0.state;
-			this.list_4.Remove(state);
+			this.ObjectsWithState.Remove(state);
 			this.lineToolEventHandler_1(lineTool_0, lineToolEventArgs_0);
 		}
 
 		internal void method_18(LineTool lineTool_0, LineToolEventArgs lineToolEventArgs_0)
 		{
 			LineToolState state = lineToolEventArgs_0.state;
-			this.list_4.Add(state);
+			this.ObjectsWithState.Add(state);
 			this.lineToolEventHandler_0(lineTool_0, lineToolEventArgs_0);
 		}
 
@@ -3773,7 +3773,7 @@ namespace SchemeCtrl2.Canvas
 
 		public ISnapPoint SnapPoint(UnitPoint point, Type[] runningsnaptypes, Type usersnaptype)
 		{
-			foreach (ICanvasLayer canvasLayer in this.list_0)
+			foreach (ICanvasLayer canvasLayer in this.layers)
 			{
 				foreach (DrawObjectBase drawObjectBase in ((DrawingLayer)canvasLayer).Objects)
 				{
@@ -3796,7 +3796,7 @@ namespace SchemeCtrl2.Canvas
 
 		public void DeleteObjects(IEnumerable<DrawObjectBase> objects, bool delSql)
 		{
-			foreach (ICanvasLayer canvasLayer in this.list_0)
+			foreach (ICanvasLayer canvasLayer in this.layers)
 			{
 				((DrawingLayer)canvasLayer).DeleteObjects(objects, delSql);
 			}
@@ -3860,7 +3860,7 @@ namespace SchemeCtrl2.Canvas
 		public bool SetObjectsInCenterScreen(List<int> idObjects, bool adaptZoom, CanvasControl.SetObjectsInCenterScreenOptions backlight)
 		{
 			List<DrawObjectBase> list = new List<DrawObjectBase>();
-			Func<DrawObjectBase, bool> C9__0;
+			Func<DrawObjectBase, bool> C9__0= null;
 			foreach (ICanvasLayer canvasLayer in this.Layers)
 			{
 				List<DrawObjectBase> list2 = list;
@@ -3974,7 +3974,7 @@ namespace SchemeCtrl2.Canvas
 
 		internal PointTool method_29(UnitPoint unitPoint_3)
 		{
-			foreach (ICanvasLayer canvasLayer in this.list_0.Reverse<ICanvasLayer>())
+			foreach (ICanvasLayer canvasLayer in this.layers.Reverse<ICanvasLayer>())
 			{
 				if (canvasLayer.Visible)
 				{
@@ -4081,7 +4081,7 @@ namespace SchemeCtrl2.Canvas
 				}
 				drawObjectBase.Layer = drawingLayer;
 				drawObjectBase.InitializeFromModel(point, drawingLayer, snappoint);
-				drawObjectBase.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+				drawObjectBase.EndDrawEvent += this.newObject_EndDrawEvent;
 			}
 			return drawObjectBase;
 		}
@@ -4108,7 +4108,7 @@ namespace SchemeCtrl2.Canvas
 			List<DrawObjectBase> list = new List<DrawObjectBase>();
 			this.Graphics = Graphics.FromHwnd(base.Handle);
 			Func<DrawObjectBase, bool> C9__0;
-			foreach (ICanvasLayer canvasLayer in this.list_0.Reverse<ICanvasLayer>())
+			foreach (ICanvasLayer canvasLayer in this.layers.Reverse<ICanvasLayer>())
 			{
 				if (canvasLayer.Visible)
 				{
@@ -4129,7 +4129,7 @@ namespace SchemeCtrl2.Canvas
 		{
 			List<DrawObjectBase> list = new List<DrawObjectBase>();
 			Func<DrawObjectBase, bool> C9__0;
-			foreach (ICanvasLayer canvasLayer in this.list_0)
+			foreach (ICanvasLayer canvasLayer in this.layers)
 			{
 				if (canvasLayer.Visible)
 				{
@@ -4218,7 +4218,7 @@ namespace SchemeCtrl2.Canvas
 		public void AddLayer(DrawingLayer layer)
 		{
 			layer.Parent = this;
-			this.list_0.Add(layer);
+			this.layers.Add(layer);
 			layer.ObjectsAdded += this.method_31;
 			layer.ObjectsRemoved += this.xOeFuedJon;
 			if (this.ActiveLayer == null)
@@ -4229,7 +4229,7 @@ namespace SchemeCtrl2.Canvas
 
 		public void ClearLayers()
 		{
-			this.list_0.Clear();
+			this.layers.Clear();
 		}
 
 		private void xOeFuedJon(List<DrawObjectBase> list_9)
@@ -4336,7 +4336,7 @@ namespace SchemeCtrl2.Canvas
 				return true;
 			}
 			Func<DrawObjectBase, bool> C9__0 =null;
-			foreach (ICanvasLayer canvasLayer in this.list_0)
+			foreach (ICanvasLayer canvasLayer in this.layers)
 			{
 				IEnumerable<DrawObjectBase> objects = canvasLayer.Objects;
 				Func<DrawObjectBase, bool> predicate;
@@ -4400,16 +4400,16 @@ namespace SchemeCtrl2.Canvas
 			}
 			list_9.Add(lineTool_0);
 			List<LineCellTool> list = new List<LineCellTool>();
-			Func<CouplingRelation, bool> <>9__1;
+			Func<CouplingRelation, bool> C9__1;
 			foreach (PointTool pointTool in from p in lineTool_0.Ends
 			where p.CouplingRelations.Count > 1
 			select p)
 			{
 				IEnumerable<CouplingRelation> couplingRelations = pointTool.CouplingRelations;
 				Func<CouplingRelation, bool> predicate;
-				if ((predicate = <>9__1) == null)
+				if ((predicate = C9__1) == null)
 				{
-					predicate = (<>9__1 = ((CouplingRelation c) => !list_9.Contains(c.Line)));
+					predicate = (C9__1 = ((CouplingRelation c) => !list_9.Contains(c.Line)));
 				}
 				foreach (CouplingRelation couplingRelation in couplingRelations.Where(predicate))
 				{
@@ -4692,7 +4692,7 @@ namespace SchemeCtrl2.Canvas
 		public void ForBigBoldButton2()
 		{
 			new List<TextBranchTool>();
-			foreach (ICanvasLayer canvasLayer in this.list_0)
+			foreach (ICanvasLayer canvasLayer in this.layers)
 			{
 				foreach (DrawObjectBase drawObjectBase in ((DrawingLayer)canvasLayer).Objects.Reverse<DrawObjectBase>())
 				{
@@ -5049,7 +5049,7 @@ namespace SchemeCtrl2.Canvas
 				drawObjectBase2.vmethod_3(this, dxfDocument);
 			}
 			IL_C3:
-			dxfDocument.Save(fileName, 1);
+			dxfDocument.Save(fileName, netDxf.Header.DxfVersion.AutoCad2004);
 		}
 
 		private void buttonCheck_Click(object sender, EventArgs e)
@@ -6062,11 +6062,11 @@ namespace SchemeCtrl2.Canvas
 				return displayObjectList;
 			}
 			IEnumerable<DrawObjectBase> childObjects = rectangleTool.Master.ChildObjects;
-			Func<DrawObjectBase, bool> <>9__1;
+			Func<DrawObjectBase, bool> C9__1;
 			Func<DrawObjectBase, bool> predicate;
-			if ((predicate = <>9__1) == null)
+			if ((predicate = C9__1) == null)
 			{
-				predicate = (<>9__1 = ((DrawObjectBase o) => o.IdBase != -1 && o.IdBase == drawObjectBase_2.IdBase));
+				predicate = (C9__1 = ((DrawObjectBase o) => o.IdBase != -1 && o.IdBase == drawObjectBase_2.IdBase));
 			}
 			using (IEnumerator<DrawObjectBase> enumerator2 = childObjects.Where(predicate).GetEnumerator())
 			{
@@ -6078,11 +6078,11 @@ namespace SchemeCtrl2.Canvas
 				}
 			}
 			IEnumerable<DrawObjectBase> objects = rectangleTool.Master.Layer.Objects;
-			Func<DrawObjectBase, bool> <>9__2;
+			Func<DrawObjectBase, bool> C9__2;
 			Func<DrawObjectBase, bool> predicate2;
-			if ((predicate2 = <>9__2) == null)
+			if ((predicate2 = C9__2) == null)
 			{
-				predicate2 = (<>9__2 = ((DrawObjectBase o) => o.IdBase != -1 && o.IdBase == drawObjectBase_2.IdBase));
+				predicate2 = (C9__2 = ((DrawObjectBase o) => o.IdBase != -1 && o.IdBase == drawObjectBase_2.IdBase));
 			}
 			using (IEnumerator<DrawObjectBase> enumerator2 = objects.Where(predicate2).GetEnumerator())
 			{
@@ -6123,7 +6123,7 @@ namespace SchemeCtrl2.Canvas
 					List<ShinaTool> list = new List<ShinaTool>();
 					List<PointTool> list2 = new List<PointTool>();
 					UnitPoint unitPoint = default(UnitPoint);
-					Func<DrawObjectBase, bool> <>9__3;
+					Func<DrawObjectBase, bool> C9__3;
 					foreach (PointTool pointTool in ((LineCellTool)drawObjectBase_2).Ends)
 					{
 						if (pointTool.Parent != null && pointTool.Parent.GetType() == typeof(ShinaTool))
@@ -6134,9 +6134,9 @@ namespace SchemeCtrl2.Canvas
 								ShinaTool shinaTool2 = null;
 								IEnumerable<DrawObjectBase> source = list3;
 								Func<DrawObjectBase, bool> predicate3;
-								if ((predicate3 = <>9__3) == null)
+								if ((predicate3 = C9__3) == null)
 								{
-									predicate3 = (<>9__3 = ((DrawObjectBase o) => !displayObjectList.Contains(o)));
+									predicate3 = (C9__3 = ((DrawObjectBase o) => !displayObjectList.Contains(o)));
 								}
 								foreach (DrawObjectBase drawObjectBase in source.Where(predicate3))
 								{
@@ -6293,7 +6293,7 @@ namespace SchemeCtrl2.Canvas
 				UnitPoint unitPoint2 = default(UnitPoint);
 				using (IEnumerator<PointTool> enumerator3 = ((LineTool)drawObjectBase_2).Ends.GetEnumerator())
 				{
-					Func<DrawObjectBase, bool> <>9__8;
+					Func<DrawObjectBase, bool> C9__8;
 					while (enumerator3.MoveNext())
 					{
 						PointTool pt = enumerator3.Current;
@@ -6305,11 +6305,11 @@ namespace SchemeCtrl2.Canvas
 								throw new Exception("Про не смогли отразить ячейку");
 							}
 							Func<DrawObjectBase, bool> predicate4;
-							if ((predicate4 = <>9__8) == null)
+							if ((predicate4 = C9__8) == null)
 							{
-								predicate4 = (<>9__8 = ((DrawObjectBase o) => !displayObjectList.Contains(o)));
+								predicate4 = (C9__8 = ((DrawObjectBase o) => !displayObjectList.Contains(o)));
 							}
-							Func<PointTool, bool> <>9__9;
+							Func<PointTool, bool> C9__9;
 							foreach (DrawObjectBase drawObjectBase2 in list6.Where(predicate4))
 							{
 								displayObjectList.Add(drawObjectBase2);
@@ -6318,9 +6318,9 @@ namespace SchemeCtrl2.Canvas
 									list4.Add((LineCellTool)drawObjectBase2);
 									IEnumerable<PointTool> ends = ((LineCellTool)drawObjectBase2).Ends;
 									Func<PointTool, bool> predicate5;
-									if ((predicate5 = <>9__9) == null)
+									if ((predicate5 = C9__9) == null)
 									{
-										predicate5 = (<>9__9 = ((PointTool o) => o.IdBase == pt.IdBase));
+										predicate5 = (C9__9 = ((PointTool o) => o.IdBase == pt.IdBase));
 									}
 									using (IEnumerator<PointTool> enumerator6 = ends.Where(predicate5).GetEnumerator())
 									{
@@ -9030,7 +9030,7 @@ namespace SchemeCtrl2.Canvas
 			}
 			if (new GroupPropertyForm(groupDrawObjectBase).ShowDialog() == DialogResult.OK)
 			{
-				this.dictionary_0[groupDrawObjectBase.Id] = groupDrawObjectBase;
+				this.groups[groupDrawObjectBase.Id] = groupDrawObjectBase;
 			}
 		}
 
@@ -9359,7 +9359,7 @@ namespace SchemeCtrl2.Canvas
 			XmlDocument xmlDocument = new XmlDocument();
 			xmlDocument.LoadXml("<canvas></canvas>");
 			XmlNode xmlNode = xmlDocument.SelectSingleNode("canvas");
-			foreach (ICanvasLayer canvasLayer in this.list_0)
+			foreach (ICanvasLayer canvasLayer in this.layers)
 			{
 				((DrawingLayer)canvasLayer).method_0(xmlNode);
 			}
@@ -9430,7 +9430,7 @@ namespace SchemeCtrl2.Canvas
 				sqlDataCommand.SelectSqlData(this.dsScheme.vSchm_CabSection, true, " where deleted = 0 ", null, false, 0);
 				sqlDataCommand.SelectSqlData(this.dsScheme.tSchm_ObjList, false, " where [TypeCodeId] = 940 and [Deleted] = 0 ", null, false, 0);
 				sqlDataCommand.SelectSqlData(this.dsScheme.vP_PassportDataReports, true, "where typecodeid in (538,535,537,536) and [CharName] like 'Принадлежность' and [CharValue] like 'Абонентская'", null, false, 0);
-				this.method_71();
+				this.LoadMainSchema();
 				this.dsScheme.vSchm_ObjListXml.Clear();
 				this.dsScheme.tSchm_Label.Clear();
 				this.dsScheme.tSchm_Relation.Clear();
@@ -9447,7 +9447,7 @@ namespace SchemeCtrl2.Canvas
 			this.SendMessage("Объектов в базе: " + this.dsScheme.vSchm_ObjListXml.Rows.Count.ToString(), eMessageType.Information);
 			sqlDataCommand.SelectSqlData(this.dsScheme.tSchm_Relation, true, "", null, false, 0);
 			this.SendMessage("Связей в базе: " + this.dsScheme.tSchm_Relation.Rows.Count.ToString(), eMessageType.Information);
-			this.method_71();
+			this.LoadMainSchema();
 			this.dsScheme.vSchm_ObjListXml.Clear();
 			this.dsScheme.tSchm_Label.Clear();
 			this.dsScheme.tSchm_Relation.Clear();
@@ -9886,8 +9886,8 @@ namespace SchemeCtrl2.Canvas
 		{
 			bool flag = false;
 			this.loadedPoints.Clear();
-			this.list_0.Clear();
-			this.dictionary_0.Clear();
+			this.layers.Clear();
+			this.groups.Clear();
 			DrawingLayer drawingLayer = new DrawingLayer("SchemaSecond", "SchemaSecond", Color.White, 0f);
 			drawingLayer.Parent = this;
 			this.AddLayer(drawingLayer);
@@ -9931,7 +9931,7 @@ namespace SchemeCtrl2.Canvas
 				rectangleTool.Rectangle = new RectangleF(-1000000f, -1000000f, 2000000f, 2000000f);
 				rectangleTool.Visible = false;
 				flag = true;
-				rectangleTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+				rectangleTool.EndDrawEvent += this.newObject_EndDrawEvent;
 			}
 			else
 			{
@@ -9940,7 +9940,7 @@ namespace SchemeCtrl2.Canvas
 				{
 					if (Convert.ToInt32(dataRow["Id"]) != this.IdRect)
 					{
-						new RectangleTool(dataRow, drawingLayer).EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+						new RectangleTool(dataRow, drawingLayer).EndDrawEvent += this.newObject_EndDrawEvent;
 					}
 				}
 			}
@@ -9983,7 +9983,7 @@ namespace SchemeCtrl2.Canvas
 								shinaTool.Parent = rectangleTool;
 								shinaTool.LimitedEditing = true;
 								drawingLayer.AddObject(shinaTool);
-								shinaTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+								shinaTool.EndDrawEvent += this.newObject_EndDrawEvent;
 								DataRow[] array = this.dsScheme.vSchm_ObjListXml.Select(string.Concat(new object[]
 								{
 									" IdParent = ",
@@ -10024,7 +10024,7 @@ namespace SchemeCtrl2.Canvas
 							{
 								drawingLayer.AddObject(drawobject);
 							}
-							shinaTool2.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+							shinaTool2.EndDrawEvent += this.newObject_EndDrawEvent;
 							DataRow[] array2 = this.dsScheme.vSchm_ObjListXml.Select(" IdParent = " + shinaTool2.IdBase.ToString() + " and typeCodeId = " + 111.ToString());
 							Dictionary<int, DataRow> dictionary = new Dictionary<int, DataRow>();
 							foreach (DataRow dataRow3 in array2)
@@ -10146,7 +10146,7 @@ namespace SchemeCtrl2.Canvas
 								{
 									continue;
 								}
-								lineCellTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+								lineCellTool.EndDrawEvent += this.newObject_EndDrawEvent;
 								flag = true;
 							}
 						}
@@ -10215,7 +10215,7 @@ namespace SchemeCtrl2.Canvas
 							{
 								continue;
 							}
-							lineCellTool2.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+							lineCellTool2.EndDrawEvent += this.newObject_EndDrawEvent;
 						}
 					}
 				}
@@ -10451,7 +10451,7 @@ namespace SchemeCtrl2.Canvas
 								}
 							}
 						}
-						lineTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+						lineTool.EndDrawEvent += this.newObject_EndDrawEvent;
 						flag = true;
 						continue;
 						IL_1B2C:
@@ -10574,7 +10574,7 @@ namespace SchemeCtrl2.Canvas
 								}
 							}
 						}
-						lineTool3.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+						lineTool3.EndDrawEvent += this.newObject_EndDrawEvent;
 					}
 				}
 			}
@@ -10631,20 +10631,20 @@ namespace SchemeCtrl2.Canvas
 				}
 			}
 		}
-
-		private void method_71()
+        // загрузка структуры схемы=
+		private void LoadMainSchema()
 		{
-			if (this.list_4 != null)
+			if (this.ObjectsWithState != null)
 			{
-				this.list_4.Clear();
+				this.ObjectsWithState.Clear();
 			}
 			this.SendMessage("Начало очитски памяти", eMessageType.Information);
 			this.loadedPoints.Clear();
 			this.loadedPoints = new Dictionary<int, PointTool>();
 			this.SendMessage("Почистили точки", eMessageType.Information);
-			this.list_0.Clear();
+			this.layers.Clear();
 			this.SendMessage("Почистили память", eMessageType.Information);
-			this.dictionary_0.Clear();
+			this.groups.Clear();
 			DrawingLayer drawingLayer = new DrawingLayer("SchemaMain", "SchemaMain", Color.White, 0f);
 			drawingLayer.Parent = this;
 			this.AddLayer(drawingLayer);
@@ -10655,7 +10655,7 @@ namespace SchemeCtrl2.Canvas
 				GroupDrawObjectBase groupDrawObjectBase = new GroupDrawObjectBase();
 				groupDrawObjectBase.Id = Convert.ToInt32(dataRow["id"]);
 				groupDrawObjectBase.Name = dataRow["Name"].ToString();
-				this.dictionary_0.Add(groupDrawObjectBase.Id, groupDrawObjectBase);
+				this.groups.Add(groupDrawObjectBase.Id, groupDrawObjectBase);
 			}
 			DrawingLayer obj2 = drawingLayer;
 			lock (obj2)
@@ -10677,7 +10677,8 @@ namespace SchemeCtrl2.Canvas
 				}
 				text = text.Remove(text.Length - 1);
 				IEnumerable<DataRow> enumerable2 = this.dsScheme.vSchm_ObjListXml.Select(" TypeCodeId in (" + text + ")");
-				text = "";
+                // формирование списка ячеек
+                text = "";
 				foreach (object obj5 in Enum.GetValues(typeof(SchemeCtrl2.DrawTool.LineToolType)))
 				{
 					SchemeCtrl2.DrawTool.LineToolType lineToolType = (SchemeCtrl2.DrawTool.LineToolType)obj5;
@@ -10687,8 +10688,9 @@ namespace SchemeCtrl2.Canvas
 					}
 				}
 				text = text.Remove(text.Length - 1);
-				IEnumerable<DataRow> enumerable3 = this.dsScheme.vSchm_ObjListXml.Select("  TypeCodeId in (" + text + ")");
-				text = "";
+				var drCells = this.dsScheme.vSchm_ObjListXml.Select("  TypeCodeId in (" + text + ")");
+                //
+                text = "";
 				foreach (object obj6 in Enum.GetValues(typeof(SchemeCtrl2.DrawTool.LineToolType)))
 				{
 					SchemeCtrl2.DrawTool.LineToolType lineToolType2 = (SchemeCtrl2.DrawTool.LineToolType)obj6;
@@ -10728,13 +10730,13 @@ namespace SchemeCtrl2.Canvas
 						RectangleTool rectangleTool = new RectangleTool(dataRow2, drawingLayer);
 						rectangleTool.IsSubscriber = (this.dsScheme.vP_PassportDataReports.Select(string.Format("[IdObj] = {0}", rectangleTool.IdBase)).Length != 0);
 						dictionary.Add(rectangleTool.IdBase, rectangleTool);
-						rectangleTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+						rectangleTool.EndDrawEvent += this.newObject_EndDrawEvent;
 						if (dataRow2["idGroup"] != DBNull.Value)
 						{
 							int key = Convert.ToInt32(dataRow2["idGroup"]);
-							if (this.dictionary_0.ContainsKey(key))
+							if (this.groups.ContainsKey(key))
 							{
-								this.dictionary_0[key].Add(rectangleTool);
+								this.groups[key].Add(rectangleTool);
 							}
 						}
 					}
@@ -10757,14 +10759,14 @@ namespace SchemeCtrl2.Canvas
 					{
 						ShinaTool shinaTool = new ShinaTool(dataRow3, drawingLayer);
 						shinaTool.Parent = dictionary[Convert.ToInt32(dataRow3["idParent"])];
-						shinaTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+						shinaTool.EndDrawEvent += this.newObject_EndDrawEvent;
 						int idBase = shinaTool.IdBase;
 						if (dataRow3["idGroup"] != DBNull.Value)
 						{
 							int key2 = Convert.ToInt32(dataRow3["idGroup"]);
-							if (this.dictionary_0.ContainsKey(key2))
+							if (this.groups.ContainsKey(key2))
 							{
-								this.dictionary_0[key2].Add(shinaTool);
+								this.groups[key2].Add(shinaTool);
 							}
 						}
 						DataRow[] array = this.dsScheme.vSchm_ObjListXml.Select(" IdParent = " + shinaTool.IdBase.ToString() + " and typeCodeId = " + 111.ToString());
@@ -10782,7 +10784,8 @@ namespace SchemeCtrl2.Canvas
 					}
 				}
 				this.SendMessage("Загружено шин: " + enumerable2.Count<DataRow>(), eMessageType.Information);
-				foreach (DataRow dataRow4 in enumerable3)
+                // грузим ячейки
+                foreach (DataRow dataRow4 in drCells)
 				{
 					try
 					{
@@ -10790,13 +10793,14 @@ namespace SchemeCtrl2.Canvas
 						if (dictionary.ContainsKey(Convert.ToInt32(dataRow4["IdParent"])))
 						{
 							lineCellTool.Parent = dictionary[Convert.ToInt32(dataRow4["IdParent"])];
-							lineCellTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
-							if (dataRow4["idGroup"] != DBNull.Value)
+							lineCellTool.EndDrawEvent += this.newObject_EndDrawEvent;
+                            // эта хрень (условие ) здесь не нужно
+                            if (dataRow4["idGroup"] != DBNull.Value)
 							{
 								int key3 = Convert.ToInt32(dataRow4["idGroup"]);
-								if (this.dictionary_0.ContainsKey(key3))
+								if (this.groups.ContainsKey(key3))
 								{
-									this.dictionary_0[key3].Add(lineCellTool);
+									this.groups[key3].Add(lineCellTool);
 								}
 							}
 							foreach (Branch branch in lineCellTool.Branches)
@@ -10821,13 +10825,14 @@ namespace SchemeCtrl2.Canvas
 						this.SendMessage("Не удалось загрузить ячейку: id = " + dataRow4["id"].ToString(), eMessageType.Error);
 					}
 				}
-				this.SendMessage("Загружено ячеек: " + enumerable3.Count<DataRow>(), eMessageType.Information);
-				foreach (DataRow dataRow5 in enumerable4)
+				this.SendMessage("Загружено ячеек: " + drCells.Count<DataRow>(), eMessageType.Information);
+                // грузим линии
+                foreach (DataRow dataRow5 in enumerable4)
 				{
 					try
 					{
 						LineTool lineTool = new LineTool(dataRow5, drawingLayer);
-						lineTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+						lineTool.EndDrawEvent += this.newObject_EndDrawEvent;
 						if (lineTool.Branches.Count == 0)
 						{
 							lineTool.Remove(false, false);
@@ -10849,9 +10854,9 @@ namespace SchemeCtrl2.Canvas
 							if (dataRow5["idGroup"] != DBNull.Value)
 							{
 								int key4 = Convert.ToInt32(dataRow5["idGroup"]);
-								if (this.dictionary_0.ContainsKey(key4))
+								if (this.groups.ContainsKey(key4))
 								{
-									this.dictionary_0[key4].Add(lineTool);
+									this.groups[key4].Add(lineTool);
 								}
 							}
 							foreach (Branch branch2 in lineTool.Branches)
@@ -10924,43 +10929,39 @@ namespace SchemeCtrl2.Canvas
 					}
 				}
 				this.SendMessage("Загружено линий: " + enumerable4.Count<DataRow>(), eMessageType.Information);
-				using (IEnumerator enumerator = this.dsScheme.tSchm_Label.Rows.GetEnumerator())
-				{
-					while (enumerator.MoveNext())
-					{
-						DataRow rLabel = (DataRow)enumerator.Current;
-						if (rLabel["IdParent"] != DBNull.Value)
-						{
-							if (dictionary.ContainsKey(Convert.ToInt32(rLabel["idParent"])))
-							{
-								((RectangleTool)dictionary[Convert.ToInt32(rLabel["idParent"])]).AddLabelTool(rLabel);
-							}
-							else
-							{
-								LabelTool labelTool = LabelTool.GetLabelTool(rLabel);
-								if (labelTool != null)
-								{
-									IEnumerable<DrawObjectBase> source = from o in this.list_0[0].Objects
-									where o.IdBase == Convert.ToInt32(rLabel["idParent"])
-									select o;
-									if (source.Count<DrawObjectBase>() > 0)
-									{
-										labelTool.Parent = source.First<DrawObjectBase>();
-										this.AddObject(drawingLayer, labelTool);
-									}
-								}
-							}
-						}
-						else
-						{
-							LabelTool labelTool2 = LabelTool.GetLabelTool(rLabel);
-							if (labelTool2 != null)
-							{
-								this.AddObject(drawingLayer, labelTool2);
-							}
-						}
-					}
-				}
+                        foreach (DataRow rLabel in this.dsScheme.tSchm_Label.Rows)
+                        {
+                            if (rLabel["IdParent"] != DBNull.Value)
+                            {
+                                if (dictionary.ContainsKey(Convert.ToInt32(rLabel["idParent"])))
+                                {
+                                    ((RectangleTool)dictionary[Convert.ToInt32(rLabel["idParent"])]).AddLabelTool(rLabel);
+                                }
+                                else
+                                {
+                                    LabelTool labelTool = LabelTool.GetLabelTool(rLabel);
+                                    if (labelTool != null)
+                                    {
+                                        IEnumerable<DrawObjectBase> source = from o in this.layers[0].Objects
+                                                                             where o.IdBase == Convert.ToInt32(rLabel["idParent"])
+                                                                             select o;
+                                        if (source.Count<DrawObjectBase>() > 0)
+                                        {
+                                            labelTool.Parent = source.First<DrawObjectBase>();
+                                            this.AddObject(drawingLayer, labelTool);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                LabelTool labelTool2 = LabelTool.GetLabelTool(rLabel);
+                                if (labelTool2 != null)
+                                {
+                                    this.AddObject(drawingLayer, labelTool2);
+                                }
+                            }
+                        }
 				if (this.SimulationMode == eSimulationMode.Normal)
 				{
 					foreach (DrawObjectBase drawObjectBase3 in from obj in this.icanvasLayer_0.Objects
@@ -10979,7 +10980,7 @@ namespace SchemeCtrl2.Canvas
 		{
 			this.xmlDocument_0 = doc1;
 			this.undoRedoManager.SaveChanges = false;
-			this.list_0.Clear();
+			this.layers.Clear();
 			this.globalPointsList.Clear();
 			XmlNode xmlNode = doc1.SelectSingleNode("canvas");
 			XmlNodeList xmlNodeList = xmlNode.SelectNodes("layer");
@@ -10996,7 +10997,7 @@ namespace SchemeCtrl2.Canvas
 				XmlNode xmlNode4 = (XmlNode)obj2;
 				DrawingLayer drawingLayer = new DrawingLayer();
 				drawingLayer.Id = xmlNode4.Attributes[0].Value;
-				this.list_0.Add(drawingLayer);
+				this.layers.Add(drawingLayer);
 				this.icanvasLayer_0 = drawingLayer;
 				drawingLayer.Color = Color.White;
 				drawingLayer.Parent = this;
@@ -11032,7 +11033,7 @@ namespace SchemeCtrl2.Canvas
 						rectangleTool.TypeRectnagleTool = (SchemeCtrl2.DrawTool.eTypeRectangleTool)Convert.ToInt32(array[0]["TypeCodeId"]);
 					}
 					drawingLayer.AddObject(rectangleTool);
-					rectangleTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+					rectangleTool.EndDrawEvent += this.newObject_EndDrawEvent;
 					foreach (object obj4 in xmlNode5.SelectNodes("Shina"))
 					{
 						XmlNode xmlNode6 = (XmlNode)obj4;
@@ -11077,7 +11078,7 @@ namespace SchemeCtrl2.Canvas
 							shinaTool.TypeShinaTool = (SchemeCtrl2.DrawTool.eTypeShinaTool)Convert.ToInt32(array2[0]["TypeCodeId"]);
 						}
 						drawingLayer.AddObject(shinaTool);
-						shinaTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+						shinaTool.EndDrawEvent += this.newObject_EndDrawEvent;
 						foreach (object obj5 in xmlNode6.SelectNodes("point"))
 						{
 							XmlNode xmlNode7 = (XmlNode)obj5;
@@ -11120,7 +11121,7 @@ namespace SchemeCtrl2.Canvas
 							}
 							lineCellTool.Text = array3[0]["Name"].ToString();
 						}
-						lineCellTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+						lineCellTool.EndDrawEvent += this.newObject_EndDrawEvent;
 						foreach (object obj7 in xmlNode8.SelectNodes("Branch"))
 						{
 							XmlNode xmlNode9 = (XmlNode)obj7;
@@ -11212,7 +11213,7 @@ namespace SchemeCtrl2.Canvas
 						lineTool.Text = array4[0]["Name"].ToString();
 					}
 					drawingLayer.AddObject(lineTool);
-					lineTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+					lineTool.EndDrawEvent += this.newObject_EndDrawEvent;
 					lineTool.DrawNewObjectEvent += this.drawObjectBase_0_DrawNewObjectEvent;
 					foreach (object obj11 in xmlNode12.SelectNodes("Branch"))
 					{
@@ -11543,7 +11544,7 @@ namespace SchemeCtrl2.Canvas
 							pointTool3.Parent = lineCellTool;
 						}
 					}
-					lineCellTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+					lineCellTool.EndDrawEvent += this.newObject_EndDrawEvent;
 				}
 			}
 			foreach (ObjectBaseServer objectBaseServer6 in from obj in transferObjs
@@ -11615,7 +11616,7 @@ namespace SchemeCtrl2.Canvas
 					}
 				}
 				lineTool.GetPointsList();
-				lineTool.EndDrawEvent += this.drawObjectBase_0_EndDrawEvent;
+				lineTool.EndDrawEvent += this.newObject_EndDrawEvent;
 			}
 			foreach (DrawObjectBase drawObjectBase in from obj in drawingLayer.Objects
 			where obj.GetType() == typeof(RectangleTool) && ((RectangleTool)obj).TypeRectnagleTool == SchemeCtrl2.DrawTool.eTypeRectangleTool.CP
@@ -11660,12 +11661,12 @@ namespace SchemeCtrl2.Canvas
 		{
 			IEnumerable<DrawObjectBase> source = null;
 			IEnumerable<DrawObjectBase> source2 = null;
-			if (this.list_0.Count > 0)
+			if (this.layers.Count > 0)
 			{
-				source2 = from o in this.list_0[0].Objects
+				source2 = from o in this.layers[0].Objects
 				where o.GetType() == typeof(TelemetryLabelTool)
 				select o;
-				source = from o in this.list_0[0].Objects
+				source = from o in this.layers[0].Objects
 				where o is ObjectOnLine
 				select o;
 				using (List<OPCMessage>.Enumerator enumerator = list_9.GetEnumerator())
@@ -11673,7 +11674,7 @@ namespace SchemeCtrl2.Canvas
 					while (enumerator.MoveNext())
 					{
 						OPCMessage message = enumerator.Current;
-						if (message.ObjectId > 0 && this.list_0.Count > 0)
+						if (message.ObjectId > 0 && this.layers.Count > 0)
 						{
 							IEnumerable<DrawObjectBase> source3 = from obj in source
 							where obj.IdBase == message.ObjectId
@@ -11750,9 +11751,9 @@ namespace SchemeCtrl2.Canvas
 
 		private void method_78(OPCMessage opcmessage_0)
 		{
-			if (opcmessage_0.ObjectId > 0 && this.list_0.Count > 0)
+			if (opcmessage_0.ObjectId > 0 && this.layers.Count > 0)
 			{
-				foreach (DrawObjectBase drawObjectBase in from o in this.list_0[0].Objects
+				foreach (DrawObjectBase drawObjectBase in from o in this.layers[0].Objects
 				where o.GetType() == typeof(TelemetryLabelTool)
 				where ((TelemetryLabelTool)o).ObjectTelemetry == opcmessage_0.ObjectId && opcmessage_0.ParameterId == ((TelemetryLabelTool)o).TelemetryParameterId
 				select o)
@@ -11799,7 +11800,7 @@ namespace SchemeCtrl2.Canvas
 			{
 				return;
 			}
-			IEnumerable<DrawObjectBase> enumerable = from o in this.list_0[0].Objects
+			IEnumerable<DrawObjectBase> enumerable = from o in this.layers[0].Objects
 			where o.GetType() == typeof(TelemetryLabelTool)
 			select o;
 			List<int> list = new List<int>();
@@ -12246,7 +12247,7 @@ namespace SchemeCtrl2.Canvas
 			{
 				eDrawMode |= eDrawMode.Color;
 			}
-			foreach (ICanvasLayer canvasLayer3 in this.list_0)
+			foreach (ICanvasLayer canvasLayer3 in this.layers)
 			{
 				foreach (DrawObjectBase drawObjectBase2 in ((DrawingLayer)canvasLayer3).Objects)
 				{
@@ -12447,7 +12448,7 @@ namespace SchemeCtrl2.Canvas
 
 		internal SchemeCtrl2.WCF.Proxy_Singleton ProxySingleton;
 
-		internal Dictionary<int, GroupDrawObjectBase> dictionary_0;
+		internal Dictionary<int, GroupDrawObjectBase> groups;
 
 		private Graphics graphics_0;
 
@@ -12455,7 +12456,7 @@ namespace SchemeCtrl2.Canvas
 
 		private GridLayer gridLayer_0;
 
-		private List<ICanvasLayer> list_0;
+		private List<ICanvasLayer> layers;
 
 		private ICanvasLayer icanvasLayer_0;
 
@@ -12523,7 +12524,7 @@ namespace SchemeCtrl2.Canvas
 
 		private eCanvasEditingMode eCanvasEditingMode_0;
 
-		private bool bool_1;
+		private bool monopoly;
 
 		private Control0 control0_0;
 
@@ -12535,7 +12536,7 @@ namespace SchemeCtrl2.Canvas
 
 		public UndoRedoManager undoRedoManager;
 
-		private List<LineToolState> list_4;
+		private List<LineToolState> ObjectsWithState;
 
 		private List<DrawObjectBase> list_5;
 

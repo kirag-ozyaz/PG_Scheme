@@ -20,6 +20,8 @@ internal partial class FormReportDetectionCrash : FormLbr.FormBase
     private void InitializeComponent()
     {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkLV = new System.Windows.Forms.CheckBox();
+            this.chkHV = new System.Windows.Forms.CheckBox();
             this.chkInfoExtended = new System.Windows.Forms.CheckBox();
             this.grpAct = new System.Windows.Forms.GroupBox();
             this.rBtnCrashAct = new System.Windows.Forms.RadioButton();
@@ -50,6 +52,8 @@ internal partial class FormReportDetectionCrash : FormLbr.FormBase
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkLV);
+            this.panel1.Controls.Add(this.chkHV);
             this.panel1.Controls.Add(this.chkInfoExtended);
             this.panel1.Controls.Add(this.grpAct);
             this.panel1.Controls.Add(this.panel2);
@@ -61,6 +65,26 @@ internal partial class FormReportDetectionCrash : FormLbr.FormBase
             this.panel1.Padding = new System.Windows.Forms.Padding(3);
             this.panel1.Size = new System.Drawing.Size(200, 571);
             this.panel1.TabIndex = 0;
+            // 
+            // chkLV
+            // 
+            this.chkLV.AutoSize = true;
+            this.chkLV.Location = new System.Drawing.Point(12, 399);
+            this.chkLV.Name = "chkLV";
+            this.chkLV.Size = new System.Drawing.Size(129, 17);
+            this.chkLV.TabIndex = 12;
+            this.chkLV.Text = "Низкое напряжение";
+            this.chkLV.UseVisualStyleBackColor = true;
+            // 
+            // chkHV
+            // 
+            this.chkHV.AutoSize = true;
+            this.chkHV.Location = new System.Drawing.Point(12, 375);
+            this.chkHV.Name = "chkHV";
+            this.chkHV.Size = new System.Drawing.Size(136, 17);
+            this.chkHV.TabIndex = 11;
+            this.chkHV.Text = "Высокое напряжение";
+            this.chkHV.UseVisualStyleBackColor = true;
             // 
             // chkInfoExtended
             // 
@@ -356,4 +380,6 @@ internal partial class FormReportDetectionCrash : FormLbr.FormBase
 
     private Label label4;
     private CheckBox chkInfoExtended;
+    private CheckBox chkLV;
+    private CheckBox chkHV;
 }
