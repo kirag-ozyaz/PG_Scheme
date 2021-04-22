@@ -610,7 +610,7 @@ namespace EIS.Forms
             // 
             this.журналАктовToolStripMenuItem.Name = "журналАктовToolStripMenuItem";
             this.журналАктовToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.журналАктовToolStripMenuItem.Text = "Журнал актов";
+            this.журналАктовToolStripMenuItem.Text = "Журнал актов огбхода";
             this.журналАктовToolStripMenuItem.Click += new System.EventHandler(this.журналАктовToolStripMenuItem_Click);
             // 
             // протоколРаботыСпециалистовToolStripMenuItem
@@ -1044,7 +1044,7 @@ namespace EIS.Forms
             this.журналАктовToolStripMenuItem1.Image = global::EIS.Properties.Resources.address_book1;
             this.журналАктовToolStripMenuItem1.Name = "журналАктовToolStripMenuItem1";
             this.журналАктовToolStripMenuItem1.Size = new System.Drawing.Size(372, 22);
-            this.журналАктовToolStripMenuItem1.Text = "Журнал актов";
+            this.журналАктовToolStripMenuItem1.Text = "Журнал актов по приборам учета";
             this.журналАктовToolStripMenuItem1.Click += new System.EventHandler(this.журналАктовToolStripMenuItem1_Click);
             // 
             // журналДемонтажаПриборовУчетаToolStripMenuItem

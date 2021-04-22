@@ -146,8 +146,8 @@ namespace ExportToPostGIS.SmartCity
                     damage.startDate = databeg.ToString("yyyy-MM-ddTHH:mm:ss");
                     damage.endDate = dataend.ToString("yyyy-MM-ddTHH:mm:ss");
 
-                    damage.comment = "Это тестовое отключение в рамках проверки интегарции программных систем ЦУГ и УльГЭ {idDaily=" + idDaily.ToString()+ "}";
-                    // {}
+                    damage.comment = $"Это тестовое отключение в рамках проверки интегарции программных систем ЦУГ и УльГЭ #idDaily={idDaily.ToString()}";
+                    damage.comment += "#NumData = " +Convert.ToInt32(tableResultat.Rows[i]["num"])+ "#DataDok = " + Convert.ToInt32(tableResultat.Rows[i]["dateCreate"]).ToString("yyyy-MM-ddTHH:mm:ss");
                     //
                     SmartCity.GetResultP<SmartCity.ShutdownPostDTO> Result = rpt.PostResult(rpt.ACCESS_TOKEN, damage, $"Shutdowns");
 
