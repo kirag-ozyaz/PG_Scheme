@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml;
 using ControlsLbr.DataGridViewExcelFilter;
 using ControlsLbr.Scheme;
+using Documents.Forms.JournalOrder;
 //using Documents.Properties;
 using FormLbr;
 using FormLbr.Classes;
@@ -18,36 +19,24 @@ namespace JournalOrder
 {
 	public partial class FormJournalOrder : FormBase
 	{
+        private DateTime DateBegin = new DateTime(DateTime.Now.Year, 1, 1);
+        private DateTime DateEnd = new DateTime(DateTime.Now.Year, 12, 31);
+        private DateTime DateBeginEventDate = DateTime.Now.Date;
+        private DateTime DateEndEventDate = DateTime.Now.Date;
+        private List<int> listSubStation;
+
         private ItemCheckEventArgs itemCheckEventArgs;
-        private List<int> listSchmObject;
-        private List<int> listSchmObjectEvents;
-        private List<int> listDivisionOrder;
+        private List<int> listSchmObject = new List<int>();
+        private List<int> listSchmObjectEvents = new List<int>();
+        private List<int> listDivisionOrder = new List<int>();
 
         public FormJournalOrder()
 		{
-			
-			this.DateBegin = new DateTime(DateTime.Now.Year, 1, 1);
-			this.DateEnd = new DateTime(DateTime.Now.Year, 12, 31);
-			this.DateBeginEventDate = DateTime.Now.Date;
-			this.DateEndEventDate = DateTime.Now.Date;
-			this.listSchmObject = new List<int>();
-			this.listSchmObjectEvents = new List<int>();
-			this.listDivisionOrder = new List<int>();
-			
 			this.InitializeComponent();
 		}
 
 		public FormJournalOrder(List<int> checkedSubstation)
 		{
-			
-			this.DateBegin = new DateTime(DateTime.Now.Year, 1, 1);
-			this.DateEnd = new DateTime(DateTime.Now.Year, 12, 31);
-			this.DateBeginEventDate = DateTime.Now.Date;
-			this.DateEndEventDate = DateTime.Now.Date;
-			this.listSchmObject = new List<int>();
-			this.listSchmObjectEvents = new List<int>();
-			this.listDivisionOrder = new List<int>();
-			
 			this.InitializeComponent();
 			this.listSubStation = checkedSubstation;
 		}
@@ -102,7 +91,7 @@ namespace JournalOrder
 				{
 					isChecked = true;
 				}
-				this.checkedListBoxDivision.Items.Add(new FormJournalOrder.StructObject(Convert.ToInt32(dataRow["id"]), dataRow["Name"].ToString()), isChecked);
+				this.checkedListBoxDivision.Items.Add(new SchmObject(Convert.ToInt32(dataRow["id"]), dataRow["Name"].ToString()), isChecked);
 			}
 		}
 
@@ -120,11 +109,7 @@ namespace JournalOrder
 			}
 			whereDateDiaposon = string.Concat(new string[]
 			{
-				" (datebegin >= '",
-				this.DateBegin.ToString("yyyyMMdd"),
-				"' and datebegin <= '",
-				this.DateEnd.ToString("yyyyMMdd"),
-				" 23:59:59') "
+				" (datebegin >= '",	this.DateBegin.ToString("yyyyMMdd"),"' and datebegin <= '",this.DateEnd.ToString("yyyyMMdd")," 23:59:59') "
 			});
 			string strWhere = "";
 			if (!this.checkBoxNoRegistered.Checked && !this.checkBoxRegistered.Checked && !this.checkBoxCurrentOrder.Checked && !this.checkBoxCloseOrder.Checked)
@@ -178,11 +163,11 @@ namespace JournalOrder
 				{
 					if (string.IsNullOrEmpty(strListDivisions))
 					{
-						strListDivisions = ((FormJournalOrder.StructObject)obj).Id.ToString();
+						strListDivisions = ((SchmObject)obj).Id.ToString();
 					}
 					else
 					{
-						strListDivisions = strListDivisions + "," + ((FormJournalOrder.StructObject)obj).Id.ToString();
+						strListDivisions = strListDivisions + "," + ((SchmObject)obj).Id.ToString();
 					}
 				}
 				if (string.IsNullOrEmpty(strWhere))
@@ -315,11 +300,11 @@ namespace JournalOrder
 				{
 					if (string.IsNullOrEmpty(strListDivisions))
 					{
-						strListDivisions = ((FormJournalOrder.StructObject)obj).Id.ToString();
+						strListDivisions = ((SchmObject)obj).Id.ToString();
 					}
 					else
 					{
-						strListDivisions = strListDivisions + "," + ((FormJournalOrder.StructObject)obj).Id.ToString();
+						strListDivisions = strListDivisions + "," + ((SchmObject)obj).Id.ToString();
 					}
 				}
 				if (string.IsNullOrEmpty(whereDivision))
@@ -828,7 +813,7 @@ namespace JournalOrder
 			{
 				XmlNode xmlNode2 = xmlDocument.CreateElement("CheckDivision");
 				XmlAttribute xmlAttribute = xmlDocument.CreateAttribute("Id");
-				xmlAttribute.Value = ((FormJournalOrder.StructObject)obj).Id.ToString();
+				xmlAttribute.Value = ((SchmObject)obj).Id.ToString();
 				xmlNode2.Attributes.Append(xmlAttribute);
 				xmlNode.AppendChild(xmlNode2);
 			}
@@ -853,29 +838,12 @@ namespace JournalOrder
 			}
 		}
 
-		private DateTime DateBegin;
-		private DateTime DateEnd;
-		private DateTime DateBeginEventDate;
-		private DateTime DateEndEventDate;
-		private List<int> listSubStation;
-		
-
-		private class StructObject
-		{
-			internal int Id { get; set; }
-
-			internal string Name { get; set; }
-
-			internal StructObject(int id, string namee)
-			{
-				this.Id = id;
-				this.Name = namee;
-			}
-
-			public override string ToString()
-			{
-				return this.Name;
-			}
-		}
-	}
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (this.tabControlOrder.SelectedTab == this.tabPageView)
+                this.dgvOrder.ExportToExcel();
+            else if (this.tabControlOrder.SelectedTab == this.tabPageEvents)
+                this.dgvEvents.ExportToExcel();
+        }
+    }
 }

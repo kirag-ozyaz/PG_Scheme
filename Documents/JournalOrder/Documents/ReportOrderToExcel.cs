@@ -7,15 +7,28 @@ using System.Windows.Forms;
 using DataSql;
 using FormLbr.Classes;
 using Microsoft.Office.Interop.Excel;
+using System.Collections.Generic;
+
 namespace JournalOrder
 {
+    /// версии печатных форм
+    /// version = 1 - с 2015 по 2021
+    /// version = 2 - с 2021
     internal static class ReportOrderToExcel
     {
+        /// <summary>
+        /// количество строк на второй странице
+        /// </summary>
+        private const int RowCountPage2 = 89;
         private static Microsoft.Office.Interop.Excel.Application xla;
         private static Workbook xlw;
         private static int Id;
         private static DataSet.DataSetOrder dataSetOrder;
         private static SQLSettings sqlSett;
+        /// <summary>
+        ////версия печатной формы
+        /// </summary>
+        private static int VersionPrintMaket = 1;
 
         internal static void Report(int id, SQLSettings sqlsett)
         {
@@ -38,10 +51,14 @@ namespace JournalOrder
                 DirectoryCreateOutFile,"наряд_",dataRow["num"],"_",Convert.ToDateTime(dataRow["dateBegin"]).Year.ToString(),"_",Environment.UserName,".xlsx"
             });
             ReportOrderToExcel.xla = new ApplicationClass();
+            // получим полное имя выгружаемого (формируемого) файла
+            // надо поиметь версию шаблона, чтобы взять нужный файл
             string FullFileName = "";
             try
             {
-                FullFileName = ReportOrderToExcel.GetCreateFileName(ReportOrderToExcel.sqlSett);
+                TemplateProperty result = ReportOrderToExcel.GetCreateFileName(ReportOrderToExcel.sqlSett, Convert.ToDateTime(dataRow["dateOutput"]));
+                FullFileName = result.OutFullFileName;
+                VersionPrintMaket = result.Version;
             }
             catch (Exception)
             {
@@ -70,10 +87,11 @@ namespace JournalOrder
                 ReportOrderToExcel.xla.Quit();
                 return;
             }
+            // лицевой лист
             Worksheet worksheet = (Worksheet)ReportOrderToExcel.xlw.Worksheets.get_Item(1);
             ((Worksheet)ReportOrderToExcel.xlw.Worksheets[1]).Copy(Type.Missing, ReportOrderToExcel.xlw.Worksheets[ReportOrderToExcel.xlw.Worksheets.Count]);
-
-            PrintArea = PrintArea + "$A$1:$J" + 89.ToString() + ";";
+            // оборотный лист
+            PrintArea = PrintArea + "$A$1:$J" + RowCountPage2.ToString() + ";"; 
             ((Worksheet)ReportOrderToExcel.xlw.Worksheets[2]).PageSetup.PrintArea = PrintArea.Remove(PrintArea.Length - 1);
 
             PrintArea = "";
@@ -88,15 +106,15 @@ namespace JournalOrder
             }
 
             sqlDataCommand.SelectSqlData(ReportOrderToExcel.dataSetOrder.tJ_OrderBrigade, true, "where idOrder = " + ReportOrderToExcel.Id.ToString(), null, false, 0);
-            string text4 = "";
+            string strIdWorker = "";
             foreach (DataRow dataRow2 in ReportOrderToExcel.dataSetOrder.tJ_OrderBrigade.Rows)
             {
-                text4 = text4 + dataRow2["idworker"].ToString() + ",";
+                strIdWorker = strIdWorker + dataRow2["idworker"].ToString() + ",";
             }
-            if (text4.Length > 0)
+            if (strIdWorker.Length > 0)
             {
-                text4 = text4.Remove(text4.Length - 1);
-                sqlDataCommand.SelectSqlData(ReportOrderToExcel.dataSetOrder.vWorkerGroup, true, "where id in (" + text4 + ")", null, true, 0);
+                strIdWorker = strIdWorker.Remove(strIdWorker.Length - 1);
+                sqlDataCommand.SelectSqlData(ReportOrderToExcel.dataSetOrder.vWorkerGroup, true, "where id in (" + strIdWorker + ")", null, true, 0);
                 foreach (DataRow dataRow3 in (from DataRow row in ReportOrderToExcel.dataSetOrder.vWorkerGroup.Rows
                                               group row by row["Id"] into g
                                               where g.Count<DataRow>() > 1
@@ -118,9 +136,10 @@ namespace JournalOrder
             ((Worksheet)ReportOrderToExcel.xlw.Worksheets[1]).Delete();
             ((Worksheet)ReportOrderToExcel.xlw.Worksheets[1]).Delete();
             ReportOrderToExcel.xla.DisplayAlerts = true;
+            ///
             Worksheet worksheet2 = (Worksheet)ReportOrderToExcel.xlw.Worksheets.Add(Type.Missing, ReportOrderToExcel.xlw.Worksheets[ReportOrderToExcel.xlw.Worksheets.Count], Type.Missing, Type.Missing);
             worksheet2.Name = "Для двухсторонней печати";
-            int num = 1;
+            int numRowBegin = 1; // номер начальной строки
             foreach (Worksheet worksheet3 in ReportOrderToExcel.xlw.Worksheets)
             {
                 if (worksheet3.Index == worksheet2.Index)
@@ -128,43 +147,72 @@ namespace JournalOrder
                     break;
                 }
                 worksheet3.Activate();
-                int num2;
+                int numRowEnd; // номер конечной строки
                 if (worksheet3.Name[worksheet3.Name.Length - 1] == '1')
                 {
-                    num2 = worksheet3.UsedRange.Rows.Count;
-                    worksheet3.get_Range("A1:J" + num2.ToString(), Type.Missing).Copy(Type.Missing);
+                    // четная сторона печатной формы
+                    numRowEnd = worksheet3.UsedRange.Rows.Count;
+                    if (VersionPrintMaket == 2)
+                        worksheet3.get_Range("A1:O" + numRowEnd.ToString(), Type.Missing).Copy(Type.Missing);
+                    else
+                        worksheet3.get_Range("A1:J" + numRowEnd.ToString(), Type.Missing).Copy(Type.Missing);
                 }
                 else
                 {
-                    num2 = 89;
-                    worksheet3.get_Range("A1:T" + num2.ToString(), Type.Missing).Copy(Type.Missing);
+                    // нечетная сторона печатной формы
+                    numRowEnd = RowCountPage2; 
+                    worksheet3.get_Range("A1:T" + numRowEnd.ToString(), Type.Missing).Copy(Type.Missing);
                 }
                 worksheet2.Activate();
                 Range range;
                 if (worksheet3.Name[worksheet3.Name.Length - 1] == '1')
                 {
-                    range = worksheet2.get_Range("A" + num.ToString(), Type.Missing);
-                    PrintArea = string.Concat(new string[]
+                    // берем диапозон печати лицевой стороны печатной формы (нечетные листы)
+                    range = worksheet2.get_Range("A" + numRowBegin.ToString(), Type.Missing);
+                    if (VersionPrintMaket == 2)
                     {
-                    PrintArea,"$A$",    num.ToString(), ":$J",(num + worksheet3.UsedRange.Rows.Count - 1).ToString(),";"
+                        PrintArea = string.Concat(new string[]
+                    {
+                        PrintArea,"$A$",    numRowBegin.ToString(), ":$O",(numRowBegin + worksheet3.UsedRange.Rows.Count - 1).ToString(),";"
                     });
+                    }
+
+                    else
+                    {
+                        PrintArea = string.Concat(new string[]
+                    {
+                        PrintArea,"$A$",    numRowBegin.ToString(), ":$J",(numRowBegin + worksheet3.UsedRange.Rows.Count - 1).ToString(),";"
+                    });
+                    }
                 }
                 else
                 {
-                    range = worksheet2.get_Range("K" + num.ToString(), Type.Missing);
-                    PrintArea = string.Concat(new string[]
+                    // берем диапозон обратной стороны печатной формы (четные листы)
+                    if (VersionPrintMaket == 2)
                     {
-                    PrintArea,"$K$",    num.ToString(),":$T",(num + 89 - 1).ToString(),";"
-                    });
+                        range = worksheet2.get_Range("P" + numRowBegin.ToString(), Type.Missing);
+                        PrintArea = string.Concat(new string[]
+                        {
+                            PrintArea,"$P$",    numRowBegin.ToString(),":$Y",(numRowBegin + RowCountPage2 - 1).ToString(),";"
+                        });
+                    }
+                    else
+                    {
+                        range = worksheet2.get_Range("K" + numRowBegin.ToString(), Type.Missing);
+                        PrintArea = string.Concat(new string[]
+                        {
+                            PrintArea,"$K$",    numRowBegin.ToString(),":$T",(numRowBegin + RowCountPage2 - 1).ToString(),";"
+                        });
+                    }
                 }
                 range.PasteSpecial(XlPasteType.xlPasteColumnWidths, XlPasteSpecialOperation.xlPasteSpecialOperationNone, Type.Missing, Type.Missing);
                 range.PasteSpecial(XlPasteType.xlPasteFormats, XlPasteSpecialOperation.xlPasteSpecialOperationNone, Type.Missing, Type.Missing);
                 range.PasteSpecial(XlPasteType.xlPasteValuesAndNumberFormats, XlPasteSpecialOperation.xlPasteSpecialOperationNone, Type.Missing, Type.Missing);
-                for (int i = 1; i <= num2; i++)
+                for (int i = 1; i <= numRowEnd; i++)
                 {
                     ((Range)range.Rows[i, Type.Missing]).RowHeight = ((Range)worksheet3.Rows[i, Type.Missing]).RowHeight;
                 }
-                num = num + num2 + 1;
+                numRowBegin = numRowBegin + numRowEnd + 1;
             }
             worksheet2.PageSetup.PrintArea = PrintArea.Remove(PrintArea.Length - 1);
             try
@@ -184,11 +232,80 @@ namespace JournalOrder
             ReportOrderToExcel.xlw.Save();
             ReportOrderToExcel.xla.Visible = true;
         }
+        internal struct TemplateProperty
+        {
+            /// <summary>
+            /// версия шаблна
+            /// </summary>
+            internal int Version;
+            /// <summary>
+            /// выходное полное имя формируемого файла
+            /// </summary>
+            internal string OutFullFileName;
 
+        }
+        /// <summary>
+        /// получаем вполное имя выгружаемого файл (по входящей дате)
+        /// </summary>
+        /// version = 1 - с 2015 по 2021
+        /// version = 2 - с 2021
+        /// <returns></returns>
+        private static TemplateProperty GetCreateFileName(SQLSettings sqlsett, DateTime date)
+        {
+            TemplateProperty result = new TemplateProperty();
+            //date = new DateTime(2000, 02, 01);
+            DateTime DateTemplateLast = new DateTime(2000, 01, 01);
+            DateTime DateTemplateCurrent = DateTime.Today; // дата текущего  шаблона в цикле (надо брать предыдущий)
+            System.Data.DataTable dataTable = new SqlDataCommand(sqlsett).SelectSqlData(" SELECT doc.id, doc.FileName, doc.DateIn  FROM tR_DocTemplate AS doc  INNER JOIN [tR_Classifier] AS c ON doc.idTypeDoc = c.id  WHERE c.ParentKey = ';TypeDoc;tR_DocTemplate;' AND c.Deleted = ((0)) AND c.isGroup = ((0)) AND c.Value = 5 and doc.deleted = 0");
+            if (dataTable.Rows.Count == 0) return result;
+            int IdLast = Convert.ToInt32(dataTable.Rows[0]["id"]);
+            int version = 1;
+            List<string> listFileName = new List<string>();
+            foreach (DataRow row in dataTable.AsEnumerable())
+            {
+                DateTemplateCurrent = Convert.ToDateTime(row["DateIn"]);
+                if (date >= DateTemplateLast && date < DateTemplateCurrent || date < DateTemplateLast)
+                {
+                    // если внутри диапозона, то берем последний шаблон
+                    break;
+                }
+                IdLast = Convert.ToInt32(row["id"]);
+                version = dataTable.Rows.IndexOf(row) + 1;
+                DateTemplateLast = Convert.ToDateTime(row["DateIn"]);
+            }
+
+            string fileName;
+            byte[] inputByteArray;
+            ReportOrderToExcel.GetFileNameTemplate(IdLast, out fileName, out inputByteArray, sqlsett);
+            string extension = new System.IO.FileInfo(fileName).Extension;
+            if (!(extension == ".xlt") && !(extension == ".xltx"))
+            {
+                if (!(extension == ".xls") && !(extension == ".xlsx"))
+                {
+                    return result;
+                }
+            }
+            else
+            {
+                fileName = fileName.Replace(extension, extension.Replace("t", "s"));
+            }
+            string path = ReportOrderToExcel.GetTempPathEISOrder();
+            string newFileNameIsExists = FileBinary.GetNewFileNameIsExists(path, fileName, true);
+            new FileBinary(inputByteArray, newFileNameIsExists, DateTime.Now).SaveToDisk(path);
+            //return path + "\\" + newFileNameIsExists;
+            result = new TemplateProperty { Version = version, OutFullFileName = path + "\\" + newFileNameIsExists };
+
+            return result;
+          
+        }
+        /// <summary>
+        /// получаем полное имя выгружаемго файла (первую запись)
+        /// </summary>
+        /// <returns></returns>
         private static string GetCreateFileName(SQLSettings sqlsett)
         {
             System.Data.DataTable dataTable = new SqlDataCommand(sqlsett).SelectSqlData(" SELECT doc.id, doc.FileName  FROM tR_DocTemplate AS doc  INNER JOIN [tR_Classifier] AS c ON doc.idTypeDoc = c.id  WHERE c.ParentKey = ';TypeDoc;tR_DocTemplate;' AND c.Deleted = ((0)) AND c.isGroup = ((0)) AND c.Value = 5 and doc.deleted = 0");
-            if (dataTable.Rows.Count > 0)
+            if (dataTable.Rows.Count > 0) // но забираем только одну строку
             {
                 string fileName;
                 byte[] inputByteArray;
@@ -210,7 +327,8 @@ namespace JournalOrder
                 new FileBinary(inputByteArray, newFileNameIsExists, DateTime.Now).SaveToDisk(path);
                 return path + "\\" + newFileNameIsExists;
             }
-            return "";
+            else
+                return "";
         }
 
         /// <summary>
@@ -344,17 +462,16 @@ namespace JournalOrder
                 text = text.Remove(text.Length - 1);
                 sqlDataCommand.SelectSqlData(ReportOrderToExcel.dataSetOrder.vR_Worker, true, "where id in (" + text + ")", null, false, 0);
                 text = "";
-                foreach (object obj2 in ReportOrderToExcel.dataSetOrder.vR_Worker.Rows)
+                foreach (DataRow dataRow3 in ReportOrderToExcel.dataSetOrder.vR_Worker.Rows)
                 {
-                    DataRow dataRow3 = (DataRow)obj2;
                     text = string.Concat(new string[]
                     {
-                    text,
-                    dataRow3["FIO"].ToString(),
-                    ReportOrderToExcel.GetJobWorker(Convert.ToInt32(dataRow3["id"])),
-                    " ",
-                    ReportOrderToExcel.GetGroupElectricalWorker(Convert.ToInt32(dataRow3["id"])),
-                    ", "
+                        text,
+                        dataRow3["FIO"].ToString(),
+                        ReportOrderToExcel.GetJobWorker(Convert.ToInt32(dataRow3["id"])),
+                        " ",
+                        ReportOrderToExcel.GetGroupElectricalWorker(Convert.ToInt32(dataRow3["id"])),
+                        ", "
                     });
                 }
                 active_sheet.get_Range("Бригада", Type.Missing).set_Value(Type.Missing, text.Remove(text.Length - 2));
@@ -441,39 +558,46 @@ namespace JournalOrder
 
         private static void Edit_tabl1(Worksheet active_sheet, int num_str)
         {
-            int num = 21;
-            int num2 = 6;
+            int numRow = 21; //начало заполнения таблицы <Мероприятия по подготовке рабочих мест к выполнению работ>
+            int numColumn2 = 6; // начало второй колонки
+            int numColumn3 = 11; // начало третьей колонки (если есть вторая версия макета)
             int num3 = 0;
             foreach (DataRow dataRow in ReportOrderToExcel.dataSetOrder.tJ_OrderInstruction.Rows)
             {
                 num3++;
                 if (num3 > num_str)
                 {
-                    if (num > 22)
+                    if (numRow > 22)
                     {
                         active_sheet.Activate();
                         active_sheet.get_Range("Строка", Type.Missing).Select();
                         ((Range)ReportOrderToExcel.xla.Selection).Copy(Type.Missing);
-                        ((Range)active_sheet.Cells[num, 1]).Select();
+                        ((Range)active_sheet.Cells[numRow, 1]).Select();
                         ((Range)ReportOrderToExcel.xla.Selection).Insert(XlInsertShiftDirection.xlShiftDown, Type.Missing);
                     }
-                    ((Range)active_sheet.Cells[num, 1]).set_Value(Type.Missing, dataRow["NameObj"]);
-                    ((Range)active_sheet.Cells[num, num2]).set_Value(Type.Missing, dataRow["Instruction"]);
-                    ((Range)active_sheet.Rows[num, Type.Missing]).AutoFit();
-                    num++;
+                    ((Range)active_sheet.Cells[numRow, 1]).set_Value(Type.Missing, dataRow["NameObj"]);
+                    ((Range)active_sheet.Cells[numRow, numColumn2]).set_Value(Type.Missing, dataRow["Instruction"]);
+                    if (VersionPrintMaket == 2)
+                        ((Range)active_sheet.Cells[numRow, numColumn3]).set_Value(Type.Missing, dataRow["Isolated"]);
+                    ((Range)active_sheet.Rows[numRow, Type.Missing]).AutoFit();
+                    numRow++;
                 }
                 if (active_sheet.HPageBreaks.Count > 0)
                 {
-                    ((Range)active_sheet.Cells[num - 1, 1]).set_Value(Type.Missing, "Смотри следующий бланк");
-                    ((Range)active_sheet.Cells[num - 1, num2]).set_Value(Type.Missing, "");
-                    ((Range)active_sheet.Rows[num - 1, Type.Missing]).AutoFit();
-                    ((Range)active_sheet.Rows[num, Type.Missing]).Delete(Type.Missing);
+                    ((Range)active_sheet.Cells[numRow - 1, 1]).set_Value(Type.Missing, "Смотри следующий бланк");
+                    ((Range)active_sheet.Cells[numRow - 1, numColumn2]).set_Value(Type.Missing, "");
+                    if (VersionPrintMaket == 2)
+                        ((Range)active_sheet.Cells[numRow - 1, numColumn3]).set_Value(Type.Missing, "");
+                    ((Range)active_sheet.Rows[numRow - 1, Type.Missing]).AutoFit();
+                    ((Range)active_sheet.Rows[numRow, Type.Missing]).Delete(Type.Missing);
                     if (active_sheet.HPageBreaks.Count > 0)
                     {
-                        ((Range)active_sheet.Rows[num - 1, Type.Missing]).Delete(Type.Missing);
-                        ((Range)active_sheet.Cells[num - 2, 1]).set_Value(Type.Missing, "Смотри следующий бланк");
-                        ((Range)active_sheet.Cells[num - 2, num2]).set_Value(Type.Missing, "");
-                        ((Range)active_sheet.Rows[num - 2, Type.Missing]).AutoFit();
+                        ((Range)active_sheet.Rows[numRow - 1, Type.Missing]).Delete(Type.Missing);
+                        ((Range)active_sheet.Cells[numRow - 2, 1]).set_Value(Type.Missing, "Смотри следующий бланк");
+                        ((Range)active_sheet.Cells[numRow - 2, numColumn2]).set_Value(Type.Missing, "");
+                        if (VersionPrintMaket == 2)
+                            ((Range)active_sheet.Cells[numRow - 2, numColumn3]).set_Value(Type.Missing, "");
+                        ((Range)active_sheet.Rows[numRow - 2, Type.Missing]).AutoFit();
                         num_str = num3 - 1;
                     }
                     else

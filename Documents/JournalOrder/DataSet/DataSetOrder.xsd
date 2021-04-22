@@ -113,8 +113,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="dateEndExt" msprop:Generator_ColumnVarNameInTable="columndateEndExt" msprop:Generator_ColumnPropNameInRow="dateEndExt" msprop:Generator_ColumnPropNameInTable="dateEndExtColumn" msprop:Generator_UserColumnName="dateEndExt" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateEndExt" msprop:Generator_ColumnVarNameInTable="columnDateEndExt" msprop:Generator_ColumnPropNameInRow="DateEndExt" msprop:Generator_ColumnPropNameInTable="DateEndExtColumn" msprop:Generator_UserColumnName="DateEndExt" type="xs:dateTime" minOccurs="0" />
               <xs:element name="idDivision" msprop:Generator_ColumnVarNameInTable="columnidDivision" msprop:Generator_ColumnPropNameInRow="idDivision" msprop:Generator_ColumnPropNameInTable="idDivisionColumn" msprop:Generator_UserColumnName="idDivision" type="xs:int" minOccurs="0" />
+              <xs:element name="OutputMaker" msdata:ReadOnly="true" msdata:Expression="OutputFIO + convert(13,System.Char) + convert(10,System.Char)+ MakerFIO" msprop:Generator_ColumnVarNameInTable="columnOutputMaker" msprop:Generator_ColumnPropNameInRow="OutputMaker" msprop:Generator_ColumnPropNameInTable="OutputMakerColumn" msprop:Generator_UserColumnName="OutputMaker" type="xs:string" minOccurs="0" />
+              <xs:element name="Resolution" msdata:ReadOnly="true" msdata:Expression="resWorker+ convert(13,System.Char) + convert(10,System.Char) + beginRes" msprop:Generator_ColumnVarNameInTable="columnResolution" msprop:Generator_ColumnPropNameInRow="Resolution" msprop:Generator_ColumnPropNameInTable="ResolutionColumn" msprop:Generator_UserColumnName="Resolution" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -234,6 +236,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="rec_num" msprop:Generator_ColumnVarNameInTable="columnrec_num" msprop:Generator_ColumnPropNameInRow="rec_num" msprop:Generator_ColumnPropNameInTable="rec_numColumn" msprop:Generator_UserColumnName="rec_num" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Isolated" msprop:Generator_ColumnVarNameInTable="columnIsolated" msprop:Generator_ColumnPropNameInRow="Isolated" msprop:Generator_ColumnPropNameInTable="IsolatedColumn" msprop:Generator_UserColumnName="Isolated" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="350" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

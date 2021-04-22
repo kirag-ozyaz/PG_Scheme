@@ -61,6 +61,7 @@ namespace JournalOrder.DataSet {
             base.Tables.CollectionChanged += schemaChangedHandler;
             base.Relations.CollectionChanged += schemaChangedHandler;
             this.EndInit();
+            this.InitExpressions();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -72,6 +73,9 @@ namespace JournalOrder.DataSet {
                 global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
                 this.Tables.CollectionChanged += schemaChangedHandler1;
                 this.Relations.CollectionChanged += schemaChangedHandler1;
+                if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.ExcludeSchema)) {
+                    this.InitExpressions();
+                }
                 return;
             }
             string strSchema = ((string)(info.GetValue("XmlSchema", typeof(string))));
@@ -128,6 +132,7 @@ namespace JournalOrder.DataSet {
             }
             else {
                 this.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                this.InitExpressions();
             }
             this.GetSerializationData(info, context);
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -309,6 +314,7 @@ namespace JournalOrder.DataSet {
         public override global::System.Data.DataSet Clone() {
             DataSetOrder cln = ((DataSetOrder)(base.Clone()));
             cln.InitVars();
+            cln.InitExpressions();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
@@ -492,7 +498,7 @@ namespace JournalOrder.DataSet {
             this.Namespace = "http://tempuri.org/DataSetOrder.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablevJ_Order = new vJ_OrderDataTable();
+            this.tablevJ_Order = new vJ_OrderDataTable(false);
             base.Tables.Add(this.tablevJ_Order);
             this.tablevJ_OrderEvents = new vJ_OrderEventsDataTable();
             base.Tables.Add(this.tablevJ_OrderEvents);
@@ -653,6 +659,13 @@ namespace JournalOrder.DataSet {
             return type;
         }
         
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitExpressions() {
+            this.vJ_Order.OutputMakerColumn.Expression = "OutputFIO + convert(13,System.Char) + convert(10,System.Char)+ MakerFIO";
+            this.vJ_Order.ResolutionColumn.Expression = "resWorker+ convert(13,System.Char) + convert(10,System.Char) + beginRes";
+        }
+        
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void vJ_OrderRowChangeEventHandler(object sender, vJ_OrderRowChangeEvent e);
         
@@ -759,16 +772,29 @@ namespace JournalOrder.DataSet {
             
             private global::System.Data.DataColumn columnextFIO;
             
-            private global::System.Data.DataColumn columndateEndExt;
+            private global::System.Data.DataColumn columnDateEndExt;
             
             private global::System.Data.DataColumn columnidDivision;
             
+            private global::System.Data.DataColumn columnOutputMaker;
+            
+            private global::System.Data.DataColumn columnResolution;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vJ_OrderDataTable() {
+            public vJ_OrderDataTable() : 
+                    this(false) {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public vJ_OrderDataTable(bool initExpressions) {
                 this.TableName = "vJ_Order";
                 this.BeginInit();
                 this.InitClass();
+                if ((initExpressions == true)) {
+                    this.InitExpressions();
+                }
                 this.EndInit();
             }
             
@@ -1038,9 +1064,9 @@ namespace JournalOrder.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dateEndExtColumn {
+            public global::System.Data.DataColumn DateEndExtColumn {
                 get {
-                    return this.columndateEndExt;
+                    return this.columnDateEndExt;
                 }
             }
             
@@ -1049,6 +1075,22 @@ namespace JournalOrder.DataSet {
             public global::System.Data.DataColumn idDivisionColumn {
                 get {
                     return this.columnidDivision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn OutputMakerColumn {
+                get {
+                    return this.columnOutputMaker;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ResolutionColumn {
+                get {
+                    return this.columnResolution;
                 }
             }
             
@@ -1120,7 +1162,85 @@ namespace JournalOrder.DataSet {
                         string resWorker, 
                         int extWorker, 
                         string extFIO, 
-                        System.DateTime dateEndExt, 
+                        System.DateTime DateEndExt, 
+                        int idDivision, 
+                        string OutputMaker, 
+                        string Resolution) {
+                vJ_OrderRow rowvJ_OrderRow = ((vJ_OrderRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id,
+                        num,
+                        dateBegin,
+                        dateEnd,
+                        idSR,
+                        srNum,
+                        srName,
+                        instruction,
+                        headworker,
+                        headFio,
+                        acceptworker,
+                        acceptFIO,
+                        watchWorker,
+                        watchFIO,
+                        makerWorker,
+                        makerFIO,
+                        otherInstruction,
+                        dateOutput,
+                        outputWorker,
+                        outputFIO,
+                        registered,
+                        dateClose,
+                        closeWorker,
+                        closeFIO,
+                        beginRes,
+                        EndRes,
+                        resWorkerId,
+                        resWorker,
+                        extWorker,
+                        extFIO,
+                        DateEndExt,
+                        idDivision,
+                        OutputMaker,
+                        Resolution};
+                rowvJ_OrderRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvJ_OrderRow);
+                return rowvJ_OrderRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public vJ_OrderRow AddvJ_OrderRow(
+                        int id, 
+                        int num, 
+                        System.DateTime dateBegin, 
+                        System.DateTime dateEnd, 
+                        int idSR, 
+                        int srNum, 
+                        string srName, 
+                        string instruction, 
+                        int headworker, 
+                        string headFio, 
+                        int acceptworker, 
+                        string acceptFIO, 
+                        int watchWorker, 
+                        string watchFIO, 
+                        int makerWorker, 
+                        string makerFIO, 
+                        string otherInstruction, 
+                        System.DateTime dateOutput, 
+                        int outputWorker, 
+                        string outputFIO, 
+                        bool registered, 
+                        System.DateTime dateClose, 
+                        int closeWorker, 
+                        string closeFIO, 
+                        System.DateTime beginRes, 
+                        System.DateTime EndRes, 
+                        int resWorkerId, 
+                        string resWorker, 
+                        int extWorker, 
+                        string extFIO, 
+                        System.DateTime DateEndExt, 
                         int idDivision) {
                 vJ_OrderRow rowvJ_OrderRow = ((vJ_OrderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -1154,8 +1274,10 @@ namespace JournalOrder.DataSet {
                         resWorker,
                         extWorker,
                         extFIO,
-                        dateEndExt,
-                        idDivision};
+                        DateEndExt,
+                        idDivision,
+                        null,
+                        null};
                 rowvJ_OrderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvJ_OrderRow);
                 return rowvJ_OrderRow;
@@ -1208,8 +1330,10 @@ namespace JournalOrder.DataSet {
                 this.columnresWorker = base.Columns["resWorker"];
                 this.columnextWorker = base.Columns["extWorker"];
                 this.columnextFIO = base.Columns["extFIO"];
-                this.columndateEndExt = base.Columns["dateEndExt"];
+                this.columnDateEndExt = base.Columns["DateEndExt"];
                 this.columnidDivision = base.Columns["idDivision"];
+                this.columnOutputMaker = base.Columns["OutputMaker"];
+                this.columnResolution = base.Columns["Resolution"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1275,10 +1399,14 @@ namespace JournalOrder.DataSet {
                 base.Columns.Add(this.columnextWorker);
                 this.columnextFIO = new global::System.Data.DataColumn("extFIO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnextFIO);
-                this.columndateEndExt = new global::System.Data.DataColumn("dateEndExt", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndateEndExt);
+                this.columnDateEndExt = new global::System.Data.DataColumn("DateEndExt", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateEndExt);
                 this.columnidDivision = new global::System.Data.DataColumn("idDivision", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidDivision);
+                this.columnOutputMaker = new global::System.Data.DataColumn("OutputMaker", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOutputMaker);
+                this.columnResolution = new global::System.Data.DataColumn("Resolution", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnResolution);
                 this.columnid.AllowDBNull = false;
                 this.columnnum.AllowDBNull = false;
                 this.columndateBegin.AllowDBNull = false;
@@ -1310,6 +1438,8 @@ namespace JournalOrder.DataSet {
                 this.columnresWorker.MaxLength = 35;
                 this.columnextFIO.ReadOnly = true;
                 this.columnextFIO.MaxLength = 35;
+                this.columnOutputMaker.ReadOnly = true;
+                this.columnResolution.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1328,6 +1458,13 @@ namespace JournalOrder.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
                 return typeof(vJ_OrderRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitExpressions() {
+                this.OutputMakerColumn.Expression = "OutputFIO + convert(13,System.Char) + convert(10,System.Char)+ MakerFIO";
+                this.ResolutionColumn.Expression = "resWorker+ convert(13,System.Char) + convert(10,System.Char) + beginRes";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2729,6 +2866,8 @@ namespace JournalOrder.DataSet {
             
             private global::System.Data.DataColumn columnrec_num;
             
+            private global::System.Data.DataColumn columnIsolated;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tJ_OrderInstructionDataTable() {
@@ -2804,6 +2943,14 @@ namespace JournalOrder.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IsolatedColumn {
+                get {
+                    return this.columnIsolated;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2839,14 +2986,15 @@ namespace JournalOrder.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tJ_OrderInstructionRow AddtJ_OrderInstructionRow(int idOrder, string NameObj, string Instruction, byte rec_num) {
+            public tJ_OrderInstructionRow AddtJ_OrderInstructionRow(int idOrder, string NameObj, string Instruction, byte rec_num, string Isolated) {
                 tJ_OrderInstructionRow rowtJ_OrderInstructionRow = ((tJ_OrderInstructionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         idOrder,
                         NameObj,
                         Instruction,
-                        rec_num};
+                        rec_num,
+                        Isolated};
                 rowtJ_OrderInstructionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtJ_OrderInstructionRow);
                 return rowtJ_OrderInstructionRow;
@@ -2881,6 +3029,7 @@ namespace JournalOrder.DataSet {
                 this.columnNameObj = base.Columns["NameObj"];
                 this.columnInstruction = base.Columns["Instruction"];
                 this.columnrec_num = base.Columns["rec_num"];
+                this.columnIsolated = base.Columns["Isolated"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2896,6 +3045,8 @@ namespace JournalOrder.DataSet {
                 base.Columns.Add(this.columnInstruction);
                 this.columnrec_num = new global::System.Data.DataColumn("rec_num", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrec_num);
+                this.columnIsolated = new global::System.Data.DataColumn("Isolated", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsolated);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -2909,6 +3060,7 @@ namespace JournalOrder.DataSet {
                 this.columnNameObj.MaxLength = 350;
                 this.columnInstruction.AllowDBNull = false;
                 this.columnInstruction.MaxLength = 350;
+                this.columnIsolated.MaxLength = 350;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6183,17 +6335,17 @@ namespace JournalOrder.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime dateEndExt {
+            public System.DateTime DateEndExt {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablevJ_Order.dateEndExtColumn]));
+                        return ((global::System.DateTime)(this[this.tablevJ_Order.DateEndExtColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'dateEndExt\' в таблице \'vJ_Order\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DateEndExt\' в таблице \'vJ_Order\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevJ_Order.dateEndExtColumn] = value;
+                    this[this.tablevJ_Order.DateEndExtColumn] = value;
                 }
             }
             
@@ -6210,6 +6362,38 @@ namespace JournalOrder.DataSet {
                 }
                 set {
                     this[this.tablevJ_Order.idDivisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string OutputMaker {
+                get {
+                    try {
+                        return ((string)(this[this.tablevJ_Order.OutputMakerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'OutputMaker\' в таблице \'vJ_Order\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevJ_Order.OutputMakerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Resolution {
+                get {
+                    try {
+                        return ((string)(this[this.tablevJ_Order.ResolutionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Resolution\' в таблице \'vJ_Order\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevJ_Order.ResolutionColumn] = value;
                 }
             }
             
@@ -6443,14 +6627,14 @@ namespace JournalOrder.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsdateEndExtNull() {
-                return this.IsNull(this.tablevJ_Order.dateEndExtColumn);
+            public bool IsDateEndExtNull() {
+                return this.IsNull(this.tablevJ_Order.DateEndExtColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetdateEndExtNull() {
-                this[this.tablevJ_Order.dateEndExtColumn] = global::System.Convert.DBNull;
+            public void SetDateEndExtNull() {
+                this[this.tablevJ_Order.DateEndExtColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6463,6 +6647,30 @@ namespace JournalOrder.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetidDivisionNull() {
                 this[this.tablevJ_Order.idDivisionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsOutputMakerNull() {
+                return this.IsNull(this.tablevJ_Order.OutputMakerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetOutputMakerNull() {
+                this[this.tablevJ_Order.OutputMakerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsResolutionNull() {
+                return this.IsNull(this.tablevJ_Order.ResolutionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetResolutionNull() {
+                this[this.tablevJ_Order.ResolutionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7272,6 +7480,22 @@ namespace JournalOrder.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Isolated {
+                get {
+                    try {
+                        return ((string)(this[this.tabletJ_OrderInstruction.IsolatedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Isolated\' в таблице \'tJ_OrderInstruction\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletJ_OrderInstruction.IsolatedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isrec_numNull() {
                 return this.IsNull(this.tabletJ_OrderInstruction.rec_numColumn);
             }
@@ -7280,6 +7504,18 @@ namespace JournalOrder.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setrec_numNull() {
                 this[this.tabletJ_OrderInstruction.rec_numColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIsolatedNull() {
+                return this.IsNull(this.tabletJ_OrderInstruction.IsolatedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIsolatedNull() {
+                this[this.tabletJ_OrderInstruction.IsolatedColumn] = global::System.Convert.DBNull;
             }
         }
         

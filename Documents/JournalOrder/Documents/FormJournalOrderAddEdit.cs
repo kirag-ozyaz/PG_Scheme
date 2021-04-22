@@ -19,7 +19,7 @@ namespace JournalOrder
     {
 
         private int idOrder = -1;
-        private bool isRead = true;
+        private bool isRead;
         private DateTime minDate = new DateTime(1900, 1, 1);
         private DateTime maxDate = new DateTime(9000, 1, 1);
         [CompilerGenerated]
@@ -153,6 +153,7 @@ namespace JournalOrder
                     this.dateTimePickerResolution.MaxDate = (DateTime)this.dateTimePickerDateEndExt.Value;
                 }
             }
+            this.Text += " (N1)";
             this.InitControls();
         }
 

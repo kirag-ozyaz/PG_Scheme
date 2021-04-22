@@ -91,7 +91,9 @@ namespace ExportToPostGIS.SmartCity
             // Отправка данных (Shutdowns по одному документу - по одному интервалу во времени (tJ_RequestForRepairDaily))
             for (int i = 0; i < tableResultat.Rows.Count; i++)
             {
+                // идентификатор документа заявки
                 int IdDocument = Convert.ToInt32(tableResultat.Rows[i]["id"]);
+                // идентификатор периодп в докумете заявке (зависит от IdDocument)
                 int idDaily = Convert.ToInt32(tableResultat.Rows[i]["idDaily"]);
                 // идентификатор записи события Daily в базе ЦУГ
                 int idCMR = -1;
@@ -128,7 +130,7 @@ namespace ExportToPostGIS.SmartCity
                         idCMR = -1;
                     }
                 }
-                if (idCMR == -1) // если отключение  уже отправили (ид ЦУГ давно получено), иначе  отправляем даннеы
+                if (idCMR == -1) // если отключение  уже отправили (ид ЦУГ давно получено), иначе  отправляем данные
                 {
                     SmartCity.ShutdownPostDTO damage = new SmartCity.ShutdownPostDTO();
                     damage.organizationId = OrganizationCurrentID;
@@ -145,6 +147,7 @@ namespace ExportToPostGIS.SmartCity
                     damage.endDate = dataend.ToString("yyyy-MM-ddTHH:mm:ss");
 
                     damage.comment = "Это тестовое отключение в рамках проверки интегарции программных систем ЦУГ и УльГЭ {idDaily=" + idDaily.ToString()+ "}";
+                    // {}
                     //
                     SmartCity.GetResultP<SmartCity.ShutdownPostDTO> Result = rpt.PostResult(rpt.ACCESS_TOKEN, damage, $"Shutdowns");
 
@@ -227,7 +230,8 @@ namespace ExportToPostGIS.SmartCity
             // список отправленных отключений
             var listSendIdDaily = tableResultat.AsEnumerable().Select(s =>  s["idDaily"].ToString());
 
-            // вытащим которые не удалены и у которых фактическое окончание работ пустое
+            // вытащим события Daily которые не удалены и у которых фактическое окончание работ пустое
+            // и которые на текущий момент не отправллись
             var tableSendCMR1 = dataSetSmartCity.tJ_RequestForRepairSendCMR;
             this.SelectSqlData(tableSendCMR1, true, $" where idCMR not in ({string.Join(",", listSendIdDaily.ToArray())}) and deleted = 0 and dateFactEnd is null");
             foreach(var row in tableSendCMR1.AsEnumerable())

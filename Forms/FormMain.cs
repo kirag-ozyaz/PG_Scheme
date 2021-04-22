@@ -145,6 +145,7 @@ namespace EIS.Forms
             this.tspMenuItemJournalN.Visible = false;
             this.tspTOK5.Visible = false;
             this.tspUploadRepairPlannedToolStripMenuItem.Visible = false;
+            this.toolMenuItemExportTo1C.Visible = false;
 #if !DEBUG
             this.tsmiMeasurement.Visible = false;
             this.toolMenuItemDailyReport.Visible = false;
@@ -315,7 +316,9 @@ namespace EIS.Forms
                 string ParentKey = row["ParentKey"].ToString();
                 switch (ParentKey)
                 {
-                    case ";GroupWorker;Administrator;": { this.tspUploadRepairPlannedToolStripMenuItem.Visible = true; this.tspMenuItemSchedulers.Visible = true; this.tspMenuItemJournalN.Visible = true; } break;
+                    case ";GroupWorker;Administrator;": {
+                            this.toolMenuItemExportTo1C.Visible = true;
+                            this.tspUploadRepairPlannedToolStripMenuItem.Visible = true; this.tspMenuItemSchedulers.Visible = true; this.tspMenuItemJournalN.Visible = true; } break;
                     case ";GroupWorker;Map;": {/* this.tspDatatoGIS.Visible = true; */ this.tspMenuItemMap.Visible = true; } break;
                     case ";GroupWorker;GeneralInterfaceLegal;": this.tspMenuItemUE.Visible = true; break;
                     case ";GroupWorker;GrantSKUEE;": AccessToSKUEE = true; break;

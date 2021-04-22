@@ -10,16 +10,6 @@ namespace JournalOrder
 {
     internal partial class FormLinkOrderAndSchm : FormBase
     {
-        //internal Dictionary<int, string> method_0()
-        //{
-        //	return this.objects;
-        //}
-
-        //internal void method_1(Dictionary<int, string> dictionary_1)
-        //{
-        //	this.objects = dictionary_1;
-        //}
-
         public Dictionary<int, string> LinkObjects
         {
             get
@@ -44,7 +34,7 @@ namespace JournalOrder
 
         private void FormLinkOrderAndSchm_Load(object sender, EventArgs e)
         {
-            this.LoadTree();
+            this.LoadSubStation();
             this.listBoxObjects.Items.Clear();
             foreach (int num in this.objects.Keys)
             {
@@ -52,7 +42,7 @@ namespace JournalOrder
             }
         }
 
-        private void LoadTree()
+        private void LoadSubStation()
         {
             DataSet.DataSetOrder dataSetOrder = new DataSet.DataSetOrder();
             base.SelectSqlData(dataSetOrder, dataSetOrder.tR_Classifier, true, " where ParentKey = ';SCM;PS;' and isgroup = 0 and deleted = 0 order by name");
@@ -102,34 +92,24 @@ namespace JournalOrder
                                 text,
                                 ") and deleted = 0"
                             }));
-                            //using (IEnumerator<DataSetOrder.Class495> enumerator2 = dataSetOrder.vSchm_ObjList.GetEnumerator())
-                            //{
-                            //	while (enumerator2.MoveNext())
-                            //	{
-                            //		DataRow dataRow2 = enumerator2.Current;
                             foreach (DataRow dataRow2 in ds.vSchm_ObjList)
                             {
-                                //DataRow dataRow2 = enumerator2;
                                 TreeNode treeNode = e.Node.Nodes.Add(dataRow2["TypeCodeSocr"].ToString() + " - " + dataRow2["Name"].ToString());
                                 treeNode.Tag = dataRow2["id"];
                                 treeNode.Nodes.Add("");
                             }
-                            //	}
-                            //	return;
-                            //}
                             return;
                         }
                     case 2:
                         ds = new DataSet.DataSetOrder();
                         base.SelectSqlData(ds, ds.vSchm_TreeCellLine, true, " where ParentLink = " + e.Node.Tag.ToString());
-                        foreach (DataRow dataRow3 in ds.vSchm_ObjList)
+                        foreach (DataRow dataRow3 in ds.vSchm_TreeCellLine)
                         {
-                            //DataRow dataRow3 = enumerator3.Current;
                             TreeNode treeNode2 = e.Node.Nodes.Add(dataRow3["FullName"].ToString());
                             treeNode2.Tag = dataRow3["id"];
                             treeNode2.Nodes.Add("");
                         }
-                        return;
+                        break;
                     case 3:
                         ds = new DataSet.DataSetOrder();
                         base.SelectSqlData(ds, ds.tSchm_Relation, true, " where Edge = " + e.Node.Tag.ToString());
@@ -154,49 +134,9 @@ namespace JournalOrder
                             e.Node.Nodes.Add(dataRow6["FullName"].ToString()).Tag = dataRow6["id"];
                         }
                         return;
-                    //goto IL_26A;
                     default:
                         return;
                 }
-                //         ds = new DataSetOrder();
-                //base.SelectSqlData(ds, ds.vSchm_TreeCellLine, true, " where ParentLink = " + e.Node.Tag.ToString());
-                //         //using (IEnumerator<DataSetOrder.Class496> enumerator3 = dataSetOrder.vSchm_TreeCellLine.GetEnumerator())
-                //         //{
-                //         //	while (enumerator3.MoveNext())
-                //         //	{
-                //                 foreach (DataRow dataRow3 in ds.vSchm_ObjList)
-                //                 {
-                //                     //DataRow dataRow3 = enumerator3.Current;
-                //                     TreeNode treeNode2 = e.Node.Nodes.Add(dataRow3["FullName"].ToString());
-                //                     treeNode2.Tag = dataRow3["id"];
-                //                     treeNode2.Nodes.Add("");
-                //                 }
-                ////	}
-                ////	return;
-                ////}
-                //	IL_26A:
-                //ds = new DataSetOrder();
-                //base.SelectSqlData(ds, ds.tSchm_Relation, true, " where Edge = " + e.Node.Tag.ToString());
-                //if (ds.tSchm_Relation.Rows.Count > 0)
-                //{
-                //	string text = "";
-                //	foreach (DataRow dataRow4 in ds.tSchm_Relation)
-                //	{
-                //		text = text + dataRow4["id"].ToString() + ",";
-                //	}
-                //	text = text.Remove(text.Length - 1);
-                //	base.SelectSqlData(ds, ds.vSchm_ObjList, true, " where idparent in (" + text + ") and deleted = 0");
-                //	foreach (DataRow dataRow5 in ds.vSchm_ObjList)
-                //	{
-                //		e.Node.Nodes.Add(dataRow5["TypeCodeSocr"].ToString() + " - " + dataRow5["Name"].ToString()).Tag = dataRow5["id"];
-                //	}
-                //}
-                //ds = new DataSetOrder();
-                //base.SelectSqlData(ds, ds.vSchm_TreeCellLine, true, " where ParentLink = " + e.Node.Tag.ToString());
-                //foreach (DataRow dataRow6 in ds.vSchm_TreeCellLine)
-                //{
-                //	e.Node.Nodes.Add(dataRow6["FullName"].ToString()).Tag = dataRow6["id"];
-                //}
             }
         }
 

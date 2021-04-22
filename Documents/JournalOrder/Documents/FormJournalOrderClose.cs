@@ -35,10 +35,10 @@ namespace JournalOrder
         private void LoadRegistered()
         {
             this.Cursor = Cursors.WaitCursor;
-            int idDokum = -1;
+            int idDokument = -1;
             if (this.dgvOrderRegistered.CurrentRow != null)
             {
-                idDokum = Convert.ToInt32(this.dgvOrderRegistered.CurrentRow.Cells[this.idDgvColumnReg.Name].Value);
+                idDokument = Convert.ToInt32(this.dgvOrderRegistered.CurrentRow.Cells[this.idDgvColumnReg.Name].Value);
             }
             string str = string.Concat(new string[]
             {
@@ -58,9 +58,9 @@ namespace JournalOrder
             });
             base.SelectSqlData(this.dsOrderRegistered, this.dsOrderRegistered.vJ_Order, true, " where " + str + " order by num");
             base.SelectSqlData(this.dsOrderRegistered, this.dsOrderRegistered.tJ_Order, true, " where " + str2 + " order by num");
-            if (idDokum > 0)
+            if (idDokument > 0)
             {
-                this.dgvOrderRegistered.SearchGrid(this.idDgvColumnReg.Name, idDokum.ToString(), false);
+                this.dgvOrderRegistered.SearchGrid(this.idDgvColumnReg.Name, idDokument.ToString(), false);
             }
             this.Cursor = Cursors.Default;
         }
@@ -68,10 +68,10 @@ namespace JournalOrder
         private void LoadOrder()
         {
             this.Cursor = Cursors.WaitCursor;
-            int idDokum = -1;
+            int idDokument = -1;
             if (this.dgvOrder.CurrentRow != null)
             {
-                idDokum = Convert.ToInt32(this.dgvOrder.CurrentRow.Cells[this.idDgvColumn.Name].Value);
+                idDokument = Convert.ToInt32(this.dgvOrder.CurrentRow.Cells[this.idDgvColumn.Name].Value);
             }
             string str = string.Concat(new string[]
             {
@@ -91,9 +91,9 @@ namespace JournalOrder
             });
             base.SelectSqlData(this.dataSetOrder, this.dataSetOrder.vJ_Order, true, " where " + str + " order by num");
             base.SelectSqlData(this.dataSetOrder, this.dataSetOrder.tJ_Order, true, " where " + str2 + " order by num");
-            if (idDokum > 0)
+            if (idDokument > 0)
             {
-                this.dgvOrder.SearchGrid(this.idDgvColumn.Name, idDokum.ToString(), false);
+                this.dgvOrder.SearchGrid(this.idDgvColumn.Name, idDokument.ToString(), false);
             }
             this.Cursor = Cursors.Default;
         }
@@ -130,8 +130,8 @@ namespace JournalOrder
             }
             foreach (object obj in this.dgvOrderRegistered.SelectedRows)
             {
-                int idDokum = Convert.ToInt32(((DataGridViewRow)obj).Cells[this.idDgvColumnReg.Name].Value);
-                DataRow[] array = this.dsOrderRegistered.tJ_Order.Select("id = " + idDokum.ToString());
+                int idDokument = Convert.ToInt32(((DataGridViewRow)obj).Cells[this.idDgvColumnReg.Name].Value);
+                DataRow[] array = this.dsOrderRegistered.tJ_Order.Select("id = " + idDokument.ToString());
                 if (array.Length != 0)
                 {
                     array[0]["DateClose"] = this.dateTimePickerCloseReg.Value;
@@ -153,8 +153,8 @@ namespace JournalOrder
             }
             foreach (object obj in ((IEnumerable)this.dgvOrder.Rows))
             {
-                int idDokum = Convert.ToInt32(((DataGridViewRow)obj).Cells[this.idDgvColumn.Name].Value);
-                DataRow[] array = this.dataSetOrder.tJ_Order.Select("id = " + idDokum.ToString());
+                int idDokument = Convert.ToInt32(((DataGridViewRow)obj).Cells[this.idDgvColumn.Name].Value);
+                DataRow[] array = this.dataSetOrder.tJ_Order.Select("id = " + idDokument.ToString());
                 if (array.Length != 0)
                 {
                     array[0]["DateClose"] = this.dateTimePickerRes.Value;
@@ -176,8 +176,8 @@ namespace JournalOrder
             }
             foreach (object obj in this.dgvOrder.SelectedRows)
             {
-                int idDokum = Convert.ToInt32(((DataGridViewRow)obj).Cells[this.idDgvColumn.Name].Value);
-                DataRow[] array = this.dataSetOrder.tJ_Order.Select("id = " + idDokum.ToString());
+                int idDokument = Convert.ToInt32(((DataGridViewRow)obj).Cells[this.idDgvColumn.Name].Value);
+                DataRow[] array = this.dataSetOrder.tJ_Order.Select("id = " + idDokument.ToString());
                 if (array.Length != 0)
                 {
                     array[0]["DateClose"] = this.dateTimePickerRes.Value;
@@ -228,7 +228,5 @@ namespace JournalOrder
                 this.dgvOrderRegistered.SearchGrid(this.idDgvColumnReg.Name, form.IdOrder.ToString(), false);
             }
         }
-
-
     }
 }

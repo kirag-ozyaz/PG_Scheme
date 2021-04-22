@@ -657,35 +657,36 @@ namespace EIS.Forms
             // UEOplToolStripMenuItem
             // 
             this.UEOplToolStripMenuItem.Name = "UEOplToolStripMenuItem";
-            this.UEOplToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.UEOplToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.UEOplToolStripMenuItem.Text = "Оплата";
             this.UEOplToolStripMenuItem.Click += new System.EventHandler(this.UEOplToolStripMenuItem_Click);
             // 
             // UEDebToolStripMenuItem
             // 
             this.UEDebToolStripMenuItem.Name = "UEDebToolStripMenuItem";
-            this.UEDebToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.UEDebToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.UEDebToolStripMenuItem.Text = "Дебиторка";
             this.UEDebToolStripMenuItem.Click += new System.EventHandler(this.UEDebToolStripMenuItem_Click);
             // 
             // UESurveyToolStripMenuItem
             // 
             this.UESurveyToolStripMenuItem.Name = "UESurveyToolStripMenuItem";
-            this.UESurveyToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.UESurveyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.UESurveyToolStripMenuItem.Text = "Обследование";
+            this.UESurveyToolStripMenuItem.Visible = false;
             this.UESurveyToolStripMenuItem.Click += new System.EventHandler(this.UESurveyToolStripMenuItem_Click);
             // 
             // toolMenuItemUEOplPost
             // 
             this.toolMenuItemUEOplPost.Name = "toolMenuItemUEOplPost";
-            this.toolMenuItemUEOplPost.Size = new System.Drawing.Size(166, 22);
+            this.toolMenuItemUEOplPost.Size = new System.Drawing.Size(180, 22);
             this.toolMenuItemUEOplPost.Text = "Оплата по почте";
             this.toolMenuItemUEOplPost.Click += new System.EventHandler(this.toolMenuItemUEOplPost_Click);
             // 
             // toolMenuItemUEAnalysis
             // 
             this.toolMenuItemUEAnalysis.Name = "toolMenuItemUEAnalysis";
-            this.toolMenuItemUEAnalysis.Size = new System.Drawing.Size(166, 22);
+            this.toolMenuItemUEAnalysis.Size = new System.Drawing.Size(180, 22);
             this.toolMenuItemUEAnalysis.Text = "Анализ";
             this.toolMenuItemUEAnalysis.Click += new System.EventHandler(this.toolMenuItemUEAnalysis_Click);
             // 
@@ -1174,10 +1175,10 @@ namespace EIS.Forms
             // 
             // toolMenuItemExportTo1C
             // 
+            this.toolMenuItemExportTo1C.Image = global::EIS.Properties.Resources.Export_To_Document;
             this.toolMenuItemExportTo1C.Name = "toolMenuItemExportTo1C";
             this.toolMenuItemExportTo1C.Size = new System.Drawing.Size(247, 22);
             this.toolMenuItemExportTo1C.Text = "Выгрузка для 1С бухгалтерии";
-            this.toolMenuItemExportTo1C.Visible = false;
             this.toolMenuItemExportTo1C.Click += new System.EventHandler(this.toolMenuItemExportTo1C_Click);
             // 
             // toolMenuItemExportToMRSK
@@ -1855,7 +1856,7 @@ namespace EIS.Forms
             this.нарядыНаРаботу2021ToolStripMenuItem.Image = global::EIS.Properties.Resources.JournalOrder;
             this.нарядыНаРаботу2021ToolStripMenuItem.Name = "нарядыНаРаботу2021ToolStripMenuItem";
             this.нарядыНаРаботу2021ToolStripMenuItem.Size = new System.Drawing.Size(415, 22);
-            this.нарядыНаРаботу2021ToolStripMenuItem.Text = "Наряды на работу (2021)";
+            this.нарядыНаРаботу2021ToolStripMenuItem.Text = "Наряд-допуск (2021)";
             this.нарядыНаРаботу2021ToolStripMenuItem.Click += new System.EventHandler(this.нарядыНаРаботу2021ToolStripMenuItem_Click);
             // 
             // toolMenuItemJRequestForRepair

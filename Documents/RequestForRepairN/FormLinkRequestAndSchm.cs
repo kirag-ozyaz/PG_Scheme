@@ -21,32 +21,7 @@ internal partial class FormLinkRequestAndSchm : FormBase
 	{
 		this.LinkObjects = link;
 	}
-    //public Dictionary<int, string> LinkObjects
-    //{
-    //    get
-    //    {
-    //        return this.link;
-    //    }
-    //    set
-    //    {
-    //        this.link = value;
-    //    }
-    //}
-
     internal short Num { get; set; }
-    //   private short num;
-    //   internal short Num
-    //{
-    //	get
-    //	{
-    //		return this.num;
-    //	}
-    //	set
-    //	{
-    //		this.num = value;
-    //	}
-    //}
-
     internal DateTime DateBeg
 	{
 		get
